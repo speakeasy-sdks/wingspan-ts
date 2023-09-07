@@ -20,13 +20,14 @@ export class CollaboratorGroupEligibilityRequirement {
      * Delete Eligibility Requirement
      */
     async delete(
-        req: operations.DeleteCollaboratorGroupEligibilityRequirementRequest,
+        eligibilityRequirementId: string,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteCollaboratorGroupEligibilityRequirementResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteCollaboratorGroupEligibilityRequirementRequest(req);
-        }
-
+        const req = new operations.DeleteCollaboratorGroupEligibilityRequirementRequest({
+            eligibilityRequirementId: eligibilityRequirementId,
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -91,13 +92,16 @@ export class CollaboratorGroupEligibilityRequirement {
      * Replace Eligibility Requirement
      */
     async replace(
-        req: operations.ReplaceCollaboratorGroupEligibilityRequirementRequest,
+        eligibilityRequirementId: string,
+        id: string,
+        collaboratorGroupRequirementUpdate?: shared.CollaboratorGroupRequirementUpdate,
         config?: AxiosRequestConfig
     ): Promise<operations.ReplaceCollaboratorGroupEligibilityRequirementResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.ReplaceCollaboratorGroupEligibilityRequirementRequest(req);
-        }
-
+        const req = new operations.ReplaceCollaboratorGroupEligibilityRequirementRequest({
+            eligibilityRequirementId: eligibilityRequirementId,
+            id: id,
+            collaboratorGroupRequirementUpdate: collaboratorGroupRequirementUpdate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

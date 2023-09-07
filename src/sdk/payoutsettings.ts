@@ -20,13 +20,12 @@ export class PayoutSettings {
      * Get the payout settings
      */
     async get(
-        req: operations.GetPayoutSettingsRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetPayoutSettingsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetPayoutSettingsRequest(req);
-        }
-
+        const req = new operations.GetPayoutSettingsRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -86,13 +85,14 @@ export class PayoutSettings {
      * Update the payout settings
      */
     async update(
-        req: operations.UpdatePayoutSettingsRequest,
+        id: string,
+        payoutSettingsUpdate?: shared.PayoutSettingsUpdate,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdatePayoutSettingsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdatePayoutSettingsRequest(req);
-        }
-
+        const req = new operations.UpdatePayoutSettingsRequest({
+            id: id,
+            payoutSettingsUpdate: payoutSettingsUpdate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

@@ -20,13 +20,12 @@ export class FormW9 {
      * Downloads a form W9 PDF for a collaborator
      */
     async download(
-        req: operations.DownloadFormW9Request,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DownloadFormW9Response> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DownloadFormW9Request(req);
-        }
-
+        const req = new operations.DownloadFormW9Request({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

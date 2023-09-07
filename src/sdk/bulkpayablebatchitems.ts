@@ -20,13 +20,12 @@ export class BulkPayableBatchItems {
      * List bulk payable batch items
      */
     async list(
-        req: operations.ListBulkPayableBatchItemsRequest,
+        batchId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.ListBulkPayableBatchItemsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.ListBulkPayableBatchItemsRequest(req);
-        }
-
+        const req = new operations.ListBulkPayableBatchItemsRequest({
+            batchId: batchId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

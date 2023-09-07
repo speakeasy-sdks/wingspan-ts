@@ -98,13 +98,12 @@ export class ClientInvoiceTemplate {
      * Get client-invoice-template
      */
     async get(
-        req: operations.GetClientInvoiceTemplateRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetClientInvoiceTemplateResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetClientInvoiceTemplateRequest(req);
-        }
-
+        const req = new operations.GetClientInvoiceTemplateRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -169,13 +168,14 @@ export class ClientInvoiceTemplate {
      * Update client-invoice-template
      */
     async update(
-        req: operations.UpdateClientInvoiceTemplateRequest,
+        id: string,
+        clientInvoiceTemplateUpdateRequest?: shared.ClientInvoiceTemplateUpdateRequest,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateClientInvoiceTemplateResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateClientInvoiceTemplateRequest(req);
-        }
-
+        const req = new operations.UpdateClientInvoiceTemplateRequest({
+            id: id,
+            clientInvoiceTemplateUpdateRequest: clientInvoiceTemplateUpdateRequest,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

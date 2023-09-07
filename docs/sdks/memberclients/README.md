@@ -11,8 +11,8 @@ List memberClients
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ListMemberClientsResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ListMemberClientsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

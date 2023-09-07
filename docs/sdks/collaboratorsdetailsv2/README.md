@@ -11,8 +11,8 @@ Get a list of collaborators and their details
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetCollaboratorsDetailsV2Response } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetCollaboratorsDetailsV2Response } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

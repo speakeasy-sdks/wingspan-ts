@@ -20,13 +20,12 @@ export class PayablesPayroll {
      * Get a list of payables connected to payroll run
      */
     async list(
-        req: operations.ListPayablesPayrollRequest,
+        payrollId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.ListPayablesPayrollResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.ListPayablesPayrollRequest(req);
-        }
-
+        const req = new operations.ListPayablesPayrollRequest({
+            payrollId: payrollId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

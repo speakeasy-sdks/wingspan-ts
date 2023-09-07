@@ -11,44 +11,53 @@ Create invoice as client
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { CreateInvoiceAsClientResponse } from "openapi/dist/sdk/models/operations";
-import { CurrencyClientInvoiceCreateRequest } from "openapi/dist/sdk/models/shared";
+import { Wingspan } from "wingspan";
+import { CreateInvoiceAsClientResponse } from "wingspan/dist/sdk/models/operations";
+import { CurrencyClientInvoiceCreateRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
 
 sdk.invoiceAsClient.create({
-  clientCompany: "accusamus",
-  clientEmail: "voluptatibus",
+  clientCompany: "et",
+  clientEmail: "saepe",
   clientEmailCC: [
-    "distinctio",
+    "ipsum",
   ],
-  clientFirstName: "omnis",
-  clientLastName: "delectus",
-  creditFeeHandling: "praesentium",
+  clientFirstName: "veritatis",
+  clientLastName: "nobis",
+  creditFeeHandling: {
+    clientAbsolutePercentage: 7316.94,
+    clientPays: 5844.76,
+    memberPays: 456.14,
+  },
   currency: CurrencyClientInvoiceCreateRequest.LessThanNilGreaterThan,
-  dueDate: "magnam",
+  dueDate: "dolorem",
   lineItems: [
     {
-      costPerUnit: 8363.64,
-      description: "quos",
-      detail: "commodi",
+      costPerUnit: 2921.47,
+      description: "labore",
+      detail: "adipisci",
       discount: {
-        amount: 4156.08,
-        description: "totam",
-        percentage: 9366.18,
+        amount: 1002.94,
+        description: "quae",
+        percentage: 164.29,
       },
-      integration: "nam",
+      integration: {
+        quickbooks: {
+          expenseAccountId: "consequatur",
+          itemId: "est",
+        },
+      },
       labels: {
-        "voluptatem": "ipsam",
+        "porro": "doloribus",
       },
-      quantity: 4259.46,
-      reimbursableExpense: "quasi",
-      totalCost: 2476.85,
-      unit: "maiores",
+      quantity: 2817.3,
+      reimbursableExpense: false,
+      totalCost: 5864.1,
+      unit: "qui",
     },
   ],
-  memberId: "enim",
+  memberId: "quae",
 }).then((res: CreateInvoiceAsClientResponse) => {
   if (res.statusCode == 200) {
     // handle response

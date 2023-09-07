@@ -7,14 +7,14 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class CreatePayoutDebitCardRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    checkbookCardCreate?: shared.CheckbookCardCreate;
-
     /**
      * Unique identifier of a member
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=memberId" })
     memberId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    checkbookCardCreate?: shared.CheckbookCardCreate;
 }
 
 export class CreatePayoutDebitCardResponse extends SpeakeasyBase {

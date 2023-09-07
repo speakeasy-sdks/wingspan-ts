@@ -20,13 +20,14 @@ export class BulkCalculation1099BatchItem {
      * Create a bulk calculation1099 batch item
      */
     async create(
-        req: operations.CreateBulkCalculation1099BatchItemRequest,
+        batchId: string,
+        bulkCalculation1099ItemCreate?: shared.BulkCalculation1099ItemCreate,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateBulkCalculation1099BatchItemResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.CreateBulkCalculation1099BatchItemRequest(req);
-        }
-
+        const req = new operations.CreateBulkCalculation1099BatchItemRequest({
+            batchId: batchId,
+            bulkCalculation1099ItemCreate: bulkCalculation1099ItemCreate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -106,13 +107,14 @@ export class BulkCalculation1099BatchItem {
      * Get a bulk calculation1099 batch item
      */
     async get(
-        req: operations.GetBulkCalculation1099BatchItemRequest,
+        batchId: string,
+        batchItemId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetBulkCalculation1099BatchItemResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetBulkCalculation1099BatchItemRequest(req);
-        }
-
+        const req = new operations.GetBulkCalculation1099BatchItemRequest({
+            batchId: batchId,
+            batchItemId: batchItemId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -177,13 +179,16 @@ export class BulkCalculation1099BatchItem {
      * Update a bulk calculation1099 batch item
      */
     async update(
-        req: operations.UpdateBulkCalculation1099BatchItemRequest,
+        batchId: string,
+        batchItemId: string,
+        bulkCalculation1099ItemUpdate?: shared.BulkCalculation1099ItemUpdate,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateBulkCalculation1099BatchItemResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateBulkCalculation1099BatchItemRequest(req);
-        }
-
+        const req = new operations.UpdateBulkCalculation1099BatchItemRequest({
+            batchId: batchId,
+            batchItemId: batchItemId,
+            bulkCalculation1099ItemUpdate: bulkCalculation1099ItemUpdate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

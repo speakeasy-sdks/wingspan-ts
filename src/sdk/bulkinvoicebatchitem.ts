@@ -20,13 +20,14 @@ export class BulkInvoiceBatchItem {
      * Create a bulk invoice batch item
      */
     async create(
-        req: operations.CreateBulkInvoiceBatchItemRequest,
+        batchId: string,
+        bulkInvoiceItemCreate?: shared.BulkInvoiceItemCreate,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateBulkInvoiceBatchItemResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.CreateBulkInvoiceBatchItemRequest(req);
-        }
-
+        const req = new operations.CreateBulkInvoiceBatchItemRequest({
+            batchId: batchId,
+            bulkInvoiceItemCreate: bulkInvoiceItemCreate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -106,13 +107,14 @@ export class BulkInvoiceBatchItem {
      * Get a bulk invoice batch item
      */
     async get(
-        req: operations.GetBulkInvoiceBatchItemRequest,
+        batchId: string,
+        batchItemId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetBulkInvoiceBatchItemResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetBulkInvoiceBatchItemRequest(req);
-        }
-
+        const req = new operations.GetBulkInvoiceBatchItemRequest({
+            batchId: batchId,
+            batchItemId: batchItemId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -177,13 +179,16 @@ export class BulkInvoiceBatchItem {
      * Update a bulk invoice batch item
      */
     async update(
-        req: operations.UpdateBulkInvoiceBatchItemRequest,
+        batchId: string,
+        batchItemId: string,
+        bulkInvoiceItemUpdate?: shared.BulkInvoiceItemUpdate,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateBulkInvoiceBatchItemResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateBulkInvoiceBatchItemRequest(req);
-        }
-
+        const req = new operations.UpdateBulkInvoiceBatchItemRequest({
+            batchId: batchId,
+            batchItemId: batchItemId,
+            bulkInvoiceItemUpdate: bulkInvoiceItemUpdate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

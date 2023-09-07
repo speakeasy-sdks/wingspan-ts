@@ -93,14 +93,10 @@ export class Card {
     /**
      * Delete a card by cardId
      */
-    async delete(
-        req: operations.DeleteCardRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.DeleteCardResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteCardRequest(req);
-        }
-
+    async delete(id: string, config?: AxiosRequestConfig): Promise<operations.DeleteCardResponse> {
+        const req = new operations.DeleteCardRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -156,14 +152,10 @@ export class Card {
     /**
      * Get card by cardId
      */
-    async get(
-        req: operations.GetCardRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.GetCardResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetCardRequest(req);
-        }
-
+    async get(id: string, config?: AxiosRequestConfig): Promise<operations.GetCardResponse> {
+        const req = new operations.GetCardRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -223,13 +215,14 @@ export class Card {
      * Update card by cardId
      */
     async update(
-        req: operations.UpdateCardRequest,
+        id: string,
+        cardUpdateRequest?: shared.CardUpdateRequest,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateCardResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateCardRequest(req);
-        }
-
+        const req = new operations.UpdateCardRequest({
+            id: id,
+            cardUpdateRequest: cardUpdateRequest,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

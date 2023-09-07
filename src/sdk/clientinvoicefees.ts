@@ -98,13 +98,12 @@ export class ClientInvoiceFees {
      * List client-invoice fees
      */
     async list(
-        req: operations.ListClientInvoiceFeesRequest,
+        invoiceId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.ListClientInvoiceFeesResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.ListClientInvoiceFeesRequest(req);
-        }
-
+        const req = new operations.ListClientInvoiceFeesRequest({
+            invoiceId: invoiceId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

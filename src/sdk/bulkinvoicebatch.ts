@@ -98,13 +98,12 @@ export class BulkInvoiceBatch {
      * Get a bulk invoice batch
      */
     async get(
-        req: operations.GetBulkInvoiceBatchRequest,
+        batchId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetBulkInvoiceBatchResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetBulkInvoiceBatchRequest(req);
-        }
-
+        const req = new operations.GetBulkInvoiceBatchRequest({
+            batchId: batchId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -169,13 +168,14 @@ export class BulkInvoiceBatch {
      * Update a bulk invoice batch
      */
     async update(
-        req: operations.UpdateBulkInvoiceBatchRequest,
+        batchId: string,
+        bulkInvoiceBatchUpdate?: shared.BulkInvoiceBatchUpdate,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateBulkInvoiceBatchResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateBulkInvoiceBatchRequest(req);
-        }
-
+        const req = new operations.UpdateBulkInvoiceBatchRequest({
+            batchId: batchId,
+            bulkInvoiceBatchUpdate: bulkInvoiceBatchUpdate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

@@ -11,14 +11,13 @@ Get invoice on member by payableId
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetInvoicePayableOnMemberResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetInvoicePayableOnMemberRequest, GetInvoicePayableOnMemberResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "laudantium";
 
-sdk.invoicePayableOnMember.get({
-  id: "9da757a5-9ecf-4ef6-aef1-caa3383c2beb",
-}).then((res: GetInvoicePayableOnMemberResponse) => {
+sdk.invoicePayableOnMember.get(id).then((res: GetInvoicePayableOnMemberResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -27,10 +26,10 @@ sdk.invoicePayableOnMember.get({
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.GetInvoicePayableOnMemberRequest](../../models/operations/getinvoicepayableonmemberrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response

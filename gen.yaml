@@ -26,11 +26,12 @@ features:
   typescript:
     core: 2.87.0
     docs: 0.1.0
+    flattening: 2.81.1
     globalServerURLs: 2.82.0
     groups: 2.81.1
     nameOverrides: 2.81.1
 typescript:
-  version: 0.1.0
+  version: 0.2.0
   author: Speakeasy
   maxMethodParams: 4
   packageName: wingspan

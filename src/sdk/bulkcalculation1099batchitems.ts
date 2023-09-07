@@ -20,13 +20,12 @@ export class BulkCalculation1099BatchItems {
      * List bulk calculation1099 batch items
      */
     async list(
-        req: operations.ListBulkCalculation1099BatchItemsRequest,
+        batchId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.ListBulkCalculation1099BatchItemsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.ListBulkCalculation1099BatchItemsRequest(req);
-        }
-
+        const req = new operations.ListBulkCalculation1099BatchItemsRequest({
+            batchId: batchId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

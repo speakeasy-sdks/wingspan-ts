@@ -12,8 +12,8 @@ List additional settings
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ListAdditionalSettingsResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ListAdditionalSettingsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 
@@ -43,21 +43,20 @@ Update additional settings
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { UpdateAdditionalSettingsResponse } from "openapi/dist/sdk/models/operations";
-import { TypeAdditionalDataUpdateRequest } from "openapi/dist/sdk/models/shared";
+import { Wingspan } from "wingspan";
+import { UpdateAdditionalSettingsRequest, UpdateAdditionalSettingsResponse } from "wingspan/dist/sdk/models/operations";
+import { AdditionalDataUpdateRequest, TypeAdditionalDataUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
+const id: string = "deserunt";
+const additionalDataUpdateRequest: AdditionalDataUpdateRequest = {
+  key: "perferendis",
+  name: "Estelle Will",
+  required: false,
+  type: TypeAdditionalDataUpdateRequest.LessThanNilGreaterThan,
+};
 
-sdk.additionalSettings.update({
-  additionalDataUpdateRequest: {
-    key: "dolores",
-    name: "Stacy Champlin",
-    required: false,
-    type: TypeAdditionalDataUpdateRequest.String,
-  },
-  id: "5907aff1-a3a2-4fa9-8677-39251aa52c3f",
-}).then((res: UpdateAdditionalSettingsResponse) => {
+sdk.additionalSettings.update(id, additionalDataUpdateRequest).then((res: UpdateAdditionalSettingsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -66,10 +65,11 @@ sdk.additionalSettings.update({
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.UpdateAdditionalSettingsRequest](../../models/operations/updateadditionalsettingsrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `id`                                                                                     | *string*                                                                                 | :heavy_check_mark:                                                                       | Unique identifier                                                                        |
+| `additionalDataUpdateRequest`                                                            | [shared.AdditionalDataUpdateRequest](../../models/shared/additionaldataupdaterequest.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response

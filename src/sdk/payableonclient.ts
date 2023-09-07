@@ -98,13 +98,14 @@ export class PayableOnClient {
      * Update payable on client by payableId
      */
     async update(
-        req: operations.UpdatePayableOnClientRequest,
+        id: string,
+        payableUpdateRequest?: shared.PayableUpdateRequest,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdatePayableOnClientResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdatePayableOnClientRequest(req);
-        }
-
+        const req = new operations.UpdatePayableOnClientRequest({
+            id: id,
+            payableUpdateRequest: payableUpdateRequest,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

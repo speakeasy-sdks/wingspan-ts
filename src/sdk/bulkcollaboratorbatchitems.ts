@@ -20,13 +20,12 @@ export class BulkCollaboratorBatchItems {
      * List bulk collaborator batch items
      */
     async list(
-        req: operations.ListBulkCollaboratorBatchItemsRequest,
+        batchId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.ListBulkCollaboratorBatchItemsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.ListBulkCollaboratorBatchItemsRequest(req);
-        }
-
+        const req = new operations.ListBulkCollaboratorBatchItemsRequest({
+            batchId: batchId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

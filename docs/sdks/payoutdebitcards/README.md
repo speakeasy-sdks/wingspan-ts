@@ -11,14 +11,13 @@ List the payout debit cards
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ListPayoutDebitCardsResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ListPayoutDebitCardsRequest, ListPayoutDebitCardsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const memberId: string = "reiciendis";
 
-sdk.payoutDebitCards.list({
-  memberId: "eius",
-}).then((res: ListPayoutDebitCardsResponse) => {
+sdk.payoutDebitCards.list(memberId).then((res: ListPayoutDebitCardsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -27,10 +26,10 @@ sdk.payoutDebitCards.list({
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.ListPayoutDebitCardsRequest](../../models/operations/listpayoutdebitcardsrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `memberId`                                                   | *string*                                                     | :heavy_check_mark:                                           | Unique identifier of a member                                |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response

@@ -11,8 +11,8 @@ List Payment Eligigbility Requirements
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ListPaymentEligibilityRequirementsResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ListPaymentEligibilityRequirementsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

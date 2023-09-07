@@ -11,8 +11,8 @@ List approved payables for payroll
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ListApprovedPayablesResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ListApprovedPayablesResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

@@ -7,9 +7,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class ReplaceCollaboratorGroupEligibilityRequirementRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    collaboratorGroupRequirementUpdate?: shared.CollaboratorGroupRequirementUpdate;
-
     /**
      * Unique eligibility Requirement Id
      */
@@ -23,6 +20,9 @@ export class ReplaceCollaboratorGroupEligibilityRequirementRequest extends Speak
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
     id: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    collaboratorGroupRequirementUpdate?: shared.CollaboratorGroupRequirementUpdate;
 }
 
 export class ReplaceCollaboratorGroupEligibilityRequirementResponse extends SpeakeasyBase {

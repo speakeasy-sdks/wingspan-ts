@@ -98,13 +98,12 @@ export class CollaboratorGroup {
      * Get Collaborator Group
      */
     async get(
-        req: operations.GetCollaboratorGroupRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetCollaboratorGroupResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetCollaboratorGroupRequest(req);
-        }
-
+        const req = new operations.GetCollaboratorGroupRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -165,13 +164,14 @@ export class CollaboratorGroup {
      * Update Collaborator Group
      */
     async update(
-        req: operations.UpdateCollaboratorGroupRequest,
+        id: string,
+        collaboratorGroupUpdateRequest?: shared.CollaboratorGroupUpdateRequest,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateCollaboratorGroupResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateCollaboratorGroupRequest(req);
-        }
-
+        const req = new operations.UpdateCollaboratorGroupRequest({
+            id: id,
+            collaboratorGroupUpdateRequest: collaboratorGroupUpdateRequest,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

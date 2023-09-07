@@ -20,13 +20,14 @@ export class CodeToToken {
      * Exchange the code for a token
      */
     async exchange(
-        req: operations.ExchangeCodeToTokenRequest,
+        id: string,
+        cardTokenRequest?: shared.CardTokenRequest,
         config?: AxiosRequestConfig
     ): Promise<operations.ExchangeCodeToTokenResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.ExchangeCodeToTokenRequest(req);
-        }
-
+        const req = new operations.ExchangeCodeToTokenRequest({
+            id: id,
+            cardTokenRequest: cardTokenRequest,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

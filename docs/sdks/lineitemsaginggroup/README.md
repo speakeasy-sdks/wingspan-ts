@@ -11,8 +11,8 @@ Get a list of line items with respective aging group
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetLineItemsAgingGroupResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetLineItemsAgingGroupResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

@@ -13,29 +13,44 @@ Create a bulk collaborator batch item
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { CreateBulkCollaboratorBatchItemResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { CreateBulkCollaboratorBatchItemRequest, CreateBulkCollaboratorBatchItemResponse } from "wingspan/dist/sdk/models/operations";
 import {
+  BulkCollaboratorItemCreate,
   CollaboratorStatusBulkCollaboratorItemCreate,
   CompanyStructureMemberClientFormW9Info,
-} from "openapi/dist/sdk/models/shared";
+  MemberClientFormW9Info,
+} from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-
-sdk.bulkCollaboratorBatchItem.create({
-  bulkCollaboratorItemCreate: {
-    collaboratorGroupId: "dolorum",
-    collaboratorId: "in",
-    collaboratorStatus: CollaboratorStatusBulkCollaboratorItemCreate.Inactive,
-    company: "Wolff, Price and Buckridge",
-    email: "Obie.Schulist@gmail.com",
-    externalId: "laborum",
-    firstLastName: "accusamus",
-    formW9Data: "occaecati",
-    labels: "accusamus",
+const batchId: string = "enim";
+const bulkCollaboratorItemCreate: BulkCollaboratorItemCreate = {
+  collaboratorGroupId: "odit",
+  collaboratorId: "quo",
+  collaboratorStatus: CollaboratorStatusBulkCollaboratorItemCreate.Active,
+  company: "Hills, Ondricka and Schuster",
+  email: "Avery_Mueller9@gmail.com",
+  externalId: "reiciendis",
+  firstLastName: "voluptatibus",
+  formW9Data: {
+    addressLine1: "nihil",
+    addressLine2: "praesentium",
+    city: "Baltimore",
+    companyStructure: CompanyStructureMemberClientFormW9Info.LLCCorporationC,
+    country: "Kazakhstan",
+    dob: "cum",
+    ein: "perferendis",
+    firstName: "Alison",
+    lastName: "Kiehn",
+    legalBusinessName: "ut",
+    postalCode: "13241-6384",
+    ssn: "repudiandae",
+    state: "quae",
   },
-  batchId: "delectus",
-}).then((res: CreateBulkCollaboratorBatchItemResponse) => {
+  labels: "quidem",
+};
+
+sdk.bulkCollaboratorBatchItem.create(batchId, bulkCollaboratorItemCreate).then((res: CreateBulkCollaboratorBatchItemResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -44,10 +59,11 @@ sdk.bulkCollaboratorBatchItem.create({
 
 ### Parameters
 
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.CreateBulkCollaboratorBatchItemRequest](../../models/operations/createbulkcollaboratorbatchitemrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `batchId`                                                                              | *string*                                                                               | :heavy_check_mark:                                                                     | Unique identifier for a batch                                                          |
+| `bulkCollaboratorItemCreate`                                                           | [shared.BulkCollaboratorItemCreate](../../models/shared/bulkcollaboratoritemcreate.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
 
 
 ### Response
@@ -62,15 +78,14 @@ Get a bulk collaborator batch item
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetBulkCollaboratorBatchItemResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetBulkCollaboratorBatchItemRequest, GetBulkCollaboratorBatchItemResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const batchId: string = "molestias";
+const batchItemId: string = "excepturi";
 
-sdk.bulkCollaboratorBatchItem.get({
-  batchId: "quidem",
-  batchItemId: "provident",
-}).then((res: GetBulkCollaboratorBatchItemResponse) => {
+sdk.bulkCollaboratorBatchItem.get(batchId, batchItemId).then((res: GetBulkCollaboratorBatchItemResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -79,10 +94,11 @@ sdk.bulkCollaboratorBatchItem.get({
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.GetBulkCollaboratorBatchItemRequest](../../models/operations/getbulkcollaboratorbatchitemrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `batchId`                                                    | *string*                                                     | :heavy_check_mark:                                           | Unique identifier for a batch                                |
+| `batchItemId`                                                | *string*                                                     | :heavy_check_mark:                                           | Unique identifier for an item in a batch                     |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -97,32 +113,33 @@ Update a bulk collaborator batch item
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { UpdateBulkCollaboratorBatchItemResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { UpdateBulkCollaboratorBatchItemRequest, UpdateBulkCollaboratorBatchItemResponse } from "wingspan/dist/sdk/models/operations";
 import {
+  BulkCollaboratorItemUpdate,
   CollaboratorStatusBulkCollaboratorItemUpdate,
   CompanyStructureMemberClientFormW9Info,
-} from "openapi/dist/sdk/models/shared";
+  MemberClientFormW9Info,
+} from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-
-sdk.bulkCollaboratorBatchItem.update({
-  bulkCollaboratorItemUpdate: {
-    collaboratorGroupId: "nam",
-    collaboratorId: "id",
-    collaboratorStatus: CollaboratorStatusBulkCollaboratorItemUpdate.Pending,
-    company: "Will - Feeney",
-    email: "Golda_Kassulke@yahoo.com",
-    externalId: "molestiae",
-    firstLastName: "perferendis",
-    formW9Data: "magnam",
-    labels: {
-      "id": "labore",
-    },
+const batchId: string = "pariatur";
+const batchItemId: string = "modi";
+const bulkCollaboratorItemUpdate: BulkCollaboratorItemUpdate = {
+  collaboratorGroupId: "praesentium",
+  collaboratorId: "rem",
+  collaboratorStatus: CollaboratorStatusBulkCollaboratorItemUpdate.LessThanNilGreaterThan,
+  company: "Waelchi LLC",
+  email: "Tobin0@gmail.com",
+  externalId: "est",
+  firstLastName: "quibusdam",
+  formW9Data: "deserunt",
+  labels: {
+    "quibusdam": "labore",
   },
-  batchId: "labore",
-  batchItemId: "suscipit",
-}).then((res: UpdateBulkCollaboratorBatchItemResponse) => {
+};
+
+sdk.bulkCollaboratorBatchItem.update(batchId, batchItemId, bulkCollaboratorItemUpdate).then((res: UpdateBulkCollaboratorBatchItemResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -131,10 +148,12 @@ sdk.bulkCollaboratorBatchItem.update({
 
 ### Parameters
 
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.UpdateBulkCollaboratorBatchItemRequest](../../models/operations/updatebulkcollaboratorbatchitemrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `batchId`                                                                              | *string*                                                                               | :heavy_check_mark:                                                                     | Unique identifier for a batch                                                          |
+| `batchItemId`                                                                          | *string*                                                                               | :heavy_check_mark:                                                                     | Unique identifier for an item in a batch                                               |
+| `bulkCollaboratorItemUpdate`                                                           | [shared.BulkCollaboratorItemUpdate](../../models/shared/bulkcollaboratoritemupdate.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
 
 
 ### Response

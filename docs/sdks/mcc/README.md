@@ -11,8 +11,8 @@ List mcc codes
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ListMCCResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ListMCCResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

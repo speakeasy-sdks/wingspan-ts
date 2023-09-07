@@ -99,13 +99,12 @@ export class AdditionalData {
      * Delete additional data
      */
     async delete(
-        req: operations.DeleteAdditionalDataRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteAdditionalDataResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteAdditionalDataRequest(req);
-        }
-
+        const req = new operations.DeleteAdditionalDataRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -170,13 +169,12 @@ export class AdditionalData {
      * Get additional data
      */
     async get(
-        req: operations.GetAdditionalDataRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAdditionalDataResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetAdditionalDataRequest(req);
-        }
-
+        const req = new operations.GetAdditionalDataRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

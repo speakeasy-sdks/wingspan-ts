@@ -14,8 +14,8 @@ Create invoice-template
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { CreateInvoiceTemplateResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { CreateInvoiceTemplateResponse } from "wingspan/dist/sdk/models/operations";
 import {
   CurrencyInvoiceCollaboratorCreateRequest,
   CurrencyInvoiceDataCreateRequest,
@@ -24,66 +24,88 @@ import {
   StatusInvoiceDataCreateRequest,
   StatusInvoiceTemplateCreateRequest,
   StatusScheduleDate,
-} from "openapi/dist/sdk/models/shared";
+} from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
 
 sdk.invoiceTemplate.create({
-  dueInDays: 2940.76,
-  frequency: "voluptate",
+  dueInDays: 4856.28,
+  frequency: {
+    daily: false,
+    dayInInterval: 7875.42,
+    endDate: "vero",
+    every: 6064.76,
+    interval: IntervalFrequency.Month,
+    startDate: "ipsum",
+    twicePerMonth: false,
+  },
   invoiceData: {
     acceptedPaymentMethods: [
-      InvoiceDataCreateRequestAcceptedPaymentMethods.Credit,
+      InvoiceDataCreateRequestAcceptedPaymentMethods.Ach,
     ],
-    attachments: "neque",
+    attachments: "vero",
     collaborators: [
       {
-        amount: 5354.68,
+        amount: 4922.68,
         currency: CurrencyInvoiceCollaboratorCreateRequest.Cad,
-        description: "iure",
-        memberClientId: "odit",
+        description: "distinctio",
+        memberClientId: "quod",
       },
     ],
-    creditFeeHandling: {
-      clientAbsolutePercentage: 4269.04,
-      clientPays: 3008.24,
-      memberPays: 8428.55,
+    creditFeeHandling: "similique",
+    currency: CurrencyInvoiceDataCreateRequest.LessThanNilGreaterThan,
+    dueDate: "vero",
+    invoiceNotes: "ducimus",
+    labels: "quibusdam",
+    lateFeeHandling: {
+      frequency: {
+        daily: "natus",
+        dayInInterval: 7733.26,
+        endDate: "aut",
+        every: 9742.59,
+        interval: IntervalFrequency.Month,
+        startDate: "nulla",
+        twicePerMonth: "porro",
+      },
+      lateFeeAmount: 9818.3,
+      lateFeePercentage: 9850.33,
     },
-    currency: CurrencyInvoiceDataCreateRequest.Usd,
-    dueDate: "facere",
-    invoiceNotes: "libero",
-    labels: "voluptatibus",
-    lateFeeHandling: "porro",
     lineItems: [
       {
-        costPerUnit: 3041.98,
-        description: "velit",
-        detail: "illo",
-        discount: "vel",
-        integration: "beatae",
-        labels: {
-          "excepturi": "eum",
-        },
-        quantity: 2465.57,
-        reimbursableExpense: "perspiciatis",
-        totalCost: 9353.02,
-        unit: "dicta",
+        costPerUnit: 4783.7,
+        description: "eligendi",
+        detail: "ducimus",
+        discount: "officia",
+        integration: "ipsam",
+        labels: "aspernatur",
+        quantity: 4282.24,
+        reimbursableExpense: false,
+        totalCost: 2978.42,
+        unit: "ratione",
       },
     ],
-    memberClientId: "impedit",
+    memberClientId: "ex",
     notificationPreferences: {
-      sendInvoice: false,
+      sendInvoice: "dolor",
       sendReceipt: false,
       sendReminders: false,
     },
     status: StatusInvoiceDataCreateRequest.Draft,
   },
-  isSchedulingOnly: "itaque",
-  labels: "laborum",
+  isSchedulingOnly: "nulla",
+  labels: {
+    "voluptatibus": "nostrum",
+  },
   scheduleDates: [
-    "dolor",
+    {
+      cutOffDate: "quisquam",
+      date: "saepe",
+      invoiceId: "ea",
+      invoiceTemplateId: "impedit",
+      status: StatusScheduleDate.Completed,
+    },
   ],
-  sendEmails: "sit",
+  sendEmails: "aliquid",
   status: StatusInvoiceTemplateCreateRequest.Active,
 }).then((res: CreateInvoiceTemplateResponse) => {
   if (res.statusCode == 200) {
@@ -112,14 +134,13 @@ Delete invoice-template
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { DeleteInvoiceTemplateResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { DeleteInvoiceTemplateRequest, DeleteInvoiceTemplateResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "magnam";
 
-sdk.invoiceTemplate.delete({
-  id: "0ae6b6bc-9b8f-4759-aac5-5a9741d31135",
-}).then((res: DeleteInvoiceTemplateResponse) => {
+sdk.invoiceTemplate.delete(id).then((res: DeleteInvoiceTemplateResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -128,10 +149,10 @@ sdk.invoiceTemplate.delete({
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.DeleteInvoiceTemplateRequest](../../models/operations/deleteinvoicetemplaterequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -146,14 +167,13 @@ Get invoice-template
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetInvoiceTemplateResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetInvoiceTemplateRequest, GetInvoiceTemplateResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "ea";
 
-sdk.invoiceTemplate.get({
-  id: "2965bb8a-7202-4611-835e-139dbc2259b1",
-}).then((res: GetInvoiceTemplateResponse) => {
+sdk.invoiceTemplate.get(id).then((res: GetInvoiceTemplateResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -162,10 +182,10 @@ sdk.invoiceTemplate.get({
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.GetInvoiceTemplateRequest](../../models/operations/getinvoicetemplaterequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -180,107 +200,113 @@ Update invoice-template
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { UpdateInvoiceTemplateResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { UpdateInvoiceTemplateRequest, UpdateInvoiceTemplateResponse } from "wingspan/dist/sdk/models/operations";
 import {
+  Facb8048736dba546c4c76242d9f8c7111011a7a7483528f37d80226698a1f2b,
+  Fee,
+  FeeHandlingConfig,
+  Fees,
+  FrequencyUpdate,
   IntervalFrequencyUpdate,
+  InvoiceCollaboratorUpdateRequest,
+  InvoiceLineItemsCreateRequest,
+  InvoiceMetadata,
+  InvoiceNotificationPreferences,
+  InvoiceTemplateUpdateRequest,
+  InvoiceUpdateRequest,
   InvoiceUpdateRequestAcceptedPaymentMethods,
+  InvoiceUpdateRequestClient2,
+  InvoiceUpdateRequestMember2,
+  LateFeeConfigUpdate,
+  ScheduleDateUpdate,
+  Sixad3f4f624fb518510130e879729b00ed8c237d1cebc5477abf34ac340a6424d,
   StatusInvoiceTemplateUpdateRequest,
   StatusInvoiceUpdateRequest,
   StatusScheduleDateUpdate,
-} from "openapi/dist/sdk/models/shared";
+  ThirtySixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2,
+  ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461,
+} from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-
-sdk.invoiceTemplate.update({
-  invoiceTemplateUpdateRequest: {
-    accountId: "id",
-    autoPaymentRequired: false,
-    dueInDays: 8544.6,
-    frequency: {
-      daily: false,
-      dayInInterval: 8119.39,
-      endDate: "sit",
-      every: 4793.85,
-      interval: IntervalFrequencyUpdate.Week,
-      startDate: "voluptates",
-      twicePerMonth: "aperiam",
-    },
-    invoiceData: {
-      acceptedPaymentMethods: [
-        InvoiceUpdateRequestAcceptedPaymentMethods.Ach,
-      ],
-      attachments: {
-        customAttachmentIds: [
-          "distinctio",
-        ],
-      },
-      chargedFees: "autem",
-      client: "dolores",
-      collaborators: [
-        {
-          amount: 1072.1,
-          description: "est",
-        },
-      ],
-      creditFeeHandling: {
-        clientAbsolutePercentage: 5459.18,
-        clientPays: 4731.43,
-        memberPays: 5888.12,
-      },
-      dueDate: "accusamus",
-      integration: {
-        quickbooks: {
-          expenseAccountId: "sint",
-          itemId: "ea",
-        },
-      },
-      invoiceNotes: "autem",
-      labels: "rerum",
-      lateFeeHandling: {
-        frequency: "officiis",
-        lateFeeAmount: 9729.12,
-        lateFeePercentage: 7372.79,
-      },
-      lineItems: [
-        {
-          costPerUnit: 51.52,
-          description: "quia",
-          detail: "quidem",
-          discount: {
-            amount: 9195.08,
-            description: "accusantium",
-            percentage: 7104.56,
-          },
-          integration: {
-            quickbooks: "quibusdam",
-          },
-          labels: "praesentium",
-          quantity: 1403.16,
-          reimbursableExpense: "corporis",
-          totalCost: 6214.73,
-          unit: "earum",
-        },
-      ],
-      member: "recusandae",
-      memberClientId: "similique",
-      metadata: "quidem",
-      notificationPreferences: "beatae",
-      status: StatusInvoiceUpdateRequest.Pending,
-    },
-    isSchedulingOnly: "delectus",
-    labels: {
-      "fugit": "numquam",
-    },
-    paymentMethodId: "numquam",
-    scheduleDates: [
-      "at",
+const id: string = "quo";
+const invoiceTemplateUpdateRequest: InvoiceTemplateUpdateRequest = {
+  accountId: "consectetur",
+  autoPaymentRequired: false,
+  dueInDays: 1324.87,
+  frequency: "eaque",
+  invoiceData: {
+    acceptedPaymentMethods: [
+      InvoiceUpdateRequestAcceptedPaymentMethods.Manual,
     ],
-    sendEmails: false,
-    status: StatusInvoiceTemplateUpdateRequest.Expired,
+    attachments: "aut",
+    chargedFees: {
+      lateFee: {
+        amount: 3045.82,
+        calculatedAt: "fugit",
+      },
+      processingFee: {
+        amount: 795.22,
+        calculatedAt: "non",
+      },
+    },
+    client: "dolorum",
+    collaborators: [
+      {
+        amount: 8104.24,
+        description: "velit",
+      },
+    ],
+    creditFeeHandling: "autem",
+    dueDate: "nobis",
+    integration: {
+      quickbooks: {
+        expenseAccountId: "nulla",
+        itemId: "voluptas",
+      },
+    },
+    invoiceNotes: "libero",
+    labels: "tempora",
+    lateFeeHandling: "explicabo",
+    lineItems: [
+      {
+        costPerUnit: 553.74,
+        description: "molestiae",
+        detail: "magnam",
+        discount: "eius",
+        integration: "esse",
+        labels: {
+          "fuga": "reprehenderit",
+        },
+        quantity: 6956.26,
+        reimbursableExpense: false,
+        totalCost: 2835.19,
+        unit: "eum",
+      },
+    ],
+    member: "assumenda",
+    memberClientId: "eos",
+    metadata: {
+      purchaseOrderNumber: "quisquam",
+    },
+    notificationPreferences: "ipsa",
+    status: StatusInvoiceUpdateRequest.PaymentInTransit,
   },
-  id: "ce52b895-c537-4c64-94ef-b0b34896c3ca",
-}).then((res: UpdateInvoiceTemplateResponse) => {
+  isSchedulingOnly: false,
+  labels: "quo",
+  paymentMethodId: "illum",
+  scheduleDates: [
+    {
+      date: "fuga",
+      invoiceTemplateId: "eius",
+      status: StatusScheduleDateUpdate.Pending,
+    },
+  ],
+  sendEmails: "ab",
+  status: StatusInvoiceTemplateUpdateRequest.Expired,
+};
+
+sdk.invoiceTemplate.update(id, invoiceTemplateUpdateRequest).then((res: UpdateInvoiceTemplateResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -289,10 +315,11 @@ sdk.invoiceTemplate.update({
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.UpdateInvoiceTemplateRequest](../../models/operations/updateinvoicetemplaterequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `id`                                                                                       | *string*                                                                                   | :heavy_check_mark:                                                                         | Unique identifier                                                                          |
+| `invoiceTemplateUpdateRequest`                                                             | [shared.InvoiceTemplateUpdateRequest](../../models/shared/invoicetemplateupdaterequest.md) | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response

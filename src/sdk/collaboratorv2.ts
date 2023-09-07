@@ -20,13 +20,12 @@ export class CollaboratorV2 {
      * Get a single V2 Collaborator by memberId
      */
     async get(
-        req: operations.GetCollaboratorV2Request,
+        memberId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetCollaboratorV2Response> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetCollaboratorV2Request(req);
-        }
-
+        const req = new operations.GetCollaboratorV2Request({
+            memberId: memberId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

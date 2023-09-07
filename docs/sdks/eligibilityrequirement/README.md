@@ -14,16 +14,16 @@ Create Eligibility Requirement
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { CreateEligibilityRequirementResponse } from "openapi/dist/sdk/models/operations";
-import { EligibilityRequirementCreateRequestRequirementType } from "openapi/dist/sdk/models/shared";
+import { Wingspan } from "wingspan";
+import { CreateEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
+import { EligibilityRequirementCreateRequestRequirementType } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
 
 sdk.eligibilityRequirement.create({
   requirementType: EligibilityRequirementCreateRequestRequirementType.Signature,
-  templateId: "esse",
-  validFor: 4037.93,
+  templateId: "molestias",
+  validFor: 8404.29,
 }).then((res: CreateEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -51,14 +51,13 @@ Delete Eligibility Requirement
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { DeleteEligibilityRequirementResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { DeleteEligibilityRequirementRequest, DeleteEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "qui";
 
-sdk.eligibilityRequirement.delete({
-  id: "360a15db-6a66-4065-9a1a-deaab5851d6c",
-}).then((res: DeleteEligibilityRequirementResponse) => {
+sdk.eligibilityRequirement.delete(id).then((res: DeleteEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -67,10 +66,10 @@ sdk.eligibilityRequirement.delete({
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.DeleteEligibilityRequirementRequest](../../models/operations/deleteeligibilityrequirementrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -85,14 +84,13 @@ Get Eligibility Requirement
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetEligibilityRequirementResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetEligibilityRequirementRequest, GetEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "neque";
 
-sdk.eligibilityRequirement.get({
-  id: "645b08b6-1891-4baa-8fe1-ade008e6f8c5",
-}).then((res: GetEligibilityRequirementResponse) => {
+sdk.eligibilityRequirement.get(id).then((res: GetEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -101,10 +99,10 @@ sdk.eligibilityRequirement.get({
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.GetEligibilityRequirementRequest](../../models/operations/geteligibilityrequirementrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -119,20 +117,22 @@ Update Eligibility Requirement
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { UpdateEligibilityRequirementResponse } from "openapi/dist/sdk/models/operations";
-import { EligibilityRequirementUpdateRequestRequirementType } from "openapi/dist/sdk/models/shared";
+import { Wingspan } from "wingspan";
+import { UpdateEligibilityRequirementRequest, UpdateEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
+import {
+  EligibilityRequirementUpdateRequest,
+  EligibilityRequirementUpdateRequestRequirementType,
+} from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
+const id: string = "fugit";
+const eligibilityRequirementUpdateRequest: EligibilityRequirementUpdateRequest = {
+  requirementType: EligibilityRequirementUpdateRequestRequirementType.Signature,
+  templateId: "magni",
+  validFor: 4880.56,
+};
 
-sdk.eligibilityRequirement.update({
-  eligibilityRequirementUpdateRequest: {
-    requirementType: EligibilityRequirementUpdateRequestRequirementType.Signature,
-    templateId: "asperiores",
-    validFor: 1905.67,
-  },
-  id: "50d8cdb5-a341-4814-b010-421813d5208e",
-}).then((res: UpdateEligibilityRequirementResponse) => {
+sdk.eligibilityRequirement.update(id, eligibilityRequirementUpdateRequest).then((res: UpdateEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -141,10 +141,11 @@ sdk.eligibilityRequirement.update({
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.UpdateEligibilityRequirementRequest](../../models/operations/updateeligibilityrequirementrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                     | *string*                                                                                                 | :heavy_check_mark:                                                                                       | Unique identifier                                                                                        |
+| `eligibilityRequirementUpdateRequest`                                                                    | [shared.EligibilityRequirementUpdateRequest](../../models/shared/eligibilityrequirementupdaterequest.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response

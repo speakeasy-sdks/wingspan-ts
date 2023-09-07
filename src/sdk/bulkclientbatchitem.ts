@@ -20,13 +20,14 @@ export class BulkClientBatchItem {
      * Create a bulk client batch item
      */
     async create(
-        req: operations.CreateBulkClientBatchItemRequest,
+        batchId: string,
+        bulkClientItemCreate?: shared.BulkClientItemCreate,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateBulkClientBatchItemResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.CreateBulkClientBatchItemRequest(req);
-        }
-
+        const req = new operations.CreateBulkClientBatchItemRequest({
+            batchId: batchId,
+            bulkClientItemCreate: bulkClientItemCreate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -106,13 +107,14 @@ export class BulkClientBatchItem {
      * Get a bulk client batch item
      */
     async get(
-        req: operations.GetBulkClientBatchItemRequest,
+        batchId: string,
+        batchItemId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetBulkClientBatchItemResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetBulkClientBatchItemRequest(req);
-        }
-
+        const req = new operations.GetBulkClientBatchItemRequest({
+            batchId: batchId,
+            batchItemId: batchItemId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -177,13 +179,16 @@ export class BulkClientBatchItem {
      * Update a bulk client batch item
      */
     async update(
-        req: operations.UpdateBulkClientBatchItemRequest,
+        batchId: string,
+        batchItemId: string,
+        bulkClientItemUpdate?: shared.BulkClientItemUpdate,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateBulkClientBatchItemResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateBulkClientBatchItemRequest(req);
-        }
-
+        const req = new operations.UpdateBulkClientBatchItemRequest({
+            batchId: batchId,
+            batchItemId: batchItemId,
+            bulkClientItemUpdate: bulkClientItemUpdate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

@@ -20,13 +20,12 @@ export class CollaboratorEvents {
      * Get collaborator events by collaboratorId
      */
     async get(
-        req: operations.GetCollaboratorEventsRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetCollaboratorEventsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetCollaboratorEventsRequest(req);
-        }
-
+        const req = new operations.GetCollaboratorEventsRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

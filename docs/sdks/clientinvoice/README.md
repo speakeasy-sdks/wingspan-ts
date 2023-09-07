@@ -12,14 +12,13 @@ Get client-invoice by invoiceId
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetClientInvoiceResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetClientInvoiceRequest, GetClientInvoiceResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "dignissimos";
 
-sdk.clientInvoice.get({
-  id: "556146c3-e250-4fb0-88c4-2e141aac366c",
-}).then((res: GetClientInvoiceResponse) => {
+sdk.clientInvoice.get(id).then((res: GetClientInvoiceResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -28,10 +27,10 @@ sdk.clientInvoice.get({
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.GetClientInvoiceRequest](../../models/operations/getclientinvoicerequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -46,23 +45,18 @@ Update client-invoice by invoiceId
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { UpdateClientInvoiceResponse } from "openapi/dist/sdk/models/operations";
-import { StatusClientInvoiceUpdateRequest } from "openapi/dist/sdk/models/shared";
+import { Wingspan } from "wingspan";
+import { UpdateClientInvoiceRequest, UpdateClientInvoiceResponse } from "wingspan/dist/sdk/models/operations";
+import { ClientInvoiceUpdateRequest, FeeHandlingConfig, StatusClientInvoiceUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
+const id: string = "eaque";
+const clientInvoiceUpdateRequest: ClientInvoiceUpdateRequest = {
+  creditFeeHandling: "nesciunt",
+  status: StatusClientInvoiceUpdateRequest.Open,
+};
 
-sdk.clientInvoice.update({
-  clientInvoiceUpdateRequest: {
-    creditFeeHandling: {
-      clientAbsolutePercentage: 8296.03,
-      clientPays: 8605.52,
-      memberPays: 3790.34,
-    },
-    status: StatusClientInvoiceUpdateRequest.PaymentInTransit,
-  },
-  id: "14429074-7477-48a7-bd46-6d28c10ab3cd",
-}).then((res: UpdateClientInvoiceResponse) => {
+sdk.clientInvoice.update(id, clientInvoiceUpdateRequest).then((res: UpdateClientInvoiceResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -71,10 +65,11 @@ sdk.clientInvoice.update({
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.UpdateClientInvoiceRequest](../../models/operations/updateclientinvoicerequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `id`                                                                                   | *string*                                                                               | :heavy_check_mark:                                                                     | Unique identifier                                                                      |
+| `clientInvoiceUpdateRequest`                                                           | [shared.ClientInvoiceUpdateRequest](../../models/shared/clientinvoiceupdaterequest.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
 
 
 ### Response

@@ -20,13 +20,14 @@ export class PayoutDebitCard {
      * Create a payout debit card
      */
     async create(
-        req: operations.CreatePayoutDebitCardRequest,
+        memberId: string,
+        checkbookCardCreate?: shared.CheckbookCardCreate,
         config?: AxiosRequestConfig
     ): Promise<operations.CreatePayoutDebitCardResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.CreatePayoutDebitCardRequest(req);
-        }
-
+        const req = new operations.CreatePayoutDebitCardRequest({
+            memberId: memberId,
+            checkbookCardCreate: checkbookCardCreate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -106,13 +107,14 @@ export class PayoutDebitCard {
      * Delete the payout debit card
      */
     async delete(
-        req: operations.DeletePayoutDebitCardRequest,
+        id: string,
+        memberId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeletePayoutDebitCardResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeletePayoutDebitCardRequest(req);
-        }
-
+        const req = new operations.DeletePayoutDebitCardRequest({
+            id: id,
+            memberId: memberId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -177,13 +179,14 @@ export class PayoutDebitCard {
      * Get the payout debit card
      */
     async get(
-        req: operations.GetPayoutDebitCardRequest,
+        id: string,
+        memberId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetPayoutDebitCardResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetPayoutDebitCardRequest(req);
-        }
-
+        const req = new operations.GetPayoutDebitCardRequest({
+            id: id,
+            memberId: memberId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

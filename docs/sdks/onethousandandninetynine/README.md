@@ -13,8 +13,8 @@ Calculate 1099 amounts for collaborator
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { Calculate1099Response } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { Calculate1099Response } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 
@@ -48,8 +48,8 @@ Mark a 1099 submission as returned by mail for collaborator
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { Mark1099Response } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { Mark1099Response } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 
@@ -84,8 +84,8 @@ Re-mail 1099 submission for collaborator
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { Remail1099Response } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { Remail1099Response } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

@@ -98,13 +98,12 @@ export class BulkClientBatch {
      * Get a bulk client batch
      */
     async get(
-        req: operations.GetBulkClientBatchRequest,
+        batchId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetBulkClientBatchResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetBulkClientBatchRequest(req);
-        }
-
+        const req = new operations.GetBulkClientBatchRequest({
+            batchId: batchId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -169,13 +168,14 @@ export class BulkClientBatch {
      * Update a bulk client batch
      */
     async update(
-        req: operations.UpdateBulkClientBatchRequest,
+        batchId: string,
+        bulkBatchUpdate?: shared.BulkBatchUpdate,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateBulkClientBatchResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateBulkClientBatchRequest(req);
-        }
-
+        const req = new operations.UpdateBulkClientBatchRequest({
+            batchId: batchId,
+            bulkBatchUpdate: bulkBatchUpdate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

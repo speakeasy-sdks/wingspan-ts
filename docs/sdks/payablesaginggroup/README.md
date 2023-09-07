@@ -11,8 +11,8 @@ Get a list of payables with respective aging group
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetPayablesAgingGroupResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetPayablesAgingGroupResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

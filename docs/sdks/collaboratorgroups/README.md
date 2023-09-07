@@ -11,8 +11,8 @@ List Collaborator Groups
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ListCollaboratorGroupsResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ListCollaboratorGroupsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

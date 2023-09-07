@@ -99,13 +99,12 @@ export class PaymentEligibilityRequirement {
      * Delete Payment Eligibility Requirement
      */
     async delete(
-        req: operations.DeletePaymentEligibilityRequirementRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeletePaymentEligibilityRequirementResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeletePaymentEligibilityRequirementRequest(req);
-        }
-
+        const req = new operations.DeletePaymentEligibilityRequirementRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -170,13 +169,12 @@ export class PaymentEligibilityRequirement {
      * Get Payment Eligibility Requirement
      */
     async get(
-        req: operations.GetPaymentEligibilityRequirementRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetPaymentEligibilityRequirementResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetPaymentEligibilityRequirementRequest(req);
-        }
-
+        const req = new operations.GetPaymentEligibilityRequirementRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -241,13 +239,14 @@ export class PaymentEligibilityRequirement {
      * Update Payment Eligibility Requirement
      */
     async update(
-        req: operations.UpdatePaymentEligibilityRequirementRequest,
+        id: string,
+        paymentEligibilityUpdateRequest?: shared.PaymentEligibilityUpdateRequest,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdatePaymentEligibilityRequirementResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdatePaymentEligibilityRequirementRequest(req);
-        }
-
+        const req = new operations.UpdatePaymentEligibilityRequirementRequest({
+            id: id,
+            paymentEligibilityUpdateRequest: paymentEligibilityUpdateRequest,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

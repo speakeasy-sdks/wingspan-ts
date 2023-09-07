@@ -13,34 +13,40 @@ Create a bulk client batch item
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { CreateBulkClientBatchItemResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { CreateBulkClientBatchItemRequest, CreateBulkClientBatchItemResponse } from "wingspan/dist/sdk/models/operations";
 import {
   AutoPayRequirementMemberData,
+  BulkClientItemCreate,
   ClientStatusBulkClientItemCreate,
+  D750b2d9403b5bcbdb3c96c89f1cc713df563d587f16e5f39f5ab546c08a20a0,
+  MemberData,
   ShareTaxDocumentMemberData,
-} from "openapi/dist/sdk/models/shared";
+  SixtyFourMillionEightHundredAndFortySixThousandOneHundredAndThirtySixa354aa510825c1f23c3a978f4c816d8d4184311e7294a570f73727dc,
+} from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-
-sdk.bulkClientBatchItem.create({
-  bulkClientItemCreate: {
-    clientStatus: ClientStatusBulkClientItemCreate.Active,
-    company: "Pouros LLC",
-    email: "Samantha_Gleason@yahoo.com",
-    externalId: "voluptates",
-    firstLastName: "quasi",
-    integration: {
-      quickbooks: {
-        customerId: "veritatis",
-        itemId: "itaque",
-      },
-    },
-    labels: "enim",
-    memberData: "est",
+const batchId: string = "iste";
+const bulkClientItemCreate: BulkClientItemCreate = {
+  clientStatus: ClientStatusBulkClientItemCreate.Active,
+  company: "Howe - Welch",
+  email: "Marisa_Kirlin@hotmail.com",
+  externalId: "iure",
+  firstLastName: "saepe",
+  integration: {
+    quickbooks: "ipsa",
   },
-  batchId: "quibusdam",
-}).then((res: CreateBulkClientBatchItemResponse) => {
+  labels: {
+    "est": "mollitia",
+  },
+  memberData: {
+    autoPayRequirement: AutoPayRequirementMemberData.All,
+    externalId: "dolorem",
+    shareTaxDocument: ShareTaxDocumentMemberData.Decline,
+  },
+};
+
+sdk.bulkClientBatchItem.create(batchId, bulkClientItemCreate).then((res: CreateBulkClientBatchItemResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -49,10 +55,11 @@ sdk.bulkClientBatchItem.create({
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.CreateBulkClientBatchItemRequest](../../models/operations/createbulkclientbatchitemrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `batchId`                                                                  | *string*                                                                   | :heavy_check_mark:                                                         | Unique identifier for a batch                                              |
+| `bulkClientItemCreate`                                                     | [shared.BulkClientItemCreate](../../models/shared/bulkclientitemcreate.md) | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `config`                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)               | :heavy_minus_sign:                                                         | Available config options for making requests.                              |
 
 
 ### Response
@@ -67,15 +74,14 @@ Get a bulk client batch item
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetBulkClientBatchItemResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetBulkClientBatchItemRequest, GetBulkClientBatchItemResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const batchId: string = "explicabo";
+const batchItemId: string = "nobis";
 
-sdk.bulkClientBatchItem.get({
-  batchId: "explicabo",
-  batchItemId: "deserunt",
-}).then((res: GetBulkClientBatchItemResponse) => {
+sdk.bulkClientBatchItem.get(batchId, batchItemId).then((res: GetBulkClientBatchItemResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -84,10 +90,11 @@ sdk.bulkClientBatchItem.get({
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetBulkClientBatchItemRequest](../../models/operations/getbulkclientbatchitemrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `batchId`                                                    | *string*                                                     | :heavy_check_mark:                                           | Unique identifier for a batch                                |
+| `batchItemId`                                                | *string*                                                     | :heavy_check_mark:                                           | Unique identifier for an item in a batch                     |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -102,36 +109,35 @@ Update a bulk client batch item
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { UpdateBulkClientBatchItemResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { UpdateBulkClientBatchItemRequest, UpdateBulkClientBatchItemResponse } from "wingspan/dist/sdk/models/operations";
 import {
   AutoPayRequirementMemberData,
+  BulkClientItemUpdate,
   ClientStatusBulkClientItemUpdate,
+  D750b2d9403b5bcbdb3c96c89f1cc713df563d587f16e5f39f5ab546c08a20a0,
+  MemberData,
   ShareTaxDocumentMemberData,
-} from "openapi/dist/sdk/models/shared";
+  SixtyFourMillionEightHundredAndFortySixThousandOneHundredAndThirtySixa354aa510825c1f23c3a978f4c816d8d4184311e7294a570f73727dc,
+} from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-
-sdk.bulkClientBatchItem.update({
-  bulkClientItemUpdate: {
-    clientStatus: ClientStatusBulkClientItemUpdate.Pending,
-    company: "Green, Gleason and Deckow",
-    email: "Kyler16@yahoo.com",
-    externalId: "assumenda",
-    firstLastName: "ipsam",
-    integration: "fugit",
-    labels: {
-      "excepturi": "tempora",
-    },
-    memberData: {
-      autoPayRequirement: AutoPayRequirementMemberData.LessThanNilGreaterThan,
-      externalId: "labore",
-      shareTaxDocument: ShareTaxDocumentMemberData.LessThanNilGreaterThan,
-    },
+const batchId: string = "enim";
+const batchItemId: string = "omnis";
+const bulkClientItemUpdate: BulkClientItemUpdate = {
+  clientStatus: ClientStatusBulkClientItemUpdate.Inactive,
+  company: "Marks Inc",
+  email: "Lorenza.Yundt65@yahoo.com",
+  externalId: "dolorem",
+  firstLastName: "culpa",
+  integration: "repellat",
+  labels: {
+    "occaecati": "numquam",
   },
-  batchId: "eum",
-  batchItemId: "non",
-}).then((res: UpdateBulkClientBatchItemResponse) => {
+  memberData: "quam",
+};
+
+sdk.bulkClientBatchItem.update(batchId, batchItemId, bulkClientItemUpdate).then((res: UpdateBulkClientBatchItemResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -140,10 +146,12 @@ sdk.bulkClientBatchItem.update({
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.UpdateBulkClientBatchItemRequest](../../models/operations/updatebulkclientbatchitemrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `batchId`                                                                  | *string*                                                                   | :heavy_check_mark:                                                         | Unique identifier for a batch                                              |
+| `batchItemId`                                                              | *string*                                                                   | :heavy_check_mark:                                                         | Unique identifier for an item in a batch                                   |
+| `bulkClientItemUpdate`                                                     | [shared.BulkClientItemUpdate](../../models/shared/bulkclientitemupdate.md) | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `config`                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)               | :heavy_minus_sign:                                                         | Available config options for making requests.                              |
 
 
 ### Response

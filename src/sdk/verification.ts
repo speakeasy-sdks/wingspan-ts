@@ -20,13 +20,14 @@ export class Verification {
      * Sends a verification code
      */
     async send(
-        req: operations.SendVerificationRequest,
+        id: string,
+        cardCodeRequest?: shared.CardCodeRequest,
         config?: AxiosRequestConfig
     ): Promise<operations.SendVerificationResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.SendVerificationRequest(req);
-        }
-
+        const req = new operations.SendVerificationRequest({
+            id: id,
+            cardCodeRequest: cardCodeRequest,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
