@@ -20,13 +20,12 @@ export class Institution {
      * Get Institution By Routing Number
      */
     async get(
-        req: operations.GetInstitutionRequest,
+        routingNumber: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetInstitutionResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetInstitutionRequest(req);
-        }
-
+        const req = new operations.GetInstitutionRequest({
+            routingNumber: routingNumber,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

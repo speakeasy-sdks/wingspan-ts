@@ -20,13 +20,14 @@ export class CollaboratorToGroup {
      * Add collaborator to collaborators group
      */
     async add(
-        req: operations.AddCollaboratorToGroupRequest,
+        groupId: string,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.AddCollaboratorToGroupResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.AddCollaboratorToGroupRequest(req);
-        }
-
+        const req = new operations.AddCollaboratorToGroupRequest({
+            groupId: groupId,
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -91,13 +92,14 @@ export class CollaboratorToGroup {
      * Remove collaborator from collaborators group
      */
     async remove(
-        req: operations.RemoveCollaboratorToGroupRequest,
+        groupId: string,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveCollaboratorToGroupResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.RemoveCollaboratorToGroupRequest(req);
-        }
-
+        const req = new operations.RemoveCollaboratorToGroupRequest({
+            groupId: groupId,
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

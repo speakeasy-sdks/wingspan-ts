@@ -11,14 +11,13 @@ Get collaborator events by collaboratorId
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetCollaboratorEventsResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetCollaboratorEventsRequest, GetCollaboratorEventsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "tempore";
 
-sdk.collaboratorEvents.get({
-  id: "79f9dfe0-ab7d-4a8a-90ce-187f86bc173d",
-}).then((res: GetCollaboratorEventsResponse) => {
+sdk.collaboratorEvents.get(id).then((res: GetCollaboratorEventsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -27,10 +26,10 @@ sdk.collaboratorEvents.get({
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.GetCollaboratorEventsRequest](../../models/operations/getcollaboratoreventsrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response

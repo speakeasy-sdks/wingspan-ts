@@ -11,8 +11,8 @@ List bank statements
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ListBankStatementsResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ListBankStatementsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

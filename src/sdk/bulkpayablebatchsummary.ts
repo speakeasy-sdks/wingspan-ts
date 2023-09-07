@@ -20,13 +20,12 @@ export class BulkPayableBatchSummary {
      * Get Bulk Payable Batch Import Summary
      */
     async get(
-        req: operations.GetBulkPayableBatchSummaryRequest,
+        batchId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetBulkPayableBatchSummaryResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetBulkPayableBatchSummaryRequest(req);
-        }
-
+        const req = new operations.GetBulkPayableBatchSummaryRequest({
+            batchId: batchId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

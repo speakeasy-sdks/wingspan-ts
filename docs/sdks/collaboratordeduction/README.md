@@ -14,22 +14,22 @@ Create deduction
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { CreateCollaboratorDeductionResponse } from "openapi/dist/sdk/models/operations";
-import { DeductionCreateRequestCurrency, TypeDeductionCreateRequest } from "openapi/dist/sdk/models/shared";
+import { Wingspan } from "wingspan";
+import { CreateCollaboratorDeductionResponse } from "wingspan/dist/sdk/models/operations";
+import { DeductionCreateRequestCurrency, TypeDeductionCreateRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
 
 sdk.collaboratorDeduction.create({
-  amount: 4174.86,
-  clientId: "quidem",
-  currency: DeductionCreateRequestCurrency.Usd,
-  memberId: "voluptas",
-  name: "Joe Hoppe",
-  priority: 724.34,
-  sourceInvoiceId: "reiciendis",
-  startDate: "perferendis",
-  type: TypeDeductionCreateRequest.PostPayment,
+  amount: 8815.86,
+  clientId: "ad",
+  currency: DeductionCreateRequestCurrency.Cad,
+  memberId: "suscipit",
+  name: "Rene Hane",
+  priority: 6289.82,
+  sourceInvoiceId: "alias",
+  startDate: "at",
+  type: TypeDeductionCreateRequest.PrePayment,
 }).then((res: CreateCollaboratorDeductionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -57,14 +57,13 @@ Delete deduction
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { DeleteCollaboratorDeductionResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { DeleteCollaboratorDeductionRequest, DeleteCollaboratorDeductionResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "tempora";
 
-sdk.collaboratorDeduction.delete({
-  id: "f4294e36-98f4-447f-a03e-8b445e80ca55",
-}).then((res: DeleteCollaboratorDeductionResponse) => {
+sdk.collaboratorDeduction.delete(id).then((res: DeleteCollaboratorDeductionResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -73,10 +72,10 @@ sdk.collaboratorDeduction.delete({
 
 ### Parameters
 
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.DeleteCollaboratorDeductionRequest](../../models/operations/deletecollaboratordeductionrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -91,14 +90,13 @@ Get deduction
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetCollaboratorDeductionResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetCollaboratorDeductionRequest, GetCollaboratorDeductionResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "vel";
 
-sdk.collaboratorDeduction.get({
-  id: "efd20e45-7e18-458b-aa89-fbe3a5aa8e48",
-}).then((res: GetCollaboratorDeductionResponse) => {
+sdk.collaboratorDeduction.get(id).then((res: GetCollaboratorDeductionResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -107,10 +105,10 @@ sdk.collaboratorDeduction.get({
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.GetCollaboratorDeductionRequest](../../models/operations/getcollaboratordeductionrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -125,24 +123,27 @@ Update deduction
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { UpdateCollaboratorDeductionResponse } from "openapi/dist/sdk/models/operations";
-import { CurrencyDeductionUpdateRequest, TypeDeductionUpdateRequest } from "openapi/dist/sdk/models/shared";
+import { Wingspan } from "wingspan";
+import { UpdateCollaboratorDeductionRequest, UpdateCollaboratorDeductionResponse } from "wingspan/dist/sdk/models/operations";
+import {
+  CurrencyDeductionUpdateRequest,
+  DeductionUpdateRequest,
+  TypeDeductionUpdateRequest,
+} from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
+const id: string = "quod";
+const deductionUpdateRequest: DeductionUpdateRequest = {
+  amount: 8853.38,
+  currency: CurrencyDeductionUpdateRequest.Usd,
+  name: "Randal Klocko",
+  priority: 2155.07,
+  sourceInvoiceId: "quisquam",
+  startDate: "tenetur",
+  type: TypeDeductionUpdateRequest.PrePayment,
+};
 
-sdk.collaboratorDeduction.update({
-  deductionUpdateRequest: {
-    amount: 1482.68,
-    currency: CurrencyDeductionUpdateRequest.Usd,
-    name: "George Nicolas",
-    priority: 78.84,
-    sourceInvoiceId: "esse",
-    startDate: "ipsam",
-    type: TypeDeductionUpdateRequest.PrePayment,
-  },
-  id: "88e51862-065e-4904-b3b1-194b8abf603a",
-}).then((res: UpdateCollaboratorDeductionResponse) => {
+sdk.collaboratorDeduction.update(id, deductionUpdateRequest).then((res: UpdateCollaboratorDeductionResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -151,10 +152,11 @@ sdk.collaboratorDeduction.update({
 
 ### Parameters
 
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.UpdateCollaboratorDeductionRequest](../../models/operations/updatecollaboratordeductionrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `id`                                                                           | *string*                                                                       | :heavy_check_mark:                                                             | Unique identifier                                                              |
+| `deductionUpdateRequest`                                                       | [shared.DeductionUpdateRequest](../../models/shared/deductionupdaterequest.md) | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
 
 
 ### Response

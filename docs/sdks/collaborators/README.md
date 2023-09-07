@@ -11,8 +11,8 @@ List all collaborators
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ListCollaboratorsResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ListCollaboratorsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

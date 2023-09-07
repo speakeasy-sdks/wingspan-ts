@@ -98,13 +98,12 @@ export class BulkCollaboratorBatch {
      * Get a bulk collaborator batch
      */
     async get(
-        req: operations.GetBulkCollaboratorBatchRequest,
+        batchId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetBulkCollaboratorBatchResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetBulkCollaboratorBatchRequest(req);
-        }
-
+        const req = new operations.GetBulkCollaboratorBatchRequest({
+            batchId: batchId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -169,13 +168,14 @@ export class BulkCollaboratorBatch {
      * Update a bulk collaborator batch
      */
     async update(
-        req: operations.UpdateBulkCollaboratorBatchRequest,
+        batchId: string,
+        bulkBatchUpdate?: shared.BulkBatchUpdate,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateBulkCollaboratorBatchResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateBulkCollaboratorBatchRequest(req);
-        }
-
+        const req = new operations.UpdateBulkCollaboratorBatchRequest({
+            batchId: batchId,
+            bulkBatchUpdate: bulkBatchUpdate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

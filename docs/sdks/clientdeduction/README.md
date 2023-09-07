@@ -11,22 +11,22 @@ Create deduction
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { CreateClientDeductionResponse } from "openapi/dist/sdk/models/operations";
-import { DeductionCreateRequestCurrency, TypeDeductionCreateRequest } from "openapi/dist/sdk/models/shared";
+import { Wingspan } from "wingspan";
+import { CreateClientDeductionResponse } from "wingspan/dist/sdk/models/operations";
+import { DeductionCreateRequestCurrency, TypeDeductionCreateRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
 
 sdk.clientDeduction.create({
-  amount: 2768.94,
-  clientId: "aspernatur",
+  amount: 5691.01,
+  clientId: "odit",
   currency: DeductionCreateRequestCurrency.Usd,
-  memberId: "distinctio",
-  name: "Gilbert Kohler",
-  priority: 1832.8,
-  sourceInvoiceId: "neque",
-  startDate: "fugit",
-  type: TypeDeductionCreateRequest.PrePayment,
+  memberId: "accusantium",
+  name: "Ebony Predovic",
+  priority: 4200.75,
+  sourceInvoiceId: "nam",
+  startDate: "eaque",
+  type: TypeDeductionCreateRequest.PostPayment,
 }).then((res: CreateClientDeductionResponse) => {
   if (res.statusCode == 200) {
     // handle response

@@ -13,28 +13,28 @@ Create a payout debit card
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { CreatePayoutDebitCardResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { CreatePayoutDebitCardRequest, CreatePayoutDebitCardResponse } from "wingspan/dist/sdk/models/operations";
+import { Address, CheckbookCardCreate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-
-sdk.payoutDebitCard.create({
-  checkbookCardCreate: {
-    address: {
-      addressLine1: "saepe",
-      addressLine2: "autem",
-      city: "Dooleyhaven",
-      postalCode: "87268",
-      state: "recusandae",
-    },
-    cardNumber: "distinctio",
-    cvv: "pariatur",
-    expMM: "ad",
-    expYYYY: "facere",
-    name: "Conrad Pacocha",
+const memberId: string = "nobis";
+const checkbookCardCreate: CheckbookCardCreate = {
+  address: {
+    addressLine1: "adipisci",
+    addressLine2: "minus",
+    city: "New Isomboro",
+    postalCode: "88327",
+    state: "blanditiis",
   },
-  memberId: "ipsam",
-}).then((res: CreatePayoutDebitCardResponse) => {
+  cardNumber: "quas",
+  cvv: "hic",
+  expMM: "nesciunt",
+  expYYYY: "culpa",
+  name: "Dewey Leannon",
+};
+
+sdk.payoutDebitCard.create(memberId, checkbookCardCreate).then((res: CreatePayoutDebitCardResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -43,10 +43,11 @@ sdk.payoutDebitCard.create({
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.CreatePayoutDebitCardRequest](../../models/operations/createpayoutdebitcardrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `memberId`                                                               | *string*                                                                 | :heavy_check_mark:                                                       | Unique identifier of a member                                            |
+| `checkbookCardCreate`                                                    | [shared.CheckbookCardCreate](../../models/shared/checkbookcardcreate.md) | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `config`                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)             | :heavy_minus_sign:                                                       | Available config options for making requests.                            |
 
 
 ### Response
@@ -61,15 +62,14 @@ Delete the payout debit card
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { DeletePayoutDebitCardResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { DeletePayoutDebitCardRequest, DeletePayoutDebitCardResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "nobis";
+const memberId: string = "sit";
 
-sdk.payoutDebitCard.delete({
-  id: "06a8aa94-c026-444c-b5e9-d9a4578adc1a",
-  memberId: "quod",
-}).then((res: DeletePayoutDebitCardResponse) => {
+sdk.payoutDebitCard.delete(id, memberId).then((res: DeletePayoutDebitCardResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -78,10 +78,11 @@ sdk.payoutDebitCard.delete({
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.DeletePayoutDebitCardRequest](../../models/operations/deletepayoutdebitcardrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `memberId`                                                   | *string*                                                     | :heavy_check_mark:                                           | Unique identifier of a member                                |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -96,15 +97,14 @@ Get the payout debit card
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetPayoutDebitCardResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetPayoutDebitCardRequest, GetPayoutDebitCardResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "rerum";
+const memberId: string = "sed";
 
-sdk.payoutDebitCard.get({
-  id: "600dec00-1ac8-402e-aec0-9ff8f0f816ff",
-  memberId: "velit",
-}).then((res: GetPayoutDebitCardResponse) => {
+sdk.payoutDebitCard.get(id, memberId).then((res: GetPayoutDebitCardResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -113,10 +113,11 @@ sdk.payoutDebitCard.get({
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.GetPayoutDebitCardRequest](../../models/operations/getpayoutdebitcardrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `memberId`                                                   | *string*                                                     | :heavy_check_mark:                                           | Unique identifier of a member                                |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response

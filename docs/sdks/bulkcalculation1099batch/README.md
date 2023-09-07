@@ -13,15 +13,13 @@ Create a bulk calculation1099 batch
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { CreateBulkCalculation1099BatchResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { CreateBulkCalculation1099BatchResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 
 sdk.bulkCalculation1099Batch.create({
-  labels: {
-    "possimus": "aut",
-  },
+  labels: "quod",
 }).then((res: CreateBulkCalculation1099BatchResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -49,14 +47,13 @@ Get a bulk calculation1099 batch
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetBulkCalculation1099BatchResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetBulkCalculation1099BatchRequest, GetBulkCalculation1099BatchResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const batchId: string = "quod";
 
-sdk.bulkCalculation1099Batch.get({
-  batchId: "quasi",
-}).then((res: GetBulkCalculation1099BatchResponse) => {
+sdk.bulkCalculation1099Batch.get(batchId).then((res: GetBulkCalculation1099BatchResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -65,10 +62,10 @@ sdk.bulkCalculation1099Batch.get({
 
 ### Parameters
 
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.GetBulkCalculation1099BatchRequest](../../models/operations/getbulkcalculation1099batchrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `batchId`                                                    | *string*                                                     | :heavy_check_mark:                                           | Unique identifier for a batch                                |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -83,21 +80,20 @@ Update a bulk calculation1099 batch
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { UpdateBulkCalculation1099BatchResponse } from "openapi/dist/sdk/models/operations";
-import { StatusBulkBatchUpdate } from "openapi/dist/sdk/models/shared";
+import { Wingspan } from "wingspan";
+import { UpdateBulkCalculation1099BatchRequest, UpdateBulkCalculation1099BatchResponse } from "wingspan/dist/sdk/models/operations";
+import { BulkBatchUpdate, StatusBulkBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-
-sdk.bulkCalculation1099Batch.update({
-  bulkBatchUpdate: {
-    labels: {
-      "temporibus": "laborum",
-    },
-    status: StatusBulkBatchUpdate.Open,
+const batchId: string = "esse";
+const bulkBatchUpdate: BulkBatchUpdate = {
+  labels: {
+    "porro": "dolorum",
   },
-  batchId: "reiciendis",
-}).then((res: UpdateBulkCalculation1099BatchResponse) => {
+  status: StatusBulkBatchUpdate.Open,
+};
+
+sdk.bulkCalculation1099Batch.update(batchId, bulkBatchUpdate).then((res: UpdateBulkCalculation1099BatchResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -106,10 +102,11 @@ sdk.bulkCalculation1099Batch.update({
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                            | [operations.UpdateBulkCalculation1099BatchRequest](../../models/operations/updatebulkcalculation1099batchrequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
-| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `batchId`                                                        | *string*                                                         | :heavy_check_mark:                                               | Unique identifier for a batch                                    |
+| `bulkBatchUpdate`                                                | [shared.BulkBatchUpdate](../../models/shared/bulkbatchupdate.md) | :heavy_minus_sign:                                               | N/A                                                              |
+| `config`                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)     | :heavy_minus_sign:                                               | Available config options for making requests.                    |
 
 
 ### Response

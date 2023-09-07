@@ -14,20 +14,14 @@ Create card
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { CreateCardResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { CreateCardResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 
 sdk.card.create({
   requestPhysicalCard: false,
-  shippingAddress: {
-    addressLine1: "quaerat",
-    addressLine2: "quos",
-    city: "East Cornelius",
-    postalCode: "12957",
-    state: "voluptate",
-  },
+  shippingAddress: "sunt",
 }).then((res: CreateCardResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -55,14 +49,13 @@ Delete a card by cardId
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { DeleteCardResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { DeleteCardRequest, DeleteCardResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "quo";
 
-sdk.card.delete({
-  id: "7f3a4100-674e-4bf6-9280-d1ba77a89ebf",
-}).then((res: DeleteCardResponse) => {
+sdk.card.delete(id).then((res: DeleteCardResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -71,10 +64,10 @@ sdk.card.delete({
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `request`                                                                    | [operations.DeleteCardRequest](../../models/operations/deletecardrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
-| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -89,14 +82,13 @@ Get card by cardId
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetCardResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetCardRequest, GetCardResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "illum";
 
-sdk.card.get({
-  id: "737ae420-3ce5-4e6a-95d8-a0d446ce2af7",
-}).then((res: GetCardResponse) => {
+sdk.card.get(id).then((res: GetCardResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -105,10 +97,10 @@ sdk.card.get({
 
 ### Parameters
 
-| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `request`                                                              | [operations.GetCardRequest](../../models/operations/getcardrequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
-| `config`                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)           | :heavy_minus_sign:                                                     | Available config options for making requests.                          |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -123,18 +115,17 @@ Update card by cardId
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { UpdateCardResponse } from "openapi/dist/sdk/models/operations";
-import { PropertiesCardUpdateRequest } from "openapi/dist/sdk/models/shared";
+import { Wingspan } from "wingspan";
+import { UpdateCardRequest, UpdateCardResponse } from "wingspan/dist/sdk/models/operations";
+import { CardUpdateRequest, PropertiesCardUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
+const id: string = "pariatur";
+const cardUpdateRequest: CardUpdateRequest = {
+  status: PropertiesCardUpdateRequest.Frozen,
+};
 
-sdk.card.update({
-  cardUpdateRequest: {
-    status: PropertiesCardUpdateRequest.Frozen,
-  },
-  id: "73cf3be4-53f8-470b-b26b-5a73429cdb1a",
-}).then((res: UpdateCardResponse) => {
+sdk.card.update(id, cardUpdateRequest).then((res: UpdateCardResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -143,10 +134,11 @@ sdk.card.update({
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `request`                                                                    | [operations.UpdateCardRequest](../../models/operations/updatecardrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
-| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `id`                                                                 | *string*                                                             | :heavy_check_mark:                                                   | Unique identifier                                                    |
+| `cardUpdateRequest`                                                  | [shared.CardUpdateRequest](../../models/shared/cardupdaterequest.md) | :heavy_minus_sign:                                                   | N/A                                                                  |
+| `config`                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)         | :heavy_minus_sign:                                                   | Available config options for making requests.                        |
 
 
 ### Response

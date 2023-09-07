@@ -11,8 +11,8 @@ Lists all collaborators in the V2 format
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ListCollaboratorsV2Response } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ListCollaboratorsV2Response } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

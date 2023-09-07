@@ -7,14 +7,14 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class ExchangeCodeToTokenRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    cardTokenRequest?: shared.CardTokenRequest;
-
     /**
      * Unique identifier
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
     id: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    cardTokenRequest?: shared.CardTokenRequest;
 }
 
 export class ExchangeCodeToTokenResponse extends SpeakeasyBase {

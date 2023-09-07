@@ -12,14 +12,13 @@ Get payroll settings
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetPayrollSettingsResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetPayrollSettingsRequest, GetPayrollSettingsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "laborum";
 
-sdk.payrollSettings.get({
-  id: "43cf789f-fafe-4da5-be5a-e6e0ac184c2b",
-}).then((res: GetPayrollSettingsResponse) => {
+sdk.payrollSettings.get(id).then((res: GetPayrollSettingsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -28,10 +27,10 @@ sdk.payrollSettings.get({
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.GetPayrollSettingsRequest](../../models/operations/getpayrollsettingsrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -46,49 +45,55 @@ Update payroll settings
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { UpdatePayrollSettingsResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { UpdatePayrollSettingsRequest, UpdatePayrollSettingsResponse } from "wingspan/dist/sdk/models/operations";
 import {
+  CalculationSettings1099,
   CardProcessingFeesCalculationSettings1099,
+  FrequencyUpdate,
+  FundingSource,
   FundingSourceCurrency,
   IntervalFrequencyUpdate,
   OffPlatformPaymentsCalculationSettings1099,
+  PayrollSettingsUpdate,
   ReimbursableExpensesCalculationSettings1099,
+  ScheduleDateUpdate,
   StatusPayrollSettingsUpdate,
   StatusScheduleDateUpdate,
   TypeFundingSource,
   WorkflowPayrollSettingsUpdate,
-} from "openapi/dist/sdk/models/shared";
+} from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-
-sdk.payrollSettings.update({
-  payrollSettingsUpdate: {
-    calculationSettings1099: {
-      cardProcessingFees: CardProcessingFeesCalculationSettings1099.LessThanNilGreaterThan,
-      offPlatformPayments: OffPlatformPaymentsCalculationSettings1099.Include,
-      reimbursableExpenses: ReimbursableExpensesCalculationSettings1099.Include,
-      stateTaxId: "quod",
-      thresholdAmount: 5524.4,
-    },
-    enablePlannedPayroll: false,
-    enableProcessDaysBeforeDue: "molestiae",
-    frequency: "laborum",
-    fundingSource: "perferendis",
-    issue1099s: false,
-    processDaysBeforeDue: 1023.16,
-    scheduleDates: [
-      {
-        date: "dolore",
-        invoiceTemplateId: "sunt",
-        status: StatusScheduleDateUpdate.LessThanNilGreaterThan,
-      },
-    ],
-    status: StatusPayrollSettingsUpdate.Draft,
-    workflow: WorkflowPayrollSettingsUpdate.SingleStage,
+const id: string = "sed";
+const payrollSettingsUpdate: PayrollSettingsUpdate = {
+  calculationSettings1099: "commodi",
+  enablePlannedPayroll: false,
+  enableProcessDaysBeforeDue: "voluptas",
+  frequency: {
+    daily: "suscipit",
+    dayInInterval: 9602.57,
+    endDate: "debitis",
+    every: 724.34,
+    interval: IntervalFrequencyUpdate.LessThanNilGreaterThan,
+    startDate: "perferendis",
+    twicePerMonth: false,
   },
-  id: "e5505575-6f5d-456d-8bd0-af2dfe13db4f",
-}).then((res: UpdatePayrollSettingsResponse) => {
+  fundingSource: {
+    fundingSourceCurrency: FundingSourceCurrency.Usd,
+    fundingSourceId: "sed",
+    fundingSourceType: TypeFundingSource.Account,
+  },
+  issue1099s: "necessitatibus",
+  processDaysBeforeDue: 2155.29,
+  scheduleDates: [
+    "occaecati",
+  ],
+  status: StatusPayrollSettingsUpdate.Expired,
+  workflow: WorkflowPayrollSettingsUpdate.LessThanNilGreaterThan,
+};
+
+sdk.payrollSettings.update(id, payrollSettingsUpdate).then((res: UpdatePayrollSettingsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -97,10 +102,11 @@ sdk.payrollSettings.update({
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.UpdatePayrollSettingsRequest](../../models/operations/updatepayrollsettingsrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `id`                                                                         | *string*                                                                     | :heavy_check_mark:                                                           | Unique identifier                                                            |
+| `payrollSettingsUpdate`                                                      | [shared.PayrollSettingsUpdate](../../models/shared/payrollsettingsupdate.md) | :heavy_minus_sign:                                                           | N/A                                                                          |
+| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
 
 
 ### Response

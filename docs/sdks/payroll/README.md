@@ -11,8 +11,8 @@ Execute payroll
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ExecutePayrollResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ExecutePayrollResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

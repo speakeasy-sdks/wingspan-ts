@@ -20,13 +20,14 @@ export class BulkCollaboratorBatchItem {
      * Create a bulk collaborator batch item
      */
     async create(
-        req: operations.CreateBulkCollaboratorBatchItemRequest,
+        batchId: string,
+        bulkCollaboratorItemCreate?: shared.BulkCollaboratorItemCreate,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateBulkCollaboratorBatchItemResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.CreateBulkCollaboratorBatchItemRequest(req);
-        }
-
+        const req = new operations.CreateBulkCollaboratorBatchItemRequest({
+            batchId: batchId,
+            bulkCollaboratorItemCreate: bulkCollaboratorItemCreate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -106,13 +107,14 @@ export class BulkCollaboratorBatchItem {
      * Get a bulk collaborator batch item
      */
     async get(
-        req: operations.GetBulkCollaboratorBatchItemRequest,
+        batchId: string,
+        batchItemId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetBulkCollaboratorBatchItemResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetBulkCollaboratorBatchItemRequest(req);
-        }
-
+        const req = new operations.GetBulkCollaboratorBatchItemRequest({
+            batchId: batchId,
+            batchItemId: batchItemId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -177,13 +179,16 @@ export class BulkCollaboratorBatchItem {
      * Update a bulk collaborator batch item
      */
     async update(
-        req: operations.UpdateBulkCollaboratorBatchItemRequest,
+        batchId: string,
+        batchItemId: string,
+        bulkCollaboratorItemUpdate?: shared.BulkCollaboratorItemUpdate,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateBulkCollaboratorBatchItemResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateBulkCollaboratorBatchItemRequest(req);
-        }
-
+        const req = new operations.UpdateBulkCollaboratorBatchItemRequest({
+            batchId: batchId,
+            batchItemId: batchItemId,
+            bulkCollaboratorItemUpdate: bulkCollaboratorItemUpdate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

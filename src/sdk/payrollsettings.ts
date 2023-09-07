@@ -20,13 +20,12 @@ export class PayrollSettings {
      * Get payroll settings
      */
     async get(
-        req: operations.GetPayrollSettingsRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetPayrollSettingsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetPayrollSettingsRequest(req);
-        }
-
+        const req = new operations.GetPayrollSettingsRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -87,13 +86,14 @@ export class PayrollSettings {
      * Update payroll settings
      */
     async update(
-        req: operations.UpdatePayrollSettingsRequest,
+        id: string,
+        payrollSettingsUpdate?: shared.PayrollSettingsUpdate,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdatePayrollSettingsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdatePayrollSettingsRequest(req);
-        }
-
+        const req = new operations.UpdatePayrollSettingsRequest({
+            id: id,
+            payrollSettingsUpdate: payrollSettingsUpdate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

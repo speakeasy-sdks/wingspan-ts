@@ -11,14 +11,13 @@ Get Bulk Payable Batch Import Summary
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetBulkPayableBatchSummaryResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetBulkPayableBatchSummaryRequest, GetBulkPayableBatchSummaryResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const batchId: string = "praesentium";
 
-sdk.bulkPayableBatchSummary.get({
-  batchId: "nobis",
-}).then((res: GetBulkPayableBatchSummaryResponse) => {
+sdk.bulkPayableBatchSummary.get(batchId).then((res: GetBulkPayableBatchSummaryResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -27,10 +26,10 @@ sdk.bulkPayableBatchSummary.get({
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.GetBulkPayableBatchSummaryRequest](../../models/operations/getbulkpayablebatchsummaryrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `batchId`                                                    | *string*                                                     | :heavy_check_mark:                                           | Unique identifier for a batch                                |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response

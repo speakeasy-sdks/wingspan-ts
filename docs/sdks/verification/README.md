@@ -11,17 +11,17 @@ Sends a verification code
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { SendVerificationResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { SendVerificationRequest, SendVerificationResponse } from "wingspan/dist/sdk/models/operations";
+import { CardCodeRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
+const id: string = "voluptate";
+const cardCodeRequest: CardCodeRequest = {
+  channel: "reiciendis",
+};
 
-sdk.verification.send({
-  cardCodeRequest: {
-    channel: "aliquid",
-  },
-  id: "8a363c88-73e4-4843-80b1-f6b8ca275a60",
-}).then((res: SendVerificationResponse) => {
+sdk.verification.send(id, cardCodeRequest).then((res: SendVerificationResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -30,10 +30,11 @@ sdk.verification.send({
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.SendVerificationRequest](../../models/operations/sendverificationrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `id`                                                             | *string*                                                         | :heavy_check_mark:                                               | Unique identifier                                                |
+| `cardCodeRequest`                                                | [shared.CardCodeRequest](../../models/shared/cardcoderequest.md) | :heavy_minus_sign:                                               | N/A                                                              |
+| `config`                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)     | :heavy_minus_sign:                                               | Available config options for making requests.                    |
 
 
 ### Response

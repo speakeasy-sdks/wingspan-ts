@@ -11,14 +11,13 @@ List bulk client batch items
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ListBulkClientBatchItemsResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ListBulkClientBatchItemsRequest, ListBulkClientBatchItemsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const batchId: string = "molestiae";
 
-sdk.bulkClientBatchItems.list({
-  batchId: "eligendi",
-}).then((res: ListBulkClientBatchItemsResponse) => {
+sdk.bulkClientBatchItems.list(batchId).then((res: ListBulkClientBatchItemsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -27,10 +26,10 @@ sdk.bulkClientBatchItems.list({
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.ListBulkClientBatchItemsRequest](../../models/operations/listbulkclientbatchitemsrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `batchId`                                                    | *string*                                                     | :heavy_check_mark:                                           | Unique identifier for a batch                                |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response

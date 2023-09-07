@@ -20,13 +20,12 @@ export class Invoice {
      * Generate invoice
      */
     async generate(
-        req: operations.GenerateInvoiceRequest,
+        invoiceId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GenerateInvoiceResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GenerateInvoiceRequest(req);
-        }
-
+        const req = new operations.GenerateInvoiceRequest({
+            invoiceId: invoiceId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -90,13 +89,12 @@ export class Invoice {
      * Send invoice
      */
     async send(
-        req: operations.SendInvoiceRequest,
+        invoiceId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.SendInvoiceResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.SendInvoiceRequest(req);
-        }
-
+        const req = new operations.SendInvoiceRequest({
+            invoiceId: invoiceId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

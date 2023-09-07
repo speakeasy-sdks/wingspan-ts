@@ -20,13 +20,12 @@ export class AppLink {
      * Gets an application link for creating the clearing bank account
      */
     async get(
-        req: operations.GetAppLinkRequest,
+        memberId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAppLinkResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetAppLinkRequest(req);
-        }
-
+        const req = new operations.GetAppLinkRequest({
+            memberId: memberId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

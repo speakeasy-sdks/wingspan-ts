@@ -7,9 +7,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class UpdateBulkInvoiceBatchItemRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    bulkInvoiceItemUpdate?: shared.BulkInvoiceItemUpdate;
-
     /**
      * Unique identifier for a batch
      */
@@ -21,6 +18,9 @@ export class UpdateBulkInvoiceBatchItemRequest extends SpeakeasyBase {
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=batchItemId" })
     batchItemId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    bulkInvoiceItemUpdate?: shared.BulkInvoiceItemUpdate;
 }
 
 export class UpdateBulkInvoiceBatchItemResponse extends SpeakeasyBase {

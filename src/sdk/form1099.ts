@@ -20,13 +20,16 @@ export class Form1099 {
      * Downloads a form 1099 PDF for a collaborator
      */
     async download(
-        req: operations.DownloadForm1099Request,
+        id: string,
+        index: string,
+        year: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DownloadForm1099Response> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DownloadForm1099Request(req);
-        }
-
+        const req = new operations.DownloadForm1099Request({
+            id: id,
+            index: index,
+            year: year,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

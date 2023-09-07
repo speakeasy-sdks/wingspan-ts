@@ -98,13 +98,12 @@ export class InvoiceTemplate {
      * Delete invoice-template
      */
     async delete(
-        req: operations.DeleteInvoiceTemplateRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteInvoiceTemplateResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteInvoiceTemplateRequest(req);
-        }
-
+        const req = new operations.DeleteInvoiceTemplateRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -165,13 +164,12 @@ export class InvoiceTemplate {
      * Get invoice-template
      */
     async get(
-        req: operations.GetInvoiceTemplateRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetInvoiceTemplateResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetInvoiceTemplateRequest(req);
-        }
-
+        const req = new operations.GetInvoiceTemplateRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -232,13 +230,14 @@ export class InvoiceTemplate {
      * Update invoice-template
      */
     async update(
-        req: operations.UpdateInvoiceTemplateRequest,
+        id: string,
+        invoiceTemplateUpdateRequest?: shared.InvoiceTemplateUpdateRequest,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateInvoiceTemplateResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateInvoiceTemplateRequest(req);
-        }
-
+        const req = new operations.UpdateInvoiceTemplateRequest({
+            id: id,
+            invoiceTemplateUpdateRequest: invoiceTemplateUpdateRequest,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

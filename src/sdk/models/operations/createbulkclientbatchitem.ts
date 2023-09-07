@@ -7,14 +7,14 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class CreateBulkClientBatchItemRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    bulkClientItemCreate?: shared.BulkClientItemCreate;
-
     /**
      * Unique identifier for a batch
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=batchId" })
     batchId: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    bulkClientItemCreate?: shared.BulkClientItemCreate;
 }
 
 export class CreateBulkClientBatchItemResponse extends SpeakeasyBase {

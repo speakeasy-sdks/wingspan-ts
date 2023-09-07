@@ -20,13 +20,14 @@ export class PayClientInvoice {
      * Pay client-invoice
      */
     async post(
-        req: operations.PostPayClientInvoiceRequest,
+        invoiceId: string,
+        payRequest?: shared.PayRequest,
         config?: AxiosRequestConfig
     ): Promise<operations.PostPayClientInvoiceResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostPayClientInvoiceRequest(req);
-        }
-
+        const req = new operations.PostPayClientInvoiceRequest({
+            invoiceId: invoiceId,
+            payRequest: payRequest,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

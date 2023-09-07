@@ -11,8 +11,8 @@ List bulk calculation1099 batches
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ListBulkCalculation1099BatchesResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ListBulkCalculation1099BatchesResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

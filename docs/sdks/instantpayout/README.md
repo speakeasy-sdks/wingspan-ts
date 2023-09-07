@@ -13,13 +13,13 @@ Create instant payout details
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { CreateInstantPayoutResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { CreateInstantPayoutResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 
 sdk.instantPayout.create({
-  externalPayoutAccountToken: "iste",
+  externalPayoutAccountToken: "voluptatem",
 }).then((res: CreateInstantPayoutResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -47,8 +47,8 @@ Delete instant payout
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { DeleteInstantPayoutResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { DeleteInstantPayoutResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 
@@ -78,8 +78,8 @@ Fetch instant payout details
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { FetchInstantPayoutResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { FetchInstantPayoutResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

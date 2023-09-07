@@ -7,14 +7,14 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class UpdateAdditionalSettingsRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    additionalDataUpdateRequest?: shared.AdditionalDataUpdateRequest;
-
     /**
      * Unique identifier
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
     id: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    additionalDataUpdateRequest?: shared.AdditionalDataUpdateRequest;
 }
 
 export class UpdateAdditionalSettingsResponse extends SpeakeasyBase {

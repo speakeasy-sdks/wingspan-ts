@@ -11,8 +11,8 @@ List client-invoice-templates
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ListClientInvoiceTemplatesResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ListClientInvoiceTemplatesResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

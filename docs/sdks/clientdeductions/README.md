@@ -11,8 +11,8 @@ List deductions
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ListClientDeductionsResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ListClientDeductionsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

@@ -13,14 +13,13 @@ Delete deduction
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { DeleteClientDeductionIDResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { DeleteClientDeductionIDRequest, DeleteClientDeductionIDResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "nemo";
 
-sdk.clientDeductionID.delete({
-  id: "715bf0cb-b1e3-41b8-b90f-3443a1108e0a",
-}).then((res: DeleteClientDeductionIDResponse) => {
+sdk.clientDeductionID.delete(id).then((res: DeleteClientDeductionIDResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -29,10 +28,10 @@ sdk.clientDeductionID.delete({
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.DeleteClientDeductionIDRequest](../../models/operations/deleteclientdeductionidrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -47,14 +46,13 @@ Get deduction
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetClientDeductionIDResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetClientDeductionIDRequest, GetClientDeductionIDResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "voluptatibus";
 
-sdk.clientDeductionID.get({
-  id: "dcf4b921-879f-4ce9-93f7-3ef7fbc7abd7",
-}).then((res: GetClientDeductionIDResponse) => {
+sdk.clientDeductionID.get(id).then((res: GetClientDeductionIDResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -63,10 +61,10 @@ sdk.clientDeductionID.get({
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.GetClientDeductionIDRequest](../../models/operations/getclientdeductionidrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -81,24 +79,27 @@ Update deduction
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { UpdateClientDeductionIDResponse } from "openapi/dist/sdk/models/operations";
-import { CurrencyDeductionUpdateRequest, TypeDeductionUpdateRequest } from "openapi/dist/sdk/models/shared";
+import { Wingspan } from "wingspan";
+import { UpdateClientDeductionIDRequest, UpdateClientDeductionIDResponse } from "wingspan/dist/sdk/models/operations";
+import {
+  CurrencyDeductionUpdateRequest,
+  DeductionUpdateRequest,
+  TypeDeductionUpdateRequest,
+} from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
+const id: string = "perferendis";
+const deductionUpdateRequest: DeductionUpdateRequest = {
+  amount: 8558.04,
+  currency: CurrencyDeductionUpdateRequest.Usd,
+  name: "Erma Hessel",
+  priority: 7499.99,
+  sourceInvoiceId: "dolores",
+  startDate: "quis",
+  type: TypeDeductionUpdateRequest.PostPayment,
+};
 
-sdk.clientDeductionID.update({
-  deductionUpdateRequest: {
-    amount: 2930.2,
-    currency: CurrencyDeductionUpdateRequest.LessThanNilGreaterThan,
-    name: "Earl Mosciski DVM",
-    priority: 3472.33,
-    sourceInvoiceId: "nulla",
-    startDate: "fugit",
-    type: TypeDeductionUpdateRequest.LessThanNilGreaterThan,
-  },
-  id: "ff7c70a4-5626-4d43-a813-f16d9f5fce6c",
-}).then((res: UpdateClientDeductionIDResponse) => {
+sdk.clientDeductionID.update(id, deductionUpdateRequest).then((res: UpdateClientDeductionIDResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -107,10 +108,11 @@ sdk.clientDeductionID.update({
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.UpdateClientDeductionIDRequest](../../models/operations/updateclientdeductionidrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `id`                                                                           | *string*                                                                       | :heavy_check_mark:                                                             | Unique identifier                                                              |
+| `deductionUpdateRequest`                                                       | [shared.DeductionUpdateRequest](../../models/shared/deductionupdaterequest.md) | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
 
 
 ### Response

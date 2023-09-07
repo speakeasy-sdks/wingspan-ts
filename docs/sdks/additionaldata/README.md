@@ -13,9 +13,9 @@ Create additional data
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { CreateAdditionalDataResponse } from "openapi/dist/sdk/models/operations";
-import { AdditionalDataType } from "openapi/dist/sdk/models/shared";
+import { Wingspan } from "wingspan";
+import { CreateAdditionalDataResponse } from "wingspan/dist/sdk/models/operations";
+import { AdditionalDataType } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
 
@@ -51,14 +51,13 @@ Delete additional data
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { DeleteAdditionalDataResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { DeleteAdditionalDataRequest, DeleteAdditionalDataResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "quis";
 
-sdk.additionalData.delete({
-  id: "51a05dfc-2ddf-47cc-b8ca-1ba928fc8167",
-}).then((res: DeleteAdditionalDataResponse) => {
+sdk.additionalData.delete(id).then((res: DeleteAdditionalDataResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -67,10 +66,10 @@ sdk.additionalData.delete({
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.DeleteAdditionalDataRequest](../../models/operations/deleteadditionaldatarequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -85,14 +84,13 @@ Get additional data
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetAdditionalDataResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetAdditionalDataRequest, GetAdditionalDataResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "veritatis";
 
-sdk.additionalData.get({
-  id: "42cb7392-0592-4939-afea-7596eb10faaa",
-}).then((res: GetAdditionalDataResponse) => {
+sdk.additionalData.get(id).then((res: GetAdditionalDataResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -101,10 +99,10 @@ sdk.additionalData.get({
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.GetAdditionalDataRequest](../../models/operations/getadditionaldatarequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response

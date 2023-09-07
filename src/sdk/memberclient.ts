@@ -98,13 +98,12 @@ export class MemberClient {
      * Delete memberClient
      */
     async delete(
-        req: operations.DeleteMemberClientRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteMemberClientResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteMemberClientRequest(req);
-        }
-
+        const req = new operations.DeleteMemberClientRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -165,13 +164,12 @@ export class MemberClient {
      * Get Member Client
      */
     async get(
-        req: operations.GetMemberClientRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetMemberClientResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetMemberClientRequest(req);
-        }
-
+        const req = new operations.GetMemberClientRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -231,13 +229,14 @@ export class MemberClient {
      * Update memberClient
      */
     async update(
-        req: operations.UpdateMemberClientRequest,
+        id: string,
+        memberClientUpdateRequest?: shared.MemberClientUpdateRequest,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateMemberClientResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateMemberClientRequest(req);
-        }
-
+        const req = new operations.UpdateMemberClientRequest({
+            id: id,
+            memberClientUpdateRequest: memberClientUpdateRequest,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

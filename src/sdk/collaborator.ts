@@ -98,13 +98,12 @@ export class Collaborator {
      * Delete collaborator by Id
      */
     async delete(
-        req: operations.DeleteCollaboratorRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteCollaboratorResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteCollaboratorRequest(req);
-        }
-
+        const req = new operations.DeleteCollaboratorRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -165,13 +164,12 @@ export class Collaborator {
      * Get collaborator by Id
      */
     async get(
-        req: operations.GetCollaboratorRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetCollaboratorResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetCollaboratorRequest(req);
-        }
-
+        const req = new operations.GetCollaboratorRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -231,13 +229,14 @@ export class Collaborator {
      * Update a collaborator by Id
      */
     async update(
-        req: operations.UpdateCollaboratorRequest,
+        id: string,
+        collaboratorUpdateRequest?: shared.CollaboratorUpdateRequest,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateCollaboratorResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateCollaboratorRequest(req);
-        }
-
+        const req = new operations.UpdateCollaboratorRequest({
+            id: id,
+            collaboratorUpdateRequest: collaboratorUpdateRequest,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

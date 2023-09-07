@@ -11,14 +11,13 @@ Get a list of payables connected to payroll run
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ListPayablesPayrollResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ListPayablesPayrollRequest, ListPayablesPayrollResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const payrollId: string = "vitae";
 
-sdk.payablesPayroll.list({
-  payrollId: "consequuntur",
-}).then((res: ListPayablesPayrollResponse) => {
+sdk.payablesPayroll.list(payrollId).then((res: ListPayablesPayrollResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -27,10 +26,10 @@ sdk.payablesPayroll.list({
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.ListPayablesPayrollRequest](../../models/operations/listpayablespayrollrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `payrollId`                                                            | *string*                                                               | :heavy_check_mark:                                                     | Unique identifier of a invoice with some constraints like invoice type |
+| `config`                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)           | :heavy_minus_sign:                                                     | Available config options for making requests.                          |
 
 
 ### Response

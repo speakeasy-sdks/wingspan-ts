@@ -98,13 +98,12 @@ export class CollaboratorDeduction {
      * Delete deduction
      */
     async delete(
-        req: operations.DeleteCollaboratorDeductionRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteCollaboratorDeductionResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteCollaboratorDeductionRequest(req);
-        }
-
+        const req = new operations.DeleteCollaboratorDeductionRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -169,13 +168,12 @@ export class CollaboratorDeduction {
      * Get deduction
      */
     async get(
-        req: operations.GetCollaboratorDeductionRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetCollaboratorDeductionResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetCollaboratorDeductionRequest(req);
-        }
-
+        const req = new operations.GetCollaboratorDeductionRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -240,13 +238,14 @@ export class CollaboratorDeduction {
      * Update deduction
      */
     async update(
-        req: operations.UpdateCollaboratorDeductionRequest,
+        id: string,
+        deductionUpdateRequest?: shared.DeductionUpdateRequest,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateCollaboratorDeductionResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateCollaboratorDeductionRequest(req);
-        }
-
+        const req = new operations.UpdateCollaboratorDeductionRequest({
+            id: id,
+            deductionUpdateRequest: deductionUpdateRequest,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

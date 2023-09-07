@@ -11,19 +11,19 @@ Pay client-invoice
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { PostPayClientInvoiceResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { PostPayClientInvoiceRequest, PostPayClientInvoiceResponse } from "wingspan/dist/sdk/models/operations";
+import { PayRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
+const invoiceId: string = "maiores";
+const payRequest: PayRequest = {
+  accountId: "natus",
+  paymentMethodId: "velit",
+  plaidPublicToken: "voluptatibus",
+};
 
-sdk.payClientInvoice.post({
-  payRequest: {
-    accountId: "nulla",
-    paymentMethodId: "officia",
-    plaidPublicToken: "sed",
-  },
-  invoiceId: "voluptatem",
-}).then((res: PostPayClientInvoiceResponse) => {
+sdk.payClientInvoice.post(invoiceId, payRequest).then((res: PostPayClientInvoiceResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -32,10 +32,11 @@ sdk.payClientInvoice.post({
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.PostPayClientInvoiceRequest](../../models/operations/postpayclientinvoicerequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `invoiceId`                                                  | *string*                                                     | :heavy_check_mark:                                           | Unique identifier of an invoice                              |
+| `payRequest`                                                 | [shared.PayRequest](../../models/shared/payrequest.md)       | :heavy_minus_sign:                                           | N/A                                                          |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response

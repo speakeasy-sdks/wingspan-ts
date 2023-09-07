@@ -11,8 +11,8 @@ Get payables summary
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetPayablesResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetPayablesResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

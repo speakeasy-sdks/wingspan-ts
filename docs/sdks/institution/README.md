@@ -11,14 +11,13 @@ Get Institution By Routing Number
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetInstitutionResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetInstitutionRequest, GetInstitutionResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const routingNumber: string = "cumque";
 
-sdk.institution.get({
-  routingNumber: "magni",
-}).then((res: GetInstitutionResponse) => {
+sdk.institution.get(routingNumber).then((res: GetInstitutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -27,10 +26,10 @@ sdk.institution.get({
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.GetInstitutionRequest](../../models/operations/getinstitutionrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `routingNumber`                                              | *string*                                                     | :heavy_check_mark:                                           | Bank Routing Number                                          |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response

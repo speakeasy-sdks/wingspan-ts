@@ -7,14 +7,14 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class UpdatePayrollSettingsRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    payrollSettingsUpdate?: shared.PayrollSettingsUpdate;
-
     /**
      * Unique identifier
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
     id: string;
+
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    payrollSettingsUpdate?: shared.PayrollSettingsUpdate;
 }
 
 export class UpdatePayrollSettingsResponse extends SpeakeasyBase {

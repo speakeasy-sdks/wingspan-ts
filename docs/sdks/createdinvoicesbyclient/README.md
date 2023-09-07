@@ -11,8 +11,8 @@ List invoices created by client
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ListCreatedInvoicesByClientResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { ListCreatedInvoicesByClientResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 

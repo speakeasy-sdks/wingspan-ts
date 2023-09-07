@@ -98,13 +98,12 @@ export class BulkPayableBatch {
      * Delete a bulk payable batch
      */
     async delete(
-        req: operations.DeleteBulkPayableBatchRequest,
+        batchId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteBulkPayableBatchResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteBulkPayableBatchRequest(req);
-        }
-
+        const req = new operations.DeleteBulkPayableBatchRequest({
+            batchId: batchId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -169,13 +168,12 @@ export class BulkPayableBatch {
      * Get a bulk payable batch
      */
     async get(
-        req: operations.GetBulkPayableBatchRequest,
+        batchId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetBulkPayableBatchResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetBulkPayableBatchRequest(req);
-        }
-
+        const req = new operations.GetBulkPayableBatchRequest({
+            batchId: batchId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -240,13 +238,14 @@ export class BulkPayableBatch {
      * Update a bulk payable batch
      */
     async update(
-        req: operations.UpdateBulkPayableBatchRequest,
+        batchId: string,
+        bulkPayableBatchUpdate?: shared.BulkPayableBatchUpdate,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateBulkPayableBatchResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateBulkPayableBatchRequest(req);
-        }
-
+        const req = new operations.UpdateBulkPayableBatchRequest({
+            batchId: batchId,
+            bulkPayableBatchUpdate: bulkPayableBatchUpdate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

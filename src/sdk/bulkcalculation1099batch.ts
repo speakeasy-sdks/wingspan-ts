@@ -98,13 +98,12 @@ export class BulkCalculation1099Batch {
      * Get a bulk calculation1099 batch
      */
     async get(
-        req: operations.GetBulkCalculation1099BatchRequest,
+        batchId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetBulkCalculation1099BatchResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetBulkCalculation1099BatchRequest(req);
-        }
-
+        const req = new operations.GetBulkCalculation1099BatchRequest({
+            batchId: batchId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -169,13 +168,14 @@ export class BulkCalculation1099Batch {
      * Update a bulk calculation1099 batch
      */
     async update(
-        req: operations.UpdateBulkCalculation1099BatchRequest,
+        batchId: string,
+        bulkBatchUpdate?: shared.BulkBatchUpdate,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateBulkCalculation1099BatchResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateBulkCalculation1099BatchRequest(req);
-        }
-
+        const req = new operations.UpdateBulkCalculation1099BatchRequest({
+            batchId: batchId,
+            bulkBatchUpdate: bulkBatchUpdate,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

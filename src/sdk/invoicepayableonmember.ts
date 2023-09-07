@@ -20,13 +20,12 @@ export class InvoicePayableOnMember {
      * Get invoice on member by payableId
      */
     async get(
-        req: operations.GetInvoicePayableOnMemberRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetInvoicePayableOnMemberResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetInvoicePayableOnMemberRequest(req);
-        }
-
+        const req = new operations.GetInvoicePayableOnMemberRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

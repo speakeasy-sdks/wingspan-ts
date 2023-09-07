@@ -20,13 +20,12 @@ export class PaPayableOnClientyable {
      * Delete payable on client by payableId
      */
     async delete(
-        req: operations.DeletePayableOnClientRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeletePayableOnClientResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeletePayableOnClientRequest(req);
-        }
-
+        const req = new operations.DeletePayableOnClientRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

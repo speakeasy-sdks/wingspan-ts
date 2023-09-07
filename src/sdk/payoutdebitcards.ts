@@ -20,13 +20,12 @@ export class PayoutDebitCards {
      * List the payout debit cards
      */
     async list(
-        req: operations.ListPayoutDebitCardsRequest,
+        memberId: string,
         config?: AxiosRequestConfig
     ): Promise<operations.ListPayoutDebitCardsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.ListPayoutDebitCardsRequest(req);
-        }
-
+        const req = new operations.ListPayoutDebitCardsRequest({
+            memberId: memberId,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

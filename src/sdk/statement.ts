@@ -20,13 +20,12 @@ export class Statement {
      * Download bank statement pdf
      */
     async download(
-        req: operations.DownloadStatementRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DownloadStatementResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DownloadStatementRequest(req);
-        }
-
+        const req = new operations.DownloadStatementRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -75,14 +74,10 @@ export class Statement {
     /**
      * Get bank statement
      */
-    async get(
-        req: operations.GetStatementRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.GetStatementResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetStatementRequest(req);
-        }
-
+    async get(id: string, config?: AxiosRequestConfig): Promise<operations.GetStatementResponse> {
+        const req = new operations.GetStatementRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

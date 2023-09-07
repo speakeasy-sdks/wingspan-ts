@@ -84,13 +84,14 @@ export class AdditionalSettings {
      * Update additional settings
      */
     async update(
-        req: operations.UpdateAdditionalSettingsRequest,
+        id: string,
+        additionalDataUpdateRequest?: shared.AdditionalDataUpdateRequest,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateAdditionalSettingsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateAdditionalSettingsRequest(req);
-        }
-
+        const req = new operations.UpdateAdditionalSettingsRequest({
+            id: id,
+            additionalDataUpdateRequest: additionalDataUpdateRequest,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults

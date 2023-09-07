@@ -13,38 +13,48 @@ Create a bulk invoice batch item
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { CreateBulkInvoiceBatchItemResponse } from "openapi/dist/sdk/models/operations";
-import { BulkInvoiceItemCreateAcceptedPaymentMethods, InvoiceStatusBulkInvoiceItemCreate } from "openapi/dist/sdk/models/shared";
+import { Wingspan } from "wingspan";
+import { CreateBulkInvoiceBatchItemRequest, CreateBulkInvoiceBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import {
+  BulkInvoiceItemCreate,
+  BulkInvoiceItemCreateAcceptedPaymentMethods,
+  FeeHandlingConfig,
+  InvoiceStatusBulkInvoiceItemCreate,
+} from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-
-sdk.bulkInvoiceBatchItem.create({
-  bulkInvoiceItemCreate: {
-    acceptedPaymentMethods: [
-      BulkInvoiceItemCreateAcceptedPaymentMethods.Manual,
-    ],
-    amount: 5518.16,
-    bulkInvoiceBatchId: "sint",
-    bulkInvoiceItemMergeKey: "accusantium",
-    bulkInvoiceItemReference: "mollitia",
-    clientEmail: "reiciendis",
-    clientExternalId: "mollitia",
-    creditFeeHandling: "eum",
-    dueDate: "dolor",
-    invoiceNotes: "necessitatibus",
-    invoiceStatus: InvoiceStatusBulkInvoiceItemCreate.Draft,
-    labels: "quasi",
-    lineItemDescription: "iure",
-    lineItemDetail: "doloribus",
-    memberClientId: "debitis",
-    paidDate: "eius",
-    projectName: "maxime",
-    reimbursableExpense: false,
-    sendDate: "facilis",
+const batchId: string = "alias";
+const bulkInvoiceItemCreate: BulkInvoiceItemCreate = {
+  acceptedPaymentMethods: [
+    BulkInvoiceItemCreateAcceptedPaymentMethods.Credit,
+  ],
+  amount: 6778.17,
+  bulkInvoiceBatchId: "excepturi",
+  bulkInvoiceItemMergeKey: "tempora",
+  bulkInvoiceItemReference: "facilis",
+  clientEmail: "tempore",
+  clientExternalId: "labore",
+  creditFeeHandling: {
+    clientAbsolutePercentage: 4332.88,
+    clientPays: 2487.53,
+    memberPays: 7561.07,
   },
-  batchId: "in",
-}).then((res: CreateBulkInvoiceBatchItemResponse) => {
+  dueDate: "sint",
+  invoiceNotes: "aliquid",
+  invoiceStatus: InvoiceStatusBulkInvoiceItemCreate.Approved,
+  labels: {
+    "sint": "officia",
+  },
+  lineItemDescription: "dolor",
+  lineItemDetail: "debitis",
+  memberClientId: "a",
+  paidDate: "dolorum",
+  projectName: "in",
+  reimbursableExpense: "illum",
+  sendDate: "maiores",
+};
+
+sdk.bulkInvoiceBatchItem.create(batchId, bulkInvoiceItemCreate).then((res: CreateBulkInvoiceBatchItemResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -53,10 +63,11 @@ sdk.bulkInvoiceBatchItem.create({
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.CreateBulkInvoiceBatchItemRequest](../../models/operations/createbulkinvoicebatchitemrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `batchId`                                                                    | *string*                                                                     | :heavy_check_mark:                                                           | Unique identifier for a batch                                                |
+| `bulkInvoiceItemCreate`                                                      | [shared.BulkInvoiceItemCreate](../../models/shared/bulkinvoiceitemcreate.md) | :heavy_minus_sign:                                                           | N/A                                                                          |
+| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
 
 
 ### Response
@@ -71,15 +82,14 @@ Get a bulk invoice batch item
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetBulkInvoiceBatchItemResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { GetBulkInvoiceBatchItemRequest, GetBulkInvoiceBatchItemResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const batchId: string = "rerum";
+const batchItemId: string = "dicta";
 
-sdk.bulkInvoiceBatchItem.get({
-  batchId: "architecto",
-  batchItemId: "architecto",
-}).then((res: GetBulkInvoiceBatchItemResponse) => {
+sdk.bulkInvoiceBatchItem.get(batchId, batchItemId).then((res: GetBulkInvoiceBatchItemResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -88,10 +98,11 @@ sdk.bulkInvoiceBatchItem.get({
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.GetBulkInvoiceBatchItemRequest](../../models/operations/getbulkinvoicebatchitemrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `batchId`                                                    | *string*                                                     | :heavy_check_mark:                                           | Unique identifier for a batch                                |
+| `batchItemId`                                                | *string*                                                     | :heavy_check_mark:                                           | Unique identifier for an item in a batch                     |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -106,43 +117,45 @@ Update a bulk invoice batch item
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { UpdateBulkInvoiceBatchItemResponse } from "openapi/dist/sdk/models/operations";
-import { BulkInvoiceItemUpdateAcceptedPaymentMethods, InvoiceStatusBulkInvoiceItemUpdate } from "openapi/dist/sdk/models/shared";
+import { Wingspan } from "wingspan";
+import { UpdateBulkInvoiceBatchItemRequest, UpdateBulkInvoiceBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import {
+  BulkInvoiceItemUpdate,
+  BulkInvoiceItemUpdateAcceptedPaymentMethods,
+  FeeHandlingConfig,
+  InvoiceStatusBulkInvoiceItemUpdate,
+} from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-
-sdk.bulkInvoiceBatchItem.update({
-  bulkInvoiceItemUpdate: {
-    acceptedPaymentMethods: [
-      BulkInvoiceItemUpdateAcceptedPaymentMethods.LessThanNilGreaterThan,
-    ],
-    amount: 3523.12,
-    bulkInvoiceBatchId: "expedita",
-    bulkInvoiceItemMergeKey: "nihil",
-    bulkInvoiceItemReference: "repellat",
-    clientEmail: "quibusdam",
-    clientExternalId: "sed",
-    creditFeeHandling: {
-      clientAbsolutePercentage: 8681.26,
-      clientPays: 375.59,
-      memberPays: 1624.93,
-    },
-    dueDate: "praesentium",
-    invoiceNotes: "natus",
-    invoiceStatus: InvoiceStatusBulkInvoiceItemUpdate.Open,
-    labels: "quo",
-    lineItemDescription: "illum",
-    lineItemDetail: "pariatur",
-    memberClientId: "maxime",
-    paidDate: "ea",
-    projectName: "excepturi",
-    reimbursableExpense: "ea",
-    sendDate: "accusantium",
+const batchId: string = "magnam";
+const batchItemId: string = "cumque";
+const bulkInvoiceItemUpdate: BulkInvoiceItemUpdate = {
+  acceptedPaymentMethods: [
+    BulkInvoiceItemUpdateAcceptedPaymentMethods.LessThanNilGreaterThan,
+  ],
+  amount: 4118.2,
+  bulkInvoiceBatchId: "aliquid",
+  bulkInvoiceItemMergeKey: "laborum",
+  bulkInvoiceItemReference: "accusamus",
+  clientEmail: "non",
+  clientExternalId: "occaecati",
+  creditFeeHandling: "accusamus",
+  dueDate: "delectus",
+  invoiceNotes: "quidem",
+  invoiceStatus: InvoiceStatusBulkInvoiceItemUpdate.Paid,
+  labels: {
+    "id": "blanditiis",
   },
-  batchId: "ab",
-  batchItemId: "maiores",
-}).then((res: UpdateBulkInvoiceBatchItemResponse) => {
+  lineItemDescription: "deleniti",
+  lineItemDetail: "sapiente",
+  memberClientId: "amet",
+  paidDate: "deserunt",
+  projectName: "nisi",
+  reimbursableExpense: "natus",
+  sendDate: "omnis",
+};
+
+sdk.bulkInvoiceBatchItem.update(batchId, batchItemId, bulkInvoiceItemUpdate).then((res: UpdateBulkInvoiceBatchItemResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -151,10 +164,12 @@ sdk.bulkInvoiceBatchItem.update({
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.UpdateBulkInvoiceBatchItemRequest](../../models/operations/updatebulkinvoicebatchitemrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `batchId`                                                                    | *string*                                                                     | :heavy_check_mark:                                                           | Unique identifier for a batch                                                |
+| `batchItemId`                                                                | *string*                                                                     | :heavy_check_mark:                                                           | Unique identifier for an item in a batch                                     |
+| `bulkInvoiceItemUpdate`                                                      | [shared.BulkInvoiceItemUpdate](../../models/shared/bulkinvoiceitemupdate.md) | :heavy_minus_sign:                                                           | N/A                                                                          |
+| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
 
 
 ### Response

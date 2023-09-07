@@ -14,14 +14,14 @@ Create Payment Eligibility Requirement
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { CreatePaymentEligibilityRequirementResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import { CreatePaymentEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
 
 sdk.paymentEligibilityRequirement.create({
-  field: "veniam",
-  value: "debitis",
+  field: "accusamus",
+  value: "similique",
 }).then((res: CreatePaymentEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -49,14 +49,16 @@ Delete Payment Eligibility Requirement
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { DeletePaymentEligibilityRequirementResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import {
+  DeletePaymentEligibilityRequirementRequest,
+  DeletePaymentEligibilityRequirementResponse,
+} from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "tempora";
 
-sdk.paymentEligibilityRequirement.delete({
-  id: "a944f3b7-56c1-41f6-837a-5126243835bb",
-}).then((res: DeletePaymentEligibilityRequirementResponse) => {
+sdk.paymentEligibilityRequirement.delete(id).then((res: DeletePaymentEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -65,10 +67,10 @@ sdk.paymentEligibilityRequirement.delete({
 
 ### Parameters
 
-| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                      | [operations.DeletePaymentEligibilityRequirementRequest](../../models/operations/deletepaymenteligibilityrequirementrequest.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
-| `config`                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                   | :heavy_minus_sign:                                                                                                             | Available config options for making requests.                                                                                  |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -83,14 +85,16 @@ Get Payment Eligibility Requirement
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { GetPaymentEligibilityRequirementResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import {
+  GetPaymentEligibilityRequirementRequest,
+  GetPaymentEligibilityRequirementResponse,
+} from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const id: string = "aspernatur";
 
-sdk.paymentEligibilityRequirement.get({
-  id: "c05a23a4-5cef-4c5f-9e10-a0ce2169e510",
-}).then((res: GetPaymentEligibilityRequirementResponse) => {
+sdk.paymentEligibilityRequirement.get(id).then((res: GetPaymentEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -99,10 +103,10 @@ sdk.paymentEligibilityRequirement.get({
 
 ### Parameters
 
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                | [operations.GetPaymentEligibilityRequirementRequest](../../models/operations/getpaymenteligibilityrequirementrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -117,18 +121,21 @@ Update Payment Eligibility Requirement
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { UpdatePaymentEligibilityRequirementResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import {
+  UpdatePaymentEligibilityRequirementRequest,
+  UpdatePaymentEligibilityRequirementResponse,
+} from "wingspan/dist/sdk/models/operations";
+import { PaymentEligibilityUpdateRequest, PaymentEligibilityUpdateRequestValue2 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
+const id: string = "voluptas";
+const paymentEligibilityUpdateRequest: PaymentEligibilityUpdateRequest = {
+  field: "voluptas",
+  value: "minima",
+};
 
-sdk.paymentEligibilityRequirement.update({
-  paymentEligibilityUpdateRequest: {
-    field: "perferendis",
-    value: "provident",
-  },
-  id: "c6dc5e34-7627-499b-bbbe-6949fb2bb4ec",
-}).then((res: UpdatePaymentEligibilityRequirementResponse) => {
+sdk.paymentEligibilityRequirement.update(id, paymentEligibilityUpdateRequest).then((res: UpdatePaymentEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -137,10 +144,11 @@ sdk.paymentEligibilityRequirement.update({
 
 ### Parameters
 
-| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                      | [operations.UpdatePaymentEligibilityRequirementRequest](../../models/operations/updatepaymenteligibilityrequirementrequest.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
-| `config`                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                   | :heavy_minus_sign:                                                                                                             | Available config options for making requests.                                                                                  |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `id`                                                                                             | *string*                                                                                         | :heavy_check_mark:                                                                               | Unique identifier                                                                                |
+| `paymentEligibilityUpdateRequest`                                                                | [shared.PaymentEligibilityUpdateRequest](../../models/shared/paymenteligibilityupdaterequest.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
 
 
 ### Response

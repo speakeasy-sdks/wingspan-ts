@@ -12,15 +12,17 @@ Delete Eligibility Requirement
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { DeleteCollaboratorGroupEligibilityRequirementResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import {
+  DeleteCollaboratorGroupEligibilityRequirementRequest,
+  DeleteCollaboratorGroupEligibilityRequirementResponse,
+} from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
+const eligibilityRequirementId: string = "dicta";
+const id: string = "laborum";
 
-sdk.collaboratorGroupEligibilityRequirement.delete({
-  eligibilityRequirementId: "alias",
-  id: "ff2a54a3-1e94-4764-a3e8-65e7956f9251",
-}).then((res: DeleteCollaboratorGroupEligibilityRequirementResponse) => {
+sdk.collaboratorGroupEligibilityRequirement.delete(eligibilityRequirementId, id).then((res: DeleteCollaboratorGroupEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -29,10 +31,11 @@ sdk.collaboratorGroupEligibilityRequirement.delete({
 
 ### Parameters
 
-| Parameter                                                                                                                                          | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                          | [operations.DeleteCollaboratorGroupEligibilityRequirementRequest](../../models/operations/deletecollaboratorgroupeligibilityrequirementrequest.md) | :heavy_check_mark:                                                                                                                                 | The request object to use for the request.                                                                                                         |
-| `config`                                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                       | :heavy_minus_sign:                                                                                                                                 | Available config options for making requests.                                                                                                      |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `eligibilityRequirementId`                                   | *string*                                                     | :heavy_check_mark:                                           | Unique eligibility Requirement Id                            |
+| `id`                                                         | *string*                                                     | :heavy_check_mark:                                           | Unique identifier                                            |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -47,18 +50,21 @@ Replace Eligibility Requirement
 ### Example Usage
 
 ```typescript
-import { Wingspan } from "openapi";
-import { ReplaceCollaboratorGroupEligibilityRequirementResponse } from "openapi/dist/sdk/models/operations";
+import { Wingspan } from "wingspan";
+import {
+  ReplaceCollaboratorGroupEligibilityRequirementRequest,
+  ReplaceCollaboratorGroupEligibilityRequirementResponse,
+} from "wingspan/dist/sdk/models/operations";
+import { CollaboratorGroupRequirementUpdate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
+const eligibilityRequirementId: string = "totam";
+const id: string = "incidunt";
+const collaboratorGroupRequirementUpdate: CollaboratorGroupRequirementUpdate = {
+  newEligibilityRequirementId: "aspernatur",
+};
 
-sdk.collaboratorGroupEligibilityRequirement.replace({
-  collaboratorGroupRequirementUpdate: {
-    newEligibilityRequirementId: "animi",
-  },
-  eligibilityRequirementId: "nostrum",
-  id: "a9da660f-f57b-4faa-94f9-efc1b4512c10",
-}).then((res: ReplaceCollaboratorGroupEligibilityRequirementResponse) => {
+sdk.collaboratorGroupEligibilityRequirement.replace(eligibilityRequirementId, id, collaboratorGroupRequirementUpdate).then((res: ReplaceCollaboratorGroupEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -67,10 +73,12 @@ sdk.collaboratorGroupEligibilityRequirement.replace({
 
 ### Parameters
 
-| Parameter                                                                                                                                            | Type                                                                                                                                                 | Required                                                                                                                                             | Description                                                                                                                                          |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                            | [operations.ReplaceCollaboratorGroupEligibilityRequirementRequest](../../models/operations/replacecollaboratorgroupeligibilityrequirementrequest.md) | :heavy_check_mark:                                                                                                                                   | The request object to use for the request.                                                                                                           |
-| `config`                                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                         | :heavy_minus_sign:                                                                                                                                   | Available config options for making requests.                                                                                                        |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `eligibilityRequirementId`                                                                             | *string*                                                                                               | :heavy_check_mark:                                                                                     | Unique eligibility Requirement Id                                                                      |
+| `id`                                                                                                   | *string*                                                                                               | :heavy_check_mark:                                                                                     | Unique identifier                                                                                      |
+| `collaboratorGroupRequirementUpdate`                                                                   | [shared.CollaboratorGroupRequirementUpdate](../../models/shared/collaboratorgrouprequirementupdate.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
 
 
 ### Response

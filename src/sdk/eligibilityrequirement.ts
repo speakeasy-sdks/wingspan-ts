@@ -99,13 +99,12 @@ export class EligibilityRequirement {
      * Delete Eligibility Requirement
      */
     async delete(
-        req: operations.DeleteEligibilityRequirementRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.DeleteEligibilityRequirementResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteEligibilityRequirementRequest(req);
-        }
-
+        const req = new operations.DeleteEligibilityRequirementRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -173,13 +172,12 @@ export class EligibilityRequirement {
      * Get Eligibility Requirement
      */
     async get(
-        req: operations.GetEligibilityRequirementRequest,
+        id: string,
         config?: AxiosRequestConfig
     ): Promise<operations.GetEligibilityRequirementResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetEligibilityRequirementRequest(req);
-        }
-
+        const req = new operations.GetEligibilityRequirementRequest({
+            id: id,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -247,13 +245,14 @@ export class EligibilityRequirement {
      * Update Eligibility Requirement
      */
     async update(
-        req: operations.UpdateEligibilityRequirementRequest,
+        id: string,
+        eligibilityRequirementUpdateRequest?: shared.EligibilityRequirementUpdateRequest,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateEligibilityRequirementResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateEligibilityRequirementRequest(req);
-        }
-
+        const req = new operations.UpdateEligibilityRequirementRequest({
+            id: id,
+            eligibilityRequirementUpdateRequest: eligibilityRequirementUpdateRequest,
+        });
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
