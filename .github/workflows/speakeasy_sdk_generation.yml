@@ -19,10 +19,10 @@ jobs:
     with:
       force: ${{ github.event.inputs.force }}
       languages: |
-        - python
+        - typescript
       mode: pr
       openapi_docs: |
-        - ./openapi.yaml
+        - https://raw.githubusercontent.com/speakeasy-sdks/wingspan-python/main/openapi.yaml
       speakeasy_version: latest
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
