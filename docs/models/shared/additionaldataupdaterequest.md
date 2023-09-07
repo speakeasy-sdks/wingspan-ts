@@ -1,0 +1,11 @@
+# AdditionalDataUpdateRequest
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `key`                                                                                     | *string*                                                                                  | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `name`                                                                                    | *string*                                                                                  | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `required`                                                                                | *any*                                                                                     | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `type`                                                                                    | [TypeAdditionalDataUpdateRequest](../../models/shared/typeadditionaldataupdaterequest.md) | :heavy_minus_sign:                                                                        | N/A                                                                                       |

@@ -1,0 +1,11 @@
+# ListBulkCalculation1099BatchesResponse
+
+
+## Fields
+
+| Field                                                                                | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `bulkCalculation1099Batches`                                                         | [shared.BulkCalculation1099Batch](../../models/shared/bulkcalculation1099batch.md)[] | :heavy_minus_sign:                                                                   | A list of bulk calculation 1099 batches                                              |
+| `contentType`                                                                        | *string*                                                                             | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `statusCode`                                                                         | *number*                                                                             | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `rawResponse`                                                                        | [AxiosResponse>](https://axios-http.com/docs/res_schema)                             | :heavy_minus_sign:                                                                   | N/A                                                                                  |

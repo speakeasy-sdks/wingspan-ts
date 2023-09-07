@@ -1,0 +1,11 @@
+# ClientOptions
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `comment`                                                                               | *string*                                                                                | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `payDate`                                                                               | *string*                                                                                | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `workflowStatus`                                                                        | [WorkflowStatusClientOptions](../../models/shared/workflowstatusclientoptions.md)       | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `workflowSubStatus`                                                                     | [WorkflowSubStatusClientOptions](../../models/shared/workflowsubstatusclientoptions.md) | :heavy_minus_sign:                                                                      | N/A                                                                                     |
