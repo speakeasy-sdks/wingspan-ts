@@ -1,0 +1,11 @@
+# ListCollaboratorGroupsResponse
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `collaboratorGroupResponses`                                                           | [shared.CollaboratorGroupResponse](../../models/shared/collaboratorgroupresponse.md)[] | :heavy_minus_sign:                                                                     | A list of Collaborator Configurations created by client                                |
+| `contentType`                                                                          | *string*                                                                               | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `statusCode`                                                                           | *number*                                                                               | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `rawResponse`                                                                          | [AxiosResponse>](https://axios-http.com/docs/res_schema)                               | :heavy_minus_sign:                                                                     | N/A                                                                                    |

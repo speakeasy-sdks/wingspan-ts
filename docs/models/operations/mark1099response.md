@@ -1,0 +1,11 @@
+# Mark1099Response
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `contentType`                                                                                | *string*                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `mark1099AsUndeliveredResponse`                                                              | [shared.Mark1099AsUndeliveredResponse](../../models/shared/mark1099asundeliveredresponse.md) | :heavy_minus_sign:                                                                           | Mark 1099 as undelivered response                                                            |
+| `statusCode`                                                                                 | *number*                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `rawResponse`                                                                                | [AxiosResponse>](https://axios-http.com/docs/res_schema)                                     | :heavy_minus_sign:                                                                           | N/A                                                                                          |

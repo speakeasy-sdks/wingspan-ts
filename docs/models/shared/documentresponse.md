@@ -1,0 +1,16 @@
+# DocumentResponse
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `clientId`                                                              | *string*                                                                | :heavy_check_mark:                                                      | N/A                                                                     |
+| `documentId`                                                            | *string*                                                                | :heavy_check_mark:                                                      | N/A                                                                     |
+| `events`                                                                | *any*                                                                   | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `files`                                                                 | *any*                                                                   | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `memberId`                                                              | *string*                                                                | :heavy_check_mark:                                                      | N/A                                                                     |
+| `status`                                                                | [StatusDocumentResponse](../../models/shared/statusdocumentresponse.md) | :heavy_check_mark:                                                      | N/A                                                                     |
+| `templateId`                                                            | *string*                                                                | :heavy_check_mark:                                                      | N/A                                                                     |
+| `title`                                                                 | *string*                                                                | :heavy_check_mark:                                                      | N/A                                                                     |
+| `userRoles`                                                             | [UserRoles](../../models/shared/userroles.md)                           | :heavy_check_mark:                                                      | N/A                                                                     |

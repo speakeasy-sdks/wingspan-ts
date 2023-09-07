@@ -1,0 +1,11 @@
+# GenerateInvoiceResponse
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `contentType`                                                                              | *string*                                                                                   | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `invoicePdfGenerationResponse`                                                             | [shared.InvoicePdfGenerationResponse](../../models/shared/invoicepdfgenerationresponse.md) | :heavy_minus_sign:                                                                         | Response from generation of invoice pdf                                                    |
+| `statusCode`                                                                               | *number*                                                                                   | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `rawResponse`                                                                              | [AxiosResponse>](https://axios-http.com/docs/res_schema)                                   | :heavy_minus_sign:                                                                         | N/A                                                                                        |

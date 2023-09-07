@@ -1,9 +1,9 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 8db86c8597b22945c2b3f77241037075
+  docChecksum: 24a5ff4b5e33679ef9adf23ba062cf16
   docVersion: 1.0.0
-  speakeasyVersion: 1.78.8
-  generationVersion: 2.96.6
+  speakeasyVersion: 1.79.0
+  generationVersion: 2.101.0
 generation:
   comments:
     disableComments: false
@@ -23,6 +23,12 @@ features:
     globalServerURLs: 2.82.0
     inputOutputModels: 2.81.1
     serverIDs: 2.81.1
+  typescript:
+    core: 2.87.0
+    docs: 0.1.0
+    globalServerURLs: 2.82.0
+    groups: 2.81.1
+    nameOverrides: 2.81.1
 python:
   version: 1.26.0
   author: Speakeasy
@@ -30,3 +36,8 @@ python:
   maxMethodParams: 4
   maxPathParams: 4
   packageName: wingspan
+typescript:
+  version: 0.1.0
+  author: Speakeasy
+  maxMethodParams: 0
+  packageName: openapi

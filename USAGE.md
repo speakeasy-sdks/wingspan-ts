@@ -1,20 +1,19 @@
 <!-- Start SDK Example Usage -->
 
 
-```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+```typescript
+import { Wingspan } from "openapi";
+import { Calculate1099Response } from "openapi/dist/sdk/models/operations";
 
-s = speakeasybar.Speakeasybar(
-    security=shared.Security(
-        api_key="",
-    ),
-)
+const sdk = new Wingspan();
 
-
-res = s.drinks.list_drinks(drink_type=shared.DrinkType.WINE)
-
-if res.drinks is not None:
-    # handle response
+sdk.oneThousandAndNinetyNine.calculate({
+  memberClientId: "corrupti",
+  year: 5928.45,
+}).then((res: Calculate1099Response) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
 ```
 <!-- End SDK Example Usage -->

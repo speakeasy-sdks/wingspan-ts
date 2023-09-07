@@ -1,0 +1,14 @@
+# FrequencyUpdate
+
+
+## Fields
+
+| Field                                                                     | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `daily`                                                                   | *any*                                                                     | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `dayInInterval`                                                           | *number*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `endDate`                                                                 | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `every`                                                                   | *number*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `interval`                                                                | [IntervalFrequencyUpdate](../../models/shared/intervalfrequencyupdate.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `startDate`                                                               | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `twicePerMonth`                                                           | *any*                                                                     | :heavy_minus_sign:                                                        | N/A                                                                       |
