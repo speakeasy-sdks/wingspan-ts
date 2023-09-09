@@ -20,9 +20,6 @@ export enum StatusBulkCollaboratorItem {
     Failed = "Failed",
 }
 
-/**
- * An item that will be converted into a collaborator
- */
 export class BulkCollaboratorItem extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "bulkCollaboratorBatchId" })

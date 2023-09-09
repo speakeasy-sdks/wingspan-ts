@@ -6,9 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { FundsTransferAccount } from "./fundstransferaccount";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Instant Payout details
- */
 export class InstantPayoutResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "instantPayoutAccount" })

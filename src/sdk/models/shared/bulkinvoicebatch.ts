@@ -19,9 +19,6 @@ export enum StatusBulkInvoiceBatch {
     Failed = "Failed",
 }
 
-/**
- * A batch of items for importing as invoices
- */
 export class BulkInvoiceBatch extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "bulkInvoiceBatchId" })

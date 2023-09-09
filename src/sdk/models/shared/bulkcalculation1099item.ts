@@ -19,9 +19,6 @@ export enum StatusBulkCalculation1099Item {
     Failed = "Failed",
 }
 
-/**
- * An item that will be converted into a calculation 1099
- */
 export class BulkCalculation1099Item extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "bulkCalculation1099BatchId" })

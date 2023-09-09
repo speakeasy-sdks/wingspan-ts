@@ -4,7 +4,4 @@
 
 import { SpeakeasyBase } from "../../../internal/utils";
 
-/**
- * Mark 1099 as undelivered response
- */
 export class Mark1099AsUndeliveredResponse extends SpeakeasyBase {}

@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * A payables summary, with current payables numbers
- */
 export class PayablesSummary extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "invoicesApproved" })

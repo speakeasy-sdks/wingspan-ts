@@ -23,9 +23,6 @@ export enum TypeDeductionResponse {
     PostPayment = "PostPayment",
 }
 
-/**
- * A deduction
- */
 export class DeductionResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "amount" })

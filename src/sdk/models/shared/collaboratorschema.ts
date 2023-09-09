@@ -22,9 +22,6 @@ export enum TaxStatusCollaboratorSchema {
     Incomplete = "Incomplete",
 }
 
-/**
- * A collaborator is a contractor that can receive payments
- */
 export class CollaboratorSchema extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "achCreditAccount" })

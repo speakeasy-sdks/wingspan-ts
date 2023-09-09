@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 24a5ff4b5e33679ef9adf23ba062cf16
   docVersion: 1.0.0
-  speakeasyVersion: 1.79.0
-  generationVersion: 2.101.0
+  speakeasyVersion: 1.82.3
+  generationVersion: 2.107.3
 generation:
   comments:
     disableComments: false
@@ -24,14 +24,13 @@ features:
     inputOutputModels: 2.81.1
     serverIDs: 2.81.1
   typescript:
-    core: 2.87.0
-    docs: 0.1.0
+    core: 2.87.1
     flattening: 2.81.1
     globalServerURLs: 2.82.0
     groups: 2.81.1
     nameOverrides: 2.81.1
 typescript:
-  version: 0.2.0
+  version: 0.2.1
   author: Speakeasy
   maxMethodParams: 4
   packageName: wingspan

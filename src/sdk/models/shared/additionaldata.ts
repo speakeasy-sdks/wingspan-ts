@@ -10,9 +10,6 @@ export enum AdditionalDataType {
     String = "String",
 }
 
-/**
- * Custom fields that are set on memberClient object to describe collaborator-member
- */
 export class AdditionalData extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "key" })

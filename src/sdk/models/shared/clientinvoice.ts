@@ -33,9 +33,6 @@ export enum StatusClientInvoice {
     Paid = "Paid",
 }
 
-/**
- * A client created invoice
- */
 export class ClientInvoice extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "acceptedPaymentMethods" })

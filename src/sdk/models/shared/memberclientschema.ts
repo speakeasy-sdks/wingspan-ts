@@ -15,9 +15,6 @@ export enum StatusMemberClientSchema {
     Pending = "Pending",
 }
 
-/**
- * Describes details of member and client
- */
 export class MemberClientSchema extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "achCreditAccount" })

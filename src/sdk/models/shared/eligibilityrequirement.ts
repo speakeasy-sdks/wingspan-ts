@@ -9,9 +9,6 @@ export enum EligibilityRequirementRequirementType {
     Signature = "Signature",
 }
 
-/**
- * Eligibility Requirement
- */
 export class EligibilityRequirement extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "clientId" })

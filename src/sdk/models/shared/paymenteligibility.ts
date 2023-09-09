@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * See payment eligibility requirements on member
- */
 export class PaymentEligibility extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "field" })

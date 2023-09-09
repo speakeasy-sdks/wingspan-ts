@@ -38,9 +38,6 @@ export enum StatusPayableSchema {
     Paid = "Paid",
 }
 
-/**
- * A payable
- */
 export class PayableSchema extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "acceptedPaymentMethods" })

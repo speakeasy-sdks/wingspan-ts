@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * A card code response
- */
 export class CardCodeResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "phoneNumber" })

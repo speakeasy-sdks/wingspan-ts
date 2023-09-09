@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * timestamp and name of service being pinged
- */
 export class Ping extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "code" })

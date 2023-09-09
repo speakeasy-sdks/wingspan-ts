@@ -27,9 +27,6 @@ export enum BulkPayableItemWorkflowSubStatus {
     LessThanNilGreaterThan = "<nil>",
 }
 
-/**
- * An item that will be converted into a payable
- */
 export class BulkPayableItem extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "amount" })
