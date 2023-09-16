@@ -1,4 +1,4 @@
-# clientInvoice
+# ClientInvoice
 
 ### Available Operations
 

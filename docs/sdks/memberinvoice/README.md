@@ -1,4 +1,4 @@
-# memberInvoice
+# MemberInvoice
 
 ### Available Operations
 

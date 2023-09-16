@@ -1,4 +1,4 @@
-# invoiceAsClient
+# InvoiceAsClient
 
 ### Available Operations
 

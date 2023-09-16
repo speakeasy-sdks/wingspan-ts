@@ -1,4 +1,4 @@
-# invoiceTemplate
+# InvoiceTemplate
 
 ### Available Operations
 

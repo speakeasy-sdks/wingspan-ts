@@ -1,4 +1,4 @@
-# codeToToken
+# CodeToToken
 
 ### Available Operations
 

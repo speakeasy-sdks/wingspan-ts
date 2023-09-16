@@ -1,4 +1,4 @@
-# payoutDebitCards
+# PayoutDebitCards
 
 ### Available Operations
 

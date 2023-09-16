@@ -1,4 +1,4 @@
-# payClientInvoice
+# PayClientInvoice
 
 ### Available Operations
 

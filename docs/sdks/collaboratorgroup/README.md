@@ -1,4 +1,4 @@
-# collaboratorGroup
+# CollaboratorGroup
 
 ### Available Operations
 

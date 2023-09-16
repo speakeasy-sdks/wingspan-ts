@@ -1,4 +1,4 @@
-# bulkCalculation1099BatchItems
+# BulkCalculation1099BatchItems
 
 ### Available Operations
 

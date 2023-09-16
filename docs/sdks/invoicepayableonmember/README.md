@@ -1,4 +1,4 @@
-# invoicePayableOnMember
+# InvoicePayableOnMember
 
 ### Available Operations
 

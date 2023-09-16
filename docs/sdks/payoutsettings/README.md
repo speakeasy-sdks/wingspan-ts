@@ -1,4 +1,4 @@
-# payoutSettings
+# PayoutSettings
 
 ### Available Operations
 
