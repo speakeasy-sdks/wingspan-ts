@@ -99,7 +99,7 @@ export class PayoutSettings {
         );
         const url: string = utils.generateURL(baseURL, "/payments/payout-settings/{id}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(

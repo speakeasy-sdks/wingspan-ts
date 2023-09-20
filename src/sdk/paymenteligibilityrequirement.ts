@@ -34,7 +34,7 @@ export class PaymentEligibilityRequirement {
         const url: string =
             baseURL.replace(/\/$/, "") + "/payments/collaborator-settings/payment-eligibility";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -257,7 +257,7 @@ export class PaymentEligibilityRequirement {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(

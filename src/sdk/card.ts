@@ -33,7 +33,7 @@ export class Card {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/payments/banking/card";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -229,7 +229,7 @@ export class Card {
         );
         const url: string = utils.generateURL(baseURL, "/payments/banking/card/{id}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(

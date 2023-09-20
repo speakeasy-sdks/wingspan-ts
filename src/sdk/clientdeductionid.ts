@@ -166,7 +166,7 @@ export class ClientDeductionID {
         );
         const url: string = utils.generateURL(baseURL, "/payments/client-deduction/{id}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(

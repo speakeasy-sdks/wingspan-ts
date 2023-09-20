@@ -33,7 +33,7 @@ export class BulkCalculation1099Batch {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/payments/bulk/calculation1099/batch";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -186,7 +186,7 @@ export class BulkCalculation1099Batch {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "bulkBatchUpdate", "json");

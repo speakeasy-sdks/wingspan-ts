@@ -33,7 +33,7 @@ export class OneThousandAndNinetyNine {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/payments/collaborator/1099/calculate";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -111,7 +111,7 @@ export class OneThousandAndNinetyNine {
         const url: string =
             baseURL.replace(/\/$/, "") + "/payments/collaborator/1099/mark-undelivered";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -188,7 +188,7 @@ export class OneThousandAndNinetyNine {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/payments/collaborator/1099/remail";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");

@@ -33,7 +33,7 @@ export class BulkClientBatch {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/payments/bulk/client/batch";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -186,7 +186,7 @@ export class BulkClientBatch {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "bulkBatchUpdate", "json");

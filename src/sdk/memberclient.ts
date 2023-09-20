@@ -33,7 +33,7 @@ export class MemberClient {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/payments/memberClient";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -243,7 +243,7 @@ export class MemberClient {
         );
         const url: string = utils.generateURL(baseURL, "/payments/memberClient/{id}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(

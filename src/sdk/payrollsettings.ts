@@ -100,7 +100,7 @@ export class PayrollSettings {
         );
         const url: string = utils.generateURL(baseURL, "/payments/payroll-settings/{id}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(

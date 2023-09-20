@@ -33,7 +33,7 @@ export class PayableOnClient {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/payments/payable";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -112,7 +112,7 @@ export class PayableOnClient {
         );
         const url: string = utils.generateURL(baseURL, "/payments/payable/{id}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(

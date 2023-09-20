@@ -34,7 +34,7 @@ export class CodeToToken {
         );
         const url: string = utils.generateURL(baseURL, "/payments/banking/card/{id}/token", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "cardTokenRequest", "json");

@@ -33,7 +33,7 @@ export class InvoiceAsClient {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/payments/client/invoice";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");

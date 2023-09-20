@@ -33,7 +33,7 @@ export class Collaborator {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/payments/collaborator";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -243,7 +243,7 @@ export class Collaborator {
         );
         const url: string = utils.generateURL(baseURL, "/payments/collaborator/{id}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(

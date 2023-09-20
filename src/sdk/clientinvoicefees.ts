@@ -33,7 +33,7 @@ export class ClientInvoiceFees {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/payments/invoice/test/create";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");

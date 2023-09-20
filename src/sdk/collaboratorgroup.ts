@@ -33,7 +33,7 @@ export class CollaboratorGroup {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/payments/collaborator-group";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -178,7 +178,7 @@ export class CollaboratorGroup {
         );
         const url: string = utils.generateURL(baseURL, "/payments/collaborator-group/{id}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(

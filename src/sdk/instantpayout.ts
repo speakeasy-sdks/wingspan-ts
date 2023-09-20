@@ -33,7 +33,7 @@ export class InstantPayout {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/payments/banking/instant-payout";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");

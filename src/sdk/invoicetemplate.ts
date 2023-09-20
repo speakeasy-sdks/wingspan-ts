@@ -33,7 +33,7 @@ export class InvoiceTemplate {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/payments/invoice-template";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -244,7 +244,7 @@ export class InvoiceTemplate {
         );
         const url: string = utils.generateURL(baseURL, "/payments/invoice-template/{id}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(

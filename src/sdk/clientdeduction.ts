@@ -33,7 +33,7 @@ export class ClientDeduction {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/payments/client-deduction";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
