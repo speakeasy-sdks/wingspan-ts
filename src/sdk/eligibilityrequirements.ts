@@ -7,7 +7,7 @@ import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
-import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
 export class EligibilityRequirements {
     private sdkConfiguration: SDKConfiguration;
@@ -29,7 +29,7 @@ export class EligibilityRequirements {
         const url: string =
             baseURL.replace(/\/$/, "") + "/payments/collaborator-settings/eligibility-requirement";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers };
         headers["Accept"] = "application/json";
 
         headers[
