@@ -15,7 +15,7 @@ import { Wingspan } from "wingspan";
 import { GetAppLinkRequest, GetAppLinkResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const memberId: string = "maiores";
+const memberId: string = "dolorum";
 
 sdk.appLink.get(memberId).then((res: GetAppLinkResponse) => {
   if (res.statusCode == 200) {

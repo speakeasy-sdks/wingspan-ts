@@ -20,10 +20,10 @@ import { AdditionalDataType } from "wingspan/dist/sdk/models/shared";
 const sdk = new Wingspan();
 
 sdk.additionalData.create({
-  key: "voluptatum",
-  name: "Miriam Huel",
+  key: "ab",
+  name: "Mrs. Marie O'Connell",
   required: false,
-  type: AdditionalDataType.Boolean,
+  type: AdditionalDataType.String,
 }).then((res: CreateAdditionalDataResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -55,7 +55,7 @@ import { Wingspan } from "wingspan";
 import { DeleteAdditionalDataRequest, DeleteAdditionalDataResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "quis";
+const id: string = "quo";
 
 sdk.additionalData.delete(id).then((res: DeleteAdditionalDataResponse) => {
   if (res.statusCode == 200) {
@@ -88,7 +88,7 @@ import { Wingspan } from "wingspan";
 import { GetAdditionalDataRequest, GetAdditionalDataResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "veritatis";
+const id: string = "odit";
 
 sdk.additionalData.get(id).then((res: GetAdditionalDataResponse) => {
   if (res.statusCode == 200) {

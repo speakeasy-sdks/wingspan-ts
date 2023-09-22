@@ -22,27 +22,25 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "nobis";
+const batchId: string = "et";
 const bulkPayableItemCreate: BulkPayableItemCreate = {
-  amount: 4287.69,
-  attachmentId: "vero",
-  bulkPayableBatchId: "aspernatur",
-  bulkPayableItemMergeKey: "architecto",
-  bulkPayableItemReference: "magnam",
-  collaboratorEmail: "et",
-  collaboratorExternalId: "excepturi",
-  collaboratorId: "ullam",
-  dueDate: "provident",
-  labels: {
-    "sint": "accusantium",
-  },
-  lineItemDescription: "mollitia",
-  lineItemDetail: "reiciendis",
-  paidDate: "mollitia",
-  payableNotes: "ad",
-  payableStatus: PayableStatusBulkPayableItemCreate.Approved,
-  reimbursableExpense: "necessitatibus",
-  workflowSubStatus: WorkflowSubStatusBulkPayableItemCreate.Submitted,
+  amount: 5699.65,
+  attachmentId: "ullam",
+  bulkPayableBatchId: "provident",
+  bulkPayableItemMergeKey: "quos",
+  bulkPayableItemReference: "sint",
+  collaboratorEmail: "accusantium",
+  collaboratorExternalId: "mollitia",
+  collaboratorId: "reiciendis",
+  dueDate: "mollitia",
+  labels: "eum",
+  lineItemDescription: "dolor",
+  lineItemDetail: "necessitatibus",
+  paidDate: "odit",
+  payableNotes: "nemo",
+  payableStatus: PayableStatusBulkPayableItemCreate.Draft,
+  reimbursableExpense: "doloribus",
+  workflowSubStatus: WorkflowSubStatusBulkPayableItemCreate.LessThanNilGreaterThan,
 };
 
 sdk.bulkPayableBatchItem.create(batchId, bulkPayableItemCreate).then((res: CreateBulkPayableBatchItemResponse) => {
@@ -77,8 +75,8 @@ import { Wingspan } from "wingspan";
 import { GetBulkPayableBatchItemRequest, GetBulkPayableBatchItemResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "nemo";
-const batchItemId: string = "quasi";
+const batchId: string = "eius";
+const batchItemId: string = "maxime";
 
 sdk.bulkPayableBatchItem.get(batchId, batchItemId).then((res: GetBulkPayableBatchItemResponse) => {
   if (res.statusCode == 200) {
@@ -117,26 +115,26 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "iure";
-const batchItemId: string = "doloribus";
+const batchId: string = "deleniti";
+const batchItemId: string = "facilis";
 const bulkPayableItemUpdate: BulkPayableItemUpdate = {
-  amount: 8919.24,
-  attachmentId: "eius",
-  bulkPayableBatchId: "maxime",
-  bulkPayableItemMergeKey: "deleniti",
-  bulkPayableItemReference: "facilis",
-  collaboratorEmail: "in",
-  collaboratorExternalId: "architecto",
-  collaboratorId: "architecto",
-  dueDate: "repudiandae",
-  labels: "expedita",
-  lineItemDescription: "nihil",
-  lineItemDetail: "repellat",
-  paidDate: "quibusdam",
-  payableNotes: "sed",
-  payableStatus: PayableStatusBulkPayableItemUpdate.LessThanNilGreaterThan,
-  reimbursableExpense: false,
-  workflowSubStatus: BulkPayableItemUpdateWorkflowSubStatus.Submitted,
+  amount: 4479.26,
+  attachmentId: "architecto",
+  bulkPayableBatchId: "architecto",
+  bulkPayableItemMergeKey: "repudiandae",
+  bulkPayableItemReference: "ullam",
+  collaboratorEmail: "expedita",
+  collaboratorExternalId: "nihil",
+  collaboratorId: "repellat",
+  dueDate: "quibusdam",
+  labels: "saepe",
+  lineItemDescription: "pariatur",
+  lineItemDetail: "accusantium",
+  paidDate: "consequuntur",
+  payableNotes: "praesentium",
+  payableStatus: PayableStatusBulkPayableItemUpdate.Paid,
+  reimbursableExpense: "sunt",
+  workflowSubStatus: BulkPayableItemUpdateWorkflowSubStatus.LessThanNilGreaterThan,
 };
 
 sdk.bulkPayableBatchItem.update(batchId, batchItemId, bulkPayableItemUpdate).then((res: UpdateBulkPayableBatchItemResponse) => {

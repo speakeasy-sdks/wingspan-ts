@@ -16,7 +16,7 @@ import { Wingspan } from "wingspan";
 import { GetPayrollSettingsRequest, GetPayrollSettingsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "laborum";
+const id: string = "dolore";
 
 sdk.payrollSettings.get(id).then((res: GetPayrollSettingsResponse) => {
   if (res.statusCode == 200) {
@@ -65,32 +65,40 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "sed";
+const id: string = "aliquam";
 const payrollSettingsUpdate: PayrollSettingsUpdate = {
-  calculationSettings1099: "commodi",
-  enablePlannedPayroll: false,
-  enableProcessDaysBeforeDue: "voluptas",
+  calculationSettings1099: {
+    cardProcessingFees: CardProcessingFeesCalculationSettings1099.LessThanNilGreaterThan,
+    offPlatformPayments: OffPlatformPaymentsCalculationSettings1099.Exclude,
+    reimbursableExpenses: ReimbursableExpensesCalculationSettings1099.Include,
+    stateTaxId: {
+      "blanditiis": "quas",
+    },
+    thresholdAmount: 9425.84,
+  },
+  enablePlannedPayroll: "culpa",
+  enableProcessDaysBeforeDue: false,
   frequency: {
-    daily: "suscipit",
-    dayInInterval: 9602.57,
-    endDate: "debitis",
-    every: 724.34,
-    interval: IntervalFrequencyUpdate.LessThanNilGreaterThan,
-    startDate: "perferendis",
-    twicePerMonth: false,
+    daily: false,
+    dayInInterval: 9402.1,
+    endDate: "exercitationem",
+    every: 7507.65,
+    interval: IntervalFrequencyUpdate.Week,
+    startDate: "rerum",
+    twicePerMonth: "reiciendis",
   },
-  fundingSource: {
-    fundingSourceCurrency: FundingSourceCurrency.Usd,
-    fundingSourceId: "sed",
-    fundingSourceType: TypeFundingSource.Account,
-  },
-  issue1099s: "necessitatibus",
-  processDaysBeforeDue: 2155.29,
+  fundingSource: "asperiores",
+  issue1099s: false,
+  processDaysBeforeDue: 4518.22,
   scheduleDates: [
-    "occaecati",
+    {
+      date: "ab",
+      invoiceTemplateId: "iste",
+      status: StatusScheduleDateUpdate.Completed,
+    },
   ],
-  status: StatusPayrollSettingsUpdate.Expired,
-  workflow: WorkflowPayrollSettingsUpdate.LessThanNilGreaterThan,
+  status: StatusPayrollSettingsUpdate.Cancelled,
+  workflow: WorkflowPayrollSettingsUpdate.SingleStage,
 };
 
 sdk.payrollSettings.update(id, payrollSettingsUpdate).then((res: UpdatePayrollSettingsResponse) => {

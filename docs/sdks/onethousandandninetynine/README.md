@@ -19,8 +19,8 @@ import { Calculate1099Response } from "wingspan/dist/sdk/models/operations";
 const sdk = new Wingspan();
 
 sdk.oneThousandAndNinetyNine.calculate({
-  memberClientId: "distinctio",
-  year: 8442.66,
+  memberClientId: "unde",
+  year: 8579.46,
 }).then((res: Calculate1099Response) => {
   if (res.statusCode == 200) {
     // handle response
@@ -54,9 +54,9 @@ import { Mark1099Response } from "wingspan/dist/sdk/models/operations";
 const sdk = new Wingspan();
 
 sdk.oneThousandAndNinetyNine.mark({
-  memberId: "unde",
-  submissionIndex: 8579.46,
-  year: 5448.83,
+  memberId: "corrupti",
+  submissionIndex: 8472.52,
+  year: 4236.55,
 }).then((res: Mark1099Response) => {
   if (res.statusCode == 200) {
     // handle response
@@ -91,15 +91,15 @@ const sdk = new Wingspan();
 
 sdk.oneThousandAndNinetyNine.remail({
   address: {
-    addressLine1: "illum",
-    addressLine2: "vel",
-    city: "Oberbrunnerbury",
-    postalCode: "28092",
-    state: "suscipit",
+    addressLine1: "error",
+    addressLine2: "deserunt",
+    city: "South Eli",
+    postalCode: "09234-7854",
+    state: "excepturi",
   },
-  documentIndex: 4776.65,
-  memberId: "minus",
-  year: 8121.69,
+  documentIndex: 3927.85,
+  memberId: "recusandae",
+  year: 8360.79,
 }).then((res: Remail1099Response) => {
   if (res.statusCode == 200) {
     // handle response

@@ -15,9 +15,9 @@ import { Wingspan } from "wingspan";
 import { DownloadForm1099Request, DownloadForm1099Response } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "sunt";
-const index: string = "ullam";
-const year: string = "nam";
+const id: string = "ut";
+const index: string = "facilis";
+const year: string = "cupiditate";
 
 sdk.form1099.download(id, index, year).then((res: DownloadForm1099Response) => {
   if (res.statusCode == 200) {

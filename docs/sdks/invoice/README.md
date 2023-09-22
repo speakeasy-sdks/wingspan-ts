@@ -16,7 +16,7 @@ import { Wingspan } from "wingspan";
 import { GenerateInvoiceRequest, GenerateInvoiceResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const invoiceId: string = "soluta";
+const invoiceId: string = "odio";
 
 sdk.invoice.generate(invoiceId).then((res: GenerateInvoiceResponse) => {
   if (res.statusCode == 200) {
@@ -49,7 +49,7 @@ import { Wingspan } from "wingspan";
 import { SendInvoiceRequest, SendInvoiceResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const invoiceId: string = "nobis";
+const invoiceId: string = "occaecati";
 
 sdk.invoice.send(invoiceId).then((res: SendInvoiceResponse) => {
   if (res.statusCode == 200) {

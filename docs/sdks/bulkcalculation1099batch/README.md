@@ -19,7 +19,7 @@ import { CreateBulkCalculation1099BatchResponse } from "wingspan/dist/sdk/models
 const sdk = new Wingspan();
 
 sdk.bulkCalculation1099Batch.create({
-  labels: "quod",
+  labels: "nam",
 }).then((res: CreateBulkCalculation1099BatchResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -51,7 +51,7 @@ import { Wingspan } from "wingspan";
 import { GetBulkCalculation1099BatchRequest, GetBulkCalculation1099BatchResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "quod";
+const batchId: string = "officia";
 
 sdk.bulkCalculation1099Batch.get(batchId).then((res: GetBulkCalculation1099BatchResponse) => {
   if (res.statusCode == 200) {
@@ -85,12 +85,10 @@ import { UpdateBulkCalculation1099BatchRequest, UpdateBulkCalculation1099BatchRe
 import { BulkBatchUpdate, StatusBulkBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "esse";
+const batchId: string = "occaecati";
 const bulkBatchUpdate: BulkBatchUpdate = {
-  labels: {
-    "porro": "dolorum",
-  },
-  status: StatusBulkBatchUpdate.Open,
+  labels: "deleniti",
+  status: StatusBulkBatchUpdate.LessThanNilGreaterThan,
 };
 
 sdk.bulkCalculation1099Batch.update(batchId, bulkBatchUpdate).then((res: UpdateBulkCalculation1099BatchResponse) => {

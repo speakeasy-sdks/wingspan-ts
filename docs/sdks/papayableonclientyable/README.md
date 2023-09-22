@@ -15,7 +15,7 @@ import { Wingspan } from "wingspan";
 import { DeletePayableOnClientRequest, DeletePayableOnClientResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "dicta";
+const id: string = "in";
 
 sdk.paPayableOnClientyable.delete(id).then((res: DeletePayableOnClientResponse) => {
   if (res.statusCode == 200) {

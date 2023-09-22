@@ -16,7 +16,7 @@ import { Wingspan } from "wingspan";
 import { DownloadStatementRequest, DownloadStatementResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "tempora";
+const id: string = "in";
 
 sdk.statement.download(id).then((res: DownloadStatementResponse) => {
   if (res.statusCode == 200) {
@@ -49,7 +49,7 @@ import { Wingspan } from "wingspan";
 import { GetStatementRequest, GetStatementResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "tempora";
+const id: string = "commodi";
 
 sdk.statement.get(id).then((res: GetStatementResponse) => {
   if (res.statusCode == 200) {

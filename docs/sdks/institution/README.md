@@ -15,7 +15,7 @@ import { Wingspan } from "wingspan";
 import { GetInstitutionRequest, GetInstitutionResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const routingNumber: string = "cumque";
+const routingNumber: string = "laudantium";
 
 sdk.institution.get(routingNumber).then((res: GetInstitutionResponse) => {
   if (res.statusCode == 200) {

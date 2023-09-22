@@ -25,24 +25,18 @@ import {
 const sdk = new Wingspan();
 
 sdk.memberClient.create({
-  clientId: "consequatur",
-  company: "Toy and Sons",
+  clientId: "tempora",
+  company: "Cole LLC",
   emailCC: [
-    "aspernatur",
+    "ipsa",
   ],
-  emailTo: "sequi",
-  integration: {
-    quickbooks: "recusandae",
-  },
-  labels: "distinctio",
-  memberData: {
-    autoPayRequirement: AutoPayRequirementMemberData.None,
-    externalId: "inventore",
-    shareTaxDocument: ShareTaxDocumentMemberData.Decline,
-  },
-  memberId: "totam",
-  name: "Tom Kuhn",
-  status: StatusMemberClientCreateRequest.LessThanNilGreaterThan,
+  emailTo: "molestiae",
+  integration: "odio",
+  labels: "esse",
+  memberData: "rem",
+  memberId: "fuga",
+  name: "Yvette Stehr",
+  status: StatusMemberClientCreateRequest.Inactive,
 }).then((res: CreateMemberClientResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -74,7 +68,7 @@ import { Wingspan } from "wingspan";
 import { DeleteMemberClientRequest, DeleteMemberClientResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "dolores";
+const id: string = "assumenda";
 
 sdk.memberClient.delete(id).then((res: DeleteMemberClientResponse) => {
   if (res.statusCode == 200) {
@@ -107,7 +101,7 @@ import { Wingspan } from "wingspan";
 import { GetMemberClientRequest, GetMemberClientResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "deserunt";
+const id: string = "eos";
 
 sdk.memberClient.get(id).then((res: GetMemberClientResponse) => {
   if (res.statusCode == 200) {
@@ -163,49 +157,30 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "molestiae";
+const id: string = "praesentium";
 const memberClientUpdateRequest: MemberClientUpdateRequest = {
-  clientData: "porro",
-  clientId: "eum",
-  company: "Langosh - Cronin",
-  emailCC: [
-    "deleniti",
-  ],
-  emailTo: "fugit",
-  form1099Balances: {
-    twoThousandAndTwentyOne: {
-      adjustments: 2775.96,
-      correction: {
-        address: "minima",
-        companyStructure: CompanyStructurece853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481.CorporationS,
-        ein: "fugit",
-        firstName: "Verlie",
-        lastName: "Cronin",
-        legalBusinessName: "ratione",
-        ssn: "explicabo",
-        totalAmount: 9039.84,
-      },
-      deliveryMethod: DeliveryMethodCollaboratorForm1099BalancesUpdateRequest.Both,
-      dispute: {
-        amount: 922.6,
-        comment: "esse",
-        status: Status8a9c6cb49482a98cdd603ff09858cdc3e5ef6ad9807c876c4161d925a96694a5.LessThanNilGreaterThan,
-      },
-      events: {},
-      status: StatusCollaboratorForm1099BalancesUpdateRequest.Ready,
-    },
-    twoThousandAndTwentyTwo: "quod",
+  clientData: {
+    autoPayStrategy: AutoPayStrategyClientData.All,
+    externalId: "ipsa",
+    verificationStratgy: VerificationStratgyClientData.All,
   },
-  formW9Data: {},
+  clientId: "quidem",
+  company: "Satterfield Group",
+  emailCC: [
+    "quo",
+  ],
+  emailTo: "fuga",
+  form1099Balances: "eos",
+  formW9Data: "ab",
   integration: {
-    quickbooks: "quasi",
+    quickbooks: "tempora",
   },
   labels: {
-    "vel": "harum",
+    "ipsam": "aspernatur",
   },
-  memberData: "rerum",
-  name: "Warren Rau V",
-  status: StatusMemberClientUpdateRequest.Pending,
+  memberData: "quo",
+  name: "Sophie Bayer",
+  status: StatusMemberClientUpdateRequest.Inactive,
 };
 
 sdk.memberClient.update(id, memberClientUpdateRequest).then((res: UpdateMemberClientResponse) => {

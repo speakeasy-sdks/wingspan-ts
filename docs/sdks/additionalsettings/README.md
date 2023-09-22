@@ -48,10 +48,10 @@ import { UpdateAdditionalSettingsRequest, UpdateAdditionalSettingsResponse } fro
 import { AdditionalDataUpdateRequest, TypeAdditionalDataUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "deserunt";
+const id: string = "at";
 const additionalDataUpdateRequest: AdditionalDataUpdateRequest = {
-  key: "perferendis",
-  name: "Estelle Will",
+  key: "at",
+  name: "Javier Schmidt",
   required: false,
   type: TypeAdditionalDataUpdateRequest.LessThanNilGreaterThan,
 };

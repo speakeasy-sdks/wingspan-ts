@@ -19,7 +19,9 @@ import { CreateBulkCollaboratorBatchResponse } from "wingspan/dist/sdk/models/op
 const sdk = new Wingspan();
 
 sdk.bulkCollaboratorBatch.create({
-  labels: "error",
+  labels: {
+    "animi": "enim",
+  },
 }).then((res: CreateBulkCollaboratorBatchResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -51,7 +53,7 @@ import { Wingspan } from "wingspan";
 import { GetBulkCollaboratorBatchRequest, GetBulkCollaboratorBatchResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "quia";
+const batchId: string = "odit";
 
 sdk.bulkCollaboratorBatch.get(batchId).then((res: GetBulkCollaboratorBatchResponse) => {
   if (res.statusCode == 200) {
@@ -85,10 +87,10 @@ import { UpdateBulkCollaboratorBatchRequest, UpdateBulkCollaboratorBatchResponse
 import { BulkBatchUpdate, StatusBulkBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "quis";
+const batchId: string = "quo";
 const bulkBatchUpdate: BulkBatchUpdate = {
-  labels: "laborum",
-  status: StatusBulkBatchUpdate.Complete,
+  labels: "tenetur",
+  status: StatusBulkBatchUpdate.Processing,
 };
 
 sdk.bulkCollaboratorBatch.update(batchId, bulkBatchUpdate).then((res: UpdateBulkCollaboratorBatchResponse) => {

@@ -15,7 +15,7 @@ import { Wingspan } from "wingspan";
 import { ListBulkClientBatchItemsRequest, ListBulkClientBatchItemsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "molestiae";
+const batchId: string = "vitae";
 
 sdk.bulkClientBatchItems.list(batchId).then((res: ListBulkClientBatchItemsResponse) => {
   if (res.statusCode == 200) {

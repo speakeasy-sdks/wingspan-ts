@@ -22,8 +22,8 @@ const sdk = new Wingspan();
 
 sdk.eligibilityRequirement.create({
   requirementType: EligibilityRequirementCreateRequestRequirementType.Signature,
-  templateId: "molestias",
-  validFor: 8404.29,
+  templateId: "quas",
+  validFor: 9295.3,
 }).then((res: CreateEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -55,7 +55,7 @@ import { Wingspan } from "wingspan";
 import { DeleteEligibilityRequirementRequest, DeleteEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "qui";
+const id: string = "consequatur";
 
 sdk.eligibilityRequirement.delete(id).then((res: DeleteEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
@@ -88,7 +88,7 @@ import { Wingspan } from "wingspan";
 import { GetEligibilityRequirementRequest, GetEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "neque";
+const id: string = "est";
 
 sdk.eligibilityRequirement.get(id).then((res: GetEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
@@ -125,11 +125,11 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "fugit";
+const id: string = "repellendus";
 const eligibilityRequirementUpdateRequest: EligibilityRequirementUpdateRequest = {
   requirementType: EligibilityRequirementUpdateRequestRequirementType.Signature,
-  templateId: "magni",
-  validFor: 4880.56,
+  templateId: "porro",
+  validFor: 9843.3,
 };
 
 sdk.eligibilityRequirement.update(id, eligibilityRequirementUpdateRequest).then((res: UpdateEligibilityRequirementResponse) => {

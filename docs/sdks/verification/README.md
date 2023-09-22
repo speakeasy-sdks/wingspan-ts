@@ -16,9 +16,9 @@ import { SendVerificationRequest, SendVerificationResponse } from "wingspan/dist
 import { CardCodeRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "voluptate";
+const id: string = "quidem";
 const cardCodeRequest: CardCodeRequest = {
-  channel: "reiciendis",
+  channel: "explicabo",
 };
 
 sdk.verification.send(id, cardCodeRequest).then((res: SendVerificationResponse) => {

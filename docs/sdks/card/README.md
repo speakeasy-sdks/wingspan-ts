@@ -21,7 +21,7 @@ const sdk = new Wingspan();
 
 sdk.card.create({
   requestPhysicalCard: false,
-  shippingAddress: "sunt",
+  shippingAddress: "excepturi",
 }).then((res: CreateCardResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -53,7 +53,7 @@ import { Wingspan } from "wingspan";
 import { DeleteCardRequest, DeleteCardResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "quo";
+const id: string = "odit";
 
 sdk.card.delete(id).then((res: DeleteCardResponse) => {
   if (res.statusCode == 200) {
@@ -86,7 +86,7 @@ import { Wingspan } from "wingspan";
 import { GetCardRequest, GetCardResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "illum";
+const id: string = "ea";
 
 sdk.card.get(id).then((res: GetCardResponse) => {
   if (res.statusCode == 200) {
@@ -120,9 +120,9 @@ import { UpdateCardRequest, UpdateCardResponse } from "wingspan/dist/sdk/models/
 import { CardUpdateRequest, PropertiesCardUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "pariatur";
+const id: string = "accusantium";
 const cardUpdateRequest: CardUpdateRequest = {
-  status: PropertiesCardUpdateRequest.Frozen,
+  status: PropertiesCardUpdateRequest.Active,
 };
 
 sdk.card.update(id, cardUpdateRequest).then((res: UpdateCardResponse) => {
