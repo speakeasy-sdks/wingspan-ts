@@ -13,12 +13,21 @@ export class ListBulkCalculation1099BatchesResponse extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: shared.BulkCalculation1099Batch })
     bulkCalculation1099Batches?: shared.BulkCalculation1099Batch[];
 
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 }
