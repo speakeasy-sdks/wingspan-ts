@@ -6,9 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { MemberClient } from "./memberclient";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Calculate 1099 amounts response
- */
 export class Calculate1099Response extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "memberClient" })

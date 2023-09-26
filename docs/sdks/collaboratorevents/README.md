@@ -1,4 +1,4 @@
-# collaboratorEvents
+# CollaboratorEvents
 
 ### Available Operations
 
@@ -15,7 +15,7 @@ import { Wingspan } from "wingspan";
 import { GetCollaboratorEventsRequest, GetCollaboratorEventsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "tempore";
+const id: string = "aliquid";
 
 sdk.collaboratorEvents.get(id).then((res: GetCollaboratorEventsResponse) => {
   if (res.statusCode == 200) {

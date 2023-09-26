@@ -1,4 +1,4 @@
-# clientInvoiceTemplates
+# ClientInvoiceTemplates
 
 ### Available Operations
 

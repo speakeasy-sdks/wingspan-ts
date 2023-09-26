@@ -1,4 +1,4 @@
-# collaboratorGroup
+# CollaboratorGroup
 
 ### Available Operations
 
@@ -19,16 +19,12 @@ import { CreateCollaboratorGroupResponse } from "wingspan/dist/sdk/models/operat
 const sdk = new Wingspan();
 
 sdk.collaboratorGroup.create({
-  collaboratorSettings: {
-    "numquam": "enim",
-  },
-  description: "dolorem",
+  collaboratorSettings: "molestias",
+  description: "temporibus",
   eligibilityRequirements: [
-    {
-      eligibilityRequirementId: "totam",
-    },
+    "neque",
   ],
-  name: "Karen Rath",
+  name: "Mrs. Louise Kuhlman",
 }).then((res: CreateCollaboratorGroupResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -60,7 +56,7 @@ import { Wingspan } from "wingspan";
 import { GetCollaboratorGroupRequest, GetCollaboratorGroupResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "vel";
+const id: string = "hic";
 
 sdk.collaboratorGroup.get(id).then((res: GetCollaboratorGroupResponse) => {
   if (res.statusCode == 200) {
@@ -94,14 +90,18 @@ import { UpdateCollaboratorGroupRequest, UpdateCollaboratorGroupResponse } from 
 import { CollaboratorGroupRequirement, CollaboratorGroupUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "libero";
+const id: string = "voluptatem";
 const collaboratorGroupUpdateRequest: CollaboratorGroupUpdateRequest = {
-  collaboratorSettings: "deserunt",
-  description: "quam",
+  collaboratorSettings: {
+    "soluta": "nobis",
+  },
+  description: "et",
   eligibilityRequirements: [
-    "incidunt",
+    {
+      eligibilityRequirementId: "ipsum",
+    },
   ],
-  name: "Shelly Schoen",
+  name: "Gayle Lueilwitz",
 };
 
 sdk.collaboratorGroup.update(id, collaboratorGroupUpdateRequest).then((res: UpdateCollaboratorGroupResponse) => {

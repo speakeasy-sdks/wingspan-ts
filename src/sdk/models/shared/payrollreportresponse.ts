@@ -7,9 +7,6 @@ import { FortyTwof004011439ceedfeb392c84d36ad40443a5a0446d1efa02369c56e930a1c07 
 import { PayrollReportInvoice } from "./payrollreportinvoice";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Payroll report with line items and payroll summary
- */
 export class PayrollReportResponse extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: PayrollReportInvoice })
     @Expose({ name: "invoices" })

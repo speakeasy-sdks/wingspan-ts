@@ -24,9 +24,6 @@ export enum TypeCardDetails {
     BusinessVirtualDebitCard = "businessVirtualDebitCard",
 }
 
-/**
- * A card summary with additional details
- */
 export class CardDetails extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "address" })

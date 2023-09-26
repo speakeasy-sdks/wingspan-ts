@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Summary of the bulk payable import
- */
 export class BulkPayableImportSummary extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "deductionCollaboratorsCount" })

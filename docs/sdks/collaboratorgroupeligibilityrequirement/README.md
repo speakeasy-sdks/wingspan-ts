@@ -1,4 +1,4 @@
-# collaboratorGroupEligibilityRequirement
+# CollaboratorGroupEligibilityRequirement
 
 ### Available Operations
 
@@ -19,8 +19,8 @@ import {
 } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const eligibilityRequirementId: string = "dicta";
-const id: string = "laborum";
+const eligibilityRequirementId: string = "aperiam";
+const id: string = "delectus";
 
 sdk.collaboratorGroupEligibilityRequirement.delete(eligibilityRequirementId, id).then((res: DeleteCollaboratorGroupEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
@@ -58,10 +58,10 @@ import {
 import { CollaboratorGroupRequirementUpdate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const eligibilityRequirementId: string = "totam";
-const id: string = "incidunt";
+const eligibilityRequirementId: string = "dolorem";
+const id: string = "dolore";
 const collaboratorGroupRequirementUpdate: CollaboratorGroupRequirementUpdate = {
-  newEligibilityRequirementId: "aspernatur",
+  newEligibilityRequirementId: "labore",
 };
 
 sdk.collaboratorGroupEligibilityRequirement.replace(eligibilityRequirementId, id, collaboratorGroupRequirementUpdate).then((res: ReplaceCollaboratorGroupEligibilityRequirementResponse) => {

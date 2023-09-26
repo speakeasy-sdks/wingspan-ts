@@ -1,4 +1,4 @@
-# clientCollaboratorV2
+# ClientCollaboratorV2
 
 ### Available Operations
 
@@ -15,7 +15,7 @@ import { Wingspan } from "wingspan";
 import { GetClientCollaboratorV2Request, GetClientCollaboratorV2Response } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const clientId: string = "ea";
+const clientId: string = "maiores";
 
 sdk.clientCollaboratorV2.get(clientId).then((res: GetClientCollaboratorV2Response) => {
   if (res.statusCode == 200) {

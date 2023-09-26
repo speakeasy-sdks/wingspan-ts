@@ -1,4 +1,4 @@
-# payableOnClient
+# PayableOnClient
 
 ### Available Operations
 
@@ -25,58 +25,60 @@ const sdk = new Wingspan();
 
 sdk.payableOnClient.create({
   acceptedPaymentMethods: [
-    PayableCreateRequestAcceptedPaymentMethods.Ach,
+    PayableCreateRequestAcceptedPaymentMethods.Credit,
   ],
-  attachments: {
-    customAttachmentIds: [
-      "aperiam",
-    ],
-  },
-  client: "quaerat",
-  collaboratorId: "consequuntur",
+  attachments: "sapiente",
+  client: "ullam",
+  collaboratorId: "reprehenderit",
   creditFeeHandling: {
-    clientAbsolutePercentage: 8315.2,
-    clientPays: 6387.62,
-    memberPays: 8070.23,
+    clientAbsolutePercentage: 3567.07,
+    clientPays: 3917.74,
+    memberPays: 163.28,
   },
   currency: CurrencyPayableCreateRequest.Cad,
-  dueDate: "officia",
+  dueDate: "qui",
   integration: {
-    quickbooks: "quae",
+    quickbooks: "deleniti",
   },
-  invoiceNotes: "quaerat",
+  invoiceNotes: "itaque",
   labels: {
-    "quod": "labore",
+    "architecto": "omnis",
   },
-  lateFeeHandling: "adipisci",
+  lateFeeHandling: {
+    frequency: "at",
+    lateFeeAmount: 920.27,
+    lateFeePercentage: 4541.62,
+  },
   lineItems: [
     {
-      costPerUnit: 6835.73,
-      description: "id",
-      detail: "suscipit",
-      discount: "culpa",
+      costPerUnit: 559.65,
+      description: "minima",
+      detail: "veritatis",
+      discount: "adipisci",
       integration: {
         quickbooks: {
-          expenseAccountId: "totam",
-          itemId: "fugiat",
+          expenseAccountId: "accusantium",
+          itemId: "rem",
         },
       },
-      labels: "ducimus",
-      quantity: 5546.88,
-      reimbursableExpense: "labore",
-      totalCost: 8225.6,
-      unit: "facilis",
+      labels: "laudantium",
+      quantity: 4287.96,
+      reimbursableExpense: false,
+      totalCost: 680.74,
+      unit: "corrupti",
     },
   ],
-  member: {},
-  memberClientId: "commodi",
-  metadata: "corporis",
+  member: "voluptatem",
+  memberClientId: "dolor",
+  metadata: {
+    purchaseOrderNumber: "numquam",
+  },
   notificationPreferences: {
-    sendInvoice: false,
-    sendReceipt: "recusandae",
+    sendInvoice: "voluptas",
+    sendReceipt: "dignissimos",
     sendReminders: false,
   },
-  status: StatusPayableCreateRequest.Cancelled,
+  status: StatusPayableCreateRequest.Draft,
 }).then((res: CreatePayableOnClientResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -130,39 +132,67 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "aperiam";
+const id: string = "maiores";
 const payableUpdateRequest: PayableUpdateRequest = {
   acceptedPaymentMethods: [
     PayableUpdateRequestAcceptedPaymentMethods.Manual,
   ],
-  attachments: "in",
-  chargedFees: "earum",
-  client: {},
+  attachments: "voluptatibus",
+  chargedFees: "asperiores",
+  client: "ea",
   collaborators: [
-    "doloribus",
+    "consequuntur",
   ],
-  creditFeeHandling: "reiciendis",
-  dueDate: "quidem",
-  integration: {
-    quickbooks: {
-      expenseAccountId: "dolore",
-      itemId: "sunt",
-    },
+  creditFeeHandling: {
+    clientAbsolutePercentage: 6387.62,
+    clientPays: 8070.23,
+    memberPays: 4903.05,
   },
-  invoiceNotes: "asperiores",
-  labels: "non",
-  lateFeeHandling: "beatae",
+  dueDate: "officia",
+  integration: {
+    quickbooks: "quae",
+  },
+  invoiceNotes: "quaerat",
+  labels: {
+    "quod": "labore",
+  },
+  lateFeeHandling: "adipisci",
   lineItems: [
-    "a",
+    {
+      costPerUnit: 6625.05,
+      description: "suscipit",
+      detail: "velit",
+      discount: {
+        amount: 6658.59,
+        description: "recusandae",
+        percentage: 5173.09,
+      },
+      integration: {
+        quickbooks: "ducimus",
+      },
+      labels: {
+        "vel": "labore",
+      },
+      quantity: 8225.6,
+      reimbursableExpense: false,
+      totalCost: 7382.27,
+      unit: "commodi",
+    },
   ],
-  member: {},
-  memberClientId: "consectetur",
-  metadata: "harum",
-  notificationPreferences: "ipsa",
+  member: "corporis",
+  memberClientId: "reiciendis",
+  metadata: {
+    purchaseOrderNumber: "nemo",
+  },
+  notificationPreferences: {
+    sendInvoice: "aperiam",
+    sendReceipt: false,
+    sendReminders: false,
+  },
   paymentMethods: [
-    PayableUpdateRequestPaymentMethods.LessThanNilGreaterThan,
+    PayableUpdateRequestPaymentMethods.Credit,
   ],
-  status: StatusPayableUpdateRequest.PaymentInTransit,
+  status: StatusPayableUpdateRequest.Cancelled,
 };
 
 sdk.payableOnClient.update(id, payableUpdateRequest).then((res: UpdatePayableOnClientResponse) => {

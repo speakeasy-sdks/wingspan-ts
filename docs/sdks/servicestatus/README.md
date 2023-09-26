@@ -1,4 +1,4 @@
-# serviceStatus
+# ServiceStatus
 
 ### Available Operations
 

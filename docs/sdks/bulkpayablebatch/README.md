@@ -1,4 +1,4 @@
-# bulkPayableBatch
+# BulkPayableBatch
 
 ### Available Operations
 
@@ -21,8 +21,8 @@ import { BulkPayableBatchCreateProcessingStrategy } from "wingspan/dist/sdk/mode
 const sdk = new Wingspan();
 
 sdk.bulkPayableBatch.create({
-  labels: "nihil",
-  processingStrategy: BulkPayableBatchCreateProcessingStrategy.Merge,
+  labels: "suscipit",
+  processingStrategy: BulkPayableBatchCreateProcessingStrategy.Single,
 }).then((res: CreateBulkPayableBatchResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -54,7 +54,7 @@ import { Wingspan } from "wingspan";
 import { DeleteBulkPayableBatchRequest, DeleteBulkPayableBatchResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "distinctio";
+const batchId: string = "nobis";
 
 sdk.bulkPayableBatch.delete(batchId).then((res: DeleteBulkPayableBatchResponse) => {
   if (res.statusCode == 200) {
@@ -87,7 +87,7 @@ import { Wingspan } from "wingspan";
 import { GetBulkPayableBatchRequest, GetBulkPayableBatchResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "id";
+const batchId: string = "eum";
 
 sdk.bulkPayableBatch.get(batchId).then((res: GetBulkPayableBatchResponse) => {
   if (res.statusCode == 200) {
@@ -121,10 +121,10 @@ import { UpdateBulkPayableBatchRequest, UpdateBulkPayableBatchResponse } from "w
 import { BulkPayableBatchUpdate, StatusBulkPayableBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "labore";
+const batchId: string = "vero";
 const bulkPayableBatchUpdate: BulkPayableBatchUpdate = {
-  labels: "suscipit",
-  status: StatusBulkPayableBatchUpdate.Complete,
+  labels: "architecto",
+  status: StatusBulkPayableBatchUpdate.Pending,
 };
 
 sdk.bulkPayableBatch.update(batchId, bulkPayableBatchUpdate).then((res: UpdateBulkPayableBatchResponse) => {

@@ -1,4 +1,4 @@
-# payoutSettings
+# PayoutSettings
 
 ### Available Operations
 
@@ -16,7 +16,7 @@ import { Wingspan } from "wingspan";
 import { GetPayoutSettingsRequest, GetPayoutSettingsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "explicabo";
+const id: string = "minima";
 
 sdk.payoutSettings.get(id).then((res: GetPayoutSettingsResponse) => {
   if (res.statusCode == 200) {
@@ -56,17 +56,17 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "asperiores";
+const id: string = "nobis";
 const payoutSettingsUpdate: PayoutSettingsUpdate = {
   payoutDestinations: [
     {
-      destinationId: "voluptate",
-      destinationType: DestinationTypePayoutDestinationUpdate.WeGift,
-      payoutMethod: PayoutMethodPayoutDestinationUpdate.Standard,
-      percentage: 6117.49,
+      destinationId: "adipisci",
+      destinationType: DestinationTypePayoutDestinationUpdate.LessThanNilGreaterThan,
+      payoutMethod: PayoutMethodPayoutDestinationUpdate.Instant,
+      percentage: 5039.34,
     },
   ],
-  payoutPreferences: PayoutPreferencesPayoutSettingsUpdate.Instant,
+  payoutPreferences: PayoutPreferencesPayoutSettingsUpdate.Expedited,
 };
 
 sdk.payoutSettings.update(id, payoutSettingsUpdate).then((res: UpdatePayoutSettingsResponse) => {

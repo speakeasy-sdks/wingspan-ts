@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * A Bank Application form
- */
 export class BankingApplicationForm extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "applicationLink" })

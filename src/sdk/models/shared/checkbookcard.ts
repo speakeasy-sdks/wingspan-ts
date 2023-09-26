@@ -15,9 +15,6 @@ export enum CheckbookCardBrand {
     Jcb = "JCB",
 }
 
-/**
- * A payout debit card
- */
 export class CheckbookCard extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "address" })

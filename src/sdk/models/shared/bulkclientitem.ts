@@ -20,9 +20,6 @@ export enum StatusBulkClientItem {
     Failed = "Failed",
 }
 
-/**
- * An item that will be converted into a client
- */
 export class BulkClientItem extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "bulkClientBatchId" })

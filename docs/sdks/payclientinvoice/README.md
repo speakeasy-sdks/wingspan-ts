@@ -1,4 +1,4 @@
-# payClientInvoice
+# PayClientInvoice
 
 ### Available Operations
 
@@ -16,11 +16,11 @@ import { PostPayClientInvoiceRequest, PostPayClientInvoiceResponse } from "wings
 import { PayRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const invoiceId: string = "maiores";
+const invoiceId: string = "eius";
 const payRequest: PayRequest = {
-  accountId: "natus",
-  paymentMethodId: "velit",
-  plaidPublicToken: "voluptatibus",
+  accountId: "libero",
+  paymentMethodId: "illum",
+  plaidPublicToken: "soluta",
 };
 
 sdk.payClientInvoice.post(invoiceId, payRequest).then((res: PostPayClientInvoiceResponse) => {

@@ -13,12 +13,21 @@ export class ListCreatedInvoicesByClientResponse extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: shared.ClientInvoice })
     clientInvoices?: shared.ClientInvoice[];
 
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 }

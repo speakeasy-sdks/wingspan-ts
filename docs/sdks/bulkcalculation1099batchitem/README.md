@@ -1,4 +1,4 @@
-# bulkCalculation1099BatchItem
+# BulkCalculation1099BatchItem
 
 ### Available Operations
 
@@ -21,12 +21,12 @@ import {
 import { BulkCalculation1099ItemCreate, CalculationTypeBulkCalculation1099ItemCreate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "nam";
+const batchId: string = "optio";
 const bulkCalculation1099ItemCreate: BulkCalculation1099ItemCreate = {
   calculationType: CalculationTypeBulkCalculation1099ItemCreate.Submissions,
-  clientId: "occaecati",
-  labels: "deleniti",
-  year: 9446.69,
+  clientId: "beatae",
+  labels: "molestiae",
+  year: 2645.55,
 };
 
 sdk.bulkCalculation1099BatchItem.create(batchId, bulkCalculation1099ItemCreate).then((res: CreateBulkCalculation1099BatchItemResponse) => {
@@ -61,8 +61,8 @@ import { Wingspan } from "wingspan";
 import { GetBulkCalculation1099BatchItemRequest, GetBulkCalculation1099BatchItemResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "optio";
-const batchItemId: string = "totam";
+const batchId: string = "qui";
+const batchItemId: string = "impedit";
 
 sdk.bulkCalculation1099BatchItem.get(batchId, batchItemId).then((res: GetBulkCalculation1099BatchItemResponse) => {
   if (res.statusCode == 200) {
@@ -100,13 +100,13 @@ import {
 import { BulkCalculation1099ItemUpdate, CalculationTypeBulkCalculation1099ItemUpdate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "beatae";
-const batchItemId: string = "commodi";
+const batchId: string = "cum";
+const batchItemId: string = "esse";
 const bulkCalculation1099ItemUpdate: BulkCalculation1099ItemUpdate = {
-  calculationType: CalculationTypeBulkCalculation1099ItemUpdate.Submissions,
-  clientId: "modi",
-  labels: "impedit",
-  year: 7369.18,
+  calculationType: CalculationTypeBulkCalculation1099ItemUpdate.Balances,
+  clientId: "excepturi",
+  labels: "perferendis",
+  year: 3241.41,
 };
 
 sdk.bulkCalculation1099BatchItem.update(batchId, batchItemId, bulkCalculation1099ItemUpdate).then((res: UpdateBulkCalculation1099BatchItemResponse) => {

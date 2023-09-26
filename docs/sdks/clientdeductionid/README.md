@@ -1,4 +1,4 @@
-# clientDeductionID
+# ClientDeductionID
 
 ### Available Operations
 
@@ -17,7 +17,7 @@ import { Wingspan } from "wingspan";
 import { DeleteClientDeductionIDRequest, DeleteClientDeductionIDResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "nemo";
+const id: string = "cumque";
 
 sdk.clientDeductionID.delete(id).then((res: DeleteClientDeductionIDResponse) => {
   if (res.statusCode == 200) {
@@ -50,7 +50,7 @@ import { Wingspan } from "wingspan";
 import { GetClientDeductionIDRequest, GetClientDeductionIDResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "voluptatibus";
+const id: string = "corporis";
 
 sdk.clientDeductionID.get(id).then((res: GetClientDeductionIDResponse) => {
   if (res.statusCode == 200) {
@@ -88,15 +88,15 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "perferendis";
+const id: string = "hic";
 const deductionUpdateRequest: DeductionUpdateRequest = {
-  amount: 8558.04,
-  currency: CurrencyDeductionUpdateRequest.Usd,
-  name: "Erma Hessel",
-  priority: 7499.99,
-  sourceInvoiceId: "dolores",
-  startDate: "quis",
-  type: TypeDeductionUpdateRequest.PostPayment,
+  amount: 7299.91,
+  currency: CurrencyDeductionUpdateRequest.LessThanNilGreaterThan,
+  name: "Beatrice Lebsack II",
+  priority: 1999.96,
+  sourceInvoiceId: "eos",
+  startDate: "perferendis",
+  type: TypeDeductionUpdateRequest.PrePayment,
 };
 
 sdk.clientDeductionID.update(id, deductionUpdateRequest).then((res: UpdateClientDeductionIDResponse) => {

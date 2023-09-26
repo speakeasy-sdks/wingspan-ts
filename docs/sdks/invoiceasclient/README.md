@@ -1,4 +1,4 @@
-# invoiceAsClient
+# InvoiceAsClient
 
 ### Available Operations
 
@@ -18,46 +18,40 @@ import { CurrencyClientInvoiceCreateRequest } from "wingspan/dist/sdk/models/sha
 const sdk = new Wingspan();
 
 sdk.invoiceAsClient.create({
-  clientCompany: "et",
-  clientEmail: "saepe",
+  clientCompany: "voluptatibus",
+  clientEmail: "quisquam",
   clientEmailCC: [
-    "ipsum",
+    "vero",
   ],
-  clientFirstName: "veritatis",
-  clientLastName: "nobis",
-  creditFeeHandling: {
-    clientAbsolutePercentage: 7316.94,
-    clientPays: 5844.76,
-    memberPays: 456.14,
-  },
-  currency: CurrencyClientInvoiceCreateRequest.LessThanNilGreaterThan,
-  dueDate: "dolorem",
+  clientFirstName: "omnis",
+  clientLastName: "quis",
+  creditFeeHandling: "delectus",
+  currency: CurrencyClientInvoiceCreateRequest.Cad,
+  dueDate: "consectetur",
   lineItems: [
     {
-      costPerUnit: 2921.47,
-      description: "labore",
-      detail: "adipisci",
+      costPerUnit: 8788.7,
+      description: "tenetur",
+      detail: "dignissimos",
       discount: {
-        amount: 1002.94,
-        description: "quae",
-        percentage: 164.29,
+        amount: 7155.61,
+        description: "quod",
+        percentage: 4861.6,
       },
       integration: {
         quickbooks: {
-          expenseAccountId: "consequatur",
-          itemId: "est",
+          expenseAccountId: "vero",
+          itemId: "ducimus",
         },
       },
-      labels: {
-        "porro": "doloribus",
-      },
-      quantity: 2817.3,
-      reimbursableExpense: false,
-      totalCost: 5864.1,
-      unit: "qui",
+      labels: "quibusdam",
+      quantity: 8489.44,
+      reimbursableExpense: "natus",
+      totalCost: 7733.26,
+      unit: "aut",
     },
   ],
-  memberId: "quae",
+  memberId: "voluptatibus",
 }).then((res: CreateInvoiceAsClientResponse) => {
   if (res.statusCode == 200) {
     // handle response

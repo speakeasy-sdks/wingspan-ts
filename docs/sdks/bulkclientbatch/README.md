@@ -1,4 +1,4 @@
-# bulkClientBatch
+# BulkClientBatch
 
 ### Available Operations
 
@@ -19,7 +19,7 @@ import { CreateBulkClientBatchResponse } from "wingspan/dist/sdk/models/operatio
 const sdk = new Wingspan();
 
 sdk.bulkClientBatch.create({
-  labels: "excepturi",
+  labels: "iste",
 }).then((res: CreateBulkClientBatchResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -51,7 +51,7 @@ import { Wingspan } from "wingspan";
 import { GetBulkClientBatchRequest, GetBulkClientBatchResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "aspernatur";
+const batchId: string = "dolor";
 
 sdk.bulkClientBatch.get(batchId).then((res: GetBulkClientBatchResponse) => {
   if (res.statusCode == 200) {
@@ -85,10 +85,10 @@ import { UpdateBulkClientBatchRequest, UpdateBulkClientBatchResponse } from "win
 import { BulkBatchUpdate, StatusBulkBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "perferendis";
+const batchId: string = "natus";
 const bulkBatchUpdate: BulkBatchUpdate = {
-  labels: "natus",
-  status: StatusBulkBatchUpdate.Open,
+  labels: "hic",
+  status: StatusBulkBatchUpdate.LessThanNilGreaterThan,
 };
 
 sdk.bulkClientBatch.update(batchId, bulkBatchUpdate).then((res: UpdateBulkClientBatchResponse) => {

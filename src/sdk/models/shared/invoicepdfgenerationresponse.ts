@@ -6,9 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { InvoiceAttachments } from "./invoiceattachments";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Response from generation of invoice pdf
- */
 export class InvoicePdfGenerationResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "attachments" })

@@ -1,4 +1,4 @@
-# invoiceTemplate
+# InvoiceTemplate
 
 ### Available Operations
 
@@ -29,84 +29,63 @@ import {
 const sdk = new Wingspan();
 
 sdk.invoiceTemplate.create({
-  dueInDays: 4856.28,
-  frequency: {
-    daily: false,
-    dayInInterval: 7875.42,
-    endDate: "vero",
-    every: 6064.76,
-    interval: IntervalFrequency.Month,
-    startDate: "ipsum",
-    twicePerMonth: false,
-  },
+  dueInDays: 8623.1,
+  frequency: "porro",
   invoiceData: {
     acceptedPaymentMethods: [
-      InvoiceDataCreateRequestAcceptedPaymentMethods.Ach,
+      InvoiceDataCreateRequestAcceptedPaymentMethods.LessThanNilGreaterThan,
     ],
-    attachments: "vero",
+    attachments: {
+      customAttachmentIds: [
+        "iusto",
+      ],
+    },
     collaborators: [
       {
-        amount: 4922.68,
-        currency: CurrencyInvoiceCollaboratorCreateRequest.Cad,
-        description: "distinctio",
-        memberClientId: "quod",
+        amount: 4973.91,
+        currency: CurrencyInvoiceCollaboratorCreateRequest.Usd,
+        description: "officia",
+        memberClientId: "tempora",
       },
     ],
-    creditFeeHandling: "similique",
-    currency: CurrencyInvoiceDataCreateRequest.LessThanNilGreaterThan,
-    dueDate: "vero",
-    invoiceNotes: "ducimus",
-    labels: "quibusdam",
-    lateFeeHandling: {
-      frequency: {
-        daily: "natus",
-        dayInInterval: 7733.26,
-        endDate: "aut",
-        every: 9742.59,
-        interval: IntervalFrequency.Month,
-        startDate: "nulla",
-        twicePerMonth: "porro",
-      },
-      lateFeeAmount: 9818.3,
-      lateFeePercentage: 9850.33,
-    },
+    creditFeeHandling: "ea",
+    currency: CurrencyInvoiceDataCreateRequest.Usd,
+    dueDate: "vel",
+    invoiceNotes: "possimus",
+    labels: "ratione",
+    lateFeeHandling: "laudantium",
     lineItems: [
       {
-        costPerUnit: 4783.7,
-        description: "eligendi",
-        detail: "ducimus",
-        discount: "officia",
-        integration: "ipsam",
-        labels: "aspernatur",
-        quantity: 4282.24,
+        costPerUnit: 1206.57,
+        description: "dolor",
+        detail: "maiores",
+        discount: "ex",
+        integration: {
+          quickbooks: {
+            expenseAccountId: "voluptatibus",
+            itemId: "nostrum",
+          },
+        },
+        labels: {
+          "quisquam": "saepe",
+        },
+        quantity: 4113.72,
         reimbursableExpense: false,
-        totalCost: 2978.42,
-        unit: "ratione",
+        totalCost: 3592.71,
+        unit: "veniam",
       },
     ],
-    memberClientId: "ex",
-    notificationPreferences: {
-      sendInvoice: "dolor",
-      sendReceipt: false,
-      sendReminders: false,
-    },
-    status: StatusInvoiceDataCreateRequest.Draft,
+    memberClientId: "aliquid",
+    notificationPreferences: "magnam",
+    status: StatusInvoiceDataCreateRequest.Cancelled,
   },
-  isSchedulingOnly: "nulla",
-  labels: {
-    "voluptatibus": "nostrum",
-  },
+  isSchedulingOnly: false,
+  labels: "recusandae",
   scheduleDates: [
-    {
-      cutOffDate: "quisquam",
-      date: "saepe",
-      invoiceId: "ea",
-      invoiceTemplateId: "impedit",
-      status: StatusScheduleDate.Completed,
-    },
+    "minima",
   ],
-  sendEmails: "aliquid",
-  status: StatusInvoiceTemplateCreateRequest.Active,
+  sendEmails: "a",
+  status: StatusInvoiceTemplateCreateRequest.Expired,
 }).then((res: CreateInvoiceTemplateResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -138,7 +117,7 @@ import { Wingspan } from "wingspan";
 import { DeleteInvoiceTemplateRequest, DeleteInvoiceTemplateResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "magnam";
+const id: string = "aut";
 
 sdk.invoiceTemplate.delete(id).then((res: DeleteInvoiceTemplateResponse) => {
   if (res.statusCode == 200) {
@@ -171,7 +150,7 @@ import { Wingspan } from "wingspan";
 import { GetInvoiceTemplateRequest, GetInvoiceTemplateResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "ea";
+const id: string = "aut";
 
 sdk.invoiceTemplate.get(id).then((res: GetInvoiceTemplateResponse) => {
   if (res.statusCode == 200) {
@@ -229,81 +208,27 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "quo";
+const id: string = "deleniti";
 const invoiceTemplateUpdateRequest: InvoiceTemplateUpdateRequest = {
-  accountId: "consectetur",
-  autoPaymentRequired: false,
-  dueInDays: 1324.87,
-  frequency: "eaque",
-  invoiceData: {
-    acceptedPaymentMethods: [
-      InvoiceUpdateRequestAcceptedPaymentMethods.Manual,
-    ],
-    attachments: "aut",
-    chargedFees: {
-      lateFee: {
-        amount: 3045.82,
-        calculatedAt: "fugit",
-      },
-      processingFee: {
-        amount: 795.22,
-        calculatedAt: "non",
-      },
-    },
-    client: "dolorum",
-    collaborators: [
-      {
-        amount: 8104.24,
-        description: "velit",
-      },
-    ],
-    creditFeeHandling: "autem",
-    dueDate: "nobis",
-    integration: {
-      quickbooks: {
-        expenseAccountId: "nulla",
-        itemId: "voluptas",
-      },
-    },
-    invoiceNotes: "libero",
-    labels: "tempora",
-    lateFeeHandling: "explicabo",
-    lineItems: [
-      {
-        costPerUnit: 553.74,
-        description: "molestiae",
-        detail: "magnam",
-        discount: "eius",
-        integration: "esse",
-        labels: {
-          "fuga": "reprehenderit",
-        },
-        quantity: 6956.26,
-        reimbursableExpense: false,
-        totalCost: 2835.19,
-        unit: "eum",
-      },
-    ],
-    member: "assumenda",
-    memberClientId: "eos",
-    metadata: {
-      purchaseOrderNumber: "quisquam",
-    },
-    notificationPreferences: "ipsa",
-    status: StatusInvoiceUpdateRequest.PaymentInTransit,
-  },
+  accountId: "impedit",
+  autoPaymentRequired: "fugit",
+  dueInDays: 8828.6,
+  frequency: "non",
+  invoiceData: "dolorum",
   isSchedulingOnly: false,
-  labels: "quo",
-  paymentMethodId: "illum",
+  labels: {
+    "velit": "eum",
+  },
+  paymentMethodId: "autem",
   scheduleDates: [
     {
-      date: "fuga",
-      invoiceTemplateId: "eius",
-      status: StatusScheduleDateUpdate.Pending,
+      date: "quas",
+      invoiceTemplateId: "assumenda",
+      status: StatusScheduleDateUpdate.LessThanNilGreaterThan,
     },
   ],
-  sendEmails: "ab",
-  status: StatusInvoiceTemplateUpdateRequest.Expired,
+  sendEmails: "libero",
+  status: StatusInvoiceTemplateUpdateRequest.Active,
 };
 
 sdk.invoiceTemplate.update(id, invoiceTemplateUpdateRequest).then((res: UpdateInvoiceTemplateResponse) => {

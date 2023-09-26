@@ -34,9 +34,6 @@ export enum StatusInvoice {
     Paid = "Paid",
 }
 
-/**
- * An invoice
- */
 export class Invoice extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "acceptedPaymentMethods" })

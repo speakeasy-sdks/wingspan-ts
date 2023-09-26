@@ -14,9 +14,6 @@ export enum StatusClientInvoiceTemplate {
     Cancelled = "Cancelled",
 }
 
-/**
- * A client created invoiceTemplate (recurring Invoice)
- */
 export class ClientInvoiceTemplate extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "accountId" })

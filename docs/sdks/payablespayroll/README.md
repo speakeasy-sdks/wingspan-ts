@@ -1,4 +1,4 @@
-# payablesPayroll
+# PayablesPayroll
 
 ### Available Operations
 
@@ -15,7 +15,7 @@ import { Wingspan } from "wingspan";
 import { ListPayablesPayrollRequest, ListPayablesPayrollResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const payrollId: string = "vitae";
+const payrollId: string = "exercitationem";
 
 sdk.payablesPayroll.list(payrollId).then((res: ListPayablesPayrollResponse) => {
   if (res.statusCode == 200) {

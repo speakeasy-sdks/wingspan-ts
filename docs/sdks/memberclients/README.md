@@ -1,4 +1,4 @@
-# memberClients
+# MemberClients
 
 ### Available Operations
 

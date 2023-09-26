@@ -4,7 +4,4 @@
 
 import { SpeakeasyBase } from "../../../internal/utils";
 
-/**
- * Download1099Response
- */
 export class Download1099Response extends SpeakeasyBase {}

@@ -1,4 +1,4 @@
-# bulkClientBatchItem
+# BulkClientBatchItem
 
 ### Available Operations
 
@@ -26,22 +26,20 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "iste";
+const batchId: string = "fuga";
 const bulkClientItemCreate: BulkClientItemCreate = {
-  clientStatus: ClientStatusBulkClientItemCreate.Active,
-  company: "Howe - Welch",
-  email: "Marisa_Kirlin@hotmail.com",
-  externalId: "iure",
-  firstLastName: "saepe",
+  clientStatus: ClientStatusBulkClientItemCreate.Inactive,
+  company: "Moore - Kertzmann",
+  email: "Maxie96@hotmail.com",
+  externalId: "est",
+  firstLastName: "mollitia",
   integration: {
-    quickbooks: "ipsa",
+    quickbooks: "dolorem",
   },
-  labels: {
-    "est": "mollitia",
-  },
+  labels: "explicabo",
   memberData: {
     autoPayRequirement: AutoPayRequirementMemberData.All,
-    externalId: "dolorem",
+    externalId: "omnis",
     shareTaxDocument: ShareTaxDocumentMemberData.Decline,
   },
 };
@@ -78,8 +76,8 @@ import { Wingspan } from "wingspan";
 import { GetBulkClientBatchItemRequest, GetBulkClientBatchItemResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "explicabo";
-const batchItemId: string = "nobis";
+const batchId: string = "minima";
+const batchItemId: string = "excepturi";
 
 sdk.bulkClientBatchItem.get(batchId, batchItemId).then((res: GetBulkClientBatchItemResponse) => {
   if (res.statusCode == 200) {
@@ -122,19 +120,17 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "enim";
-const batchItemId: string = "omnis";
+const batchId: string = "accusantium";
+const batchItemId: string = "iure";
 const bulkClientItemUpdate: BulkClientItemUpdate = {
-  clientStatus: ClientStatusBulkClientItemUpdate.Inactive,
-  company: "Marks Inc",
-  email: "Lorenza.Yundt65@yahoo.com",
-  externalId: "dolorem",
-  firstLastName: "culpa",
-  integration: "repellat",
-  labels: {
-    "occaecati": "numquam",
-  },
-  memberData: "quam",
+  clientStatus: ClientStatusBulkClientItemUpdate.Pending,
+  company: "Williamson, Brakus and O'Hara",
+  email: "Lorine_Crooks58@gmail.com",
+  externalId: "numquam",
+  firstLastName: "commodi",
+  integration: "molestiae",
+  labels: "error",
+  memberData: "quis",
 };
 
 sdk.bulkClientBatchItem.update(batchId, batchItemId, bulkClientItemUpdate).then((res: UpdateBulkClientBatchItemResponse) => {

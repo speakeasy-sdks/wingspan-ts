@@ -1,4 +1,4 @@
-# bulkInvoiceBatchItem
+# BulkInvoiceBatchItem
 
 ### Available Operations
 
@@ -23,35 +23,35 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "alias";
+const batchId: string = "tempora";
 const bulkInvoiceItemCreate: BulkInvoiceItemCreate = {
   acceptedPaymentMethods: [
-    BulkInvoiceItemCreateAcceptedPaymentMethods.Credit,
+    BulkInvoiceItemCreateAcceptedPaymentMethods.Manual,
   ],
-  amount: 6778.17,
-  bulkInvoiceBatchId: "excepturi",
-  bulkInvoiceItemMergeKey: "tempora",
-  bulkInvoiceItemReference: "facilis",
-  clientEmail: "tempore",
-  clientExternalId: "labore",
+  amount: 7351.94,
+  bulkInvoiceBatchId: "labore",
+  bulkInvoiceItemMergeKey: "delectus",
+  bulkInvoiceItemReference: "eum",
+  clientEmail: "non",
+  clientExternalId: "eligendi",
   creditFeeHandling: {
-    clientAbsolutePercentage: 4332.88,
-    clientPays: 2487.53,
-    memberPays: 7561.07,
+    clientAbsolutePercentage: 3960.98,
+    clientPays: 5920.42,
+    memberPays: 8960.39,
   },
   dueDate: "sint",
-  invoiceNotes: "aliquid",
-  invoiceStatus: InvoiceStatusBulkInvoiceItemCreate.Approved,
+  invoiceNotes: "officia",
+  invoiceStatus: InvoiceStatusBulkInvoiceItemCreate.Open,
   labels: {
-    "sint": "officia",
+    "a": "dolorum",
   },
-  lineItemDescription: "dolor",
-  lineItemDetail: "debitis",
-  memberClientId: "a",
-  paidDate: "dolorum",
-  projectName: "in",
-  reimbursableExpense: "illum",
-  sendDate: "maiores",
+  lineItemDescription: "in",
+  lineItemDetail: "in",
+  memberClientId: "illum",
+  paidDate: "maiores",
+  projectName: "rerum",
+  reimbursableExpense: "magnam",
+  sendDate: "cumque",
 };
 
 sdk.bulkInvoiceBatchItem.create(batchId, bulkInvoiceItemCreate).then((res: CreateBulkInvoiceBatchItemResponse) => {
@@ -86,8 +86,8 @@ import { Wingspan } from "wingspan";
 import { GetBulkInvoiceBatchItemRequest, GetBulkInvoiceBatchItemResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "rerum";
-const batchItemId: string = "dicta";
+const batchId: string = "facere";
+const batchItemId: string = "ea";
 
 sdk.bulkInvoiceBatchItem.get(batchId, batchItemId).then((res: GetBulkInvoiceBatchItemResponse) => {
   if (res.statusCode == 200) {
@@ -127,32 +127,36 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "magnam";
-const batchItemId: string = "cumque";
+const batchId: string = "aliquid";
+const batchItemId: string = "laborum";
 const bulkInvoiceItemUpdate: BulkInvoiceItemUpdate = {
   acceptedPaymentMethods: [
     BulkInvoiceItemUpdateAcceptedPaymentMethods.LessThanNilGreaterThan,
   ],
-  amount: 4118.2,
-  bulkInvoiceBatchId: "aliquid",
-  bulkInvoiceItemMergeKey: "laborum",
+  amount: 2497.96,
+  bulkInvoiceBatchId: "occaecati",
+  bulkInvoiceItemMergeKey: "enim",
   bulkInvoiceItemReference: "accusamus",
-  clientEmail: "non",
-  clientExternalId: "occaecati",
-  creditFeeHandling: "accusamus",
-  dueDate: "delectus",
-  invoiceNotes: "quidem",
-  invoiceStatus: InvoiceStatusBulkInvoiceItemUpdate.Paid,
-  labels: {
-    "id": "blanditiis",
+  clientEmail: "delectus",
+  clientExternalId: "quidem",
+  creditFeeHandling: {
+    clientAbsolutePercentage: 7252.55,
+    clientPays: 6596.69,
+    memberPays: 5013.24,
   },
-  lineItemDescription: "deleniti",
-  lineItemDetail: "sapiente",
-  memberClientId: "amet",
-  paidDate: "deserunt",
-  projectName: "nisi",
-  reimbursableExpense: "natus",
-  sendDate: "omnis",
+  dueDate: "deleniti",
+  invoiceNotes: "sapiente",
+  invoiceStatus: InvoiceStatusBulkInvoiceItemUpdate.Open,
+  labels: {
+    "nisi": "vel",
+  },
+  lineItemDescription: "natus",
+  lineItemDetail: "omnis",
+  memberClientId: "molestiae",
+  paidDate: "perferendis",
+  projectName: "nihil",
+  reimbursableExpense: "distinctio",
+  sendDate: "id",
 };
 
 sdk.bulkInvoiceBatchItem.update(batchId, batchItemId, bulkInvoiceItemUpdate).then((res: UpdateBulkInvoiceBatchItemResponse) => {

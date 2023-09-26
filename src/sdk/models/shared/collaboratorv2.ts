@@ -25,9 +25,6 @@ export enum TaxStatusCollaboratorV2 {
     Incomplete = "Incomplete",
 }
 
-/**
- * A single V2 Collaborator
- */
 export class CollaboratorV2 extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "achCreditAccount" })

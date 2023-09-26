@@ -1,4 +1,4 @@
-# collaborator
+# Collaborator
 
 ### Available Operations
 
@@ -26,17 +26,42 @@ import {
 const sdk = new Wingspan();
 
 sdk.collaborator.create({
-  clientData: "accusamus",
-  clientId: "quidem",
-  collaboratorGroupId: "voluptatibus",
-  formW9Data: "natus",
-  integration: "atque",
-  labels: "fugiat",
-  memberCompany: "ab",
-  memberEmail: "soluta",
-  memberId: "dolorum",
-  memberName: "iusto",
-  status: StatusCollaboratorCreateRequest.Inactive,
+  clientData: {
+    autoPayStrategy: AutoPayStrategyClientData.All,
+    externalId: "soluta",
+    verificationStratgy: VerificationStratgyClientData.LessThanNilGreaterThan,
+  },
+  clientId: "iusto",
+  collaboratorGroupId: "voluptate",
+  formW9Data: {
+    addressLine1: "deleniti",
+    addressLine2: "omnis",
+    city: "Portland",
+    companyStructure: CompanyStructureMemberClientFormW9Info.Partnership,
+    country: "Republic of Korea",
+    dob: "ipsum",
+    ein: "voluptate",
+    firstName: "Makenzie",
+    lastName: "Ullrich",
+    legalBusinessName: "eius",
+    postalCode: "02783",
+    ssn: "saepe",
+    state: "suscipit",
+  },
+  integration: {
+    quickbooks: {
+      expenseAccountId: "minima",
+      vendorId: "repellendus",
+    },
+  },
+  labels: {
+    "similique": "alias",
+  },
+  memberCompany: "at",
+  memberEmail: "quaerat",
+  memberId: "tempora",
+  memberName: "vel",
+  status: StatusCollaboratorCreateRequest.LessThanNilGreaterThan,
 }).then((res: CreateCollaboratorResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -68,7 +93,7 @@ import { Wingspan } from "wingspan";
 import { DeleteCollaboratorRequest, DeleteCollaboratorResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "dolorum";
+const id: string = "officiis";
 
 sdk.collaborator.delete(id).then((res: DeleteCollaboratorResponse) => {
   if (res.statusCode == 200) {
@@ -101,7 +126,7 @@ import { Wingspan } from "wingspan";
 import { GetCollaboratorRequest, GetCollaboratorResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "deleniti";
+const id: string = "qui";
 
 sdk.collaborator.get(id).then((res: GetCollaboratorResponse) => {
   if (res.statusCode == 200) {
@@ -154,20 +179,20 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "omnis";
+const id: string = "dolorum";
 const collaboratorUpdateRequest: CollaboratorUpdateRequest = {
   clientData: {
-    autoPayStrategy: AutoPayStrategyClientData.LessThanNilGreaterThan,
-    externalId: "asperiores",
+    autoPayStrategy: AutoPayStrategyClientData.None,
+    externalId: "harum",
     verificationStratgy: VerificationStratgyClientData.All,
   },
-  form1099Balances: "voluptate",
+  form1099Balances: "quisquam",
   formW9Data: {},
-  integration: {
-    quickbooks: "aspernatur",
+  integration: "tempore",
+  labels: {
+    "numquam": "enim",
   },
-  labels: "amet",
-  status: StatusCollaboratorUpdateRequest.LessThanNilGreaterThan,
+  status: StatusCollaboratorUpdateRequest.Active,
 };
 
 sdk.collaborator.update(id, collaboratorUpdateRequest).then((res: UpdateCollaboratorResponse) => {

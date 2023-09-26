@@ -1,4 +1,4 @@
-# clientCollaboratorsV2
+# ClientCollaboratorsV2
 
 ### Available Operations
 

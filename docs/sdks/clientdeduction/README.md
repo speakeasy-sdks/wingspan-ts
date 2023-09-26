@@ -1,4 +1,4 @@
-# clientDeduction
+# ClientDeduction
 
 ### Available Operations
 
@@ -18,15 +18,15 @@ import { DeductionCreateRequestCurrency, TypeDeductionCreateRequest } from "wing
 const sdk = new Wingspan();
 
 sdk.clientDeduction.create({
-  amount: 5691.01,
-  clientId: "odit",
+  amount: 6974.29,
+  clientId: "ipsam",
   currency: DeductionCreateRequestCurrency.Usd,
-  memberId: "accusantium",
-  name: "Ebony Predovic",
-  priority: 4200.75,
-  sourceInvoiceId: "nam",
-  startDate: "eaque",
-  type: TypeDeductionCreateRequest.PostPayment,
+  memberId: "autem",
+  name: "Gary Streich",
+  priority: 166.27,
+  sourceInvoiceId: "fugiat",
+  startDate: "amet",
+  type: TypeDeductionCreateRequest.PrePayment,
 }).then((res: CreateClientDeductionResponse) => {
   if (res.statusCode == 200) {
     // handle response

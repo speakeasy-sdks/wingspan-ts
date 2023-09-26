@@ -18,9 +18,6 @@ export enum PayrollSettingsWorkflow {
     LessThanNilGreaterThan = "<nil>",
 }
 
-/**
- * The payroll settings for a member
- */
 export class PayrollSettings extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "calculationSettings1099" })

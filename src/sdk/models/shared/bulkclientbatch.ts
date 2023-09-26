@@ -14,9 +14,6 @@ export enum StatusBulkClientBatch {
     Failed = "Failed",
 }
 
-/**
- * A batch of items for importing as clients
- */
 export class BulkClientBatch extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "bulkClientBatchId" })

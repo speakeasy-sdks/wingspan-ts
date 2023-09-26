@@ -18,6 +18,9 @@ export class UpdateMemberClientRequest extends SpeakeasyBase {
 }
 
 export class UpdateMemberClientResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -27,9 +30,15 @@ export class UpdateMemberClientResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     memberClientSchema?: shared.MemberClientSchema;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 }

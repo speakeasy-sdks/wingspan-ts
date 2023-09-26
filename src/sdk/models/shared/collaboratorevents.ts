@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * List of events on collaborator
- */
 export class CollaboratorEvents extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "knowYourCustomerVerifiedAt" })

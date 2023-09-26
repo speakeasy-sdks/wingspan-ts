@@ -1,4 +1,4 @@
-# formW9
+# FormW9
 
 ### Available Operations
 
@@ -15,7 +15,7 @@ import { Wingspan } from "wingspan";
 import { DownloadFormW9Request, DownloadFormW9Response } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "hic";
+const id: string = "qui";
 
 sdk.formW9.download(id).then((res: DownloadFormW9Response) => {
   if (res.statusCode == 200) {

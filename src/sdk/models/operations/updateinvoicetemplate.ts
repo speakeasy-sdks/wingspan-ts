@@ -18,6 +18,9 @@ export class UpdateInvoiceTemplateRequest extends SpeakeasyBase {
 }
 
 export class UpdateInvoiceTemplateResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -27,9 +30,15 @@ export class UpdateInvoiceTemplateResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     invoiceTemplate?: shared.InvoiceTemplate;
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 }

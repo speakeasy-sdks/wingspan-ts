@@ -1,4 +1,4 @@
-# bulkPayableBatches
+# BulkPayableBatches
 
 ### Available Operations
 

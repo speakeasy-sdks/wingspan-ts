@@ -29,9 +29,6 @@ export enum StatusBulkInvoiceItem {
     Failed = "Failed",
 }
 
-/**
- * An item that will be converted into a invoice
- */
 export class BulkInvoiceItem extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "acceptedPaymentMethods" })

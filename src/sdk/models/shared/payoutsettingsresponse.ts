@@ -14,9 +14,6 @@ export enum PayoutPreferencesPayoutSettingsResponse {
     ECheck = "ECheck",
 }
 
-/**
- * The payout settings for a member
- */
 export class PayoutSettingsResponse extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: PayoutDestinationResponse })
     @Expose({ name: "payoutDestinations" })

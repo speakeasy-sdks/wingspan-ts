@@ -1,4 +1,4 @@
-# clientInvoiceTemplate
+# ClientInvoiceTemplate
 
 ### Available Operations
 
@@ -25,56 +25,58 @@ import {
 const sdk = new Wingspan();
 
 sdk.clientInvoiceTemplate.create({
-  accountId: "hic",
-  clientCompany: "recusandae",
-  clientEmail: "omnis",
+  accountId: "consequuntur",
+  clientCompany: "blanditiis",
+  clientEmail: "error",
   clientEmailCC: [
-    "facilis",
+    "eaque",
   ],
-  clientFirstName: "perspiciatis",
-  clientLastName: "voluptatem",
-  dueInDays: 7836.45,
-  frequency: "blanditiis",
+  clientFirstName: "occaecati",
+  clientLastName: "rerum",
+  dueInDays: 2378.93,
+  frequency: {
+    daily: false,
+    dayInInterval: 2672.62,
+    endDate: "iste",
+    every: 6790.91,
+    interval: IntervalFrequency.Month,
+    startDate: "pariatur",
+    twicePerMonth: false,
+  },
   invoiceData: {
     creditFeeHandling: {
-      clientAbsolutePercentage: 503.7,
-      clientPays: 5772.29,
-      memberPays: 6990.98,
+      clientAbsolutePercentage: 7301.22,
+      clientPays: 9644.9,
+      memberPays: 3119.45,
     },
-    currency: CurrencyClientInvoiceDataCreateRequest.Usd,
-    dueDate: "asperiores",
+    currency: CurrencyClientInvoiceDataCreateRequest.Cad,
+    dueDate: "aliquid",
     lineItems: [
       {
-        costPerUnit: 9342.14,
-        description: "modi",
-        detail: "iste",
-        discount: {
-          amount: 5356.33,
-          description: "pariatur",
-          percentage: 5899.1,
-        },
+        costPerUnit: 2123.9,
+        description: "dolorem",
+        detail: "dolor",
+        discount: "ipsum",
         integration: {
           quickbooks: {
-            expenseAccountId: "delectus",
-            itemId: "quaerat",
+            expenseAccountId: "cum",
+            itemId: "voluptate",
           },
         },
-        labels: {
-          "aliquid": "dolorem",
-        },
-        quantity: 2098.43,
-        reimbursableExpense: "qui",
-        totalCost: 2187.49,
-        unit: "hic",
+        labels: "reiciendis",
+        quantity: 2274.14,
+        reimbursableExpense: false,
+        totalCost: 2543.56,
+        unit: "veritatis",
       },
     ],
   },
-  memberId: "excepturi",
-  paymentMethodId: "cum",
+  memberId: "ipsa",
+  paymentMethodId: "ipsa",
   scheduleDates: [
-    "dignissimos",
+    "odio",
   ],
-  status: StatusClientInvoiceTemplateCreateRequest.Cancelled,
+  status: StatusClientInvoiceTemplateCreateRequest.Draft,
 }).then((res: CreateClientInvoiceTemplateResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -106,7 +108,7 @@ import { Wingspan } from "wingspan";
 import { GetClientInvoiceTemplateRequest, GetClientInvoiceTemplateResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "amet";
+const id: string = "accusamus";
 
 sdk.clientInvoiceTemplate.get(id).then((res: GetClientInvoiceTemplateResponse) => {
   if (res.statusCode == 200) {
@@ -140,11 +142,11 @@ import { UpdateClientInvoiceTemplateRequest, UpdateClientInvoiceTemplateResponse
 import { ClientInvoiceTemplateUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "dolorum";
+const id: string = "quidem";
 const clientInvoiceTemplateUpdateRequest: ClientInvoiceTemplateUpdateRequest = {
-  accountId: "numquam",
-  clientId: "veritatis",
-  paymentMethodId: "ipsa",
+  accountId: "voluptatibus",
+  clientId: "voluptas",
+  paymentMethodId: "natus",
 };
 
 sdk.clientInvoiceTemplate.update(id, clientInvoiceTemplateUpdateRequest).then((res: UpdateClientInvoiceTemplateResponse) => {

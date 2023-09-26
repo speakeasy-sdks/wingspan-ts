@@ -1,4 +1,4 @@
-# memberInvoice
+# MemberInvoice
 
 ### Available Operations
 
@@ -30,60 +30,49 @@ sdk.memberInvoice.create({
   acceptedPaymentMethods: [
     InvoiceCreateRequestAcceptedPaymentMethods.Credit,
   ],
-  attachments: {
-    customAttachmentIds: [
-      "consequuntur",
-    ],
-  },
-  client: "minus",
+  attachments: "totam",
+  client: {},
   collaborators: [
-    "sapiente",
+    "odio",
   ],
   creditFeeHandling: {
-    clientAbsolutePercentage: 2328.65,
-    clientPays: 4581.39,
-    memberPays: 5034.27,
+    clientAbsolutePercentage: 5775.43,
+    clientPays: 4145.67,
+    memberPays: 9594.34,
   },
-  currency: CurrencyInvoiceCreateRequest.Cad,
-  dueDate: "a",
-  integration: {
-    quickbooks: {
-      expenseAccountId: "esse",
-      itemId: "quasi",
-    },
-  },
-  invoiceNotes: "a",
-  labels: {
-    "sint": "pariatur",
-  },
+  currency: CurrencyInvoiceCreateRequest.Usd,
+  dueDate: "deserunt",
+  integration: "accusantium",
+  invoiceNotes: "porro",
+  labels: "quas",
   lateFeeHandling: {
-    frequency: "eveniet",
-    lateFeeAmount: 9924.3,
-    lateFeePercentage: 8155.24,
+    frequency: "deleniti",
+    lateFeeAmount: 1438.29,
+    lateFeePercentage: 6813.93,
   },
   lineItems: [
     {
-      costPerUnit: 850.01,
-      description: "consequuntur",
-      detail: "quasi",
-      discount: {
-        amount: 6336.08,
-        description: "aliquid",
-        percentage: 9492.98,
+      costPerUnit: 6494.63,
+      description: "incidunt",
+      detail: "atque",
+      discount: "minima",
+      integration: "fugit",
+      labels: {
+        "consequuntur": "ratione",
       },
-      integration: "earum",
-      labels: "in",
-      quantity: 2586.84,
+      quantity: 1294.12,
       reimbursableExpense: false,
-      totalCost: 8490.39,
-      unit: "soluta",
+      totalCost: 5789.22,
+      unit: "atque",
     },
   ],
-  member: "aliquam",
-  memberClientId: "sapiente",
-  metadata: "ullam",
-  notificationPreferences: "ullam",
-  status: StatusInvoiceCreateRequest.Cancelled,
+  member: "esse",
+  memberClientId: "eveniet",
+  metadata: {
+    purchaseOrderNumber: "veritatis",
+  },
+  notificationPreferences: "quod",
+  status: StatusInvoiceCreateRequest.PaymentInTransit,
 }).then((res: CreateMemberInvoiceResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -115,7 +104,7 @@ import { Wingspan } from "wingspan";
 import { DeleteMemberInvoiceRequest, DeleteMemberInvoiceResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "aut";
+const id: string = "vero";
 
 sdk.memberInvoice.delete(id).then((res: DeleteMemberInvoiceResponse) => {
   if (res.statusCode == 200) {
@@ -148,7 +137,7 @@ import { Wingspan } from "wingspan";
 import { GetMemberInvoiceRequest, GetMemberInvoiceResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "voluptatum";
+const id: string = "aliquid";
 
 sdk.memberInvoice.get(id).then((res: GetMemberInvoiceResponse) => {
   if (res.statusCode == 200) {
@@ -202,48 +191,56 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "qui";
+const id: string = "quasi";
 const invoiceUpdateRequest: InvoiceUpdateRequest = {
   acceptedPaymentMethods: [
     InvoiceUpdateRequestAcceptedPaymentMethods.LessThanNilGreaterThan,
   ],
-  attachments: "deleniti",
-  chargedFees: {
-    lateFee: {
-      amount: 996.15,
-      calculatedAt: "omnis",
-    },
-    processingFee: {
-      amount: 984.78,
-      calculatedAt: "at",
-    },
-  },
-  client: "voluptate",
+  attachments: "harum",
+  chargedFees: "rerum",
+  client: {},
   collaborators: [
-    "minima",
+    "distinctio",
   ],
-  creditFeeHandling: "consectetur",
+  creditFeeHandling: {
+    clientAbsolutePercentage: 270.69,
+    clientPays: 6360.61,
+    memberPays: 7313.98,
+  },
   dueDate: "adipisci",
   integration: {
-    quickbooks: {
-      expenseAccountId: "accusantium",
-      itemId: "rem",
-    },
+    quickbooks: "consequatur",
   },
-  invoiceNotes: "aut",
-  labels: {
-    "eum": "mollitia",
-  },
-  lateFeeHandling: "corrupti",
+  invoiceNotes: "minus",
+  labels: "sapiente",
+  lateFeeHandling: "esse",
   lineItems: [
-    "voluptatem",
+    {
+      costPerUnit: 5909.84,
+      description: "a",
+      detail: "nulla",
+      discount: {
+        amount: 4572.23,
+        description: "quasi",
+        percentage: 9518.75,
+      },
+      integration: {
+        quickbooks: {
+          expenseAccountId: "pariatur",
+          itemId: "possimus",
+        },
+      },
+      labels: "eveniet",
+      quantity: 9924.3,
+      reimbursableExpense: false,
+      totalCost: 850.01,
+      unit: "consequuntur",
+    },
   ],
-  member: "occaecati",
-  memberClientId: "numquam",
-  metadata: {
-    purchaseOrderNumber: "explicabo",
-  },
-  notificationPreferences: "aut",
+  member: "similique",
+  memberClientId: "culpa",
+  metadata: "tenetur",
+  notificationPreferences: "earum",
   status: StatusInvoiceUpdateRequest.Cancelled,
 };
 

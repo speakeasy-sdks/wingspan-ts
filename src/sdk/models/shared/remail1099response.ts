@@ -4,7 +4,4 @@
 
 import { SpeakeasyBase } from "../../../internal/utils";
 
-/**
- * Remail 1099 response
- */
 export class Remail1099Response extends SpeakeasyBase {}

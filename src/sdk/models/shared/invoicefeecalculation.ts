@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Fees on Invoice
- */
 export class InvoiceFeeCalculation extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "creditFeeTotal" })
