@@ -1,4 +1,5 @@
 # BulkInvoiceBatchItems
+(*bulkInvoiceBatchItems*)
 
 ### Available Operations
 

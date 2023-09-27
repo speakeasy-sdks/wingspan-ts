@@ -1,4 +1,5 @@
 # MemberClient
+(*memberClient*)
 
 ### Available Operations
 
