@@ -24,35 +24,29 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "tempora";
+const batchId: string = "online";
 const bulkInvoiceItemCreate: BulkInvoiceItemCreate = {
   acceptedPaymentMethods: [
     BulkInvoiceItemCreateAcceptedPaymentMethods.Manual,
   ],
-  amount: 7351.94,
-  bulkInvoiceBatchId: "labore",
-  bulkInvoiceItemMergeKey: "delectus",
-  bulkInvoiceItemReference: "eum",
-  clientEmail: "non",
-  clientExternalId: "eligendi",
-  creditFeeHandling: {
-    clientAbsolutePercentage: 3960.98,
-    clientPays: 5920.42,
-    memberPays: 8960.39,
-  },
-  dueDate: "sint",
-  invoiceNotes: "officia",
-  invoiceStatus: InvoiceStatusBulkInvoiceItemCreate.Open,
-  labels: {
-    "a": "dolorum",
-  },
-  lineItemDescription: "in",
-  lineItemDetail: "in",
-  memberClientId: "illum",
-  paidDate: "maiores",
-  projectName: "rerum",
-  reimbursableExpense: "magnam",
-  sendDate: "cumque",
+  amount: 8592.13,
+  bulkInvoiceBatchId: "innovative blue",
+  bulkInvoiceItemMergeKey: "grey technology East",
+  bulkInvoiceItemReference: "evolve",
+  clientEmail: "fuchsia Gasoline Screen",
+  clientExternalId: "physical Ameliorated",
+  creditFeeHandling: "after",
+  dueDate: "Intelligent Fish",
+  invoiceNotes: "Fiat",
+  invoiceStatus: InvoiceStatusBulkInvoiceItemCreate.Cancelled,
+  labels: "Account",
+  lineItemDescription: "Profound",
+  lineItemDetail: "metrics",
+  memberClientId: "Minivan",
+  paidDate: "Senior Mouse West",
+  projectName: "Towels likewise",
+  reimbursableExpense: "Praseodymium",
+  sendDate: "Rubber silver Indiana",
 };
 
 sdk.bulkInvoiceBatchItem.create(batchId, bulkInvoiceItemCreate).then((res: CreateBulkInvoiceBatchItemResponse) => {
@@ -87,8 +81,8 @@ import { Wingspan } from "wingspan";
 import { GetBulkInvoiceBatchItemRequest, GetBulkInvoiceBatchItemResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "facere";
-const batchItemId: string = "ea";
+const batchId: string = "female";
+const batchItemId: string = "program";
 
 sdk.bulkInvoiceBatchItem.get(batchId, batchItemId).then((res: GetBulkInvoiceBatchItemResponse) => {
   if (res.statusCode == 200) {
@@ -128,36 +122,30 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "aliquid";
-const batchItemId: string = "laborum";
+const batchId: string = "Van";
+const batchItemId: string = "East";
 const bulkInvoiceItemUpdate: BulkInvoiceItemUpdate = {
   acceptedPaymentMethods: [
-    BulkInvoiceItemUpdateAcceptedPaymentMethods.LessThanNilGreaterThan,
+    BulkInvoiceItemUpdateAcceptedPaymentMethods.Manual,
   ],
-  amount: 2497.96,
-  bulkInvoiceBatchId: "occaecati",
-  bulkInvoiceItemMergeKey: "enim",
-  bulkInvoiceItemReference: "accusamus",
-  clientEmail: "delectus",
-  clientExternalId: "quidem",
-  creditFeeHandling: {
-    clientAbsolutePercentage: 7252.55,
-    clientPays: 6596.69,
-    memberPays: 5013.24,
-  },
-  dueDate: "deleniti",
-  invoiceNotes: "sapiente",
-  invoiceStatus: InvoiceStatusBulkInvoiceItemUpdate.Open,
-  labels: {
-    "nisi": "vel",
-  },
-  lineItemDescription: "natus",
-  lineItemDetail: "omnis",
-  memberClientId: "molestiae",
-  paidDate: "perferendis",
-  projectName: "nihil",
-  reimbursableExpense: "distinctio",
-  sendDate: "id",
+  amount: 9914.64,
+  bulkInvoiceBatchId: "Quality",
+  bulkInvoiceItemMergeKey: "invoice Arizona",
+  bulkInvoiceItemReference: "mostly",
+  clientEmail: "dynamic white",
+  clientExternalId: "Carolina syndicate",
+  creditFeeHandling: "implement",
+  dueDate: "Baht Quality",
+  invoiceNotes: "Home users Sharable",
+  invoiceStatus: InvoiceStatusBulkInvoiceItemUpdate.Paid,
+  labels: "Northeast",
+  lineItemDescription: "Northwest Fantastic",
+  lineItemDetail: "Internal invoice",
+  memberClientId: "brightly",
+  paidDate: "frictionless haptic modulo",
+  projectName: "navigating Diesel Avon",
+  reimbursableExpense: "hungrily",
+  sendDate: "Global Northeast Xenogender",
 };
 
 sdk.bulkInvoiceBatchItem.update(batchId, batchItemId, bulkInvoiceItemUpdate).then((res: UpdateBulkInvoiceBatchItemResponse) => {

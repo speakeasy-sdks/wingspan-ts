@@ -24,33 +24,31 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "id";
+const batchId: string = "online";
 const bulkCollaboratorItemCreate: BulkCollaboratorItemCreate = {
-  collaboratorGroupId: "possimus",
-  collaboratorId: "aut",
+  collaboratorGroupId: "Extended South",
+  collaboratorId: "grey technology East",
   collaboratorStatus: CollaboratorStatusBulkCollaboratorItemCreate.Active,
-  company: "Smitham - Pacocha",
-  email: "Wanda.Wolf50@gmail.com",
-  externalId: "voluptatibus",
-  firstLastName: "ipsa",
+  company: "Borer LLC",
+  email: "Russel_Schumm@hotmail.com",
+  externalId: "volt physical Ameliorated",
+  firstLastName: "after",
   formW9Data: {
-    addressLine1: "voluptate",
-    addressLine2: "cum",
-    city: "North Ilianaboro",
-    companyStructure: CompanyStructureMemberClientFormW9Info.Partnership,
-    country: "Brazil",
-    dob: "corporis",
-    ein: "dolore",
-    firstName: "Jayden",
-    lastName: "Carter",
-    legalBusinessName: "harum",
-    postalCode: "84902",
-    ssn: "quidem",
-    state: "molestias",
+    addressLine1: "Bike",
+    addressLine2: "Buckinghamshire functionalities Grocery",
+    city: "New Baronbury",
+    companyStructure: CompanyStructureMemberClientFormW9Info.LLCCorporationC,
+    country: "Bulgaria",
+    dob: "animated Minivan",
+    ein: "Senior Mouse West",
+    firstName: "Judd",
+    lastName: "Hauck",
+    legalBusinessName: "Towels",
+    postalCode: "44747-2679",
+    ssn: "Sausages",
+    state: "round Lake Dollar",
   },
-  labels: {
-    "pariatur": "modi",
-  },
+  labels: "South",
 };
 
 sdk.bulkCollaboratorBatchItem.create(batchId, bulkCollaboratorItemCreate).then((res: CreateBulkCollaboratorBatchItemResponse) => {
@@ -85,8 +83,8 @@ import { Wingspan } from "wingspan";
 import { GetBulkCollaboratorBatchItemRequest, GetBulkCollaboratorBatchItemResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "praesentium";
-const batchItemId: string = "rem";
+const batchId: string = "female";
+const batchItemId: string = "program";
 
 sdk.bulkCollaboratorBatchItem.get(batchId, batchItemId).then((res: GetBulkCollaboratorBatchItemResponse) => {
   if (res.statusCode == 200) {
@@ -126,18 +124,20 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "voluptates";
-const batchItemId: string = "quasi";
+const batchId: string = "Van";
+const batchItemId: string = "East";
 const bulkCollaboratorItemUpdate: BulkCollaboratorItemUpdate = {
-  collaboratorGroupId: "repudiandae",
-  collaboratorId: "sint",
+  collaboratorGroupId: "dock Quality redundant",
+  collaboratorId: "Arizona Cotton extend",
   collaboratorStatus: CollaboratorStatusBulkCollaboratorItemUpdate.Active,
-  company: "Gottlieb, Hamill and Altenwerth",
-  email: "Roosevelt_Cole@hotmail.com",
-  externalId: "quibusdam",
-  firstLastName: "labore",
-  formW9Data: "qui",
-  labels: "cupiditate",
+  company: "Connelly - Nolan",
+  email: "Zakary.Towne@hotmail.com",
+  externalId: "JBOD",
+  firstLastName: "Quality guestbook driver",
+  formW9Data: "pascal",
+  labels: {
+    "officia": "Lev",
+  },
 };
 
 sdk.bulkCollaboratorBatchItem.update(batchId, batchItemId, bulkCollaboratorItemUpdate).then((res: UpdateBulkCollaboratorBatchItemResponse) => {

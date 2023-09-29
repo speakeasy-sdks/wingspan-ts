@@ -18,7 +18,7 @@ import { Wingspan } from "wingspan";
 import { DeleteClientDeductionIDRequest, DeleteClientDeductionIDResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "cumque";
+const id: string = "program";
 
 sdk.clientDeductionID.delete(id).then((res: DeleteClientDeductionIDResponse) => {
   if (res.statusCode == 200) {
@@ -51,7 +51,7 @@ import { Wingspan } from "wingspan";
 import { GetClientDeductionIDRequest, GetClientDeductionIDResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "corporis";
+const id: string = "female";
 
 sdk.clientDeductionID.get(id).then((res: GetClientDeductionIDResponse) => {
   if (res.statusCode == 200) {
@@ -89,14 +89,14 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "hic";
+const id: string = "Van";
 const deductionUpdateRequest: DeductionUpdateRequest = {
-  amount: 7299.91,
-  currency: CurrencyDeductionUpdateRequest.LessThanNilGreaterThan,
-  name: "Beatrice Lebsack II",
-  priority: 1999.96,
-  sourceInvoiceId: "eos",
-  startDate: "perferendis",
+  amount: 156.52,
+  currency: CurrencyDeductionUpdateRequest.Cad,
+  name: "dock Quality redundant",
+  priority: 9840.08,
+  sourceInvoiceId: "Islands",
+  startDate: "withdrawal extend",
   type: TypeDeductionUpdateRequest.PrePayment,
 };
 

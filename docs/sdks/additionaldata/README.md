@@ -21,10 +21,10 @@ import { AdditionalDataType } from "wingspan/dist/sdk/models/shared";
 const sdk = new Wingspan();
 
 sdk.additionalData.create({
-  key: "ab",
-  name: "Mrs. Marie O'Connell",
+  key: "<key>",
+  name: "bluetooth Extended",
   required: false,
-  type: AdditionalDataType.String,
+  type: AdditionalDataType.Boolean,
 }).then((res: CreateAdditionalDataResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -56,7 +56,7 @@ import { Wingspan } from "wingspan";
 import { DeleteAdditionalDataRequest, DeleteAdditionalDataResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "quo";
+const id: string = "program";
 
 sdk.additionalData.delete(id).then((res: DeleteAdditionalDataResponse) => {
   if (res.statusCode == 200) {
@@ -89,7 +89,7 @@ import { Wingspan } from "wingspan";
 import { GetAdditionalDataRequest, GetAdditionalDataResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "odit";
+const id: string = "female";
 
 sdk.additionalData.get(id).then((res: GetAdditionalDataResponse) => {
   if (res.statusCode == 200) {

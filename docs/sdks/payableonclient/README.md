@@ -26,60 +26,53 @@ const sdk = new Wingspan();
 
 sdk.payableOnClient.create({
   acceptedPaymentMethods: [
-    PayableCreateRequestAcceptedPaymentMethods.Credit,
+    PayableCreateRequestAcceptedPaymentMethods.Ach,
   ],
-  attachments: "sapiente",
-  client: "ullam",
-  collaboratorId: "reprehenderit",
+  attachments: "Configuration",
+  client: "innovative",
+  collaboratorId: "Cambridgeshire grey technology",
   creditFeeHandling: {
-    clientAbsolutePercentage: 3567.07,
-    clientPays: 3917.74,
-    memberPays: 163.28,
+    clientAbsolutePercentage: 0.86,
+    clientPays: 4552.22,
+    memberPays: 1697.27,
   },
-  currency: CurrencyPayableCreateRequest.Cad,
-  dueDate: "qui",
+  currency: CurrencyPayableCreateRequest.Usd,
+  dueDate: "male",
   integration: {
-    quickbooks: "deleniti",
+    quickbooks: {
+      expenseAccountId: "Screen mobile",
+      itemId: "Ameliorated Fresh",
+    },
   },
-  invoiceNotes: "itaque",
-  labels: {
-    "architecto": "omnis",
-  },
-  lateFeeHandling: {
-    frequency: "at",
-    lateFeeAmount: 920.27,
-    lateFeePercentage: 4541.62,
-  },
+  invoiceNotes: "overriding",
+  labels: "Fish",
+  lateFeeHandling: "Fiat",
   lineItems: [
     {
-      costPerUnit: 559.65,
-      description: "minima",
-      detail: "veritatis",
-      discount: "adipisci",
+      costPerUnit: 8946.95,
+      description: "Digitized fresh-thinking approach",
+      detail: "Northwest Direct",
+      discount: "animated",
       integration: {
         quickbooks: {
-          expenseAccountId: "accusantium",
-          itemId: "rem",
+          expenseAccountId: "Senior Mouse West",
+          itemId: "Towels likewise",
         },
       },
-      labels: "laudantium",
-      quantity: 4287.96,
-      reimbursableExpense: false,
-      totalCost: 680.74,
-      unit: "corrupti",
+      labels: "Praseodymium",
+      quantity: 7757.87,
+      reimbursableExpense: "woman",
+      totalCost: 1373.24,
+      unit: "radian",
     },
   ],
-  member: "voluptatem",
-  memberClientId: "dolor",
+  member: {},
+  memberClientId: "mmm lavender City",
   metadata: {
-    purchaseOrderNumber: "numquam",
+    purchaseOrderNumber: "incompatible overhang",
   },
-  notificationPreferences: {
-    sendInvoice: "voluptas",
-    sendReceipt: "dignissimos",
-    sendReminders: false,
-  },
-  status: StatusPayableCreateRequest.Draft,
+  notificationPreferences: "South",
+  status: StatusPayableCreateRequest.Cancelled,
 }).then((res: CreatePayableOnClientResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -133,67 +126,40 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "maiores";
+const id: string = "Van";
 const payableUpdateRequest: PayableUpdateRequest = {
   acceptedPaymentMethods: [
-    PayableUpdateRequestAcceptedPaymentMethods.Manual,
+    PayableUpdateRequestAcceptedPaymentMethods.Credit,
   ],
-  attachments: "voluptatibus",
-  chargedFees: "asperiores",
-  client: "ea",
+  attachments: "male",
+  chargedFees: "Quality",
+  client: "invoice",
   collaborators: [
-    "consequuntur",
+    "Islands",
   ],
-  creditFeeHandling: {
-    clientAbsolutePercentage: 6387.62,
-    clientPays: 8070.23,
-    memberPays: 4903.05,
-  },
-  dueDate: "officia",
-  integration: {
-    quickbooks: "quae",
-  },
-  invoiceNotes: "quaerat",
+  creditFeeHandling: "withdrawal",
+  dueDate: "white",
+  integration: "Carolina",
+  invoiceNotes: "immediately implement JBOD",
   labels: {
-    "quod": "labore",
+    "similique": "Representative",
   },
-  lateFeeHandling: "adipisci",
+  lateFeeHandling: "driver",
   lineItems: [
-    {
-      costPerUnit: 6625.05,
-      description: "suscipit",
-      detail: "velit",
-      discount: {
-        amount: 6658.59,
-        description: "recusandae",
-        percentage: 5173.09,
-      },
-      integration: {
-        quickbooks: "ducimus",
-      },
-      labels: {
-        "vel": "labore",
-      },
-      quantity: 8225.6,
-      reimbursableExpense: false,
-      totalCost: 7382.27,
-      unit: "commodi",
-    },
+    "pascal",
   ],
-  member: "corporis",
-  memberClientId: "reiciendis",
-  metadata: {
-    purchaseOrderNumber: "nemo",
-  },
+  member: {},
+  memberClientId: "Lev Wooden",
+  metadata: "Jaguar",
   notificationPreferences: {
-    sendInvoice: "aperiam",
+    sendInvoice: "brightly",
     sendReceipt: false,
     sendReminders: false,
   },
   paymentMethods: [
-    PayableUpdateRequestPaymentMethods.Credit,
+    PayableUpdateRequestPaymentMethods.Ach,
   ],
-  status: StatusPayableUpdateRequest.Cancelled,
+  status: StatusPayableUpdateRequest.Pending,
 };
 
 sdk.payableOnClient.update(id, payableUpdateRequest).then((res: UpdatePayableOnClientResponse) => {

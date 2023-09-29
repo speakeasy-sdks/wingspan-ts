@@ -29,51 +29,65 @@ const sdk = new Wingspan();
 
 sdk.memberInvoice.create({
   acceptedPaymentMethods: [
-    InvoiceCreateRequestAcceptedPaymentMethods.Credit,
+    InvoiceCreateRequestAcceptedPaymentMethods.Ach,
   ],
-  attachments: "totam",
-  client: {},
+  attachments: "Configuration",
+  client: "innovative",
   collaborators: [
-    "odio",
+    {
+      amount: 690.25,
+      currency: CurrencyInvoiceCollaboratorCreateRequest.Cad,
+      description: "Secured exuding throughput",
+      memberClientId: "East orange Northwest",
+    },
   ],
   creditFeeHandling: {
-    clientAbsolutePercentage: 5775.43,
-    clientPays: 4145.67,
-    memberPays: 9594.34,
+    clientAbsolutePercentage: 7926.2,
+    clientPays: 8559.52,
+    memberPays: 8165.88,
   },
-  currency: CurrencyInvoiceCreateRequest.Usd,
-  dueDate: "deserunt",
-  integration: "accusantium",
-  invoiceNotes: "porro",
-  labels: "quas",
+  currency: CurrencyInvoiceCreateRequest.Cad,
+  dueDate: "Polestar mobile",
+  integration: {
+    quickbooks: "Durham",
+  },
+  invoiceNotes: "South Intelligent Fish",
+  labels: "Fiat",
   lateFeeHandling: {
-    frequency: "deleniti",
-    lateFeeAmount: 1438.29,
-    lateFeePercentage: 6813.93,
+    frequency: "Account",
+    lateFeeAmount: 1009.66,
+    lateFeePercentage: 3577.62,
   },
   lineItems: [
     {
-      costPerUnit: 6494.63,
-      description: "incidunt",
-      detail: "atque",
-      discount: "minima",
-      integration: "fugit",
-      labels: {
-        "consequuntur": "ratione",
+      costPerUnit: 6519.85,
+      description: "Customer-focused encompassing standardization",
+      detail: "Minivan",
+      discount: {
+        amount: 6502.37,
+        description: "Cloned cohesive challenge",
+        percentage: 155.52,
       },
-      quantity: 1294.12,
+      integration: {
+        quickbooks: {
+          expenseAccountId: "Edinburg Investor",
+          itemId: "azure Dollar",
+        },
+      },
+      labels: "Bicycle",
+      quantity: 7823.67,
       reimbursableExpense: false,
-      totalCost: 5789.22,
-      unit: "atque",
+      totalCost: 1373.24,
+      unit: "radian",
     },
   ],
-  member: "esse",
-  memberClientId: "eveniet",
+  member: {},
+  memberClientId: "mmm lavender City",
   metadata: {
-    purchaseOrderNumber: "veritatis",
+    purchaseOrderNumber: "incompatible overhang",
   },
-  notificationPreferences: "quod",
-  status: StatusInvoiceCreateRequest.PaymentInTransit,
+  notificationPreferences: "South",
+  status: StatusInvoiceCreateRequest.Cancelled,
 }).then((res: CreateMemberInvoiceResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -105,7 +119,7 @@ import { Wingspan } from "wingspan";
 import { DeleteMemberInvoiceRequest, DeleteMemberInvoiceResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "vero";
+const id: string = "program";
 
 sdk.memberInvoice.delete(id).then((res: DeleteMemberInvoiceResponse) => {
   if (res.statusCode == 200) {
@@ -138,7 +152,7 @@ import { Wingspan } from "wingspan";
 import { GetMemberInvoiceRequest, GetMemberInvoiceResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "aliquid";
+const id: string = "female";
 
 sdk.memberInvoice.get(id).then((res: GetMemberInvoiceResponse) => {
   if (res.statusCode == 200) {
@@ -192,57 +206,37 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "quasi";
+const id: string = "Van";
 const invoiceUpdateRequest: InvoiceUpdateRequest = {
   acceptedPaymentMethods: [
-    InvoiceUpdateRequestAcceptedPaymentMethods.LessThanNilGreaterThan,
+    InvoiceUpdateRequestAcceptedPaymentMethods.Credit,
   ],
-  attachments: "harum",
-  chargedFees: "rerum",
-  client: {},
+  attachments: "male",
+  chargedFees: "Quality",
+  client: "invoice",
   collaborators: [
-    "distinctio",
+    "Islands",
   ],
-  creditFeeHandling: {
-    clientAbsolutePercentage: 270.69,
-    clientPays: 6360.61,
-    memberPays: 7313.98,
+  creditFeeHandling: "withdrawal",
+  dueDate: "white",
+  integration: "Carolina",
+  invoiceNotes: "immediately implement JBOD",
+  labels: {
+    "similique": "Representative",
   },
-  dueDate: "adipisci",
-  integration: {
-    quickbooks: "consequatur",
-  },
-  invoiceNotes: "minus",
-  labels: "sapiente",
-  lateFeeHandling: "esse",
+  lateFeeHandling: "driver",
   lineItems: [
-    {
-      costPerUnit: 5909.84,
-      description: "a",
-      detail: "nulla",
-      discount: {
-        amount: 4572.23,
-        description: "quasi",
-        percentage: 9518.75,
-      },
-      integration: {
-        quickbooks: {
-          expenseAccountId: "pariatur",
-          itemId: "possimus",
-        },
-      },
-      labels: "eveniet",
-      quantity: 9924.3,
-      reimbursableExpense: false,
-      totalCost: 850.01,
-      unit: "consequuntur",
-    },
+    "pascal",
   ],
-  member: "similique",
-  memberClientId: "culpa",
-  metadata: "tenetur",
-  notificationPreferences: "earum",
-  status: StatusInvoiceUpdateRequest.Cancelled,
+  member: {},
+  memberClientId: "Lev Wooden",
+  metadata: "Jaguar",
+  notificationPreferences: {
+    sendInvoice: "brightly",
+    sendReceipt: false,
+    sendReminders: false,
+  },
+  status: StatusInvoiceUpdateRequest.Overdue,
 };
 
 sdk.memberInvoice.update(id, invoiceUpdateRequest).then((res: UpdateMemberInvoiceResponse) => {

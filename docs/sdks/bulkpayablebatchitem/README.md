@@ -23,24 +23,26 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "et";
+const batchId: string = "online";
 const bulkPayableItemCreate: BulkPayableItemCreate = {
-  amount: 5699.65,
-  attachmentId: "ullam",
-  bulkPayableBatchId: "provident",
-  bulkPayableItemMergeKey: "quos",
-  bulkPayableItemReference: "sint",
-  collaboratorEmail: "accusantium",
-  collaboratorExternalId: "mollitia",
-  collaboratorId: "reiciendis",
-  dueDate: "mollitia",
-  labels: "eum",
-  lineItemDescription: "dolor",
-  lineItemDetail: "necessitatibus",
-  paidDate: "odit",
-  payableNotes: "nemo",
-  payableStatus: PayableStatusBulkPayableItemCreate.Draft,
-  reimbursableExpense: "doloribus",
+  amount: 6384.24,
+  attachmentId: "Money blue shred",
+  bulkPayableBatchId: "technology East",
+  bulkPayableItemMergeKey: "evolve",
+  bulkPayableItemReference: "fuchsia Gasoline Screen",
+  collaboratorEmail: "physical Ameliorated",
+  collaboratorExternalId: "after",
+  collaboratorId: "Intelligent Fish",
+  dueDate: "Fiat",
+  labels: {
+    "qui": "Account",
+  },
+  lineItemDescription: "Profound",
+  lineItemDetail: "metrics",
+  paidDate: "Minivan",
+  payableNotes: "Senior Mouse West",
+  payableStatus: PayableStatusBulkPayableItemCreate.Approved,
+  reimbursableExpense: "Edinburg",
   workflowSubStatus: WorkflowSubStatusBulkPayableItemCreate.LessThanNilGreaterThan,
 };
 
@@ -76,8 +78,8 @@ import { Wingspan } from "wingspan";
 import { GetBulkPayableBatchItemRequest, GetBulkPayableBatchItemResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "eius";
-const batchItemId: string = "maxime";
+const batchId: string = "female";
+const batchItemId: string = "program";
 
 sdk.bulkPayableBatchItem.get(batchId, batchItemId).then((res: GetBulkPayableBatchItemResponse) => {
   if (res.statusCode == 200) {
@@ -116,25 +118,25 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "deleniti";
-const batchItemId: string = "facilis";
+const batchId: string = "Van";
+const batchItemId: string = "East";
 const bulkPayableItemUpdate: BulkPayableItemUpdate = {
-  amount: 4479.26,
-  attachmentId: "architecto",
-  bulkPayableBatchId: "architecto",
-  bulkPayableItemMergeKey: "repudiandae",
-  bulkPayableItemReference: "ullam",
-  collaboratorEmail: "expedita",
-  collaboratorExternalId: "nihil",
-  collaboratorId: "repellat",
-  dueDate: "quibusdam",
-  labels: "saepe",
-  lineItemDescription: "pariatur",
-  lineItemDetail: "accusantium",
-  paidDate: "consequuntur",
-  payableNotes: "praesentium",
-  payableStatus: PayableStatusBulkPayableItemUpdate.Paid,
-  reimbursableExpense: "sunt",
+  amount: 7084.55,
+  attachmentId: "Metal cheater Islands",
+  bulkPayableBatchId: "withdrawal extend",
+  bulkPayableItemMergeKey: "bifurcated",
+  bulkPayableItemReference: "silver immediately",
+  collaboratorEmail: "East",
+  collaboratorExternalId: "Bicycle guestbook",
+  collaboratorId: "Galveston pascal",
+  dueDate: "Division Northeast Wooden",
+  labels: "Jaguar",
+  lineItemDescription: "visionary Buckinghamshire frictionless",
+  lineItemDetail: "parse possimus",
+  paidDate: "Turkish Avon",
+  payableNotes: "hungrily",
+  payableStatus: PayableStatusBulkPayableItemUpdate.Cancelled,
+  reimbursableExpense: false,
   workflowSubStatus: BulkPayableItemUpdateWorkflowSubStatus.LessThanNilGreaterThan,
 };
 

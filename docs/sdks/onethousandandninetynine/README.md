@@ -20,8 +20,8 @@ import { Calculate1099Response } from "wingspan/dist/sdk/models/operations";
 const sdk = new Wingspan();
 
 sdk.oneThousandAndNinetyNine.calculate({
-  memberClientId: "unde",
-  year: 8579.46,
+  memberClientId: "green Practical",
+  year: 7783.47,
 }).then((res: Calculate1099Response) => {
   if (res.statusCode == 200) {
     // handle response
@@ -55,9 +55,9 @@ import { Mark1099Response } from "wingspan/dist/sdk/models/operations";
 const sdk = new Wingspan();
 
 sdk.oneThousandAndNinetyNine.mark({
-  memberId: "corrupti",
-  submissionIndex: 8472.52,
-  year: 4236.55,
+  memberId: "Avon",
+  submissionIndex: 3695.9,
+  year: 3706.5,
 }).then((res: Mark1099Response) => {
   if (res.statusCode == 200) {
     // handle response
@@ -92,15 +92,15 @@ const sdk = new Wingspan();
 
 sdk.oneThousandAndNinetyNine.remail({
   address: {
-    addressLine1: "error",
-    addressLine2: "deserunt",
-    city: "South Eli",
-    postalCode: "09234-7854",
-    state: "excepturi",
+    addressLine1: "purple",
+    addressLine2: "Dell Incredible",
+    city: "West Teresaton",
+    postalCode: "13750",
+    state: "hmph why architectures",
   },
-  documentIndex: 3927.85,
-  memberId: "recusandae",
-  year: 8360.79,
+  documentIndex: 4391.23,
+  memberId: "firmware Other Rubber",
+  year: 7578.67,
 }).then((res: Remail1099Response) => {
   if (res.statusCode == 200) {
     // handle response

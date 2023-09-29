@@ -26,18 +26,24 @@ import {
 const sdk = new Wingspan();
 
 sdk.memberClient.create({
-  clientId: "tempora",
-  company: "Cole LLC",
+  clientId: "bluetooth Extended",
+  company: "Schaefer Inc",
   emailCC: [
-    "ipsa",
+    "shred",
   ],
-  emailTo: "molestiae",
-  integration: "odio",
-  labels: "esse",
-  memberData: "rem",
-  memberId: "fuga",
-  name: "Yvette Stehr",
-  status: StatusMemberClientCreateRequest.Inactive,
+  emailTo: "technology East",
+  integration: "evolve",
+  labels: {
+    "minus": "SUV",
+  },
+  memberData: {
+    autoPayRequirement: AutoPayRequirementMemberData.None,
+    externalId: "volt physical Ameliorated",
+    shareTaxDocument: ShareTaxDocumentMemberData.Allow,
+  },
+  memberId: "South Intelligent Fish",
+  name: "Fiat",
+  status: StatusMemberClientCreateRequest.LessThanNilGreaterThan,
 }).then((res: CreateMemberClientResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -69,7 +75,7 @@ import { Wingspan } from "wingspan";
 import { DeleteMemberClientRequest, DeleteMemberClientResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "assumenda";
+const id: string = "program";
 
 sdk.memberClient.delete(id).then((res: DeleteMemberClientResponse) => {
   if (res.statusCode == 200) {
@@ -102,7 +108,7 @@ import { Wingspan } from "wingspan";
 import { GetMemberClientRequest, GetMemberClientResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "eos";
+const id: string = "female";
 
 sdk.memberClient.get(id).then((res: GetMemberClientResponse) => {
   if (res.statusCode == 200) {
@@ -158,29 +164,55 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "praesentium";
+const id: string = "Van";
 const memberClientUpdateRequest: MemberClientUpdateRequest = {
-  clientData: {
-    autoPayStrategy: AutoPayStrategyClientData.All,
-    externalId: "ipsa",
-    verificationStratgy: VerificationStratgyClientData.All,
-  },
-  clientId: "quidem",
-  company: "Satterfield Group",
+  clientData: "Reactive",
+  clientId: "Metal cheater Islands",
+  company: "King - Hills",
   emailCC: [
-    "quo",
+    "extend",
   ],
-  emailTo: "fuga",
-  form1099Balances: "eos",
-  formW9Data: "ab",
+  emailTo: "bifurcated",
+  form1099Balances: {
+    twoThousandAndTwentyOne: {
+      adjustments: 9936.8,
+      correction: {
+        address: "implement",
+        companyStructure: CompanyStructurece853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481.LLCCorporationS,
+        ein: "Bicycle guestbook",
+        firstName: "Juliet",
+        lastName: "Barton",
+        legalBusinessName: "pascal Gasoline",
+        ssn: "Northeast Wooden",
+        totalAmount: 3529.19,
+      },
+      deliveryMethod: DeliveryMethodCollaboratorForm1099BalancesUpdateRequest.Mail,
+      dispute: {
+        amount: 8246.79,
+        comment: "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+        status: Status8a9c6cb49482a98cdd603ff09858cdc3e5ef6ad9807c876c4161d925a96694a5.LessThanNilGreaterThan,
+      },
+      events: "brightly",
+      status: StatusCollaboratorForm1099BalancesUpdateRequest.Accepted,
+    },
+    twoThousandAndTwentyTwo: "compressing",
+  },
+  formW9Data: "haptic",
   integration: {
-    quickbooks: "tempora",
+    quickbooks: {
+      customerId: "navigating Diesel Avon",
+      expenseAccountId: "hungrily",
+      itemId: "Global Northeast Xenogender",
+      vendorId: "West",
+    },
   },
-  labels: {
-    "ipsam": "aspernatur",
+  labels: "Southeast",
+  memberData: {
+    autoPayRequirement: AutoPayRequirementMemberData.LessThanNilGreaterThan,
+    externalId: "pascal Plastic",
+    shareTaxDocument: ShareTaxDocumentMemberData.Allow,
   },
-  memberData: "quo",
-  name: "Sophie Bayer",
+  name: "male",
   status: StatusMemberClientUpdateRequest.Inactive,
 };
 

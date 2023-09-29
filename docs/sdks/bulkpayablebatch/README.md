@@ -22,7 +22,7 @@ import { BulkPayableBatchCreateProcessingStrategy } from "wingspan/dist/sdk/mode
 const sdk = new Wingspan();
 
 sdk.bulkPayableBatch.create({
-  labels: "suscipit",
+  labels: "bluetooth",
   processingStrategy: BulkPayableBatchCreateProcessingStrategy.Single,
 }).then((res: CreateBulkPayableBatchResponse) => {
   if (res.statusCode == 200) {
@@ -55,7 +55,7 @@ import { Wingspan } from "wingspan";
 import { DeleteBulkPayableBatchRequest, DeleteBulkPayableBatchResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "nobis";
+const batchId: string = "program";
 
 sdk.bulkPayableBatch.delete(batchId).then((res: DeleteBulkPayableBatchResponse) => {
   if (res.statusCode == 200) {
@@ -88,7 +88,7 @@ import { Wingspan } from "wingspan";
 import { GetBulkPayableBatchRequest, GetBulkPayableBatchResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "eum";
+const batchId: string = "female";
 
 sdk.bulkPayableBatch.get(batchId).then((res: GetBulkPayableBatchResponse) => {
   if (res.statusCode == 200) {
@@ -122,10 +122,10 @@ import { UpdateBulkPayableBatchRequest, UpdateBulkPayableBatchResponse } from "w
 import { BulkPayableBatchUpdate, StatusBulkPayableBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "vero";
+const batchId: string = "Van";
 const bulkPayableBatchUpdate: BulkPayableBatchUpdate = {
-  labels: "architecto",
-  status: StatusBulkPayableBatchUpdate.Pending,
+  labels: "Reactive",
+  status: StatusBulkPayableBatchUpdate.LessThanNilGreaterThan,
 };
 
 sdk.bulkPayableBatch.update(batchId, bulkPayableBatchUpdate).then((res: UpdateBulkPayableBatchResponse) => {

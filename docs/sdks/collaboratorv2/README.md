@@ -16,7 +16,7 @@ import { Wingspan } from "wingspan";
 import { GetCollaboratorV2Request, GetCollaboratorV2Response } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const memberId: string = "aut";
+const memberId: string = "female";
 
 sdk.collaboratorV2.get(memberId).then((res: GetCollaboratorV2Response) => {
   if (res.statusCode == 200) {

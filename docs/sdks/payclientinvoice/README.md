@@ -17,11 +17,11 @@ import { PostPayClientInvoiceRequest, PostPayClientInvoiceResponse } from "wings
 import { PayRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const invoiceId: string = "eius";
+const invoiceId: string = "payment";
 const payRequest: PayRequest = {
-  accountId: "libero",
-  paymentMethodId: "illum",
-  plaidPublicToken: "soluta",
+  accountId: "base mealy Metrics",
+  paymentMethodId: "Market",
+  plaidPublicToken: "Grenada",
 };
 
 sdk.payClientInvoice.post(invoiceId, payRequest).then((res: PostPayClientInvoiceResponse) => {

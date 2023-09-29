@@ -29,8 +29,8 @@ import { Calculate1099Response } from "wingspan/dist/sdk/models/operations";
 const sdk = new Wingspan();
 
 sdk.oneThousandAndNinetyNine.calculate({
-  memberClientId: "distinctio",
-  year: 8442.66,
+  memberClientId: "green Practical",
+  year: 7783.47,
 }).then((res: Calculate1099Response) => {
   if (res.statusCode == 200) {
     // handle response

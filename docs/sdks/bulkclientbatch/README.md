@@ -20,7 +20,7 @@ import { CreateBulkClientBatchResponse } from "wingspan/dist/sdk/models/operatio
 const sdk = new Wingspan();
 
 sdk.bulkClientBatch.create({
-  labels: "iste",
+  labels: "bluetooth",
 }).then((res: CreateBulkClientBatchResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -52,7 +52,7 @@ import { Wingspan } from "wingspan";
 import { GetBulkClientBatchRequest, GetBulkClientBatchResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "dolor";
+const batchId: string = "female";
 
 sdk.bulkClientBatch.get(batchId).then((res: GetBulkClientBatchResponse) => {
   if (res.statusCode == 200) {
@@ -86,9 +86,9 @@ import { UpdateBulkClientBatchRequest, UpdateBulkClientBatchResponse } from "win
 import { BulkBatchUpdate, StatusBulkBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "natus";
+const batchId: string = "Van";
 const bulkBatchUpdate: BulkBatchUpdate = {
-  labels: "hic",
+  labels: "Reactive",
   status: StatusBulkBatchUpdate.LessThanNilGreaterThan,
 };
 

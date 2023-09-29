@@ -19,20 +19,20 @@ import { CreatePayoutDebitCardRequest, CreatePayoutDebitCardResponse } from "win
 import { Address, CheckbookCardCreate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const memberId: string = "saepe";
+const memberId: string = "online";
 const checkbookCardCreate: CheckbookCardCreate = {
   address: {
-    addressLine1: "dolore",
-    addressLine2: "sunt",
-    city: "Deltona",
-    postalCode: "21498",
-    state: "consectetur",
+    addressLine1: "Money blue shred",
+    addressLine2: "technology East",
+    city: "West Astridcester",
+    postalCode: "88558-7496",
+    state: "Durham after",
   },
-  cardNumber: "corporis",
-  cvv: "harum",
-  expMM: "laboriosam",
-  expYYYY: "ipsa",
-  name: "Randolph Bruen",
+  cardNumber: "Intelligent Fish",
+  cvv: "Fiat",
+  expMM: "Grocery Borders Northwest",
+  expYYYY: "Kentucky animated",
+  name: "Interactions Senior Mouse",
 };
 
 sdk.payoutDebitCard.create(memberId, checkbookCardCreate).then((res: CreatePayoutDebitCardResponse) => {
@@ -67,8 +67,8 @@ import { Wingspan } from "wingspan";
 import { DeletePayoutDebitCardRequest, DeletePayoutDebitCardResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "tempora";
-const memberId: string = "aspernatur";
+const id: string = "program";
+const memberId: string = "Designer";
 
 sdk.payoutDebitCard.delete(id, memberId).then((res: DeletePayoutDebitCardResponse) => {
   if (res.statusCode == 200) {
@@ -102,8 +102,8 @@ import { Wingspan } from "wingspan";
 import { GetPayoutDebitCardRequest, GetPayoutDebitCardResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "voluptas";
-const memberId: string = "voluptas";
+const id: string = "female";
+const memberId: string = "program";
 
 sdk.payoutDebitCard.get(id, memberId).then((res: GetPayoutDebitCardResponse) => {
   if (res.statusCode == 200) {

@@ -20,8 +20,8 @@ import {
 } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const eligibilityRequirementId: string = "aperiam";
-const id: string = "delectus";
+const eligibilityRequirementId: string = "program";
+const id: string = "Designer";
 
 sdk.collaboratorGroupEligibilityRequirement.delete(eligibilityRequirementId, id).then((res: DeleteCollaboratorGroupEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
@@ -59,10 +59,10 @@ import {
 import { CollaboratorGroupRequirementUpdate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const eligibilityRequirementId: string = "dolorem";
-const id: string = "dolore";
+const eligibilityRequirementId: string = "Cruiser";
+const id: string = "Tandem";
 const collaboratorGroupRequirementUpdate: CollaboratorGroupRequirementUpdate = {
-  newEligibilityRequirementId: "labore",
+  newEligibilityRequirementId: "Bicycle",
 };
 
 sdk.collaboratorGroupEligibilityRequirement.replace(eligibilityRequirementId, id, collaboratorGroupRequirementUpdate).then((res: ReplaceCollaboratorGroupEligibilityRequirementResponse) => {

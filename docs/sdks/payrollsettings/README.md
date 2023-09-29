@@ -17,7 +17,7 @@ import { Wingspan } from "wingspan";
 import { GetPayrollSettingsRequest, GetPayrollSettingsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "dolore";
+const id: string = "female";
 
 sdk.payrollSettings.get(id).then((res: GetPayrollSettingsResponse) => {
   if (res.statusCode == 200) {
@@ -66,40 +66,24 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "aliquam";
+const id: string = "Van";
 const payrollSettingsUpdate: PayrollSettingsUpdate = {
-  calculationSettings1099: {
-    cardProcessingFees: CardProcessingFeesCalculationSettings1099.LessThanNilGreaterThan,
-    offPlatformPayments: OffPlatformPaymentsCalculationSettings1099.Exclude,
-    reimbursableExpenses: ReimbursableExpensesCalculationSettings1099.Include,
-    stateTaxId: {
-      "blanditiis": "quas",
-    },
-    thresholdAmount: 9425.84,
-  },
-  enablePlannedPayroll: "culpa",
-  enableProcessDaysBeforeDue: false,
-  frequency: {
-    daily: false,
-    dayInInterval: 9402.1,
-    endDate: "exercitationem",
-    every: 7507.65,
-    interval: IntervalFrequencyUpdate.Week,
-    startDate: "rerum",
-    twicePerMonth: "reiciendis",
-  },
-  fundingSource: "asperiores",
-  issue1099s: false,
-  processDaysBeforeDue: 4518.22,
+  calculationSettings1099: "Reactive",
+  enablePlannedPayroll: false,
+  enableProcessDaysBeforeDue: "Quality",
+  frequency: "invoice",
+  fundingSource: "Islands",
+  issue1099s: "withdrawal",
+  processDaysBeforeDue: 3115.07,
   scheduleDates: [
     {
-      date: "ab",
-      invoiceTemplateId: "iste",
+      date: "bifurcated",
+      invoiceTemplateId: "silver immediately",
       status: StatusScheduleDateUpdate.Completed,
     },
   ],
-  status: StatusPayrollSettingsUpdate.Cancelled,
-  workflow: WorkflowPayrollSettingsUpdate.SingleStage,
+  status: StatusPayrollSettingsUpdate.Active,
+  workflow: WorkflowPayrollSettingsUpdate.DualStage,
 };
 
 sdk.payrollSettings.update(id, payrollSettingsUpdate).then((res: UpdatePayrollSettingsResponse) => {

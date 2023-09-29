@@ -23,8 +23,8 @@ const sdk = new Wingspan();
 
 sdk.eligibilityRequirement.create({
   requirementType: EligibilityRequirementCreateRequestRequirementType.Signature,
-  templateId: "quas",
-  validFor: 9295.3,
+  templateId: "bluetooth Extended",
+  validFor: 1343.65,
 }).then((res: CreateEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -56,7 +56,7 @@ import { Wingspan } from "wingspan";
 import { DeleteEligibilityRequirementRequest, DeleteEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "consequatur";
+const id: string = "program";
 
 sdk.eligibilityRequirement.delete(id).then((res: DeleteEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
@@ -89,7 +89,7 @@ import { Wingspan } from "wingspan";
 import { GetEligibilityRequirementRequest, GetEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "est";
+const id: string = "female";
 
 sdk.eligibilityRequirement.get(id).then((res: GetEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
@@ -126,11 +126,11 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "repellendus";
+const id: string = "Van";
 const eligibilityRequirementUpdateRequest: EligibilityRequirementUpdateRequest = {
   requirementType: EligibilityRequirementUpdateRequestRequirementType.Signature,
-  templateId: "porro",
-  validFor: 9843.3,
+  templateId: "Reactive",
+  validFor: 9914.64,
 };
 
 sdk.eligibilityRequirement.update(id, eligibilityRequirementUpdateRequest).then((res: UpdateEligibilityRequirementResponse) => {

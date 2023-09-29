@@ -22,14 +22,14 @@ import { DeductionCreateRequestCurrency, TypeDeductionCreateRequest } from "wing
 const sdk = new Wingspan();
 
 sdk.collaboratorDeduction.create({
-  amount: 9574.51,
-  clientId: "totam",
-  currency: DeductionCreateRequestCurrency.Usd,
-  memberId: "sit",
-  name: "Luis Cremin",
-  priority: 3741.7,
-  sourceInvoiceId: "deserunt",
-  startDate: "quam",
+  amount: 4865.89,
+  clientId: "Configuration Money",
+  currency: DeductionCreateRequestCurrency.Cad,
+  memberId: "shred",
+  name: "technology East",
+  priority: 1697.27,
+  sourceInvoiceId: "Northwest",
+  startDate: "SUV quantify Polestar",
   type: TypeDeductionCreateRequest.PrePayment,
 }).then((res: CreateCollaboratorDeductionResponse) => {
   if (res.statusCode == 200) {
@@ -62,7 +62,7 @@ import { Wingspan } from "wingspan";
 import { DeleteCollaboratorDeductionRequest, DeleteCollaboratorDeductionResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "incidunt";
+const id: string = "program";
 
 sdk.collaboratorDeduction.delete(id).then((res: DeleteCollaboratorDeductionResponse) => {
   if (res.statusCode == 200) {
@@ -95,7 +95,7 @@ import { Wingspan } from "wingspan";
 import { GetCollaboratorDeductionRequest, GetCollaboratorDeductionResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "qui";
+const id: string = "female";
 
 sdk.collaboratorDeduction.get(id).then((res: GetCollaboratorDeductionResponse) => {
   if (res.statusCode == 200) {
@@ -133,15 +133,15 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "cupiditate";
+const id: string = "Van";
 const deductionUpdateRequest: DeductionUpdateRequest = {
-  amount: 8075.81,
-  currency: CurrencyDeductionUpdateRequest.LessThanNilGreaterThan,
-  name: "Keith Padberg",
-  priority: 1320.68,
-  sourceInvoiceId: "dolores",
-  startDate: "distinctio",
-  type: TypeDeductionUpdateRequest.LessThanNilGreaterThan,
+  amount: 156.52,
+  currency: CurrencyDeductionUpdateRequest.Cad,
+  name: "dock Quality redundant",
+  priority: 9840.08,
+  sourceInvoiceId: "Islands",
+  startDate: "withdrawal extend",
+  type: TypeDeductionUpdateRequest.PrePayment,
 };
 
 sdk.collaboratorDeduction.update(id, deductionUpdateRequest).then((res: UpdateCollaboratorDeductionResponse) => {

@@ -16,7 +16,7 @@ import { Wingspan } from "wingspan";
 import { GetInvoicePayableOnMemberRequest, GetInvoicePayableOnMemberResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "exercitationem";
+const id: string = "female";
 
 sdk.invoicePayableOnMember.get(id).then((res: GetInvoicePayableOnMemberResponse) => {
   if (res.statusCode == 200) {

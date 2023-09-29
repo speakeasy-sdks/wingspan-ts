@@ -22,12 +22,12 @@ import {
 import { BulkCalculation1099ItemCreate, CalculationTypeBulkCalculation1099ItemCreate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "optio";
+const batchId: string = "online";
 const bulkCalculation1099ItemCreate: BulkCalculation1099ItemCreate = {
   calculationType: CalculationTypeBulkCalculation1099ItemCreate.Submissions,
-  clientId: "beatae",
-  labels: "molestiae",
-  year: 2645.55,
+  clientId: "Money blue shred",
+  labels: "technology",
+  year: 0.86,
 };
 
 sdk.bulkCalculation1099BatchItem.create(batchId, bulkCalculation1099ItemCreate).then((res: CreateBulkCalculation1099BatchItemResponse) => {
@@ -62,8 +62,8 @@ import { Wingspan } from "wingspan";
 import { GetBulkCalculation1099BatchItemRequest, GetBulkCalculation1099BatchItemResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "qui";
-const batchItemId: string = "impedit";
+const batchId: string = "female";
+const batchItemId: string = "program";
 
 sdk.bulkCalculation1099BatchItem.get(batchId, batchItemId).then((res: GetBulkCalculation1099BatchItemResponse) => {
   if (res.statusCode == 200) {
@@ -101,13 +101,13 @@ import {
 import { BulkCalculation1099ItemUpdate, CalculationTypeBulkCalculation1099ItemUpdate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "cum";
-const batchItemId: string = "esse";
+const batchId: string = "Van";
+const batchItemId: string = "East";
 const bulkCalculation1099ItemUpdate: BulkCalculation1099ItemUpdate = {
-  calculationType: CalculationTypeBulkCalculation1099ItemUpdate.Balances,
-  clientId: "excepturi",
-  labels: "perferendis",
-  year: 3241.41,
+  calculationType: CalculationTypeBulkCalculation1099ItemUpdate.LessThanNilGreaterThan,
+  clientId: "Metal cheater Islands",
+  labels: "withdrawal",
+  year: 3115.07,
 };
 
 sdk.bulkCalculation1099BatchItem.update(batchId, batchItemId, bulkCalculation1099ItemUpdate).then((res: UpdateBulkCalculation1099BatchItemResponse) => {

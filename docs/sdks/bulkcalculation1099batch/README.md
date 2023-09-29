@@ -20,7 +20,7 @@ import { CreateBulkCalculation1099BatchResponse } from "wingspan/dist/sdk/models
 const sdk = new Wingspan();
 
 sdk.bulkCalculation1099Batch.create({
-  labels: "nam",
+  labels: "bluetooth",
 }).then((res: CreateBulkCalculation1099BatchResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -52,7 +52,7 @@ import { Wingspan } from "wingspan";
 import { GetBulkCalculation1099BatchRequest, GetBulkCalculation1099BatchResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "officia";
+const batchId: string = "female";
 
 sdk.bulkCalculation1099Batch.get(batchId).then((res: GetBulkCalculation1099BatchResponse) => {
   if (res.statusCode == 200) {
@@ -86,9 +86,9 @@ import { UpdateBulkCalculation1099BatchRequest, UpdateBulkCalculation1099BatchRe
 import { BulkBatchUpdate, StatusBulkBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "occaecati";
+const batchId: string = "Van";
 const bulkBatchUpdate: BulkBatchUpdate = {
-  labels: "deleniti",
+  labels: "Reactive",
   status: StatusBulkBatchUpdate.LessThanNilGreaterThan,
 };
 

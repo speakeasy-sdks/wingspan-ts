@@ -21,8 +21,8 @@ import { CreatePaymentEligibilityRequirementResponse } from "wingspan/dist/sdk/m
 const sdk = new Wingspan();
 
 sdk.paymentEligibilityRequirement.create({
-  field: "earum",
-  value: "facere",
+  field: "bluetooth Extended",
+  value: "blue",
 }).then((res: CreatePaymentEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -57,7 +57,7 @@ import {
 } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "numquam";
+const id: string = "program";
 
 sdk.paymentEligibilityRequirement.delete(id).then((res: DeletePaymentEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
@@ -93,7 +93,7 @@ import {
 } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "doloribus";
+const id: string = "female";
 
 sdk.paymentEligibilityRequirement.get(id).then((res: GetPaymentEligibilityRequirementResponse) => {
   if (res.statusCode == 200) {
@@ -130,9 +130,9 @@ import {
 import { PaymentEligibilityUpdateRequest, PaymentEligibilityUpdateRequestValue2 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "suscipit";
+const id: string = "Van";
 const paymentEligibilityUpdateRequest: PaymentEligibilityUpdateRequest = {
-  field: "reiciendis",
+  field: "Reactive",
   value: {},
 };
 

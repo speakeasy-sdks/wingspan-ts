@@ -19,40 +19,37 @@ import { CurrencyClientInvoiceCreateRequest } from "wingspan/dist/sdk/models/sha
 const sdk = new Wingspan();
 
 sdk.invoiceAsClient.create({
-  clientCompany: "voluptatibus",
-  clientEmail: "quisquam",
+  clientCompany: "bluetooth Extended",
+  clientEmail: "blue",
   clientEmailCC: [
-    "vero",
+    "shred",
   ],
-  clientFirstName: "omnis",
-  clientLastName: "quis",
-  creditFeeHandling: "delectus",
+  clientFirstName: "technology East",
+  clientLastName: "evolve",
+  creditFeeHandling: {
+    clientAbsolutePercentage: 7926.2,
+    clientPays: 8559.52,
+    memberPays: 8165.88,
+  },
   currency: CurrencyClientInvoiceCreateRequest.Cad,
-  dueDate: "consectetur",
+  dueDate: "Polestar mobile",
   lineItems: [
     {
-      costPerUnit: 8788.7,
-      description: "tenetur",
-      detail: "dignissimos",
-      discount: {
-        amount: 7155.61,
-        description: "quod",
-        percentage: 4861.6,
-      },
+      costPerUnit: 6562.56,
+      description: "Grass-roots 3rd generation data-warehouse",
+      detail: "South Intelligent Fish",
+      discount: "Fiat",
       integration: {
-        quickbooks: {
-          expenseAccountId: "vero",
-          itemId: "ducimus",
-        },
+        quickbooks: "Account",
       },
-      labels: "quibusdam",
-      quantity: 8489.44,
-      reimbursableExpense: "natus",
-      totalCost: 7733.26,
-      unit: "aut",
+      labels: "Profound",
+      quantity: 1325.85,
+      reimbursableExpense: "animated",
+      totalCost: 8424.64,
+      unit: "lumen",
     },
   ],
-  memberId: "voluptatibus",
+  memberId: "Senior Mouse West",
 }).then((res: CreateInvoiceAsClientResponse) => {
   if (res.statusCode == 200) {
     // handle response
