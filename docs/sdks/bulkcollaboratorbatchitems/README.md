@@ -1,4 +1,5 @@
 # BulkCollaboratorBatchItems
+(*bulkCollaboratorBatchItems*)
 
 ### Available Operations
 
@@ -15,7 +16,7 @@ import { Wingspan } from "wingspan";
 import { ListBulkCollaboratorBatchItemsRequest, ListBulkCollaboratorBatchItemsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "quos";
+const batchId: string = "Bicycle";
 
 sdk.bulkCollaboratorBatchItems.list(batchId).then((res: ListBulkCollaboratorBatchItemsResponse) => {
   if (res.statusCode == 200) {

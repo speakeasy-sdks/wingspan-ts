@@ -1,4 +1,5 @@
 # AdditionalSettings
+(*additionalSettings*)
 
 ### Available Operations
 
@@ -48,12 +49,12 @@ import { UpdateAdditionalSettingsRequest, UpdateAdditionalSettingsResponse } fro
 import { AdditionalDataUpdateRequest, TypeAdditionalDataUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "at";
+const id: string = "Van";
 const additionalDataUpdateRequest: AdditionalDataUpdateRequest = {
-  key: "at",
-  name: "Javier Schmidt",
+  key: "<key>",
+  name: "Reactive",
   required: false,
-  type: TypeAdditionalDataUpdateRequest.LessThanNilGreaterThan,
+  type: TypeAdditionalDataUpdateRequest.Boolean,
 };
 
 sdk.additionalSettings.update(id, additionalDataUpdateRequest).then((res: UpdateAdditionalSettingsResponse) => {

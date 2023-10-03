@@ -1,4 +1,5 @@
 # ClientInvoiceFees
+(*clientInvoiceFees*)
 
 ### Available Operations
 
@@ -18,8 +19,8 @@ import { CreateClientInvoiceFeesResponse } from "wingspan/dist/sdk/models/operat
 const sdk = new Wingspan();
 
 sdk.clientInvoiceFees.create({
-  contactName: "hic",
-  email: "Leo.Purdy@hotmail.com",
+  contactName: "bluetooth Extended",
+  email: "Pamela_Bernhard37@gmail.com",
 }).then((res: CreateClientInvoiceFeesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -51,7 +52,7 @@ import { Wingspan } from "wingspan";
 import { ListClientInvoiceFeesRequest, ListClientInvoiceFeesResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const invoiceId: string = "porro";
+const invoiceId: string = "Bicycle";
 
 sdk.clientInvoiceFees.list(invoiceId).then((res: ListClientInvoiceFeesResponse) => {
   if (res.statusCode == 200) {

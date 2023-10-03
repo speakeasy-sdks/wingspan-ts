@@ -1,4 +1,5 @@
 # CollaboratorToGroup
+(*collaboratorToGroup*)
 
 ### Available Operations
 
@@ -16,8 +17,8 @@ import { Wingspan } from "wingspan";
 import { AddCollaboratorToGroupRequest, AddCollaboratorToGroupResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const groupId: string = "adipisci";
-const id: string = "dolorum";
+const groupId: string = "transmit";
+const id: string = "calculate";
 
 sdk.collaboratorToGroup.add(groupId, id).then((res: AddCollaboratorToGroupResponse) => {
   if (res.statusCode == 200) {
@@ -51,8 +52,8 @@ import { Wingspan } from "wingspan";
 import { RemoveCollaboratorToGroupRequest, RemoveCollaboratorToGroupResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const groupId: string = "architecto";
-const id: string = "quae";
+const groupId: string = "Usability";
+const id: string = "Southwest";
 
 sdk.collaboratorToGroup.remove(groupId, id).then((res: RemoveCollaboratorToGroupResponse) => {
   if (res.statusCode == 200) {

@@ -1,4 +1,5 @@
 # BulkInvoiceBatch
+(*bulkInvoiceBatch*)
 
 ### Available Operations
 
@@ -20,7 +21,7 @@ import { BulkInvoiceBatchCreateProcessingStrategy } from "wingspan/dist/sdk/mode
 const sdk = new Wingspan();
 
 sdk.bulkInvoiceBatch.create({
-  labels: "magni",
+  labels: "bluetooth",
   processingStrategy: BulkInvoiceBatchCreateProcessingStrategy.Single,
 }).then((res: CreateBulkInvoiceBatchResponse) => {
   if (res.statusCode == 200) {
@@ -53,7 +54,7 @@ import { Wingspan } from "wingspan";
 import { GetBulkInvoiceBatchRequest, GetBulkInvoiceBatchResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "ipsam";
+const batchId: string = "female";
 
 sdk.bulkInvoiceBatch.get(batchId).then((res: GetBulkInvoiceBatchResponse) => {
   if (res.statusCode == 200) {
@@ -87,10 +88,10 @@ import { UpdateBulkInvoiceBatchRequest, UpdateBulkInvoiceBatchResponse } from "w
 import { BulkInvoiceBatchUpdate, StatusBulkInvoiceBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "alias";
+const batchId: string = "Van";
 const bulkInvoiceBatchUpdate: BulkInvoiceBatchUpdate = {
-  labels: "dolorum",
-  status: StatusBulkInvoiceBatchUpdate.Complete,
+  labels: "Reactive",
+  status: StatusBulkInvoiceBatchUpdate.LessThanNilGreaterThan,
 };
 
 sdk.bulkInvoiceBatch.update(batchId, bulkInvoiceBatchUpdate).then((res: UpdateBulkInvoiceBatchResponse) => {

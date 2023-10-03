@@ -1,4 +1,5 @@
 # BulkPayableBatchSummary
+(*bulkPayableBatchSummary*)
 
 ### Available Operations
 
@@ -15,7 +16,7 @@ import { Wingspan } from "wingspan";
 import { GetBulkPayableBatchSummaryRequest, GetBulkPayableBatchSummaryResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "pariatur";
+const batchId: string = "female";
 
 sdk.bulkPayableBatchSummary.get(batchId).then((res: GetBulkPayableBatchSummaryResponse) => {
   if (res.statusCode == 200) {

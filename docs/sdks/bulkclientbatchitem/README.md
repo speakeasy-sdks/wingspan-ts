@@ -1,4 +1,5 @@
 # BulkClientBatchItem
+(*bulkClientBatchItem*)
 
 ### Available Operations
 
@@ -26,21 +27,19 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "fuga";
+const batchId: string = "online";
 const bulkClientItemCreate: BulkClientItemCreate = {
-  clientStatus: ClientStatusBulkClientItemCreate.Inactive,
-  company: "Moore - Kertzmann",
-  email: "Maxie96@hotmail.com",
-  externalId: "est",
-  firstLastName: "mollitia",
-  integration: {
-    quickbooks: "dolorem",
-  },
-  labels: "explicabo",
+  clientStatus: ClientStatusBulkClientItemCreate.Pending,
+  company: "Johnson, Green and Collier",
+  email: "Annie.Zieme95@hotmail.com",
+  externalId: "East orange Northwest",
+  firstLastName: "SUV quantify Polestar",
+  integration: "physical",
+  labels: "Durham",
   memberData: {
     autoPayRequirement: AutoPayRequirementMemberData.All,
-    externalId: "omnis",
-    shareTaxDocument: ShareTaxDocumentMemberData.Decline,
+    externalId: "Intelligent Fish",
+    shareTaxDocument: ShareTaxDocumentMemberData.Allow,
   },
 };
 
@@ -76,8 +75,8 @@ import { Wingspan } from "wingspan";
 import { GetBulkClientBatchItemRequest, GetBulkClientBatchItemResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "minima";
-const batchItemId: string = "excepturi";
+const batchId: string = "female";
+const batchItemId: string = "program";
 
 sdk.bulkClientBatchItem.get(batchId, batchItemId).then((res: GetBulkClientBatchItemResponse) => {
   if (res.statusCode == 200) {
@@ -120,17 +119,19 @@ import {
 } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const batchId: string = "accusantium";
-const batchItemId: string = "iure";
+const batchId: string = "Van";
+const batchItemId: string = "East";
 const bulkClientItemUpdate: BulkClientItemUpdate = {
   clientStatus: ClientStatusBulkClientItemUpdate.Pending,
-  company: "Williamson, Brakus and O'Hara",
-  email: "Lorine_Crooks58@gmail.com",
-  externalId: "numquam",
-  firstLastName: "commodi",
-  integration: "molestiae",
-  labels: "error",
-  memberData: "quis",
+  company: "Glover, Murazik and Paucek",
+  email: "Immanuel5@yahoo.com",
+  externalId: "mostly",
+  firstLastName: "dynamic white",
+  integration: "Carolina",
+  labels: {
+    "officiis": "East",
+  },
+  memberData: "Bicycle",
 };
 
 sdk.bulkClientBatchItem.update(batchId, batchItemId, bulkClientItemUpdate).then((res: UpdateBulkClientBatchItemResponse) => {

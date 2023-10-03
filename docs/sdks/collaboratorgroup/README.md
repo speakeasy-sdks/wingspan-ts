@@ -1,4 +1,5 @@
 # CollaboratorGroup
+(*collaboratorGroup*)
 
 ### Available Operations
 
@@ -19,12 +20,12 @@ import { CreateCollaboratorGroupResponse } from "wingspan/dist/sdk/models/operat
 const sdk = new Wingspan();
 
 sdk.collaboratorGroup.create({
-  collaboratorSettings: "molestias",
-  description: "temporibus",
+  collaboratorSettings: "bluetooth",
+  description: "Synchronised full-range emulation",
   eligibilityRequirements: [
-    "neque",
+    "blue",
   ],
-  name: "Mrs. Louise Kuhlman",
+  name: "grey technology East",
 }).then((res: CreateCollaboratorGroupResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -56,7 +57,7 @@ import { Wingspan } from "wingspan";
 import { GetCollaboratorGroupRequest, GetCollaboratorGroupResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "hic";
+const id: string = "female";
 
 sdk.collaboratorGroup.get(id).then((res: GetCollaboratorGroupResponse) => {
   if (res.statusCode == 200) {
@@ -90,18 +91,16 @@ import { UpdateCollaboratorGroupRequest, UpdateCollaboratorGroupResponse } from 
 import { CollaboratorGroupRequirement, CollaboratorGroupUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "voluptatem";
+const id: string = "Van";
 const collaboratorGroupUpdateRequest: CollaboratorGroupUpdateRequest = {
-  collaboratorSettings: {
-    "soluta": "nobis",
-  },
-  description: "et",
+  collaboratorSettings: "Reactive",
+  description: "Vision-oriented didactic migration",
   eligibilityRequirements: [
     {
-      eligibilityRequirementId: "ipsum",
+      eligibilityRequirementId: "invoice Arizona",
     },
   ],
-  name: "Gayle Lueilwitz",
+  name: "mostly",
 };
 
 sdk.collaboratorGroup.update(id, collaboratorGroupUpdateRequest).then((res: UpdateCollaboratorGroupResponse) => {

@@ -1,4 +1,5 @@
 # CodeToToken
+(*codeToToken*)
 
 ### Available Operations
 
@@ -16,10 +17,10 @@ import { ExchangeCodeToTokenRequest, ExchangeCodeToTokenResponse } from "wingspa
 import { CardTokenRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "eos";
+const id: string = "between";
 const cardTokenRequest: CardTokenRequest = {
-  verificationCode: "atque",
-  verificationToken: "sit",
+  verificationCode: "Canada Southwest panel",
+  verificationToken: "North Pickup noisily",
 };
 
 sdk.codeToToken.exchange(id, cardTokenRequest).then((res: ExchangeCodeToTokenResponse) => {

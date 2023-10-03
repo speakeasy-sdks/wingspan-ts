@@ -1,4 +1,5 @@
 # ClientInvoiceTemplate
+(*clientInvoiceTemplate*)
 
 ### Available Operations
 
@@ -25,56 +26,60 @@ import {
 const sdk = new Wingspan();
 
 sdk.clientInvoiceTemplate.create({
-  accountId: "consequuntur",
-  clientCompany: "blanditiis",
-  clientEmail: "error",
+  accountId: "bluetooth Extended",
+  clientCompany: "blue",
+  clientEmail: "grey technology East",
   clientEmailCC: [
-    "eaque",
+    "orange",
   ],
-  clientFirstName: "occaecati",
-  clientLastName: "rerum",
-  dueInDays: 2378.93,
-  frequency: {
-    daily: false,
-    dayInInterval: 2672.62,
-    endDate: "iste",
-    every: 6790.91,
-    interval: IntervalFrequency.Month,
-    startDate: "pariatur",
-    twicePerMonth: false,
-  },
+  clientFirstName: "male",
+  clientLastName: "Gasoline Screen mobile",
+  dueInDays: 6562.56,
+  frequency: "Durham",
   invoiceData: {
     creditFeeHandling: {
-      clientAbsolutePercentage: 7301.22,
-      clientPays: 9644.9,
-      memberPays: 3119.45,
+      clientAbsolutePercentage: 177.59,
+      clientPays: 5190.28,
+      memberPays: 2303.13,
     },
-    currency: CurrencyClientInvoiceDataCreateRequest.Cad,
-    dueDate: "aliquid",
+    currency: CurrencyClientInvoiceDataCreateRequest.Usd,
+    dueDate: "female",
     lineItems: [
       {
-        costPerUnit: 2123.9,
-        description: "dolorem",
-        detail: "dolor",
-        discount: "ipsum",
+        costPerUnit: 8291.42,
+        description: "Function-based tertiary collaboration",
+        detail: "Borders Northwest",
+        discount: {
+          amount: 1325.85,
+          description: "Fundamental systemic algorithm",
+          percentage: 8424.64,
+        },
         integration: {
           quickbooks: {
-            expenseAccountId: "cum",
-            itemId: "voluptate",
+            expenseAccountId: "East red",
+            itemId: "array Edinburg Investor",
           },
         },
-        labels: "reiciendis",
-        quantity: 2274.14,
+        labels: {
+          "quisquam": "likewise",
+        },
+        quantity: 4522.24,
         reimbursableExpense: false,
-        totalCost: 2543.56,
-        unit: "veritatis",
+        totalCost: 4963.23,
+        unit: "steradian",
       },
     ],
   },
-  memberId: "ipsa",
-  paymentMethodId: "ipsa",
+  memberId: "woman",
+  paymentMethodId: "Sausages",
   scheduleDates: [
-    "odio",
+    {
+      cutOffDate: "City meanwhile incompatible",
+      date: "Folk South digital",
+      invoiceId: "Southwest",
+      invoiceTemplateId: "Mongolia Maine sexy",
+      status: StatusScheduleDate.Skipped,
+    },
   ],
   status: StatusClientInvoiceTemplateCreateRequest.Draft,
 }).then((res: CreateClientInvoiceTemplateResponse) => {
@@ -108,7 +113,7 @@ import { Wingspan } from "wingspan";
 import { GetClientInvoiceTemplateRequest, GetClientInvoiceTemplateResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "accusamus";
+const id: string = "female";
 
 sdk.clientInvoiceTemplate.get(id).then((res: GetClientInvoiceTemplateResponse) => {
   if (res.statusCode == 200) {
@@ -142,11 +147,11 @@ import { UpdateClientInvoiceTemplateRequest, UpdateClientInvoiceTemplateResponse
 import { ClientInvoiceTemplateUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "quidem";
+const id: string = "Van";
 const clientInvoiceTemplateUpdateRequest: ClientInvoiceTemplateUpdateRequest = {
-  accountId: "voluptatibus",
-  clientId: "voluptas",
-  paymentMethodId: "natus",
+  accountId: "Reactive",
+  clientId: "Metal cheater Islands",
+  paymentMethodId: "withdrawal extend",
 };
 
 sdk.clientInvoiceTemplate.update(id, clientInvoiceTemplateUpdateRequest).then((res: UpdateClientInvoiceTemplateResponse) => {

@@ -1,4 +1,5 @@
 # Verification
+(*verification*)
 
 ### Available Operations
 
@@ -16,9 +17,9 @@ import { SendVerificationRequest, SendVerificationResponse } from "wingspan/dist
 import { CardCodeRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "quidem";
+const id: string = "hacking";
 const cardCodeRequest: CardCodeRequest = {
-  channel: "explicabo",
+  channel: "bluetooth Boynton",
 };
 
 sdk.verification.send(id, cardCodeRequest).then((res: SendVerificationResponse) => {

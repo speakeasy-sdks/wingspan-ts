@@ -1,4 +1,5 @@
 # Card
+(*card*)
 
 ### Available Operations
 
@@ -20,8 +21,14 @@ import { CreateCardResponse } from "wingspan/dist/sdk/models/operations";
 const sdk = new Wingspan();
 
 sdk.card.create({
-  requestPhysicalCard: false,
-  shippingAddress: "excepturi",
+  requestPhysicalCard: "bluetooth",
+  shippingAddress: {
+    addressLine1: "innovative blue",
+    addressLine2: "grey technology East",
+    city: "West Astridcester",
+    postalCode: "88558-7496",
+    state: "Durham after",
+  },
 }).then((res: CreateCardResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -53,7 +60,7 @@ import { Wingspan } from "wingspan";
 import { DeleteCardRequest, DeleteCardResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "odit";
+const id: string = "program";
 
 sdk.card.delete(id).then((res: DeleteCardResponse) => {
   if (res.statusCode == 200) {
@@ -86,7 +93,7 @@ import { Wingspan } from "wingspan";
 import { GetCardRequest, GetCardResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "ea";
+const id: string = "female";
 
 sdk.card.get(id).then((res: GetCardResponse) => {
   if (res.statusCode == 200) {
@@ -120,7 +127,7 @@ import { UpdateCardRequest, UpdateCardResponse } from "wingspan/dist/sdk/models/
 import { CardUpdateRequest, PropertiesCardUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "accusantium";
+const id: string = "Van";
 const cardUpdateRequest: CardUpdateRequest = {
   status: PropertiesCardUpdateRequest.Active,
 };

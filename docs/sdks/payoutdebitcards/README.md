@@ -1,4 +1,5 @@
 # PayoutDebitCards
+(*payoutDebitCards*)
 
 ### Available Operations
 
@@ -15,7 +16,7 @@ import { Wingspan } from "wingspan";
 import { ListPayoutDebitCardsRequest, ListPayoutDebitCardsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const memberId: string = "voluptas";
+const memberId: string = "Bicycle";
 
 sdk.payoutDebitCards.list(memberId).then((res: ListPayoutDebitCardsResponse) => {
   if (res.statusCode == 200) {

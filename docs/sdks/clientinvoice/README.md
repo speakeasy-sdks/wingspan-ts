@@ -1,4 +1,5 @@
 # ClientInvoice
+(*clientInvoice*)
 
 ### Available Operations
 
@@ -16,7 +17,7 @@ import { Wingspan } from "wingspan";
 import { GetClientInvoiceRequest, GetClientInvoiceResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "minus";
+const id: string = "female";
 
 sdk.clientInvoice.get(id).then((res: GetClientInvoiceResponse) => {
   if (res.statusCode == 200) {
@@ -50,10 +51,10 @@ import { UpdateClientInvoiceRequest, UpdateClientInvoiceResponse } from "wingspa
 import { ClientInvoiceUpdateRequest, FeeHandlingConfig, StatusClientInvoiceUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
 const sdk = new Wingspan();
-const id: string = "quam";
+const id: string = "Van";
 const clientInvoiceUpdateRequest: ClientInvoiceUpdateRequest = {
-  creditFeeHandling: "vero",
-  status: StatusClientInvoiceUpdateRequest.Overdue,
+  creditFeeHandling: "Reactive",
+  status: StatusClientInvoiceUpdateRequest.LessThanNilGreaterThan,
 };
 
 sdk.clientInvoice.update(id, clientInvoiceUpdateRequest).then((res: UpdateClientInvoiceResponse) => {

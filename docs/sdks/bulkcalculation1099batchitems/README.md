@@ -1,4 +1,5 @@
 # BulkCalculation1099BatchItems
+(*bulkCalculation1099BatchItems*)
 
 ### Available Operations
 
@@ -18,7 +19,7 @@ import {
 } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "natus";
+const batchId: string = "Bicycle";
 
 sdk.bulkCalculation1099BatchItems.list(batchId).then((res: ListBulkCalculation1099BatchItemsResponse) => {
   if (res.statusCode == 200) {

@@ -1,4 +1,5 @@
 # BulkPayableBatchItems
+(*bulkPayableBatchItems*)
 
 ### Available Operations
 
@@ -15,7 +16,7 @@ import { Wingspan } from "wingspan";
 import { ListBulkPayableBatchItemsRequest, ListBulkPayableBatchItemsResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const batchId: string = "illum";
+const batchId: string = "Bicycle";
 
 sdk.bulkPayableBatchItems.list(batchId).then((res: ListBulkPayableBatchItemsResponse) => {
   if (res.statusCode == 200) {

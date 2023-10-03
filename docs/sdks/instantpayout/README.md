@@ -1,4 +1,5 @@
 # InstantPayout
+(*instantPayout*)
 
 ### Available Operations
 
@@ -19,7 +20,7 @@ import { CreateInstantPayoutResponse } from "wingspan/dist/sdk/models/operations
 const sdk = new Wingspan();
 
 sdk.instantPayout.create({
-  externalPayoutAccountToken: "quae",
+  externalPayoutAccountToken: "bluetooth Extended",
 }).then((res: CreateInstantPayoutResponse) => {
   if (res.statusCode == 200) {
     // handle response

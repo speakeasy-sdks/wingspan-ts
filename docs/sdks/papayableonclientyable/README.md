@@ -1,4 +1,5 @@
 # PaPayableOnClientyable
+(*paPayableOnClientyable*)
 
 ### Available Operations
 
@@ -15,7 +16,7 @@ import { Wingspan } from "wingspan";
 import { DeletePayableOnClientRequest, DeletePayableOnClientResponse } from "wingspan/dist/sdk/models/operations";
 
 const sdk = new Wingspan();
-const id: string = "in";
+const id: string = "program";
 
 sdk.paPayableOnClientyable.delete(id).then((res: DeletePayableOnClientResponse) => {
   if (res.statusCode == 200) {
