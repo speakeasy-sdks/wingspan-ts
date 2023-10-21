@@ -22,7 +22,7 @@ export class BulkCalculation1099ItemUpdate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "year" })

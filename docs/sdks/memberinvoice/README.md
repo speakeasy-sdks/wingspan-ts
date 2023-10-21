@@ -16,7 +16,6 @@ Create invoice on member
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateMemberInvoiceResponse } from "wingspan/dist/sdk/models/operations";
 import {
   CurrencyInvoiceCollaboratorCreateRequest,
   CurrencyInvoiceCreateRequest,
@@ -25,74 +24,61 @@ import {
   StatusInvoiceCreateRequest,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.memberInvoice.create({
-  acceptedPaymentMethods: [
-    InvoiceCreateRequestAcceptedPaymentMethods.Ach,
-  ],
-  attachments: "Configuration",
-  client: "innovative",
-  collaborators: [
-    {
-      amount: 690.25,
-      currency: CurrencyInvoiceCollaboratorCreateRequest.Cad,
-      description: "Secured exuding throughput",
-      memberClientId: "East orange Northwest",
+  const res = await sdk.memberInvoice.create({
+    acceptedPaymentMethods: [
+      InvoiceCreateRequestAcceptedPaymentMethods.Ach,
+    ],
+    attachments: {
+      customAttachmentIds: [
+        "string",
+      ],
     },
-  ],
-  creditFeeHandling: {
-    clientAbsolutePercentage: 7926.2,
-    clientPays: 8559.52,
-    memberPays: 8165.88,
-  },
-  currency: CurrencyInvoiceCreateRequest.Cad,
-  dueDate: "Polestar mobile",
-  integration: {
-    quickbooks: "Durham",
-  },
-  invoiceNotes: "South Intelligent Fish",
-  labels: "Fiat",
-  lateFeeHandling: {
-    frequency: "Account",
-    lateFeeAmount: 1009.66,
-    lateFeePercentage: 3577.62,
-  },
-  lineItems: [
-    {
-      costPerUnit: 6519.85,
-      description: "Customer-focused encompassing standardization",
-      detail: "Minivan",
-      discount: {
-        amount: 6502.37,
-        description: "Cloned cohesive challenge",
-        percentage: 155.52,
+    client: {},
+    collaborators: [
+      {
+        amount: 4893.82,
+        currency: CurrencyInvoiceCollaboratorCreateRequest.Cad,
+        description: "Synchronised full-range emulation",
+        memberClientId: "string",
       },
-      integration: {
-        quickbooks: {
-          expenseAccountId: "Edinburg Investor",
-          itemId: "azure Dollar",
+    ],
+    creditFeeHandling: {},
+    dueDate: "string",
+    integration: {
+      quickbooks: {},
+    },
+    labels: {
+      "key": "string",
+    },
+    lateFeeHandling: {
+      frequency: {},
+    },
+    lineItems: [
+      {
+        discount: {},
+        integration: {
+          quickbooks: {},
+        },
+        labels: {
+          "key": "string",
         },
       },
-      labels: "Bicycle",
-      quantity: 7823.67,
-      reimbursableExpense: false,
-      totalCost: 1373.24,
-      unit: "radian",
+    ],
+    member: {},
+    memberClientId: "string",
+    metadata: {},
+    notificationPreferences: {
+      sendReminders: false,
     },
-  ],
-  member: {},
-  memberClientId: "mmm lavender City",
-  metadata: {
-    purchaseOrderNumber: "incompatible overhang",
-  },
-  notificationPreferences: "South",
-  status: StatusInvoiceCreateRequest.Cancelled,
-}).then((res: CreateMemberInvoiceResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -116,16 +102,18 @@ Delete invoice on member by invoiceId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteMemberInvoiceRequest, DeleteMemberInvoiceResponse } from "wingspan/dist/sdk/models/operations";
+import { DeleteMemberInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.memberInvoice.delete(id).then((res: DeleteMemberInvoiceResponse) => {
+  const res = await sdk.memberInvoice.delete(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -149,16 +137,18 @@ Get invoice on member by invoiceId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetMemberInvoiceRequest, GetMemberInvoiceResponse } from "wingspan/dist/sdk/models/operations";
+import { GetMemberInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.memberInvoice.get(id).then((res: GetMemberInvoiceResponse) => {
+  const res = await sdk.memberInvoice.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -182,7 +172,7 @@ Update invoice on member by invoiceId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateMemberInvoiceRequest, UpdateMemberInvoiceResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateMemberInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 import {
   Facb8048736dba546c4c76242d9f8c7111011a7a7483528f37d80226698a1f2b,
   Fee,
@@ -196,8 +186,8 @@ import {
   InvoiceNotificationPreferences,
   InvoiceUpdateRequest,
   InvoiceUpdateRequestAcceptedPaymentMethods,
-  InvoiceUpdateRequestClient2,
-  InvoiceUpdateRequestMember2,
+  InvoiceUpdateRequestClient,
+  InvoiceUpdateRequestMember,
   LateFeeConfigUpdate,
   Sixad3f4f624fb518510130e879729b00ed8c237d1cebc5477abf34ac340a6424d,
   StatusInvoiceUpdateRequest,
@@ -205,45 +195,64 @@ import {
   ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 const invoiceUpdateRequest: InvoiceUpdateRequest = {
   acceptedPaymentMethods: [
-    InvoiceUpdateRequestAcceptedPaymentMethods.Credit,
+    InvoiceUpdateRequestAcceptedPaymentMethods.LessThanNilGreaterThan,
   ],
-  attachments: "male",
-  chargedFees: "Quality",
-  client: "invoice",
-  collaborators: [
-    "Islands",
-  ],
-  creditFeeHandling: "withdrawal",
-  dueDate: "white",
-  integration: "Carolina",
-  invoiceNotes: "immediately implement JBOD",
-  labels: {
-    "similique": "Representative",
+  attachments: {
+    customAttachmentIds: [
+      "string",
+    ],
   },
-  lateFeeHandling: "driver",
+  chargedFees: {
+    lateFee: {
+      amount: 245.55,
+    },
+    processingFee: {
+      amount: 5971.29,
+    },
+  },
+  client: {},
+  collaborators: [
+    {},
+  ],
+  creditFeeHandling: {},
+  integration: {
+    quickbooks: {},
+  },
+  labels: {
+    "key": "string",
+  },
+  lateFeeHandling: {
+    frequency: {},
+  },
   lineItems: [
-    "pascal",
+    {
+      discount: {},
+      integration: {
+        quickbooks: {},
+      },
+      labels: {
+        "key": "string",
+      },
+    },
   ],
   member: {},
-  memberClientId: "Lev Wooden",
-  metadata: "Jaguar",
+  metadata: {},
   notificationPreferences: {
-    sendInvoice: "brightly",
-    sendReceipt: false,
     sendReminders: false,
   },
-  status: StatusInvoiceUpdateRequest.Overdue,
 };
 
-sdk.memberInvoice.update(id, invoiceUpdateRequest).then((res: UpdateMemberInvoiceResponse) => {
+  const res = await sdk.memberInvoice.update(id, invoiceUpdateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

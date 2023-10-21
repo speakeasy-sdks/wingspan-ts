@@ -13,21 +13,23 @@ Exchange the code for a token
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ExchangeCodeToTokenRequest, ExchangeCodeToTokenResponse } from "wingspan/dist/sdk/models/operations";
+import { ExchangeCodeToTokenRequest } from "wingspan/dist/sdk/models/operations";
 import { CardTokenRequest } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "between";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 const cardTokenRequest: CardTokenRequest = {
-  verificationCode: "Canada Southwest panel",
-  verificationToken: "North Pickup noisily",
+  verificationCode: "string",
+  verificationToken: "string",
 };
 
-sdk.codeToToken.exchange(id, cardTokenRequest).then((res: ExchangeCodeToTokenResponse) => {
+  const res = await sdk.codeToToken.exchange(id, cardTokenRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

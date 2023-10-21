@@ -3,14 +3,16 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { Address } from "./address";
+import { Expose, Type } from "class-transformer";
 
 export class CardCreateRequest extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "requestPhysicalCard" })
-    requestPhysicalCard?: any;
+    requestPhysicalCard?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "shippingAddress" })
-    shippingAddress?: any;
+    @Type(() => Address)
+    shippingAddress?: Address;
 }

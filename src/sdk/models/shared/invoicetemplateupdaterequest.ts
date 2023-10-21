@@ -3,7 +3,10 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { FrequencyUpdate } from "./frequencyupdate";
+import { InvoiceUpdateRequest } from "./invoiceupdaterequest";
+import { ScheduleDateUpdate } from "./scheduledateupdate";
+import { Expose, Type } from "class-transformer";
 
 export enum StatusInvoiceTemplateUpdateRequest {
     Active = "Active",
@@ -20,7 +23,7 @@ export class InvoiceTemplateUpdateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "autoPaymentRequired" })
-    autoPaymentRequired?: any;
+    autoPaymentRequired?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "dueInDays" })
@@ -28,31 +31,34 @@ export class InvoiceTemplateUpdateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "frequency" })
-    frequency?: any;
+    @Type(() => FrequencyUpdate)
+    frequency?: FrequencyUpdate;
 
     @SpeakeasyMetadata()
     @Expose({ name: "invoiceData" })
-    invoiceData?: any;
+    @Type(() => InvoiceUpdateRequest)
+    invoiceData?: InvoiceUpdateRequest;
 
     @SpeakeasyMetadata()
     @Expose({ name: "isSchedulingOnly" })
-    isSchedulingOnly?: any;
+    isSchedulingOnly?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "paymentMethodId" })
     paymentMethodId?: string;
 
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: ScheduleDateUpdate })
     @Expose({ name: "scheduleDates" })
-    scheduleDates?: any[];
+    @Type(() => ScheduleDateUpdate)
+    scheduleDates?: ScheduleDateUpdate[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "sendEmails" })
-    sendEmails?: any;
+    sendEmails?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

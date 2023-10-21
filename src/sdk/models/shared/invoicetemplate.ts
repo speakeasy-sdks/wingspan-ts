@@ -3,7 +3,9 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Frequency } from "./frequency";
 import { Invoice } from "./invoice";
+import { ScheduleDate } from "./scheduledate";
 import { UserRoles } from "./userroles";
 import { Expose, Type } from "class-transformer";
 
@@ -21,7 +23,7 @@ export class InvoiceTemplate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "autoPaymentRequired" })
-    autoPaymentRequired?: any;
+    autoPaymentRequired?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "createdAt" })
@@ -37,7 +39,8 @@ export class InvoiceTemplate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "frequency" })
-    frequency?: any;
+    @Type(() => Frequency)
+    frequency?: Frequency;
 
     @SpeakeasyMetadata()
     @Expose({ name: "invoiceData" })
@@ -50,7 +53,7 @@ export class InvoiceTemplate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "isSchedulingOnly" })
-    isSchedulingOnly?: any;
+    isSchedulingOnly?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
@@ -72,9 +75,10 @@ export class InvoiceTemplate extends SpeakeasyBase {
     @Expose({ name: "paymentMethodId" })
     paymentMethodId?: string;
 
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: ScheduleDate })
     @Expose({ name: "scheduleDates" })
-    scheduleDates?: any[];
+    @Type(() => ScheduleDate)
+    scheduleDates?: ScheduleDate[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

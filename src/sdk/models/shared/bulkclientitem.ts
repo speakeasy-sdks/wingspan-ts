@@ -3,6 +3,9 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { D750b2d9403b5bcbdb3c96c89f1cc713df563d587f16e5f39f5ab546c08a20a0 } from "./d750b2d9403b5bcbdb3c96c89f1cc713df563d587f16e5f39f5ab546c08a20a0";
+import { FourThousandAndNinetyOnec2911630f24a45153ca60a204edf3efba15902cef686d412c191e0c18cac } from "./fourthousandandninetyonec2911630f24a45153ca60a204edf3efba15902cef686d412c191e0c18cac";
+import { MemberData } from "./memberdata";
 import { UserRoles } from "./userroles";
 import { Expose, Type } from "class-transformer";
 
@@ -55,7 +58,8 @@ export class BulkClientItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration" })
-    integration?: any;
+    @Type(() => D750b2d9403b5bcbdb3c96c89f1cc713df563d587f16e5f39f5ab546c08a20a0)
+    integration?: D750b2d9403b5bcbdb3c96c89f1cc713df563d587f16e5f39f5ab546c08a20a0;
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
@@ -67,7 +71,8 @@ export class BulkClientItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "memberData" })
-    memberData?: any;
+    @Type(() => MemberData)
+    memberData?: MemberData;
 
     @SpeakeasyMetadata()
     @Expose({ name: "memberId" })
@@ -75,7 +80,10 @@ export class BulkClientItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "metadata" })
-    metadata?: any;
+    @Type(
+        () => FourThousandAndNinetyOnec2911630f24a45153ca60a204edf3efba15902cef686d412c191e0c18cac
+    )
+    metadata?: FourThousandAndNinetyOnec2911630f24a45153ca60a204edf3efba15902cef686d412c191e0c18cac;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

@@ -4,6 +4,7 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { ClientInvoice } from "./clientinvoice";
+import { Frequency } from "./frequency";
 import { ScheduleDate } from "./scheduledate";
 import { Expose, Type } from "class-transformer";
 
@@ -37,7 +38,8 @@ export class ClientInvoiceTemplate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "frequency" })
-    frequency?: any;
+    @Type(() => Frequency)
+    frequency?: Frequency;
 
     @SpeakeasyMetadata()
     @Expose({ name: "invoiceData" })

@@ -3,7 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { PayoutDestinationUpdate } from "./payoutdestinationupdate";
+import { Expose, Type } from "class-transformer";
 
 export enum PayoutPreferencesPayoutSettingsUpdate {
     Standard = "Standard",
@@ -15,9 +16,10 @@ export enum PayoutPreferencesPayoutSettingsUpdate {
 }
 
 export class PayoutSettingsUpdate extends SpeakeasyBase {
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: PayoutDestinationUpdate })
     @Expose({ name: "payoutDestinations" })
-    payoutDestinations?: any[];
+    @Type(() => PayoutDestinationUpdate)
+    payoutDestinations?: PayoutDestinationUpdate[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "payoutPreferences" })

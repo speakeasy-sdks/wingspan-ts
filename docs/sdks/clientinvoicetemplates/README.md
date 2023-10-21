@@ -13,15 +13,16 @@ List client-invoice-templates
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListClientInvoiceTemplatesResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.clientInvoiceTemplates.list().then((res: ListClientInvoiceTemplatesResponse) => {
+  const res = await sdk.clientInvoiceTemplates.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -13,16 +13,18 @@ Downloads a form W9 PDF for a collaborator
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DownloadFormW9Request, DownloadFormW9Response } from "wingspan/dist/sdk/models/operations";
+import { DownloadFormW9Request } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "optical";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.formW9.download(id).then((res: DownloadFormW9Response) => {
+  const res = await sdk.formW9.download(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

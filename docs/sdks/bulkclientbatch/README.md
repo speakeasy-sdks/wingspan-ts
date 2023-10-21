@@ -15,17 +15,20 @@ Create a bulk client batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateBulkClientBatchResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.bulkClientBatch.create({
-  labels: "bluetooth",
-}).then((res: CreateBulkClientBatchResponse) => {
+  const res = await sdk.bulkClientBatch.create({
+    labels: {
+      "key": "string",
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -49,16 +52,18 @@ Get a bulk client batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetBulkClientBatchRequest, GetBulkClientBatchResponse } from "wingspan/dist/sdk/models/operations";
+import { GetBulkClientBatchRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 
-sdk.bulkClientBatch.get(batchId).then((res: GetBulkClientBatchResponse) => {
+  const res = await sdk.bulkClientBatch.get(batchId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -82,21 +87,24 @@ Update a bulk client batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateBulkClientBatchRequest, UpdateBulkClientBatchResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateBulkClientBatchRequest } from "wingspan/dist/sdk/models/operations";
 import { BulkBatchUpdate, StatusBulkBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "Van";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 const bulkBatchUpdate: BulkBatchUpdate = {
-  labels: "Reactive",
-  status: StatusBulkBatchUpdate.LessThanNilGreaterThan,
+  labels: {
+    "key": "string",
+  },
 };
 
-sdk.bulkClientBatch.update(batchId, bulkBatchUpdate).then((res: UpdateBulkClientBatchResponse) => {
+  const res = await sdk.bulkClientBatch.update(batchId, bulkBatchUpdate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

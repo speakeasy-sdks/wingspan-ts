@@ -13,16 +13,18 @@ Gets an application link for creating the clearing bank account
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetAppLinkRequest, GetAppLinkResponse } from "wingspan/dist/sdk/models/operations";
+import { GetAppLinkRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const memberId: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const memberId: string = "string";
 
-sdk.appLink.get(memberId).then((res: GetAppLinkResponse) => {
+  const res = await sdk.appLink.get(memberId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

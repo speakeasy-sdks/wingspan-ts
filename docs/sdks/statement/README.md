@@ -14,16 +14,18 @@ Download bank statement pdf
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DownloadStatementRequest, DownloadStatementResponse } from "wingspan/dist/sdk/models/operations";
+import { DownloadStatementRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "optical";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.statement.download(id).then((res: DownloadStatementResponse) => {
+  const res = await sdk.statement.download(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -47,16 +49,18 @@ Get bank statement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetStatementRequest, GetStatementResponse } from "wingspan/dist/sdk/models/operations";
+import { GetStatementRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.statement.get(id).then((res: GetStatementResponse) => {
+  const res = await sdk.statement.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

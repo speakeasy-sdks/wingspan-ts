@@ -13,15 +13,16 @@ List Payment Eligigbility Requirements
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListPaymentEligibilityRequirementsResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.paymentEligibilityRequirements.list().then((res: ListPaymentEligibilityRequirementsResponse) => {
+  const res = await sdk.paymentEligibilityRequirements.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

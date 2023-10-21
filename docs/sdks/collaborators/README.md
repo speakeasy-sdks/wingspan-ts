@@ -13,15 +13,16 @@ List all collaborators
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListCollaboratorsResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.collaborators.list().then((res: ListCollaboratorsResponse) => {
+  const res = await sdk.collaborators.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -15,7 +15,7 @@ Create a bulk collaborator batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateBulkCollaboratorBatchItemRequest, CreateBulkCollaboratorBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import { CreateBulkCollaboratorBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 import {
   BulkCollaboratorItemCreate,
   CollaboratorStatusBulkCollaboratorItemCreate,
@@ -23,39 +23,29 @@ import {
   MemberClientFormW9Info,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "online";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 const bulkCollaboratorItemCreate: BulkCollaboratorItemCreate = {
-  collaboratorGroupId: "Extended South",
-  collaboratorId: "grey technology East",
-  collaboratorStatus: CollaboratorStatusBulkCollaboratorItemCreate.Active,
-  company: "Borer LLC",
-  email: "Russel_Schumm@hotmail.com",
-  externalId: "volt physical Ameliorated",
-  firstLastName: "after",
   formW9Data: {
-    addressLine1: "Bike",
-    addressLine2: "Buckinghamshire functionalities Grocery",
-    city: "New Baronbury",
-    companyStructure: CompanyStructureMemberClientFormW9Info.LLCCorporationC,
-    country: "Bulgaria",
-    dob: "animated Minivan",
-    ein: "Senior Mouse West",
-    firstName: "Judd",
-    lastName: "Hauck",
-    legalBusinessName: "Towels",
-    postalCode: "44747-2679",
-    ssn: "Sausages",
-    state: "round Lake Dollar",
+    addressLine1: "string",
+    city: "Jenafurt",
+    companyStructure: CompanyStructureMemberClientFormW9Info.CorporationC,
+    country: "Iraq",
+    postalCode: "17097",
+    state: "string",
   },
-  labels: "South",
+  labels: {
+    "key": "string",
+  },
 };
 
-sdk.bulkCollaboratorBatchItem.create(batchId, bulkCollaboratorItemCreate).then((res: CreateBulkCollaboratorBatchItemResponse) => {
+  const res = await sdk.bulkCollaboratorBatchItem.create(batchId, bulkCollaboratorItemCreate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -80,17 +70,19 @@ Get a bulk collaborator batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetBulkCollaboratorBatchItemRequest, GetBulkCollaboratorBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import { GetBulkCollaboratorBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "female";
-const batchItemId: string = "program";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
+const batchItemId: string = "string";
 
-sdk.bulkCollaboratorBatchItem.get(batchId, batchItemId).then((res: GetBulkCollaboratorBatchItemResponse) => {
+  const res = await sdk.bulkCollaboratorBatchItem.get(batchId, batchItemId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -115,7 +107,7 @@ Update a bulk collaborator batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateBulkCollaboratorBatchItemRequest, UpdateBulkCollaboratorBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateBulkCollaboratorBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 import {
   BulkCollaboratorItemUpdate,
   CollaboratorStatusBulkCollaboratorItemUpdate,
@@ -123,28 +115,30 @@ import {
   MemberClientFormW9Info,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "Van";
-const batchItemId: string = "East";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
+const batchItemId: string = "string";
 const bulkCollaboratorItemUpdate: BulkCollaboratorItemUpdate = {
-  collaboratorGroupId: "dock Quality redundant",
-  collaboratorId: "Arizona Cotton extend",
-  collaboratorStatus: CollaboratorStatusBulkCollaboratorItemUpdate.Active,
-  company: "Connelly - Nolan",
-  email: "Zakary.Towne@hotmail.com",
-  externalId: "JBOD",
-  firstLastName: "Quality guestbook driver",
-  formW9Data: "pascal",
+  formW9Data: {
+    addressLine1: "string",
+    city: "Ann Arbor",
+    companyStructure: CompanyStructureMemberClientFormW9Info.LLCCorporationS,
+    country: "American Samoa",
+    postalCode: "79266",
+    state: "string",
+  },
   labels: {
-    "officia": "Lev",
+    "key": "string",
   },
 };
 
-sdk.bulkCollaboratorBatchItem.update(batchId, batchItemId, bulkCollaboratorItemUpdate).then((res: UpdateBulkCollaboratorBatchItemResponse) => {
+  const res = await sdk.bulkCollaboratorBatchItem.update(batchId, batchItemId, bulkCollaboratorItemUpdate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

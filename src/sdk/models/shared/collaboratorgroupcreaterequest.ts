@@ -3,20 +3,22 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { CollaboratorGroupRequirement } from "./collaboratorgrouprequirement";
+import { Expose, Type } from "class-transformer";
 
 export class CollaboratorGroupCreateRequest extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "collaboratorSettings" })
-    collaboratorSettings?: any;
+    collaboratorSettings?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "description" })
     description: string;
 
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: CollaboratorGroupRequirement })
     @Expose({ name: "eligibilityRequirements" })
-    eligibilityRequirements?: any[];
+    @Type(() => CollaboratorGroupRequirement)
+    eligibilityRequirements?: CollaboratorGroupRequirement[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })

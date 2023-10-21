@@ -15,26 +15,26 @@ Create a bulk calculation1099 batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import {
-  CreateBulkCalculation1099BatchItemRequest,
-  CreateBulkCalculation1099BatchItemResponse,
-} from "wingspan/dist/sdk/models/operations";
+import { CreateBulkCalculation1099BatchItemRequest } from "wingspan/dist/sdk/models/operations";
 import { BulkCalculation1099ItemCreate, CalculationTypeBulkCalculation1099ItemCreate } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "online";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 const bulkCalculation1099ItemCreate: BulkCalculation1099ItemCreate = {
-  calculationType: CalculationTypeBulkCalculation1099ItemCreate.Submissions,
-  clientId: "Money blue shred",
-  labels: "technology",
-  year: 0.86,
+  clientId: "string",
+  labels: {
+    "key": "string",
+  },
+  year: 4865.89,
 };
 
-sdk.bulkCalculation1099BatchItem.create(batchId, bulkCalculation1099ItemCreate).then((res: CreateBulkCalculation1099BatchItemResponse) => {
+  const res = await sdk.bulkCalculation1099BatchItem.create(batchId, bulkCalculation1099ItemCreate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -59,17 +59,19 @@ Get a bulk calculation1099 batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetBulkCalculation1099BatchItemRequest, GetBulkCalculation1099BatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import { GetBulkCalculation1099BatchItemRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "female";
-const batchItemId: string = "program";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
+const batchItemId: string = "string";
 
-sdk.bulkCalculation1099BatchItem.get(batchId, batchItemId).then((res: GetBulkCalculation1099BatchItemResponse) => {
+  const res = await sdk.bulkCalculation1099BatchItem.get(batchId, batchItemId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -94,27 +96,25 @@ Update a bulk calculation1099 batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import {
-  UpdateBulkCalculation1099BatchItemRequest,
-  UpdateBulkCalculation1099BatchItemResponse,
-} from "wingspan/dist/sdk/models/operations";
+import { UpdateBulkCalculation1099BatchItemRequest } from "wingspan/dist/sdk/models/operations";
 import { BulkCalculation1099ItemUpdate, CalculationTypeBulkCalculation1099ItemUpdate } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "Van";
-const batchItemId: string = "East";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
+const batchItemId: string = "string";
 const bulkCalculation1099ItemUpdate: BulkCalculation1099ItemUpdate = {
-  calculationType: CalculationTypeBulkCalculation1099ItemUpdate.LessThanNilGreaterThan,
-  clientId: "Metal cheater Islands",
-  labels: "withdrawal",
-  year: 3115.07,
+  labels: {
+    "key": "string",
+  },
 };
 
-sdk.bulkCalculation1099BatchItem.update(batchId, batchItemId, bulkCalculation1099ItemUpdate).then((res: UpdateBulkCalculation1099BatchItemResponse) => {
+  const res = await sdk.bulkCalculation1099BatchItem.update(batchId, batchItemId, bulkCalculation1099ItemUpdate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

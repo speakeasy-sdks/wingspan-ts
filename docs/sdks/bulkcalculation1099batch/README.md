@@ -15,17 +15,20 @@ Create a bulk calculation1099 batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateBulkCalculation1099BatchResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.bulkCalculation1099Batch.create({
-  labels: "bluetooth",
-}).then((res: CreateBulkCalculation1099BatchResponse) => {
+  const res = await sdk.bulkCalculation1099Batch.create({
+    labels: {
+      "key": "string",
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -49,16 +52,18 @@ Get a bulk calculation1099 batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetBulkCalculation1099BatchRequest, GetBulkCalculation1099BatchResponse } from "wingspan/dist/sdk/models/operations";
+import { GetBulkCalculation1099BatchRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 
-sdk.bulkCalculation1099Batch.get(batchId).then((res: GetBulkCalculation1099BatchResponse) => {
+  const res = await sdk.bulkCalculation1099Batch.get(batchId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -82,21 +87,24 @@ Update a bulk calculation1099 batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateBulkCalculation1099BatchRequest, UpdateBulkCalculation1099BatchResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateBulkCalculation1099BatchRequest } from "wingspan/dist/sdk/models/operations";
 import { BulkBatchUpdate, StatusBulkBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "Van";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 const bulkBatchUpdate: BulkBatchUpdate = {
-  labels: "Reactive",
-  status: StatusBulkBatchUpdate.LessThanNilGreaterThan,
+  labels: {
+    "key": "string",
+  },
 };
 
-sdk.bulkCalculation1099Batch.update(batchId, bulkBatchUpdate).then((res: UpdateBulkCalculation1099BatchResponse) => {
+  const res = await sdk.bulkCalculation1099Batch.update(batchId, bulkBatchUpdate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

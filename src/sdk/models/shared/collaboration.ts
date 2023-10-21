@@ -3,7 +3,10 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { ClientData } from "./clientdata";
+import { MemberClientRequirementResponse } from "./memberclientrequirementresponse";
+import { TwentySixe8ea23ccb1e007e7d6560175c7e75c768dac34727b7fe1d834ca24b8221ef4 } from "./twentysixe8ea23ccb1e007e7d6560175c7e75c768dac34727b7fe1d834ca24b8221ef4";
+import { Expose, Type } from "class-transformer";
 
 export enum StatusCollaboration {
     Active = "Active",
@@ -14,7 +17,8 @@ export enum StatusCollaboration {
 export class Collaboration extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "clientData" })
-    clientData?: any;
+    @Type(() => ClientData)
+    clientData?: ClientData;
 
     @SpeakeasyMetadata()
     @Expose({ name: "collaboratorGroupIds" })
@@ -24,13 +28,15 @@ export class Collaboration extends SpeakeasyBase {
     @Expose({ name: "collaboratorId" })
     collaboratorId: string;
 
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: MemberClientRequirementResponse })
     @Expose({ name: "eligibilityRequirements" })
-    eligibilityRequirements?: any[];
+    @Type(() => MemberClientRequirementResponse)
+    eligibilityRequirements?: MemberClientRequirementResponse[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration" })
-    integration?: any;
+    @Type(() => TwentySixe8ea23ccb1e007e7d6560175c7e75c768dac34727b7fe1d834ca24b8221ef4)
+    integration?: TwentySixe8ea23ccb1e007e7d6560175c7e75c768dac34727b7fe1d834ca24b8221ef4;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

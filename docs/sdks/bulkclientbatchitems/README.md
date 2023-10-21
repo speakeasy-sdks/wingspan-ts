@@ -13,16 +13,18 @@ List bulk client batch items
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListBulkClientBatchItemsRequest, ListBulkClientBatchItemsResponse } from "wingspan/dist/sdk/models/operations";
+import { ListBulkClientBatchItemsRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "Bicycle";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 
-sdk.bulkClientBatchItems.list(batchId).then((res: ListBulkClientBatchItemsResponse) => {
+  const res = await sdk.bulkClientBatchItems.list(batchId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

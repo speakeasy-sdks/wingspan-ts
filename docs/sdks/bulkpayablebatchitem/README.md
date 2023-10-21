@@ -15,42 +15,33 @@ Create a bulk payable batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateBulkPayableBatchItemRequest, CreateBulkPayableBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import { CreateBulkPayableBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 import {
   BulkPayableItemCreate,
   PayableStatusBulkPayableItemCreate,
   WorkflowSubStatusBulkPayableItemCreate,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "online";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 const bulkPayableItemCreate: BulkPayableItemCreate = {
-  amount: 6384.24,
-  attachmentId: "Money blue shred",
-  bulkPayableBatchId: "technology East",
-  bulkPayableItemMergeKey: "evolve",
-  bulkPayableItemReference: "fuchsia Gasoline Screen",
-  collaboratorEmail: "physical Ameliorated",
-  collaboratorExternalId: "after",
-  collaboratorId: "Intelligent Fish",
-  dueDate: "Fiat",
+  amount: 4865.89,
+  bulkPayableBatchId: "string",
+  dueDate: "string",
   labels: {
-    "qui": "Account",
+    "key": "string",
   },
-  lineItemDescription: "Profound",
-  lineItemDetail: "metrics",
-  paidDate: "Minivan",
-  payableNotes: "Senior Mouse West",
+  lineItemDescription: "string",
   payableStatus: PayableStatusBulkPayableItemCreate.Approved,
-  reimbursableExpense: "Edinburg",
-  workflowSubStatus: WorkflowSubStatusBulkPayableItemCreate.LessThanNilGreaterThan,
 };
 
-sdk.bulkPayableBatchItem.create(batchId, bulkPayableItemCreate).then((res: CreateBulkPayableBatchItemResponse) => {
+  const res = await sdk.bulkPayableBatchItem.create(batchId, bulkPayableItemCreate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -75,17 +66,19 @@ Get a bulk payable batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetBulkPayableBatchItemRequest, GetBulkPayableBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import { GetBulkPayableBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "female";
-const batchItemId: string = "program";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
+const batchItemId: string = "string";
 
-sdk.bulkPayableBatchItem.get(batchId, batchItemId).then((res: GetBulkPayableBatchItemResponse) => {
+  const res = await sdk.bulkPayableBatchItem.get(batchId, batchItemId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -110,41 +103,29 @@ Update a bulk payable batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateBulkPayableBatchItemRequest, UpdateBulkPayableBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateBulkPayableBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 import {
   BulkPayableItemUpdate,
   BulkPayableItemUpdateWorkflowSubStatus,
   PayableStatusBulkPayableItemUpdate,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "Van";
-const batchItemId: string = "East";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
+const batchItemId: string = "string";
 const bulkPayableItemUpdate: BulkPayableItemUpdate = {
-  amount: 7084.55,
-  attachmentId: "Metal cheater Islands",
-  bulkPayableBatchId: "withdrawal extend",
-  bulkPayableItemMergeKey: "bifurcated",
-  bulkPayableItemReference: "silver immediately",
-  collaboratorEmail: "East",
-  collaboratorExternalId: "Bicycle guestbook",
-  collaboratorId: "Galveston pascal",
-  dueDate: "Division Northeast Wooden",
-  labels: "Jaguar",
-  lineItemDescription: "visionary Buckinghamshire frictionless",
-  lineItemDetail: "parse possimus",
-  paidDate: "Turkish Avon",
-  payableNotes: "hungrily",
-  payableStatus: PayableStatusBulkPayableItemUpdate.Cancelled,
-  reimbursableExpense: false,
-  workflowSubStatus: BulkPayableItemUpdateWorkflowSubStatus.LessThanNilGreaterThan,
+  labels: {
+    "key": "string",
+  },
 };
 
-sdk.bulkPayableBatchItem.update(batchId, batchItemId, bulkPayableItemUpdate).then((res: UpdateBulkPayableBatchItemResponse) => {
+  const res = await sdk.bulkPayableBatchItem.update(batchId, batchItemId, bulkPayableItemUpdate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

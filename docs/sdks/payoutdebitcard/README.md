@@ -15,31 +15,31 @@ Create a payout debit card
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreatePayoutDebitCardRequest, CreatePayoutDebitCardResponse } from "wingspan/dist/sdk/models/operations";
+import { CreatePayoutDebitCardRequest } from "wingspan/dist/sdk/models/operations";
 import { Address, CheckbookCardCreate } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const memberId: string = "online";
+(async() => {
+  const sdk = new Wingspan();
+const memberId: string = "string";
 const checkbookCardCreate: CheckbookCardCreate = {
   address: {
-    addressLine1: "Money blue shred",
-    addressLine2: "technology East",
-    city: "West Astridcester",
-    postalCode: "88558-7496",
-    state: "Durham after",
+    addressLine1: "string",
+    city: "Jenafurt",
+    postalCode: "42170-9739",
+    state: "string",
   },
-  cardNumber: "Intelligent Fish",
-  cvv: "Fiat",
-  expMM: "Grocery Borders Northwest",
-  expYYYY: "Kentucky animated",
-  name: "Interactions Senior Mouse",
+  cardNumber: "string",
+  expMM: "string",
+  expYYYY: "string",
+  name: "string",
 };
 
-sdk.payoutDebitCard.create(memberId, checkbookCardCreate).then((res: CreatePayoutDebitCardResponse) => {
+  const res = await sdk.payoutDebitCard.create(memberId, checkbookCardCreate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -64,17 +64,19 @@ Delete the payout debit card
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeletePayoutDebitCardRequest, DeletePayoutDebitCardResponse } from "wingspan/dist/sdk/models/operations";
+import { DeletePayoutDebitCardRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
-const memberId: string = "Designer";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
+const memberId: string = "string";
 
-sdk.payoutDebitCard.delete(id, memberId).then((res: DeletePayoutDebitCardResponse) => {
+  const res = await sdk.payoutDebitCard.delete(id, memberId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -99,17 +101,19 @@ Get the payout debit card
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetPayoutDebitCardRequest, GetPayoutDebitCardResponse } from "wingspan/dist/sdk/models/operations";
+import { GetPayoutDebitCardRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
-const memberId: string = "program";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
+const memberId: string = "string";
 
-sdk.payoutDebitCard.get(id, memberId).then((res: GetPayoutDebitCardResponse) => {
+  const res = await sdk.payoutDebitCard.get(id, memberId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -15,17 +15,20 @@ Create a bulk collaborator batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateBulkCollaboratorBatchResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.bulkCollaboratorBatch.create({
-  labels: "bluetooth",
-}).then((res: CreateBulkCollaboratorBatchResponse) => {
+  const res = await sdk.bulkCollaboratorBatch.create({
+    labels: {
+      "key": "string",
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -49,16 +52,18 @@ Get a bulk collaborator batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetBulkCollaboratorBatchRequest, GetBulkCollaboratorBatchResponse } from "wingspan/dist/sdk/models/operations";
+import { GetBulkCollaboratorBatchRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 
-sdk.bulkCollaboratorBatch.get(batchId).then((res: GetBulkCollaboratorBatchResponse) => {
+  const res = await sdk.bulkCollaboratorBatch.get(batchId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -82,21 +87,24 @@ Update a bulk collaborator batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateBulkCollaboratorBatchRequest, UpdateBulkCollaboratorBatchResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateBulkCollaboratorBatchRequest } from "wingspan/dist/sdk/models/operations";
 import { BulkBatchUpdate, StatusBulkBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "Van";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 const bulkBatchUpdate: BulkBatchUpdate = {
-  labels: "Reactive",
-  status: StatusBulkBatchUpdate.LessThanNilGreaterThan,
+  labels: {
+    "key": "string",
+  },
 };
 
-sdk.bulkCollaboratorBatch.update(batchId, bulkBatchUpdate).then((res: UpdateBulkCollaboratorBatchResponse) => {
+  const res = await sdk.bulkCollaboratorBatch.update(batchId, bulkBatchUpdate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

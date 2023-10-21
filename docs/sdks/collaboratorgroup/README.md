@@ -15,22 +15,25 @@ Create Collaborator Group
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateCollaboratorGroupResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.collaboratorGroup.create({
-  collaboratorSettings: "bluetooth",
-  description: "Synchronised full-range emulation",
-  eligibilityRequirements: [
-    "blue",
-  ],
-  name: "grey technology East",
-}).then((res: CreateCollaboratorGroupResponse) => {
+  const res = await sdk.collaboratorGroup.create({
+    collaboratorSettings: {
+      "key": "string",
+    },
+    description: "Multi-tiered human-resource model",
+    eligibilityRequirements: [
+      {},
+    ],
+    name: "string",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -54,16 +57,18 @@ Get Collaborator Group
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetCollaboratorGroupRequest, GetCollaboratorGroupResponse } from "wingspan/dist/sdk/models/operations";
+import { GetCollaboratorGroupRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.collaboratorGroup.get(id).then((res: GetCollaboratorGroupResponse) => {
+  const res = await sdk.collaboratorGroup.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -87,27 +92,27 @@ Update Collaborator Group
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateCollaboratorGroupRequest, UpdateCollaboratorGroupResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateCollaboratorGroupRequest } from "wingspan/dist/sdk/models/operations";
 import { CollaboratorGroupRequirement, CollaboratorGroupUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 const collaboratorGroupUpdateRequest: CollaboratorGroupUpdateRequest = {
-  collaboratorSettings: "Reactive",
-  description: "Vision-oriented didactic migration",
+  collaboratorSettings: {
+    "key": "string",
+  },
   eligibilityRequirements: [
-    {
-      eligibilityRequirementId: "invoice Arizona",
-    },
+    {},
   ],
-  name: "mostly",
 };
 
-sdk.collaboratorGroup.update(id, collaboratorGroupUpdateRequest).then((res: UpdateCollaboratorGroupResponse) => {
+  const res = await sdk.collaboratorGroup.update(id, collaboratorGroupUpdateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -14,17 +14,19 @@ Add collaborator to collaborators group
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { AddCollaboratorToGroupRequest, AddCollaboratorToGroupResponse } from "wingspan/dist/sdk/models/operations";
+import { AddCollaboratorToGroupRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const groupId: string = "transmit";
-const id: string = "calculate";
+(async() => {
+  const sdk = new Wingspan();
+const groupId: string = "string";
+const id: string = "string";
 
-sdk.collaboratorToGroup.add(groupId, id).then((res: AddCollaboratorToGroupResponse) => {
+  const res = await sdk.collaboratorToGroup.add(groupId, id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -49,17 +51,19 @@ Remove collaborator from collaborators group
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { RemoveCollaboratorToGroupRequest, RemoveCollaboratorToGroupResponse } from "wingspan/dist/sdk/models/operations";
+import { RemoveCollaboratorToGroupRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const groupId: string = "Usability";
-const id: string = "Southwest";
+(async() => {
+  const sdk = new Wingspan();
+const groupId: string = "string";
+const id: string = "string";
 
-sdk.collaboratorToGroup.remove(groupId, id).then((res: RemoveCollaboratorToGroupResponse) => {
+  const res = await sdk.collaboratorToGroup.remove(groupId, id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
