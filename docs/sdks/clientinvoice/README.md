@@ -14,16 +14,18 @@ Get client-invoice by invoiceId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetClientInvoiceRequest, GetClientInvoiceResponse } from "wingspan/dist/sdk/models/operations";
+import { GetClientInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.clientInvoice.get(id).then((res: GetClientInvoiceResponse) => {
+  const res = await sdk.clientInvoice.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -47,21 +49,22 @@ Update client-invoice by invoiceId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateClientInvoiceRequest, UpdateClientInvoiceResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateClientInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 import { ClientInvoiceUpdateRequest, FeeHandlingConfig, StatusClientInvoiceUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 const clientInvoiceUpdateRequest: ClientInvoiceUpdateRequest = {
-  creditFeeHandling: "Reactive",
-  status: StatusClientInvoiceUpdateRequest.LessThanNilGreaterThan,
+  creditFeeHandling: {},
 };
 
-sdk.clientInvoice.update(id, clientInvoiceUpdateRequest).then((res: UpdateClientInvoiceResponse) => {
+  const res = await sdk.clientInvoice.update(id, clientInvoiceUpdateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

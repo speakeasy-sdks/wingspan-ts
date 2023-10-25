@@ -15,7 +15,7 @@ Create a bulk invoice batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateBulkInvoiceBatchItemRequest, CreateBulkInvoiceBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import { CreateBulkInvoiceBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 import {
   BulkInvoiceItemCreate,
   BulkInvoiceItemCreateAcceptedPaymentMethods,
@@ -23,37 +23,30 @@ import {
   InvoiceStatusBulkInvoiceItemCreate,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "online";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 const bulkInvoiceItemCreate: BulkInvoiceItemCreate = {
   acceptedPaymentMethods: [
-    BulkInvoiceItemCreateAcceptedPaymentMethods.Manual,
+    BulkInvoiceItemCreateAcceptedPaymentMethods.Ach,
   ],
-  amount: 8592.13,
-  bulkInvoiceBatchId: "innovative blue",
-  bulkInvoiceItemMergeKey: "grey technology East",
-  bulkInvoiceItemReference: "evolve",
-  clientEmail: "fuchsia Gasoline Screen",
-  clientExternalId: "physical Ameliorated",
-  creditFeeHandling: "after",
-  dueDate: "Intelligent Fish",
-  invoiceNotes: "Fiat",
-  invoiceStatus: InvoiceStatusBulkInvoiceItemCreate.Cancelled,
-  labels: "Account",
-  lineItemDescription: "Profound",
-  lineItemDetail: "metrics",
-  memberClientId: "Minivan",
-  paidDate: "Senior Mouse West",
-  projectName: "Towels likewise",
-  reimbursableExpense: "Praseodymium",
-  sendDate: "Rubber silver Indiana",
+  amount: 4893.82,
+  bulkInvoiceBatchId: "string",
+  creditFeeHandling: {},
+  dueDate: "string",
+  invoiceStatus: InvoiceStatusBulkInvoiceItemCreate.Paid,
+  labels: {
+    "key": "string",
+  },
+  lineItemDescription: "string",
 };
 
-sdk.bulkInvoiceBatchItem.create(batchId, bulkInvoiceItemCreate).then((res: CreateBulkInvoiceBatchItemResponse) => {
+  const res = await sdk.bulkInvoiceBatchItem.create(batchId, bulkInvoiceItemCreate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -78,17 +71,19 @@ Get a bulk invoice batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetBulkInvoiceBatchItemRequest, GetBulkInvoiceBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import { GetBulkInvoiceBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "female";
-const batchItemId: string = "program";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
+const batchItemId: string = "string";
 
-sdk.bulkInvoiceBatchItem.get(batchId, batchItemId).then((res: GetBulkInvoiceBatchItemResponse) => {
+  const res = await sdk.bulkInvoiceBatchItem.get(batchId, batchItemId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -113,7 +108,7 @@ Update a bulk invoice batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateBulkInvoiceBatchItemRequest, UpdateBulkInvoiceBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateBulkInvoiceBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 import {
   BulkInvoiceItemUpdate,
   BulkInvoiceItemUpdateAcceptedPaymentMethods,
@@ -121,38 +116,26 @@ import {
   InvoiceStatusBulkInvoiceItemUpdate,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "Van";
-const batchItemId: string = "East";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
+const batchItemId: string = "string";
 const bulkInvoiceItemUpdate: BulkInvoiceItemUpdate = {
   acceptedPaymentMethods: [
-    BulkInvoiceItemUpdateAcceptedPaymentMethods.Manual,
+    BulkInvoiceItemUpdateAcceptedPaymentMethods.LessThanNilGreaterThan,
   ],
-  amount: 9914.64,
-  bulkInvoiceBatchId: "Quality",
-  bulkInvoiceItemMergeKey: "invoice Arizona",
-  bulkInvoiceItemReference: "mostly",
-  clientEmail: "dynamic white",
-  clientExternalId: "Carolina syndicate",
-  creditFeeHandling: "implement",
-  dueDate: "Baht Quality",
-  invoiceNotes: "Home users Sharable",
-  invoiceStatus: InvoiceStatusBulkInvoiceItemUpdate.Paid,
-  labels: "Northeast",
-  lineItemDescription: "Northwest Fantastic",
-  lineItemDetail: "Internal invoice",
-  memberClientId: "brightly",
-  paidDate: "frictionless haptic modulo",
-  projectName: "navigating Diesel Avon",
-  reimbursableExpense: "hungrily",
-  sendDate: "Global Northeast Xenogender",
+  creditFeeHandling: {},
+  labels: {
+    "key": "string",
+  },
 };
 
-sdk.bulkInvoiceBatchItem.update(batchId, batchItemId, bulkInvoiceItemUpdate).then((res: UpdateBulkInvoiceBatchItemResponse) => {
+  const res = await sdk.bulkInvoiceBatchItem.update(batchId, batchItemId, bulkInvoiceItemUpdate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -1,4 +1,4 @@
-# CollaboratorForm1099BalancesUpdateRequestEvents2
+# InvoiceUpdateRequestClient
 
 
 ## Fields

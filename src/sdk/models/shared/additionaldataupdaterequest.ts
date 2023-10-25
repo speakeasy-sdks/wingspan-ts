@@ -22,7 +22,7 @@ export class AdditionalDataUpdateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "required" })
-    required?: any;
+    required?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "type" })

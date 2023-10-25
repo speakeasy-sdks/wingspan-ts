@@ -16,7 +16,6 @@ Create new collaborator
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateCollaboratorResponse } from "wingspan/dist/sdk/models/operations";
 import {
   AutoPayStrategyClientData,
   CompanyStructureMemberClientFormW9Info,
@@ -24,30 +23,32 @@ import {
   VerificationStratgyClientData,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.collaborator.create({
-  clientData: "bluetooth",
-  clientId: "Money blue shred",
-  collaboratorGroupId: "technology East",
-  formW9Data: "evolve",
-  integration: {
-    quickbooks: {
-      expenseAccountId: "Gasoline Screen mobile",
-      vendorId: "Ameliorated Fresh",
+  const res = await sdk.collaborator.create({
+    clientData: {},
+    clientId: "string",
+    formW9Data: {
+      addressLine1: "string",
+      city: "Jenafurt",
+      companyStructure: CompanyStructureMemberClientFormW9Info.CorporationC,
+      country: "Iraq",
+      postalCode: "17097",
+      state: "string",
     },
-  },
-  labels: "overriding",
-  memberCompany: "Fish",
-  memberEmail: "Fiat",
-  memberId: "Grocery Borders Northwest",
-  memberName: "Kentucky animated",
-  status: StatusCollaboratorCreateRequest.LessThanNilGreaterThan,
-}).then((res: CreateCollaboratorResponse) => {
+    integration: {
+      quickbooks: {},
+    },
+    labels: {
+      "key": "string",
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -71,16 +72,18 @@ Delete collaborator by Id
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteCollaboratorRequest, DeleteCollaboratorResponse } from "wingspan/dist/sdk/models/operations";
+import { DeleteCollaboratorRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.collaborator.delete(id).then((res: DeleteCollaboratorResponse) => {
+  const res = await sdk.collaborator.delete(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -104,16 +107,18 @@ Get collaborator by Id
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetCollaboratorRequest, GetCollaboratorResponse } from "wingspan/dist/sdk/models/operations";
+import { GetCollaboratorRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.collaborator.get(id).then((res: GetCollaboratorResponse) => {
+  const res = await sdk.collaborator.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -137,16 +142,16 @@ Update a collaborator by Id
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateCollaboratorRequest, UpdateCollaboratorResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateCollaboratorRequest } from "wingspan/dist/sdk/models/operations";
 import {
   AutoPayStrategyClientData,
   Ce853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481,
-  Ce853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481Address2,
+  Ce853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481Address,
   ClientData,
   CollaboratorForm1099BalancesUpdateRequest,
-  CollaboratorForm1099BalancesUpdateRequestEvents2,
+  CollaboratorForm1099BalancesUpdateRequestEvents,
   CollaboratorUpdateRequest,
-  CollaboratorUpdateRequestFormW9Data2,
+  CollaboratorUpdateRequestFormW9Data,
   CompanyStructurece853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481,
   DeliveryMethodCollaboratorForm1099BalancesUpdateRequest,
   Eighta9c6cb49482a98cdd603ff09858cdc3e5ef6ad9807c876c4161d925a96694a5,
@@ -159,25 +164,42 @@ import {
   VerificationStratgyClientData,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 const collaboratorUpdateRequest: CollaboratorUpdateRequest = {
-  clientData: "Reactive",
+  clientData: {},
   form1099Balances: {
-    twoThousandAndTwentyOne: "Quality",
-    twoThousandAndTwentyTwo: "invoice",
+    twoThousandAndTwentyOne: {
+      correction: {
+        address: {},
+      },
+      dispute: {},
+      events: {},
+    },
+    twoThousandAndTwentyTwo: {
+      correction: {
+        address: {},
+      },
+      dispute: {},
+      events: {},
+    },
   },
-  formW9Data: "Islands",
-  integration: "withdrawal",
-  labels: "white",
-  status: StatusCollaboratorUpdateRequest.Inactive,
+  formW9Data: {},
+  integration: {
+    quickbooks: {},
+  },
+  labels: {
+    "key": "string",
+  },
 };
 
-sdk.collaborator.update(id, collaboratorUpdateRequest).then((res: UpdateCollaboratorResponse) => {
+  const res = await sdk.collaborator.update(id, collaboratorUpdateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

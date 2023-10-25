@@ -3,9 +3,9 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { Expose, Type } from "class-transformer";
 
-export class PaymentEligibilityUpdateRequestValue2 extends SpeakeasyBase {}
+export class PaymentEligibilityUpdateRequestValue extends SpeakeasyBase {}
 
 export class PaymentEligibilityUpdateRequest extends SpeakeasyBase {
     @SpeakeasyMetadata()
@@ -14,5 +14,6 @@ export class PaymentEligibilityUpdateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "value" })
-    value?: any;
+    @Type(() => PaymentEligibilityUpdateRequestValue)
+    value?: PaymentEligibilityUpdateRequestValue;
 }

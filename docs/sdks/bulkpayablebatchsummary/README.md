@@ -13,16 +13,18 @@ Get Bulk Payable Batch Import Summary
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetBulkPayableBatchSummaryRequest, GetBulkPayableBatchSummaryResponse } from "wingspan/dist/sdk/models/operations";
+import { GetBulkPayableBatchSummaryRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 
-sdk.bulkPayableBatchSummary.get(batchId).then((res: GetBulkPayableBatchSummaryResponse) => {
+  const res = await sdk.bulkPayableBatchSummary.get(batchId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

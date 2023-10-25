@@ -13,15 +13,16 @@ List mcc codes
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListMCCResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.mcc.list().then((res: ListMCCResponse) => {
+  const res = await sdk.mcc.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

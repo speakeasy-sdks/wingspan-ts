@@ -4,6 +4,7 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { DeductionApplication } from "./deductionapplication";
+import { PostPaymentDeductionDisbursement } from "./postpaymentdeductiondisbursement";
 import { UserRoles } from "./userroles";
 import { Expose, Type } from "class-transformer";
 
@@ -55,7 +56,8 @@ export class DeductionResponse extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "disbursement" })
-    disbursement?: any;
+    @Type(() => PostPaymentDeductionDisbursement)
+    disbursement?: PostPaymentDeductionDisbursement;
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })

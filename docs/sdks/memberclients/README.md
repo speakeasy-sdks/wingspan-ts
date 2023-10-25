@@ -13,15 +13,16 @@ List memberClients
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListMemberClientsResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.memberClients.list().then((res: ListMemberClientsResponse) => {
+  const res = await sdk.memberClients.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -15,19 +15,22 @@ Create a bulk invoice batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateBulkInvoiceBatchResponse } from "wingspan/dist/sdk/models/operations";
 import { BulkInvoiceBatchCreateProcessingStrategy } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.bulkInvoiceBatch.create({
-  labels: "bluetooth",
-  processingStrategy: BulkInvoiceBatchCreateProcessingStrategy.Single,
-}).then((res: CreateBulkInvoiceBatchResponse) => {
+  const res = await sdk.bulkInvoiceBatch.create({
+    labels: {
+      "key": "string",
+    },
+    processingStrategy: BulkInvoiceBatchCreateProcessingStrategy.Merge,
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -51,16 +54,18 @@ Get a bulk invoice batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetBulkInvoiceBatchRequest, GetBulkInvoiceBatchResponse } from "wingspan/dist/sdk/models/operations";
+import { GetBulkInvoiceBatchRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 
-sdk.bulkInvoiceBatch.get(batchId).then((res: GetBulkInvoiceBatchResponse) => {
+  const res = await sdk.bulkInvoiceBatch.get(batchId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -84,21 +89,24 @@ Update a bulk invoice batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateBulkInvoiceBatchRequest, UpdateBulkInvoiceBatchResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateBulkInvoiceBatchRequest } from "wingspan/dist/sdk/models/operations";
 import { BulkInvoiceBatchUpdate, StatusBulkInvoiceBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "Van";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 const bulkInvoiceBatchUpdate: BulkInvoiceBatchUpdate = {
-  labels: "Reactive",
-  status: StatusBulkInvoiceBatchUpdate.LessThanNilGreaterThan,
+  labels: {
+    "key": "string",
+  },
 };
 
-sdk.bulkInvoiceBatch.update(batchId, bulkInvoiceBatchUpdate).then((res: UpdateBulkInvoiceBatchResponse) => {
+  const res = await sdk.bulkInvoiceBatch.update(batchId, bulkInvoiceBatchUpdate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

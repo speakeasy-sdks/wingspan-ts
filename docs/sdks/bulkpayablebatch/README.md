@@ -16,19 +16,22 @@ Create a bulk payable batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateBulkPayableBatchResponse } from "wingspan/dist/sdk/models/operations";
 import { BulkPayableBatchCreateProcessingStrategy } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.bulkPayableBatch.create({
-  labels: "bluetooth",
-  processingStrategy: BulkPayableBatchCreateProcessingStrategy.Single,
-}).then((res: CreateBulkPayableBatchResponse) => {
+  const res = await sdk.bulkPayableBatch.create({
+    labels: {
+      "key": "string",
+    },
+    processingStrategy: BulkPayableBatchCreateProcessingStrategy.Merge,
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -52,16 +55,18 @@ Delete a bulk payable batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteBulkPayableBatchRequest, DeleteBulkPayableBatchResponse } from "wingspan/dist/sdk/models/operations";
+import { DeleteBulkPayableBatchRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "program";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 
-sdk.bulkPayableBatch.delete(batchId).then((res: DeleteBulkPayableBatchResponse) => {
+  const res = await sdk.bulkPayableBatch.delete(batchId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -85,16 +90,18 @@ Get a bulk payable batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetBulkPayableBatchRequest, GetBulkPayableBatchResponse } from "wingspan/dist/sdk/models/operations";
+import { GetBulkPayableBatchRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 
-sdk.bulkPayableBatch.get(batchId).then((res: GetBulkPayableBatchResponse) => {
+  const res = await sdk.bulkPayableBatch.get(batchId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -118,21 +125,24 @@ Update a bulk payable batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateBulkPayableBatchRequest, UpdateBulkPayableBatchResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateBulkPayableBatchRequest } from "wingspan/dist/sdk/models/operations";
 import { BulkPayableBatchUpdate, StatusBulkPayableBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "Van";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 const bulkPayableBatchUpdate: BulkPayableBatchUpdate = {
-  labels: "Reactive",
-  status: StatusBulkPayableBatchUpdate.LessThanNilGreaterThan,
+  labels: {
+    "key": "string",
+  },
 };
 
-sdk.bulkPayableBatch.update(batchId, bulkPayableBatchUpdate).then((res: UpdateBulkPayableBatchResponse) => {
+  const res = await sdk.bulkPayableBatch.update(batchId, bulkPayableBatchUpdate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

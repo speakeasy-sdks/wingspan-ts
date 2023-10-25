@@ -3,7 +3,10 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { Eighta9c6cb49482a98cdd603ff09858cdc3e5ef6ad9807c876c4161d925a96694a5 } from "./eighta9c6cb49482a98cdd603ff09858cdc3e5ef6ad9807c876c4161d925a96694a5";
+import { Form1099Correction } from "./form1099correction";
+import { Form1099Events } from "./form1099events";
+import { Expose, Type } from "class-transformer";
 
 export enum DeliveryMethodMemberClientForm1099Balances {
     Electronic = "Electronic",
@@ -26,7 +29,7 @@ export enum StatusMemberClientForm1099Balances {
     Excluded = "Excluded",
 }
 
-export class MemberClientForm1099BalancesTaxForm2 extends SpeakeasyBase {}
+export class MemberClientForm1099BalancesTaxForm extends SpeakeasyBase {}
 
 export enum TypeMemberClientForm1099Balances {
     Nec = "NEC",
@@ -39,7 +42,8 @@ export class MemberClientForm1099Balances extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "correction" })
-    correction?: any;
+    @Type(() => Form1099Correction)
+    correction?: Form1099Correction;
 
     @SpeakeasyMetadata()
     @Expose({ name: "deliveryMethod" })
@@ -47,11 +51,13 @@ export class MemberClientForm1099Balances extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "dispute" })
-    dispute?: any;
+    @Type(() => Eighta9c6cb49482a98cdd603ff09858cdc3e5ef6ad9807c876c4161d925a96694a5)
+    dispute?: Eighta9c6cb49482a98cdd603ff09858cdc3e5ef6ad9807c876c4161d925a96694a5;
 
     @SpeakeasyMetadata()
     @Expose({ name: "events" })
-    events?: any;
+    @Type(() => Form1099Events)
+    events?: Form1099Events;
 
     @SpeakeasyMetadata()
     @Expose({ name: "exclusionReason" })
@@ -75,7 +81,8 @@ export class MemberClientForm1099Balances extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "taxForm" })
-    taxForm?: any;
+    @Type(() => MemberClientForm1099BalancesTaxForm)
+    taxForm?: MemberClientForm1099BalancesTaxForm;
 
     @SpeakeasyMetadata()
     @Expose({ name: "taxFormId" })

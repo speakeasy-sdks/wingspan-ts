@@ -14,7 +14,6 @@ Create payable on client for member
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreatePayableOnClientResponse } from "wingspan/dist/sdk/models/operations";
 import {
   CurrencyPayableCreateRequest,
   IntervalFrequencyUpdate,
@@ -22,62 +21,53 @@ import {
   StatusPayableCreateRequest,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.payableOnClient.create({
-  acceptedPaymentMethods: [
-    PayableCreateRequestAcceptedPaymentMethods.Ach,
-  ],
-  attachments: "Configuration",
-  client: "innovative",
-  collaboratorId: "Cambridgeshire grey technology",
-  creditFeeHandling: {
-    clientAbsolutePercentage: 0.86,
-    clientPays: 4552.22,
-    memberPays: 1697.27,
-  },
-  currency: CurrencyPayableCreateRequest.Usd,
-  dueDate: "male",
-  integration: {
-    quickbooks: {
-      expenseAccountId: "Screen mobile",
-      itemId: "Ameliorated Fresh",
+  const res = await sdk.payableOnClient.create({
+    acceptedPaymentMethods: [
+      PayableCreateRequestAcceptedPaymentMethods.Ach,
+    ],
+    attachments: {
+      customAttachmentIds: [
+        "string",
+      ],
     },
-  },
-  invoiceNotes: "overriding",
-  labels: "Fish",
-  lateFeeHandling: "Fiat",
-  lineItems: [
-    {
-      costPerUnit: 8946.95,
-      description: "Digitized fresh-thinking approach",
-      detail: "Northwest Direct",
-      discount: "animated",
-      integration: {
-        quickbooks: {
-          expenseAccountId: "Senior Mouse West",
-          itemId: "Towels likewise",
+    client: {},
+    collaboratorId: "string",
+    creditFeeHandling: {},
+    dueDate: "string",
+    integration: {
+      quickbooks: {},
+    },
+    labels: {
+      "key": "string",
+    },
+    lateFeeHandling: {
+      frequency: {},
+    },
+    lineItems: [
+      {
+        discount: {},
+        integration: {
+          quickbooks: {},
+        },
+        labels: {
+          "key": "string",
         },
       },
-      labels: "Praseodymium",
-      quantity: 7757.87,
-      reimbursableExpense: "woman",
-      totalCost: 1373.24,
-      unit: "radian",
+    ],
+    member: {},
+    metadata: {},
+    notificationPreferences: {
+      sendReminders: false,
     },
-  ],
-  member: {},
-  memberClientId: "mmm lavender City",
-  metadata: {
-    purchaseOrderNumber: "incompatible overhang",
-  },
-  notificationPreferences: "South",
-  status: StatusPayableCreateRequest.Cancelled,
-}).then((res: CreatePayableOnClientResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -101,7 +91,7 @@ Update payable on client by payableId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdatePayableOnClientRequest, UpdatePayableOnClientResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdatePayableOnClientRequest } from "wingspan/dist/sdk/models/operations";
 import {
   Facb8048736dba546c4c76242d9f8c7111011a7a7483528f37d80226698a1f2b,
   Fee,
@@ -116,8 +106,8 @@ import {
   LateFeeConfigUpdate,
   PayableUpdateRequest,
   PayableUpdateRequestAcceptedPaymentMethods,
-  PayableUpdateRequestClient2,
-  PayableUpdateRequestMember2,
+  PayableUpdateRequestClient,
+  PayableUpdateRequestMember,
   PayableUpdateRequestPaymentMethods,
   Sixad3f4f624fb518510130e879729b00ed8c237d1cebc5477abf34ac340a6424d,
   StatusPayableUpdateRequest,
@@ -125,48 +115,67 @@ import {
   ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 const payableUpdateRequest: PayableUpdateRequest = {
   acceptedPaymentMethods: [
-    PayableUpdateRequestAcceptedPaymentMethods.Credit,
+    PayableUpdateRequestAcceptedPaymentMethods.LessThanNilGreaterThan,
   ],
-  attachments: "male",
-  chargedFees: "Quality",
-  client: "invoice",
-  collaborators: [
-    "Islands",
-  ],
-  creditFeeHandling: "withdrawal",
-  dueDate: "white",
-  integration: "Carolina",
-  invoiceNotes: "immediately implement JBOD",
-  labels: {
-    "similique": "Representative",
+  attachments: {
+    customAttachmentIds: [
+      "string",
+    ],
   },
-  lateFeeHandling: "driver",
+  chargedFees: {
+    lateFee: {
+      amount: 245.55,
+    },
+    processingFee: {
+      amount: 5971.29,
+    },
+  },
+  client: {},
+  collaborators: [
+    {},
+  ],
+  creditFeeHandling: {},
+  integration: {
+    quickbooks: {},
+  },
+  labels: {
+    "key": "string",
+  },
+  lateFeeHandling: {
+    frequency: {},
+  },
   lineItems: [
-    "pascal",
+    {
+      discount: {},
+      integration: {
+        quickbooks: {},
+      },
+      labels: {
+        "key": "string",
+      },
+    },
   ],
   member: {},
-  memberClientId: "Lev Wooden",
-  metadata: "Jaguar",
+  metadata: {},
   notificationPreferences: {
-    sendInvoice: "brightly",
-    sendReceipt: false,
     sendReminders: false,
   },
   paymentMethods: [
-    PayableUpdateRequestPaymentMethods.Ach,
+    PayableUpdateRequestPaymentMethods.Credit,
   ],
-  status: StatusPayableUpdateRequest.Pending,
 };
 
-sdk.payableOnClient.update(id, payableUpdateRequest).then((res: UpdatePayableOnClientResponse) => {
+  const res = await sdk.payableOnClient.update(id, payableUpdateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

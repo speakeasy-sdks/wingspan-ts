@@ -13,15 +13,16 @@ List bulk collaborator batches
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListBulkCollaboratorBatchesResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.bulkCollaboratorBatches.list().then((res: ListBulkCollaboratorBatchesResponse) => {
+  const res = await sdk.bulkCollaboratorBatches.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

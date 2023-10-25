@@ -4,9 +4,12 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { B9789f45f8c8070ff38a64d80c2e4a8732ddaf329e46546474400d26f84c0f1c } from "./b9789f45f8c8070ff38a64d80c2e4a8732ddaf329e46546474400d26f84c0f1c";
+import { ClientData } from "./clientdata";
 import { Collaboration } from "./collaboration";
+import { CollaboratorEvents } from "./collaboratorevents";
 import { CollaboratorV2FormW9Info } from "./collaboratorv2formw9info";
 import { MemberClientWireAccount } from "./memberclientwireaccount";
+import { MemberData } from "./memberdata";
 import { Ninecd48bf78a297540b0ec6f45365beb8d6ce0ee88e6d244115ad226e6701011a3 } from "./ninecd48bf78a297540b0ec6f45365beb8d6ce0ee88e6d244115ad226e6701011a3";
 import { RedactedMember } from "./redactedmember";
 import { UserRoles } from "./userroles";
@@ -33,7 +36,8 @@ export class CollaboratorV2 extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "clientData" })
-    clientData?: any;
+    @Type(() => ClientData)
+    clientData?: ClientData;
 
     @SpeakeasyMetadata()
     @Expose({ name: "clientId" })
@@ -83,11 +87,13 @@ export class CollaboratorV2 extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "memberData" })
-    memberData?: any;
+    @Type(() => MemberData)
+    memberData?: MemberData;
 
     @SpeakeasyMetadata()
     @Expose({ name: "memberEvents" })
-    memberEvents?: any;
+    @Type(() => CollaboratorEvents)
+    memberEvents?: CollaboratorEvents;
 
     @SpeakeasyMetadata()
     @Expose({ name: "memberId" })

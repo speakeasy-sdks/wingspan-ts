@@ -13,16 +13,18 @@ Get collaborator events by collaboratorId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetCollaboratorEventsRequest, GetCollaboratorEventsResponse } from "wingspan/dist/sdk/models/operations";
+import { GetCollaboratorEventsRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.collaboratorEvents.get(id).then((res: GetCollaboratorEventsResponse) => {
+  const res = await sdk.collaboratorEvents.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
