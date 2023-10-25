@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 213e6692a623ef7a4c2e2fbeb0e17e0f
   docVersion: 1.0.0
-  speakeasyVersion: 1.104.0
-  generationVersion: 2.169.0
+  speakeasyVersion: 1.107.0
+  generationVersion: 2.171.0
 generation:
   comments:
     disableComments: false
@@ -25,13 +25,13 @@ features:
     inputOutputModels: 2.81.1
     serverIDs: 2.81.1
   typescript:
-    core: 2.93.0
+    core: 2.94.0
     flattening: 2.81.1
     globalServerURLs: 2.82.0
     groups: 2.81.2
     nameOverrides: 2.81.1
 typescript:
-  version: 0.5.0
+  version: 0.6.0
   author: Speakeasy
   flattenGlobalSecurity: true
   installationURL: https://github.com/speakeasy-sdks/wingspan-ts
