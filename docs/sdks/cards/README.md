@@ -13,15 +13,17 @@ List cards
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListCardsResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.cards.list().then((res: ListCardsResponse) => {
+  const res = await sdk.cards.list();
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

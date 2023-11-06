@@ -13,15 +13,17 @@ List bulk client batches
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListBulkClientBatchesResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.bulkClientBatches.list().then((res: ListBulkClientBatchesResponse) => {
+  const res = await sdk.bulkClientBatches.list();
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

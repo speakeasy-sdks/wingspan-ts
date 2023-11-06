@@ -13,16 +13,19 @@ Get Institution By Routing Number
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetInstitutionRequest, GetInstitutionResponse } from "wingspan/dist/sdk/models/operations";
+import { GetInstitutionRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const routingNumber: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const routingNumber: string = "string";
 
-sdk.institution.get(routingNumber).then((res: GetInstitutionResponse) => {
+  const res = await sdk.institution.get(routingNumber);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

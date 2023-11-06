@@ -13,15 +13,17 @@ List invoices on member
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListMemberInvoicesResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.memberInvoices.list().then((res: ListMemberInvoicesResponse) => {
+  const res = await sdk.memberInvoices.list();
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

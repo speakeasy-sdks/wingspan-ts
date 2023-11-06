@@ -3,12 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { Address } from "./address";
+import { Expose, Type } from "class-transformer";
 
 export class CheckbookCardCreate extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "address" })
-    address?: any;
+    @Type(() => Address)
+    address?: Address;
 
     @SpeakeasyMetadata()
     @Expose({ name: "cardNumber" })

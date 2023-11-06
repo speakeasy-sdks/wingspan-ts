@@ -13,15 +13,17 @@ Get a list of line items with respective aging group
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetLineItemsAgingGroupResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.lineItemsAgingGroup.get().then((res: GetLineItemsAgingGroupResponse) => {
+  const res = await sdk.lineItemsAgingGroup.get();
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

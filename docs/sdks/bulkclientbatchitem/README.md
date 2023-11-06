@@ -15,7 +15,7 @@ Create a bulk client batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateBulkClientBatchItemRequest, CreateBulkClientBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import { CreateBulkClientBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 import {
   AutoPayRequirementMemberData,
   BulkClientItemCreate,
@@ -26,28 +26,26 @@ import {
   SixtyFourMillionEightHundredAndFortySixThousandOneHundredAndThirtySixa354aa510825c1f23c3a978f4c816d8d4184311e7294a570f73727dc,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "online";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 const bulkClientItemCreate: BulkClientItemCreate = {
-  clientStatus: ClientStatusBulkClientItemCreate.Pending,
-  company: "Johnson, Green and Collier",
-  email: "Annie.Zieme95@hotmail.com",
-  externalId: "East orange Northwest",
-  firstLastName: "SUV quantify Polestar",
-  integration: "physical",
-  labels: "Durham",
-  memberData: {
-    autoPayRequirement: AutoPayRequirementMemberData.All,
-    externalId: "Intelligent Fish",
-    shareTaxDocument: ShareTaxDocumentMemberData.Allow,
+  integration: {
+    quickbooks: {},
   },
+  labels: {
+    "key": "string",
+  },
+  memberData: {},
 };
 
-sdk.bulkClientBatchItem.create(batchId, bulkClientItemCreate).then((res: CreateBulkClientBatchItemResponse) => {
+  const res = await sdk.bulkClientBatchItem.create(batchId, bulkClientItemCreate);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -72,17 +70,20 @@ Get a bulk client batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetBulkClientBatchItemRequest, GetBulkClientBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import { GetBulkClientBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "female";
-const batchItemId: string = "program";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
+const batchItemId: string = "string";
 
-sdk.bulkClientBatchItem.get(batchId, batchItemId).then((res: GetBulkClientBatchItemResponse) => {
+  const res = await sdk.bulkClientBatchItem.get(batchId, batchItemId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -107,7 +108,7 @@ Update a bulk client batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateBulkClientBatchItemRequest, UpdateBulkClientBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateBulkClientBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 import {
   AutoPayRequirementMemberData,
   BulkClientItemUpdate,
@@ -118,27 +119,27 @@ import {
   SixtyFourMillionEightHundredAndFortySixThousandOneHundredAndThirtySixa354aa510825c1f23c3a978f4c816d8d4184311e7294a570f73727dc,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "Van";
-const batchItemId: string = "East";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
+const batchItemId: string = "string";
 const bulkClientItemUpdate: BulkClientItemUpdate = {
-  clientStatus: ClientStatusBulkClientItemUpdate.Pending,
-  company: "Glover, Murazik and Paucek",
-  email: "Immanuel5@yahoo.com",
-  externalId: "mostly",
-  firstLastName: "dynamic white",
-  integration: "Carolina",
-  labels: {
-    "officiis": "East",
+  integration: {
+    quickbooks: {},
   },
-  memberData: "Bicycle",
+  labels: {
+    "key": "string",
+  },
+  memberData: {},
 };
 
-sdk.bulkClientBatchItem.update(batchId, batchItemId, bulkClientItemUpdate).then((res: UpdateBulkClientBatchItemResponse) => {
+  const res = await sdk.bulkClientBatchItem.update(batchId, batchItemId, bulkClientItemUpdate);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

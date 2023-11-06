@@ -13,16 +13,19 @@ List the payout debit cards
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListPayoutDebitCardsRequest, ListPayoutDebitCardsResponse } from "wingspan/dist/sdk/models/operations";
+import { ListPayoutDebitCardsRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const memberId: string = "Bicycle";
+(async() => {
+  const sdk = new Wingspan();
+const memberId: string = "string";
 
-sdk.payoutDebitCards.list(memberId).then((res: ListPayoutDebitCardsResponse) => {
+  const res = await sdk.payoutDebitCards.list(memberId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

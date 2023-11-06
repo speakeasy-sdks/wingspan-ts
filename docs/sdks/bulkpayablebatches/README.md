@@ -13,15 +13,17 @@ List bulk payable batches
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListBulkPayableBatchesResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.bulkPayableBatches.list().then((res: ListBulkPayableBatchesResponse) => {
+  const res = await sdk.bulkPayableBatches.list();
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -13,16 +13,19 @@ Delete payable on client by payableId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeletePayableOnClientRequest, DeletePayableOnClientResponse } from "wingspan/dist/sdk/models/operations";
+import { DeletePayableOnClientRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.paPayableOnClientyable.delete(id).then((res: DeletePayableOnClientResponse) => {
+  const res = await sdk.paPayableOnClientyable.delete(id);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -3,6 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { SevenHundredAndFiftySevenf4961b94334fd41cedc27262be7b14583377703cda6490b996969bd4e66c2 } from "./sevenhundredandfiftysevenf4961b94334fd41cedc27262be7b14583377703cda6490b996969bd4e66c2";
 import { UserRoles } from "./userroles";
 import { Expose, Type } from "class-transformer";
 
@@ -42,7 +43,10 @@ export class BulkInvoiceBatch extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "statistics" })
-    statistics?: any;
+    @Type(
+        () => SevenHundredAndFiftySevenf4961b94334fd41cedc27262be7b14583377703cda6490b996969bd4e66c2
+    )
+    statistics?: SevenHundredAndFiftySevenf4961b94334fd41cedc27262be7b14583377703cda6490b996969bd4e66c2;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

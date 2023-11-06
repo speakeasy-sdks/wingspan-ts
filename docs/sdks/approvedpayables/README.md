@@ -13,15 +13,17 @@ List approved payables for payroll
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListApprovedPayablesResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.approvedPayables.list().then((res: ListApprovedPayablesResponse) => {
+  const res = await sdk.approvedPayables.list();
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

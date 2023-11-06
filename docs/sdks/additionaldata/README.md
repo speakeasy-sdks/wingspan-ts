@@ -15,21 +15,23 @@ Create additional data
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateAdditionalDataResponse } from "wingspan/dist/sdk/models/operations";
 import { AdditionalDataType } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.additionalData.create({
-  key: "<key>",
-  name: "bluetooth Extended",
-  required: false,
-  type: AdditionalDataType.Boolean,
-}).then((res: CreateAdditionalDataResponse) => {
+  const res = await sdk.additionalData.create({
+    key: "<key>",
+    name: "string",
+    required: false,
+    type: AdditionalDataType.Boolean,
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -53,16 +55,19 @@ Delete additional data
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteAdditionalDataRequest, DeleteAdditionalDataResponse } from "wingspan/dist/sdk/models/operations";
+import { DeleteAdditionalDataRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.additionalData.delete(id).then((res: DeleteAdditionalDataResponse) => {
+  const res = await sdk.additionalData.delete(id);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -86,16 +91,19 @@ Get additional data
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetAdditionalDataRequest, GetAdditionalDataResponse } from "wingspan/dist/sdk/models/operations";
+import { GetAdditionalDataRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.additionalData.get(id).then((res: GetAdditionalDataResponse) => {
+  const res = await sdk.additionalData.get(id);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

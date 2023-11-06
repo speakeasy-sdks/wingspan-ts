@@ -3,7 +3,9 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Frequency } from "./frequency";
 import { InvoiceDataCreateRequest } from "./invoicedatacreaterequest";
+import { ScheduleDate } from "./scheduledate";
 import { Expose, Type } from "class-transformer";
 
 export enum StatusInvoiceTemplateCreateRequest {
@@ -20,7 +22,8 @@ export class InvoiceTemplateCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "frequency" })
-    frequency?: any;
+    @Type(() => Frequency)
+    frequency?: Frequency;
 
     @SpeakeasyMetadata()
     @Expose({ name: "invoiceData" })
@@ -29,19 +32,20 @@ export class InvoiceTemplateCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "isSchedulingOnly" })
-    isSchedulingOnly?: any;
+    isSchedulingOnly?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: ScheduleDate })
     @Expose({ name: "scheduleDates" })
-    scheduleDates?: any[];
+    @Type(() => ScheduleDate)
+    scheduleDates?: ScheduleDate[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "sendEmails" })
-    sendEmails?: any;
+    sendEmails?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

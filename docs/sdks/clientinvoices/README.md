@@ -13,15 +13,17 @@ List invoices on client
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListClientInvoicesResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.clientInvoices.list().then((res: ListClientInvoicesResponse) => {
+  const res = await sdk.clientInvoices.list();
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

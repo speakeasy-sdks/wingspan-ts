@@ -13,16 +13,19 @@ Get a list of payables connected to payroll run
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListPayablesPayrollRequest, ListPayablesPayrollResponse } from "wingspan/dist/sdk/models/operations";
+import { ListPayablesPayrollRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const payrollId: string = "Bicycle";
+(async() => {
+  const sdk = new Wingspan();
+const payrollId: string = "string";
 
-sdk.payablesPayroll.list(payrollId).then((res: ListPayablesPayrollResponse) => {
+  const res = await sdk.payablesPayroll.list(payrollId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

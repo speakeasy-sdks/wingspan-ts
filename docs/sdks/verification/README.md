@@ -13,20 +13,23 @@ Sends a verification code
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { SendVerificationRequest, SendVerificationResponse } from "wingspan/dist/sdk/models/operations";
+import { SendVerificationRequest } from "wingspan/dist/sdk/models/operations";
 import { CardCodeRequest } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "hacking";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 const cardCodeRequest: CardCodeRequest = {
-  channel: "bluetooth Boynton",
+  channel: "string",
 };
 
-sdk.verification.send(id, cardCodeRequest).then((res: SendVerificationResponse) => {
+  const res = await sdk.verification.send(id, cardCodeRequest);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

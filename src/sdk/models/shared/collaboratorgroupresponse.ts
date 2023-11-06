@@ -3,7 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { EligibilityRequirement } from "./eligibilityrequirement";
+import { Expose, Type } from "class-transformer";
 
 export class CollaboratorGroupResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
@@ -16,7 +17,7 @@ export class CollaboratorGroupResponse extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "collaboratorSettings" })
-    collaboratorSettings?: any;
+    collaboratorSettings?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "defaultGroup" })
@@ -26,9 +27,10 @@ export class CollaboratorGroupResponse extends SpeakeasyBase {
     @Expose({ name: "description" })
     description: string;
 
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: EligibilityRequirement })
     @Expose({ name: "eligibilityRequirements" })
-    eligibilityRequirements?: any[];
+    @Type(() => EligibilityRequirement)
+    eligibilityRequirements?: EligibilityRequirement[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })

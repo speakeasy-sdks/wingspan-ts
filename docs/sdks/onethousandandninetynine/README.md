@@ -15,18 +15,20 @@ Calculate 1099 amounts for collaborator
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { Calculate1099Response } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.oneThousandAndNinetyNine.calculate({
-  memberClientId: "green Practical",
-  year: 7783.47,
-}).then((res: Calculate1099Response) => {
+  const res = await sdk.oneThousandAndNinetyNine.calculate({
+    memberClientId: "string",
+    year: 6611.96,
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -50,19 +52,21 @@ Mark a 1099 submission as returned by mail for collaborator
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { Mark1099Response } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.oneThousandAndNinetyNine.mark({
-  memberId: "Avon",
-  submissionIndex: 3695.9,
-  year: 3706.5,
-}).then((res: Mark1099Response) => {
+  const res = await sdk.oneThousandAndNinetyNine.mark({
+    memberId: "string",
+    submissionIndex: 2694.09,
+    year: 735.52,
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -86,26 +90,26 @@ Re-mail 1099 submission for collaborator
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { Remail1099Response } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.oneThousandAndNinetyNine.remail({
-  address: {
-    addressLine1: "purple",
-    addressLine2: "Dell Incredible",
-    city: "West Teresaton",
-    postalCode: "13750",
-    state: "hmph why architectures",
-  },
-  documentIndex: 4391.23,
-  memberId: "firmware Other Rubber",
-  year: 7578.67,
-}).then((res: Remail1099Response) => {
+  const res = await sdk.oneThousandAndNinetyNine.remail({
+    address: {
+      addressLine1: "string",
+      city: "Port Cara",
+      postalCode: "13281-2223",
+      state: "string",
+    },
+    memberId: "string",
+    year: 3145.26,
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

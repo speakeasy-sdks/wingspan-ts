@@ -3,7 +3,9 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { F6f2bd1a2fc7bad4e0d8f22345fc5f6699d096b7797b93575869c544a4fc5cef } from "./f6f2bd1a2fc7bad4e0d8f22345fc5f6699d096b7797b93575869c544a4fc5cef";
+import { SevenThousandNineHundredAndNinetySixa6815c717c0e93865680b5cd47dec90314e97e4e7282bed7fc2f367bc051 } from "./seventhousandninehundredandninetysixa6815c717c0e93865680b5cd47dec90314e97e4e7282bed7fc2f367bc051";
+import { Expose, Type } from "class-transformer";
 
 export class RedactedUser extends SpeakeasyBase {
     @SpeakeasyMetadata()
@@ -12,11 +14,16 @@ export class RedactedUser extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "phone" })
-    phone?: any;
+    @Type(
+        () =>
+            SevenThousandNineHundredAndNinetySixa6815c717c0e93865680b5cd47dec90314e97e4e7282bed7fc2f367bc051
+    )
+    phone?: SevenThousandNineHundredAndNinetySixa6815c717c0e93865680b5cd47dec90314e97e4e7282bed7fc2f367bc051;
 
     @SpeakeasyMetadata()
     @Expose({ name: "profile" })
-    profile?: any;
+    @Type(() => F6f2bd1a2fc7bad4e0d8f22345fc5f6699d096b7797b93575869c544a4fc5cef)
+    profile?: F6f2bd1a2fc7bad4e0d8f22345fc5f6699d096b7797b93575869c544a4fc5cef;
 
     @SpeakeasyMetadata()
     @Expose({ name: "tag" })

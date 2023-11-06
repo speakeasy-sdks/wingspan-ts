@@ -13,15 +13,17 @@ List Eligibility Requirements
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListEligibilityRequirementsResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.eligibilityRequirements.list().then((res: ListEligibilityRequirementsResponse) => {
+  const res = await sdk.eligibilityRequirements.list();
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

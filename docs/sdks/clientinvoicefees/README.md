@@ -14,18 +14,20 @@ Create client-invoice fees
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateClientInvoiceFeesResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.clientInvoiceFees.create({
-  contactName: "bluetooth Extended",
-  email: "Pamela_Bernhard37@gmail.com",
-}).then((res: CreateClientInvoiceFeesResponse) => {
+  const res = await sdk.clientInvoiceFees.create({
+    contactName: "string",
+    email: "Jena.Nienow28@yahoo.com",
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -49,16 +51,19 @@ List client-invoice fees
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListClientInvoiceFeesRequest, ListClientInvoiceFeesResponse } from "wingspan/dist/sdk/models/operations";
+import { ListClientInvoiceFeesRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const invoiceId: string = "Bicycle";
+(async() => {
+  const sdk = new Wingspan();
+const invoiceId: string = "string";
 
-sdk.clientInvoiceFees.list(invoiceId).then((res: ListClientInvoiceFeesResponse) => {
+  const res = await sdk.clientInvoiceFees.list(invoiceId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -13,15 +13,17 @@ List bulk calculation1099 batches
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListBulkCalculation1099BatchesResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.bulkCalculation1099Batches.list().then((res: ListBulkCalculation1099BatchesResponse) => {
+  const res = await sdk.bulkCalculation1099Batches.list();
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

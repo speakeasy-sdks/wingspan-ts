@@ -13,15 +13,17 @@ Get Service Status
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetServiceStatusResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.serviceStatus.get().then((res: GetServiceStatusResponse) => {
+  const res = await sdk.serviceStatus.get();
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

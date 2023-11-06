@@ -15,17 +15,19 @@ Create instant payout details
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateInstantPayoutResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.instantPayout.create({
-  externalPayoutAccountToken: "bluetooth Extended",
-}).then((res: CreateInstantPayoutResponse) => {
+  const res = await sdk.instantPayout.create({
+    externalPayoutAccountToken: "string",
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -49,15 +51,17 @@ Delete instant payout
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteInstantPayoutResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.instantPayout.delete().then((res: DeleteInstantPayoutResponse) => {
+  const res = await sdk.instantPayout.delete();
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -80,15 +84,17 @@ Fetch instant payout details
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { FetchInstantPayoutResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.instantPayout.fetch().then((res: FetchInstantPayoutResponse) => {
+  const res = await sdk.instantPayout.fetch();
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

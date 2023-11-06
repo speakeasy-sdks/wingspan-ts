@@ -13,16 +13,19 @@ List bulk collaborator batch items
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListBulkCollaboratorBatchItemsRequest, ListBulkCollaboratorBatchItemsResponse } from "wingspan/dist/sdk/models/operations";
+import { ListBulkCollaboratorBatchItemsRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "Bicycle";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 
-sdk.bulkCollaboratorBatchItems.list(batchId).then((res: ListBulkCollaboratorBatchItemsResponse) => {
+  const res = await sdk.bulkCollaboratorBatchItems.list(batchId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

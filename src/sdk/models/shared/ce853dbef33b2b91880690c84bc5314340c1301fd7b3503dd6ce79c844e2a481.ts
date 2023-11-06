@@ -3,9 +3,9 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { Expose, Type } from "class-transformer";
 
-export class Ce853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481Address2 extends SpeakeasyBase {}
+export class Ce853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481Address extends SpeakeasyBase {}
 
 export enum CompanyStructurece853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481 {
     None = "None",
@@ -24,7 +24,8 @@ export enum CompanyStructurece853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce
 export class Ce853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481 extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "address" })
-    address?: any;
+    @Type(() => Ce853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481Address)
+    address?: Ce853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481Address;
 
     @SpeakeasyMetadata()
     @Expose({ name: "companyStructure" })

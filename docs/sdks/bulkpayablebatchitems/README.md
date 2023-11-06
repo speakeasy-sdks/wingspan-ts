@@ -13,16 +13,19 @@ List bulk payable batch items
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListBulkPayableBatchItemsRequest, ListBulkPayableBatchItemsResponse } from "wingspan/dist/sdk/models/operations";
+import { ListBulkPayableBatchItemsRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "Bicycle";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 
-sdk.bulkPayableBatchItems.list(batchId).then((res: ListBulkPayableBatchItemsResponse) => {
+  const res = await sdk.bulkPayableBatchItems.list(batchId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

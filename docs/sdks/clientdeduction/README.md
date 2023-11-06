@@ -13,26 +13,25 @@ Create deduction
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateClientDeductionResponse } from "wingspan/dist/sdk/models/operations";
 import { DeductionCreateRequestCurrency, TypeDeductionCreateRequest } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.clientDeduction.create({
-  amount: 4865.89,
-  clientId: "Configuration Money",
-  currency: DeductionCreateRequestCurrency.Cad,
-  memberId: "shred",
-  name: "technology East",
-  priority: 1697.27,
-  sourceInvoiceId: "Northwest",
-  startDate: "SUV quantify Polestar",
-  type: TypeDeductionCreateRequest.PrePayment,
-}).then((res: CreateClientDeductionResponse) => {
+  const res = await sdk.clientDeduction.create({
+    amount: 4865.89,
+    clientId: "string",
+    currency: DeductionCreateRequestCurrency.Usd,
+    memberId: "string",
+    name: "string",
+    type: TypeDeductionCreateRequest.PostPayment,
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

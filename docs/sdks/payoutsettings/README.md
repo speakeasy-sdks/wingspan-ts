@@ -14,16 +14,19 @@ Get the payout settings
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetPayoutSettingsRequest, GetPayoutSettingsResponse } from "wingspan/dist/sdk/models/operations";
+import { GetPayoutSettingsRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.payoutSettings.get(id).then((res: GetPayoutSettingsResponse) => {
+  const res = await sdk.payoutSettings.get(id);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -47,7 +50,7 @@ Update the payout settings
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdatePayoutSettingsRequest, UpdatePayoutSettingsResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdatePayoutSettingsRequest } from "wingspan/dist/sdk/models/operations";
 import {
   DestinationTypePayoutDestinationUpdate,
   PayoutDestinationUpdate,
@@ -56,20 +59,22 @@ import {
   PayoutSettingsUpdate,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 const payoutSettingsUpdate: PayoutSettingsUpdate = {
   payoutDestinations: [
-    "Reactive",
+    {},
   ],
-  payoutPreferences: PayoutPreferencesPayoutSettingsUpdate.LessThanNilGreaterThan,
 };
 
-sdk.payoutSettings.update(id, payoutSettingsUpdate).then((res: UpdatePayoutSettingsResponse) => {
+  const res = await sdk.payoutSettings.update(id, payoutSettingsUpdate);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

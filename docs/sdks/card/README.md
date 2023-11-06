@@ -16,24 +16,24 @@ Create card
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateCardResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.card.create({
-  requestPhysicalCard: "bluetooth",
-  shippingAddress: {
-    addressLine1: "innovative blue",
-    addressLine2: "grey technology East",
-    city: "West Astridcester",
-    postalCode: "88558-7496",
-    state: "Durham after",
-  },
-}).then((res: CreateCardResponse) => {
+  const res = await sdk.card.create({
+    shippingAddress: {
+      addressLine1: "string",
+      city: "Jenafurt",
+      postalCode: "42170-9739",
+      state: "string",
+    },
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -57,16 +57,19 @@ Delete a card by cardId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteCardRequest, DeleteCardResponse } from "wingspan/dist/sdk/models/operations";
+import { DeleteCardRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.card.delete(id).then((res: DeleteCardResponse) => {
+  const res = await sdk.card.delete(id);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -90,16 +93,19 @@ Get card by cardId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetCardRequest, GetCardResponse } from "wingspan/dist/sdk/models/operations";
+import { GetCardRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.card.get(id).then((res: GetCardResponse) => {
+  const res = await sdk.card.get(id);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -123,20 +129,23 @@ Update card by cardId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateCardRequest, UpdateCardResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateCardRequest } from "wingspan/dist/sdk/models/operations";
 import { CardUpdateRequest, PropertiesCardUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 const cardUpdateRequest: CardUpdateRequest = {
-  status: PropertiesCardUpdateRequest.Active,
+  status: PropertiesCardUpdateRequest.ClosedByCustomer,
 };
 
-sdk.card.update(id, cardUpdateRequest).then((res: UpdateCardResponse) => {
+  const res = await sdk.card.update(id, cardUpdateRequest);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

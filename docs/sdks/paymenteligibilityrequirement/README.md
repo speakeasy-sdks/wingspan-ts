@@ -16,18 +16,20 @@ Create Payment Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreatePaymentEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.paymentEligibilityRequirement.create({
-  field: "bluetooth Extended",
-  value: "blue",
-}).then((res: CreatePaymentEligibilityRequirementResponse) => {
+  const res = await sdk.paymentEligibilityRequirement.create({
+    field: "string",
+    value: "string",
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -51,19 +53,19 @@ Delete Payment Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import {
-  DeletePaymentEligibilityRequirementRequest,
-  DeletePaymentEligibilityRequirementResponse,
-} from "wingspan/dist/sdk/models/operations";
+import { DeletePaymentEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.paymentEligibilityRequirement.delete(id).then((res: DeletePaymentEligibilityRequirementResponse) => {
+  const res = await sdk.paymentEligibilityRequirement.delete(id);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -87,19 +89,19 @@ Get Payment Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import {
-  GetPaymentEligibilityRequirementRequest,
-  GetPaymentEligibilityRequirementResponse,
-} from "wingspan/dist/sdk/models/operations";
+import { GetPaymentEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.paymentEligibilityRequirement.get(id).then((res: GetPaymentEligibilityRequirementResponse) => {
+  const res = await sdk.paymentEligibilityRequirement.get(id);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -123,24 +125,23 @@ Update Payment Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import {
-  UpdatePaymentEligibilityRequirementRequest,
-  UpdatePaymentEligibilityRequirementResponse,
-} from "wingspan/dist/sdk/models/operations";
-import { PaymentEligibilityUpdateRequest, PaymentEligibilityUpdateRequestValue2 } from "wingspan/dist/sdk/models/shared";
+import { UpdatePaymentEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
+import { PaymentEligibilityUpdateRequest, PaymentEligibilityUpdateRequestValue } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 const paymentEligibilityUpdateRequest: PaymentEligibilityUpdateRequest = {
-  field: "Reactive",
   value: {},
 };
 
-sdk.paymentEligibilityRequirement.update(id, paymentEligibilityUpdateRequest).then((res: UpdatePaymentEligibilityRequirementResponse) => {
+  const res = await sdk.paymentEligibilityRequirement.update(id, paymentEligibilityUpdateRequest);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

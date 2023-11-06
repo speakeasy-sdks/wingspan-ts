@@ -3,16 +3,18 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { InvoiceAttachmentFile } from "./invoiceattachmentfile";
+import { Expose, Type } from "class-transformer";
 
 export class InvoiceAttachments extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "customAttachmentIds" })
     customAttachmentIds?: string[];
 
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: InvoiceAttachmentFile })
     @Expose({ name: "customAttachmentInfo" })
-    customAttachmentInfo?: any[];
+    @Type(() => InvoiceAttachmentFile)
+    customAttachmentInfo?: InvoiceAttachmentFile[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "invoiceLink" })

@@ -13,19 +13,19 @@ List bulk calculation1099 batch items
 
 ```typescript
 import { Wingspan } from "wingspan";
-import {
-  ListBulkCalculation1099BatchItemsRequest,
-  ListBulkCalculation1099BatchItemsResponse,
-} from "wingspan/dist/sdk/models/operations";
+import { ListBulkCalculation1099BatchItemsRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "Bicycle";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 
-sdk.bulkCalculation1099BatchItems.list(batchId).then((res: ListBulkCalculation1099BatchItemsResponse) => {
+  const res = await sdk.bulkCalculation1099BatchItems.list(batchId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

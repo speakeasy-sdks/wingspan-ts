@@ -15,16 +15,19 @@ Delete deduction
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteClientDeductionIDRequest, DeleteClientDeductionIDResponse } from "wingspan/dist/sdk/models/operations";
+import { DeleteClientDeductionIDRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.clientDeductionID.delete(id).then((res: DeleteClientDeductionIDResponse) => {
+  const res = await sdk.clientDeductionID.delete(id);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -48,16 +51,19 @@ Get deduction
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetClientDeductionIDRequest, GetClientDeductionIDResponse } from "wingspan/dist/sdk/models/operations";
+import { GetClientDeductionIDRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.clientDeductionID.get(id).then((res: GetClientDeductionIDResponse) => {
+  const res = await sdk.clientDeductionID.get(id);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -81,30 +87,25 @@ Update deduction
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateClientDeductionIDRequest, UpdateClientDeductionIDResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateClientDeductionIDRequest } from "wingspan/dist/sdk/models/operations";
 import {
   CurrencyDeductionUpdateRequest,
   DeductionUpdateRequest,
   TypeDeductionUpdateRequest,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
-const deductionUpdateRequest: DeductionUpdateRequest = {
-  amount: 156.52,
-  currency: CurrencyDeductionUpdateRequest.Cad,
-  name: "dock Quality redundant",
-  priority: 9840.08,
-  sourceInvoiceId: "Islands",
-  startDate: "withdrawal extend",
-  type: TypeDeductionUpdateRequest.PrePayment,
-};
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
+const deductionUpdateRequest: DeductionUpdateRequest = {};
 
-sdk.clientDeductionID.update(id, deductionUpdateRequest).then((res: UpdateClientDeductionIDResponse) => {
+  const res = await sdk.clientDeductionID.update(id, deductionUpdateRequest);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

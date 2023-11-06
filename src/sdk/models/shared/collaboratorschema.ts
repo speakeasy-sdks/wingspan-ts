@@ -4,8 +4,13 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { B9789f45f8c8070ff38a64d80c2e4a8732ddaf329e46546474400d26f84c0f1c } from "./b9789f45f8c8070ff38a64d80c2e4a8732ddaf329e46546474400d26f84c0f1c";
+import { ClientData } from "./clientdata";
+import { MemberClientFormW9Info } from "./memberclientformw9info";
+import { MemberClientRequirementResponse } from "./memberclientrequirementresponse";
 import { MemberClientWireAccount } from "./memberclientwireaccount";
+import { MemberData } from "./memberdata";
 import { RedactedMember } from "./redactedmember";
+import { TwentySixe8ea23ccb1e007e7d6560175c7e75c768dac34727b7fe1d834ca24b8221ef4 } from "./twentysixe8ea23ccb1e007e7d6560175c7e75c768dac34727b7fe1d834ca24b8221ef4";
 import { UserRoles } from "./userroles";
 import { Expose, Type } from "class-transformer";
 
@@ -30,7 +35,8 @@ export class CollaboratorSchema extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "clientData" })
-    clientData?: any;
+    @Type(() => ClientData)
+    clientData?: ClientData;
 
     @SpeakeasyMetadata()
     @Expose({ name: "clientId" })
@@ -48,9 +54,10 @@ export class CollaboratorSchema extends SpeakeasyBase {
     @Expose({ name: "createdAt" })
     createdAt: string;
 
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: MemberClientRequirementResponse })
     @Expose({ name: "eligibilityRequirements" })
-    eligibilityRequirements?: any[];
+    @Type(() => MemberClientRequirementResponse)
+    eligibilityRequirements?: MemberClientRequirementResponse[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "form1099Balances" })
@@ -59,11 +66,13 @@ export class CollaboratorSchema extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "formW9Data" })
-    formW9Data?: any;
+    @Type(() => MemberClientFormW9Info)
+    formW9Data?: MemberClientFormW9Info;
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration" })
-    integration?: any;
+    @Type(() => TwentySixe8ea23ccb1e007e7d6560175c7e75c768dac34727b7fe1d834ca24b8221ef4)
+    integration?: TwentySixe8ea23ccb1e007e7d6560175c7e75c768dac34727b7fe1d834ca24b8221ef4;
 
     @SpeakeasyMetadata()
     @Expose({ name: "internationalWireAccount" })
@@ -81,7 +90,8 @@ export class CollaboratorSchema extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "memberData" })
-    memberData?: any;
+    @Type(() => MemberData)
+    memberData?: MemberData;
 
     @SpeakeasyMetadata()
     @Expose({ name: "memberId" })

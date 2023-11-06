@@ -13,16 +13,19 @@ Get a single V2 Collaborator by clientId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetClientCollaboratorV2Request, GetClientCollaboratorV2Response } from "wingspan/dist/sdk/models/operations";
+import { GetClientCollaboratorV2Request } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const clientId: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const clientId: string = "string";
 
-sdk.clientCollaboratorV2.get(clientId).then((res: GetClientCollaboratorV2Response) => {
+  const res = await sdk.clientCollaboratorV2.get(clientId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

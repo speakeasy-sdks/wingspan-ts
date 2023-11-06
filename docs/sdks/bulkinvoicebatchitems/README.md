@@ -13,16 +13,19 @@ List bulk invoice batch items
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListBulkInvoiceBatchItemsRequest, ListBulkInvoiceBatchItemsResponse } from "wingspan/dist/sdk/models/operations";
+import { ListBulkInvoiceBatchItemsRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "Bicycle";
+(async() => {
+  const sdk = new Wingspan();
+const batchId: string = "string";
 
-sdk.bulkInvoiceBatchItems.list(batchId).then((res: ListBulkInvoiceBatchItemsResponse) => {
+  const res = await sdk.bulkInvoiceBatchItems.list(batchId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

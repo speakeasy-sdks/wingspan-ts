@@ -13,48 +13,37 @@ Create invoice as client
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateInvoiceAsClientResponse } from "wingspan/dist/sdk/models/operations";
 import { CurrencyClientInvoiceCreateRequest } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.invoiceAsClient.create({
-  clientCompany: "bluetooth Extended",
-  clientEmail: "blue",
-  clientEmailCC: [
-    "shred",
-  ],
-  clientFirstName: "technology East",
-  clientLastName: "evolve",
-  creditFeeHandling: {
-    clientAbsolutePercentage: 7926.2,
-    clientPays: 8559.52,
-    memberPays: 8165.88,
-  },
-  currency: CurrencyClientInvoiceCreateRequest.Cad,
-  dueDate: "Polestar mobile",
-  lineItems: [
-    {
-      costPerUnit: 6562.56,
-      description: "Grass-roots 3rd generation data-warehouse",
-      detail: "South Intelligent Fish",
-      discount: "Fiat",
-      integration: {
-        quickbooks: "Account",
+  const res = await sdk.invoiceAsClient.create({
+    clientEmail: "string",
+    clientEmailCC: [
+      "string",
+    ],
+    creditFeeHandling: {},
+    dueDate: "string",
+    lineItems: [
+      {
+        discount: {},
+        integration: {
+          quickbooks: {},
+        },
+        labels: {
+          "key": "string",
+        },
       },
-      labels: "Profound",
-      quantity: 1325.85,
-      reimbursableExpense: "animated",
-      totalCost: 8424.64,
-      unit: "lumen",
-    },
-  ],
-  memberId: "Senior Mouse West",
-}).then((res: CreateInvoiceAsClientResponse) => {
+    ],
+    memberId: "string",
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

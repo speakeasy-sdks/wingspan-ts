@@ -13,15 +13,17 @@ List deductions
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListCollaboratorDeductionsResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.collaboratorDeductions.list().then((res: ListCollaboratorDeductionsResponse) => {
+  const res = await sdk.collaboratorDeductions.list();
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

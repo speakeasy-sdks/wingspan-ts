@@ -16,26 +16,25 @@ Create deduction
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateCollaboratorDeductionResponse } from "wingspan/dist/sdk/models/operations";
 import { DeductionCreateRequestCurrency, TypeDeductionCreateRequest } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.collaboratorDeduction.create({
-  amount: 4865.89,
-  clientId: "Configuration Money",
-  currency: DeductionCreateRequestCurrency.Cad,
-  memberId: "shred",
-  name: "technology East",
-  priority: 1697.27,
-  sourceInvoiceId: "Northwest",
-  startDate: "SUV quantify Polestar",
-  type: TypeDeductionCreateRequest.PrePayment,
-}).then((res: CreateCollaboratorDeductionResponse) => {
+  const res = await sdk.collaboratorDeduction.create({
+    amount: 4865.89,
+    clientId: "string",
+    currency: DeductionCreateRequestCurrency.Usd,
+    memberId: "string",
+    name: "string",
+    type: TypeDeductionCreateRequest.PostPayment,
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -59,16 +58,19 @@ Delete deduction
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteCollaboratorDeductionRequest, DeleteCollaboratorDeductionResponse } from "wingspan/dist/sdk/models/operations";
+import { DeleteCollaboratorDeductionRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.collaboratorDeduction.delete(id).then((res: DeleteCollaboratorDeductionResponse) => {
+  const res = await sdk.collaboratorDeduction.delete(id);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -92,16 +94,19 @@ Get deduction
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetCollaboratorDeductionRequest, GetCollaboratorDeductionResponse } from "wingspan/dist/sdk/models/operations";
+import { GetCollaboratorDeductionRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.collaboratorDeduction.get(id).then((res: GetCollaboratorDeductionResponse) => {
+  const res = await sdk.collaboratorDeduction.get(id);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -125,30 +130,25 @@ Update deduction
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateCollaboratorDeductionRequest, UpdateCollaboratorDeductionResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateCollaboratorDeductionRequest } from "wingspan/dist/sdk/models/operations";
 import {
   CurrencyDeductionUpdateRequest,
   DeductionUpdateRequest,
   TypeDeductionUpdateRequest,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
-const deductionUpdateRequest: DeductionUpdateRequest = {
-  amount: 156.52,
-  currency: CurrencyDeductionUpdateRequest.Cad,
-  name: "dock Quality redundant",
-  priority: 9840.08,
-  sourceInvoiceId: "Islands",
-  startDate: "withdrawal extend",
-  type: TypeDeductionUpdateRequest.PrePayment,
-};
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
+const deductionUpdateRequest: DeductionUpdateRequest = {};
 
-sdk.collaboratorDeduction.update(id, deductionUpdateRequest).then((res: UpdateCollaboratorDeductionResponse) => {
+  const res = await sdk.collaboratorDeduction.update(id, deductionUpdateRequest);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

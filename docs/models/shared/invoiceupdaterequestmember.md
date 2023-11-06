@@ -1,4 +1,4 @@
-# InvoiceCreateRequestMember2
+# InvoiceUpdateRequestMember
 
 
 ## Fields

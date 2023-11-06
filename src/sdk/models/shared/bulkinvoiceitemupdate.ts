@@ -3,7 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { FeeHandlingConfig } from "./feehandlingconfig";
+import { Expose, Type } from "class-transformer";
 
 export enum BulkInvoiceItemUpdateAcceptedPaymentMethods {
     Credit = "Credit",
@@ -52,7 +53,8 @@ export class BulkInvoiceItemUpdate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "creditFeeHandling" })
-    creditFeeHandling?: any;
+    @Type(() => FeeHandlingConfig)
+    creditFeeHandling?: FeeHandlingConfig;
 
     @SpeakeasyMetadata()
     @Expose({ name: "dueDate" })
@@ -68,7 +70,7 @@ export class BulkInvoiceItemUpdate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "lineItemDescription" })
@@ -92,7 +94,7 @@ export class BulkInvoiceItemUpdate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "reimbursableExpense" })
-    reimbursableExpense?: any;
+    reimbursableExpense?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "sendDate" })

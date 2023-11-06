@@ -14,16 +14,19 @@ Get payroll settings
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetPayrollSettingsRequest, GetPayrollSettingsResponse } from "wingspan/dist/sdk/models/operations";
+import { GetPayrollSettingsRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.payrollSettings.get(id).then((res: GetPayrollSettingsResponse) => {
+  const res = await sdk.payrollSettings.get(id);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -47,7 +50,7 @@ Update payroll settings
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdatePayrollSettingsRequest, UpdatePayrollSettingsResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdatePayrollSettingsRequest } from "wingspan/dist/sdk/models/operations";
 import {
   CalculationSettings1099,
   CardProcessingFeesCalculationSettings1099,
@@ -65,32 +68,33 @@ import {
   WorkflowPayrollSettingsUpdate,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 const payrollSettingsUpdate: PayrollSettingsUpdate = {
-  calculationSettings1099: "Reactive",
-  enablePlannedPayroll: false,
-  enableProcessDaysBeforeDue: "Quality",
-  frequency: "invoice",
-  fundingSource: "Islands",
-  issue1099s: "withdrawal",
-  processDaysBeforeDue: 3115.07,
-  scheduleDates: [
-    {
-      date: "bifurcated",
-      invoiceTemplateId: "silver immediately",
-      status: StatusScheduleDateUpdate.Completed,
+  calculationSettings1099: {
+    stateTaxId: {
+      "key": "string",
     },
+  },
+  frequency: {},
+  fundingSource: {
+    fundingSourceCurrency: FundingSourceCurrency.Cad,
+    fundingSourceId: "string",
+    fundingSourceType: TypeFundingSource.InternalAccount,
+  },
+  scheduleDates: [
+    {},
   ],
-  status: StatusPayrollSettingsUpdate.Active,
-  workflow: WorkflowPayrollSettingsUpdate.DualStage,
 };
 
-sdk.payrollSettings.update(id, payrollSettingsUpdate).then((res: UpdatePayrollSettingsResponse) => {
+  const res = await sdk.payrollSettings.update(id, payrollSettingsUpdate);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

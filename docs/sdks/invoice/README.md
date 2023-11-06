@@ -14,16 +14,19 @@ Generate invoice
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GenerateInvoiceRequest, GenerateInvoiceResponse } from "wingspan/dist/sdk/models/operations";
+import { GenerateInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const invoiceId: string = "ohm";
+(async() => {
+  const sdk = new Wingspan();
+const invoiceId: string = "string";
 
-sdk.invoice.generate(invoiceId).then((res: GenerateInvoiceResponse) => {
+  const res = await sdk.invoice.generate(invoiceId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -47,16 +50,19 @@ Send invoice
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { SendInvoiceRequest, SendInvoiceResponse } from "wingspan/dist/sdk/models/operations";
+import { SendInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const invoiceId: string = "hacking";
+(async() => {
+  const sdk = new Wingspan();
+const invoiceId: string = "string";
 
-sdk.invoice.send(invoiceId).then((res: SendInvoiceResponse) => {
+  const res = await sdk.invoice.send(invoiceId);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

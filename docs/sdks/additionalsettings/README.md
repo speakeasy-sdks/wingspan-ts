@@ -14,15 +14,17 @@ List additional settings
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListAdditionalSettingsResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.additionalSettings.list().then((res: ListAdditionalSettingsResponse) => {
+  const res = await sdk.additionalSettings.list();
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -45,23 +47,21 @@ Update additional settings
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateAdditionalSettingsRequest, UpdateAdditionalSettingsResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateAdditionalSettingsRequest } from "wingspan/dist/sdk/models/operations";
 import { AdditionalDataUpdateRequest, TypeAdditionalDataUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
-const additionalDataUpdateRequest: AdditionalDataUpdateRequest = {
-  key: "<key>",
-  name: "Reactive",
-  required: false,
-  type: TypeAdditionalDataUpdateRequest.Boolean,
-};
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
+const additionalDataUpdateRequest: AdditionalDataUpdateRequest = {};
 
-sdk.additionalSettings.update(id, additionalDataUpdateRequest).then((res: UpdateAdditionalSettingsResponse) => {
+  const res = await sdk.additionalSettings.update(id, additionalDataUpdateRequest);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

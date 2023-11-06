@@ -14,20 +14,20 @@ Delete Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import {
-  DeleteCollaboratorGroupEligibilityRequirementRequest,
-  DeleteCollaboratorGroupEligibilityRequirementResponse,
-} from "wingspan/dist/sdk/models/operations";
+import { DeleteCollaboratorGroupEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const eligibilityRequirementId: string = "program";
-const id: string = "Designer";
+(async() => {
+  const sdk = new Wingspan();
+const eligibilityRequirementId: string = "string";
+const id: string = "string";
 
-sdk.collaboratorGroupEligibilityRequirement.delete(eligibilityRequirementId, id).then((res: DeleteCollaboratorGroupEligibilityRequirementResponse) => {
+  const res = await sdk.collaboratorGroupEligibilityRequirement.delete(eligibilityRequirementId, id);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -52,24 +52,24 @@ Replace Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import {
-  ReplaceCollaboratorGroupEligibilityRequirementRequest,
-  ReplaceCollaboratorGroupEligibilityRequirementResponse,
-} from "wingspan/dist/sdk/models/operations";
+import { ReplaceCollaboratorGroupEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 import { CollaboratorGroupRequirementUpdate } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const eligibilityRequirementId: string = "Cruiser";
-const id: string = "Tandem";
+(async() => {
+  const sdk = new Wingspan();
+const eligibilityRequirementId: string = "string";
+const id: string = "string";
 const collaboratorGroupRequirementUpdate: CollaboratorGroupRequirementUpdate = {
-  newEligibilityRequirementId: "Bicycle",
+  newEligibilityRequirementId: "string",
 };
 
-sdk.collaboratorGroupEligibilityRequirement.replace(eligibilityRequirementId, id, collaboratorGroupRequirementUpdate).then((res: ReplaceCollaboratorGroupEligibilityRequirementResponse) => {
+  const res = await sdk.collaboratorGroupEligibilityRequirement.replace(eligibilityRequirementId, id, collaboratorGroupRequirementUpdate);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

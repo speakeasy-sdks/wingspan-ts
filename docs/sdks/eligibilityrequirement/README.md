@@ -16,20 +16,20 @@ Create Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
 import { EligibilityRequirementCreateRequestRequirementType } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.eligibilityRequirement.create({
-  requirementType: EligibilityRequirementCreateRequestRequirementType.Signature,
-  templateId: "bluetooth Extended",
-  validFor: 1343.65,
-}).then((res: CreateEligibilityRequirementResponse) => {
+  const res = await sdk.eligibilityRequirement.create({
+    requirementType: EligibilityRequirementCreateRequestRequirementType.Signature,
+  });
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -53,16 +53,19 @@ Delete Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteEligibilityRequirementRequest, DeleteEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
+import { DeleteEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.eligibilityRequirement.delete(id).then((res: DeleteEligibilityRequirementResponse) => {
+  const res = await sdk.eligibilityRequirement.delete(id);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -86,16 +89,19 @@ Get Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetEligibilityRequirementRequest, GetEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
+import { GetEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 
-sdk.eligibilityRequirement.get(id).then((res: GetEligibilityRequirementResponse) => {
+  const res = await sdk.eligibilityRequirement.get(id);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -119,25 +125,26 @@ Update Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateEligibilityRequirementRequest, UpdateEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 import {
   EligibilityRequirementUpdateRequest,
   EligibilityRequirementUpdateRequestRequirementType,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+(async() => {
+  const sdk = new Wingspan();
+const id: string = "string";
 const eligibilityRequirementUpdateRequest: EligibilityRequirementUpdateRequest = {
   requirementType: EligibilityRequirementUpdateRequestRequirementType.Signature,
-  templateId: "Reactive",
-  validFor: 9914.64,
 };
 
-sdk.eligibilityRequirement.update(id, eligibilityRequirementUpdateRequest).then((res: UpdateEligibilityRequirementResponse) => {
+  const res = await sdk.eligibilityRequirement.update(id, eligibilityRequirementUpdateRequest);
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

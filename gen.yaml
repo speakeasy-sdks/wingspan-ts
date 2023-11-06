@@ -1,18 +1,13 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 24a5ff4b5e33679ef9adf23ba062cf16
+  docChecksum: 213e6692a623ef7a4c2e2fbeb0e17e0f
   docVersion: 1.0.0
-  speakeasyVersion: 1.91.3
-  generationVersion: 2.139.1
+  speakeasyVersion: 1.112.1
+  generationVersion: 2.173.0
 generation:
-  comments:
-    disableComments: false
-    omitDescriptionIfSummaryPresent: false
-  baseServerURL: ""
+  comments: {}
   sdkClassName: wingspan
-  singleTagPerOp: false
-  tagNamespacingDisabled: false
-  telemetryEnabled: false
+  repoURL: https://github.com/speakeasy-sdks/wingspan-ts.git
 features:
   python:
     core: 2.85.3
@@ -24,13 +19,16 @@ features:
     inputOutputModels: 2.81.1
     serverIDs: 2.81.1
   typescript:
-    core: 2.89.1
+    core: 2.94.0
     flattening: 2.81.1
     globalServerURLs: 2.82.0
-    groups: 2.81.1
+    groups: 2.81.2
     nameOverrides: 2.81.1
 typescript:
-  version: 0.4.0
+  version: 0.5.0
   author: Speakeasy
+  flattenGlobalSecurity: true
+  installationURL: https://github.com/speakeasy-sdks/wingspan-ts
   maxMethodParams: 4
   packageName: wingspan
+  repoSubDirectory: .

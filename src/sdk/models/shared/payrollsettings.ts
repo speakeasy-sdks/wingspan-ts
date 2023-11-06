@@ -3,7 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { CalculationSettings1099 } from "./calculationsettings1099";
+import { Frequency } from "./frequency";
+import { FundingSource } from "./fundingsource";
+import { ScheduleDate } from "./scheduledate";
+import { Expose, Type } from "class-transformer";
 
 export enum StatusPayrollSettings {
     Active = "Active",
@@ -21,35 +25,39 @@ export enum PayrollSettingsWorkflow {
 export class PayrollSettings extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "calculationSettings1099" })
-    calculationSettings1099?: any;
+    @Type(() => CalculationSettings1099)
+    calculationSettings1099?: CalculationSettings1099;
 
     @SpeakeasyMetadata()
     @Expose({ name: "enablePlannedPayroll" })
-    enablePlannedPayroll?: any;
+    enablePlannedPayroll?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "enableProcessDaysBeforeDue" })
-    enableProcessDaysBeforeDue?: any;
+    enableProcessDaysBeforeDue?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "frequency" })
-    frequency?: any;
+    @Type(() => Frequency)
+    frequency?: Frequency;
 
     @SpeakeasyMetadata()
     @Expose({ name: "fundingSource" })
-    fundingSource?: any;
+    @Type(() => FundingSource)
+    fundingSource?: FundingSource;
 
     @SpeakeasyMetadata()
     @Expose({ name: "issue1099s" })
-    issue1099s?: any;
+    issue1099s?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "processDaysBeforeDue" })
     processDaysBeforeDue?: number;
 
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: ScheduleDate })
     @Expose({ name: "scheduleDates" })
-    scheduleDates?: any[];
+    @Type(() => ScheduleDate)
+    scheduleDates?: ScheduleDate[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

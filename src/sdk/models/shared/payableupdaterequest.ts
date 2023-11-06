@@ -3,7 +3,16 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { FeeHandlingConfig } from "./feehandlingconfig";
+import { Fees } from "./fees";
+import { InvoiceCollaboratorUpdateRequest } from "./invoicecollaboratorupdaterequest";
+import { InvoiceLineItemsCreateRequest } from "./invoicelineitemscreaterequest";
+import { InvoiceMetadata } from "./invoicemetadata";
+import { InvoiceNotificationPreferences } from "./invoicenotificationpreferences";
+import { LateFeeConfigUpdate } from "./latefeeconfigupdate";
+import { ThirtySixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2 } from "./thirtysixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2";
+import { ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461 } from "./threebilliononehundredandninetymillionsixhundredandeightyfivethousandeighthundredandthirtytwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461";
+import { Expose, Type } from "class-transformer";
 
 export enum PayableUpdateRequestAcceptedPaymentMethods {
     Credit = "Credit",
@@ -12,9 +21,9 @@ export enum PayableUpdateRequestAcceptedPaymentMethods {
     LessThanNilGreaterThan = "<nil>",
 }
 
-export class PayableUpdateRequestClient2 extends SpeakeasyBase {}
+export class PayableUpdateRequestClient extends SpeakeasyBase {}
 
-export class PayableUpdateRequestMember2 extends SpeakeasyBase {}
+export class PayableUpdateRequestMember extends SpeakeasyBase {}
 
 export enum PayableUpdateRequestPaymentMethods {
     Credit = "Credit",
@@ -41,23 +50,28 @@ export class PayableUpdateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "attachments" })
-    attachments?: any;
+    @Type(() => ThirtySixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2)
+    attachments?: ThirtySixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2;
 
     @SpeakeasyMetadata()
     @Expose({ name: "chargedFees" })
-    chargedFees?: any;
+    @Type(() => Fees)
+    chargedFees?: Fees;
 
     @SpeakeasyMetadata()
     @Expose({ name: "client" })
-    client?: any;
+    @Type(() => PayableUpdateRequestClient)
+    client?: PayableUpdateRequestClient;
 
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: InvoiceCollaboratorUpdateRequest })
     @Expose({ name: "collaborators" })
-    collaborators?: any[];
+    @Type(() => InvoiceCollaboratorUpdateRequest)
+    collaborators?: InvoiceCollaboratorUpdateRequest[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "creditFeeHandling" })
-    creditFeeHandling?: any;
+    @Type(() => FeeHandlingConfig)
+    creditFeeHandling?: FeeHandlingConfig;
 
     @SpeakeasyMetadata()
     @Expose({ name: "dueDate" })
@@ -65,7 +79,11 @@ export class PayableUpdateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration" })
-    integration?: any;
+    @Type(
+        () =>
+            ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461
+    )
+    integration?: ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461;
 
     @SpeakeasyMetadata()
     @Expose({ name: "invoiceNotes" })
@@ -73,19 +91,22 @@ export class PayableUpdateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "lateFeeHandling" })
-    lateFeeHandling?: any;
+    @Type(() => LateFeeConfigUpdate)
+    lateFeeHandling?: LateFeeConfigUpdate;
 
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: InvoiceLineItemsCreateRequest })
     @Expose({ name: "lineItems" })
-    lineItems?: any[];
+    @Type(() => InvoiceLineItemsCreateRequest)
+    lineItems?: InvoiceLineItemsCreateRequest[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "member" })
-    member?: any;
+    @Type(() => PayableUpdateRequestMember)
+    member?: PayableUpdateRequestMember;
 
     @SpeakeasyMetadata()
     @Expose({ name: "memberClientId" })
@@ -93,11 +114,13 @@ export class PayableUpdateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "metadata" })
-    metadata?: any;
+    @Type(() => InvoiceMetadata)
+    metadata?: InvoiceMetadata;
 
     @SpeakeasyMetadata()
     @Expose({ name: "notificationPreferences" })
-    notificationPreferences?: any;
+    @Type(() => InvoiceNotificationPreferences)
+    notificationPreferences?: InvoiceNotificationPreferences;
 
     @SpeakeasyMetadata()
     @Expose({ name: "paymentMethods" })

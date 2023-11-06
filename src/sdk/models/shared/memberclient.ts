@@ -8,9 +8,11 @@ import { ClientData } from "./clientdata";
 import { ExternalIds } from "./externalids";
 import { FiftyFoura6b24a57d15569713a0fc2cbf4d7b60e5b00c0035643d120b72001060ebd30 } from "./fiftyfoura6b24a57d15569713a0fc2cbf4d7b60e5b00c0035643d120b72001060ebd30";
 import { MemberClientFormW9Info } from "./memberclientformw9info";
+import { MemberClientRequirementResponse } from "./memberclientrequirementresponse";
 import { MemberClientWireAccount } from "./memberclientwireaccount";
 import { MemberData } from "./memberdata";
 import { RedactedMember } from "./redactedmember";
+import { Threed33fba3f009de957b3be92fba006d6383af7e39f823cc1fd213506f6205100f } from "./threed33fba3f009de957b3be92fba006d6383af7e39f823cc1fd213506f6205100f";
 import { UserRoles } from "./userroles";
 import { Expose, Type } from "class-transformer";
 
@@ -63,9 +65,10 @@ export class MemberClient extends SpeakeasyBase {
     @Expose({ name: "createdAt" })
     createdAt: string;
 
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: MemberClientRequirementResponse })
     @Expose({ name: "eligibilityRequirements" })
-    eligibilityRequirements?: any[];
+    @Type(() => MemberClientRequirementResponse)
+    eligibilityRequirements?: MemberClientRequirementResponse[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "emailCC" })
@@ -92,7 +95,8 @@ export class MemberClient extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration" })
-    integration?: any;
+    @Type(() => Threed33fba3f009de957b3be92fba006d6383af7e39f823cc1fd213506f6205100f)
+    integration?: Threed33fba3f009de957b3be92fba006d6383af7e39f823cc1fd213506f6205100f;
 
     @SpeakeasyMetadata()
     @Expose({ name: "internal" })

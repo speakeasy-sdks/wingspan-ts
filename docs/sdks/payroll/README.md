@@ -13,15 +13,17 @@ Execute payroll
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ExecutePayrollResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+(async() => {
+  const sdk = new Wingspan();
 
-sdk.payroll.execute().then((res: ExecutePayrollResponse) => {
+  const res = await sdk.payroll.execute();
+
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
