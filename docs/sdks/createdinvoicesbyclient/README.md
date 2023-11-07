@@ -1,5 +1,5 @@
 # CreatedInvoicesByClient
-(*createdInvoicesByClient*)
+(*.createdInvoicesByClient*)
 
 ### Available Operations
 

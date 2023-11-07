@@ -1,5 +1,5 @@
 # AdditionalSettings
-(*additionalSettings*)
+(*.additionalSettings*)
 
 ### Available Operations
 

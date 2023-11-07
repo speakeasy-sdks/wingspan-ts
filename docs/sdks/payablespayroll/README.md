@@ -1,5 +1,5 @@
 # PayablesPayroll
-(*payablesPayroll*)
+(*.payablesPayroll*)
 
 ### Available Operations
 

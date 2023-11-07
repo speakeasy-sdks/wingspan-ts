@@ -1,5 +1,5 @@
 # EligibilityRequirements
-(*eligibilityRequirements*)
+(*.eligibilityRequirements*)
 
 ### Available Operations
 

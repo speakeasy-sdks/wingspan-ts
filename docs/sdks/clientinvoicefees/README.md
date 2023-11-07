@@ -1,5 +1,5 @@
 # ClientInvoiceFees
-(*clientInvoiceFees*)
+(*.clientInvoiceFees*)
 
 ### Available Operations
 

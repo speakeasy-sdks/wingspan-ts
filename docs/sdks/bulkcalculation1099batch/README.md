@@ -1,5 +1,5 @@
 # BulkCalculation1099Batch
-(*bulkCalculation1099Batch*)
+(*.bulkCalculation1099Batch*)
 
 ### Available Operations
 

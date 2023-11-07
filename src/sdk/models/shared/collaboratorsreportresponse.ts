@@ -8,7 +8,7 @@ import { RedactedMember } from "./redactedmember";
 import { SixtySixad6f986038e3285c36e0faa5c61b52a02882d1460acb116b601a30abfb6c1d } from "./sixtysixad6f986038e3285c36e0faa5c61b52a02882d1460acb116b601a30abfb6c1d";
 import { Expose, Type } from "class-transformer";
 
-export class CollaboratorsReportResponseLabels extends SpeakeasyBase {}
+export class Labels extends SpeakeasyBase {}
 
 export enum StatusCollaboratorsReportResponse {
     Active = "Active",
@@ -49,8 +49,8 @@ export class CollaboratorsReportResponse extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    @Type(() => CollaboratorsReportResponseLabels)
-    labels?: CollaboratorsReportResponseLabels;
+    @Type(() => Labels)
+    labels?: Labels;
 
     @SpeakeasyMetadata()
     @Expose({ name: "member" })

@@ -1,5 +1,5 @@
 # PaymentEligibilityRequirements
-(*paymentEligibilityRequirements*)
+(*.paymentEligibilityRequirements*)
 
 ### Available Operations
 

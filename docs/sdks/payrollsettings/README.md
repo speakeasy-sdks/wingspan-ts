@@ -1,5 +1,5 @@
 # PayrollSettings
-(*payrollSettings*)
+(*.payrollSettings*)
 
 ### Available Operations
 

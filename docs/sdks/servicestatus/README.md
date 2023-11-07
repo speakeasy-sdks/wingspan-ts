@@ -1,5 +1,5 @@
 # ServiceStatus
-(*serviceStatus*)
+(*.serviceStatus*)
 
 ### Available Operations
 

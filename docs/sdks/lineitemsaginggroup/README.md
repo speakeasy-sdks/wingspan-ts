@@ -1,5 +1,5 @@
 # LineItemsAgingGroup
-(*lineItemsAgingGroup*)
+(*.lineItemsAgingGroup*)
 
 ### Available Operations
 

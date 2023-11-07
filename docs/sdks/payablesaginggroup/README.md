@@ -1,5 +1,5 @@
 # PayablesAgingGroup
-(*payablesAgingGroup*)
+(*.payablesAgingGroup*)
 
 ### Available Operations
 

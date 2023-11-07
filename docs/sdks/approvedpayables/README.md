@@ -1,5 +1,5 @@
 # ApprovedPayables
-(*approvedPayables*)
+(*.approvedPayables*)
 
 ### Available Operations
 

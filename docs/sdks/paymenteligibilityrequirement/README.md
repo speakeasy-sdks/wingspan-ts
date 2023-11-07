@@ -1,5 +1,5 @@
 # PaymentEligibilityRequirement
-(*paymentEligibilityRequirement*)
+(*.paymentEligibilityRequirement*)
 
 ### Available Operations
 
@@ -126,7 +126,7 @@ Update Payment Eligibility Requirement
 ```typescript
 import { Wingspan } from "wingspan";
 import { UpdatePaymentEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
-import { PaymentEligibilityUpdateRequest, PaymentEligibilityUpdateRequestValue } from "wingspan/dist/sdk/models/shared";
+import { PaymentEligibilityUpdateRequest, Value } from "wingspan/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new Wingspan();

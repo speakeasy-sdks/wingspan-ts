@@ -1,5 +1,5 @@
 # AdditionalData
-(*additionalData*)
+(*.additionalData*)
 
 ### Available Operations
 
@@ -15,7 +15,7 @@ Create additional data
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { AdditionalDataType } from "wingspan/dist/sdk/models/shared";
+import { TypeT } from "wingspan/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new Wingspan();
@@ -24,7 +24,7 @@ import { AdditionalDataType } from "wingspan/dist/sdk/models/shared";
     key: "<key>",
     name: "string",
     required: false,
-    type: AdditionalDataType.Boolean,
+    type: TypeT.Boolean,
   });
 
 

@@ -29,7 +29,7 @@ export enum StatusMemberClientForm1099Balances {
     Excluded = "Excluded",
 }
 
-export class MemberClientForm1099BalancesTaxForm extends SpeakeasyBase {}
+export class TaxForm extends SpeakeasyBase {}
 
 export enum TypeMemberClientForm1099Balances {
     Nec = "NEC",
@@ -81,8 +81,8 @@ export class MemberClientForm1099Balances extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "taxForm" })
-    @Type(() => MemberClientForm1099BalancesTaxForm)
-    taxForm?: MemberClientForm1099BalancesTaxForm;
+    @Type(() => TaxForm)
+    taxForm?: TaxForm;
 
     @SpeakeasyMetadata()
     @Expose({ name: "taxFormId" })

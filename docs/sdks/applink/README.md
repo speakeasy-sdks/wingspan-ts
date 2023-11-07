@@ -1,5 +1,5 @@
 # AppLink
-(*appLink*)
+(*.appLink*)
 
 ### Available Operations
 

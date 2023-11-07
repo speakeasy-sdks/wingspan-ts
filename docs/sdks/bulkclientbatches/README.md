@@ -1,5 +1,5 @@
 # BulkClientBatches
-(*bulkClientBatches*)
+(*.bulkClientBatches*)
 
 ### Available Operations
 

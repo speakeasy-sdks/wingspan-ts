@@ -1,5 +1,5 @@
 # MemberClients
-(*memberClients*)
+(*.memberClients*)
 
 ### Available Operations
 

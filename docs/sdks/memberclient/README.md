@@ -1,5 +1,5 @@
 # MemberClient
-(*memberClient*)
+(*.memberClient*)
 
 ### Available Operations
 
@@ -146,11 +146,11 @@ import {
   Ce853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481Address,
   ClientData,
   CollaboratorForm1099BalancesUpdateRequest,
-  CollaboratorForm1099BalancesUpdateRequestEvents,
   CompanyStructurece853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481,
   D86c1fba5267ac3d9ce2954a6e46b70e471c0f91a44abbe94565ae50e6e9e863,
   DeliveryMethodCollaboratorForm1099BalancesUpdateRequest,
   Eighta9c6cb49482a98cdd603ff09858cdc3e5ef6ad9807c876c4161d925a96694a5,
+  Events,
   MemberClientUpdateRequest,
   MemberClientUpdateRequestFormW9Data,
   MemberData,

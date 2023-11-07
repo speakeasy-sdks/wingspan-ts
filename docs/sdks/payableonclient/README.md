@@ -1,5 +1,5 @@
 # PayableOnClient
-(*payableOnClient*)
+(*.payableOnClient*)
 
 ### Available Operations
 
@@ -109,7 +109,7 @@ import {
   PayableUpdateRequestAcceptedPaymentMethods,
   PayableUpdateRequestClient,
   PayableUpdateRequestMember,
-  PayableUpdateRequestPaymentMethods,
+  PaymentMethods,
   Sixad3f4f624fb518510130e879729b00ed8c237d1cebc5477abf34ac340a6424d,
   StatusPayableUpdateRequest,
   ThirtySixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2,
@@ -167,7 +167,7 @@ const payableUpdateRequest: PayableUpdateRequest = {
     sendReminders: false,
   },
   paymentMethods: [
-    PayableUpdateRequestPaymentMethods.Credit,
+    PaymentMethods.Credit,
   ],
 };
 

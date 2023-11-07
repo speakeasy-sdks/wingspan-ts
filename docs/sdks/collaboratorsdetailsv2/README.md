@@ -1,5 +1,5 @@
 # CollaboratorsDetailsV2
-(*collaboratorsDetailsV2*)
+(*.collaboratorsDetailsV2*)
 
 ### Available Operations
 

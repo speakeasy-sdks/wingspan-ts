@@ -1,5 +1,5 @@
 # InstantPayout
-(*instantPayout*)
+(*.instantPayout*)
 
 ### Available Operations
 

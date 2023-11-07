@@ -1,5 +1,5 @@
 # Payables
-(*payables*)
+(*.payables*)
 
 ### Available Operations
 

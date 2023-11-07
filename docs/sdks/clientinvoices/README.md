@@ -1,5 +1,5 @@
 # ClientInvoices
-(*clientInvoices*)
+(*.clientInvoices*)
 
 ### Available Operations
 

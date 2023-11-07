@@ -1,5 +1,5 @@
 # PaPayableOnClientyable
-(*paPayableOnClientyable*)
+(*.paPayableOnClientyable*)
 
 ### Available Operations
 

@@ -1,5 +1,5 @@
 # BankStatements
-(*bankStatements*)
+(*.bankStatements*)
 
 ### Available Operations
 

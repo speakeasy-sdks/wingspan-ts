@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListBulkCollaboratorBatchItemsRequest extends SpeakeasyBase {
@@ -15,12 +15,6 @@ export class ListBulkCollaboratorBatchItemsRequest extends SpeakeasyBase {
 }
 
 export class ListBulkCollaboratorBatchItemsResponse extends SpeakeasyBase {
-    /**
-     * A list of bulk collaborator items
-     */
-    @SpeakeasyMetadata({ elemType: shared.BulkCollaboratorItem })
-    bulkCollaboratorItems?: shared.BulkCollaboratorItem[];
-
     /**
      * HTTP response content type for this operation
      */
@@ -38,4 +32,10 @@ export class ListBulkCollaboratorBatchItemsResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
+
+    /**
+     * A list of bulk collaborator items
+     */
+    @SpeakeasyMetadata({ elemType: shared.BulkCollaboratorItem })
+    classes?: shared.BulkCollaboratorItem[];
 }

@@ -1,5 +1,5 @@
 # CollaboratorEvents
-(*collaboratorEvents*)
+(*.collaboratorEvents*)
 
 ### Available Operations
 

@@ -13,7 +13,7 @@ export enum CurrencyDeductionResponse {
     Cad = "CAD",
 }
 
-export enum DeductionResponseStatus {
+export enum Status {
     Pending = "Pending",
     PartiallyApplied = "PartiallyApplied",
     Complete = "Complete",
@@ -85,7 +85,7 @@ export class DeductionResponse extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })
-    status: DeductionResponseStatus;
+    status: Status;
 
     @SpeakeasyMetadata()
     @Expose({ name: "type" })

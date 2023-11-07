@@ -1,5 +1,5 @@
 # MemberInvoice
-(*memberInvoice*)
+(*.memberInvoice*)
 
 ### Available Operations
 

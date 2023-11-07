@@ -24,7 +24,7 @@ export enum StatusBulkPayableItem {
     Failed = "Failed",
 }
 
-export enum BulkPayableItemWorkflowSubStatus {
+export enum WorkflowSubStatus {
     Submitted = "Submitted",
     LessThanNilGreaterThan = "<nil>",
 }
@@ -131,5 +131,5 @@ export class BulkPayableItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "workflowSubStatus" })
-    workflowSubStatus?: BulkPayableItemWorkflowSubStatus;
+    workflowSubStatus?: WorkflowSubStatus;
 }

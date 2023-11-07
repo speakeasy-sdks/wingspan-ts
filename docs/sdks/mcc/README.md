@@ -1,5 +1,5 @@
 # Mcc
-(*mcc*)
+(*.mcc*)
 
 ### Available Operations
 

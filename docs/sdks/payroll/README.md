@@ -1,5 +1,5 @@
 # Payroll
-(*payroll*)
+(*.payroll*)
 
 ### Available Operations
 

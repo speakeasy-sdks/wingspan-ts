@@ -1,5 +1,5 @@
 # CodeToToken
-(*codeToToken*)
+(*.codeToToken*)
 
 ### Available Operations
 

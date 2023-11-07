@@ -1,5 +1,5 @@
 # Collaborators
-(*collaborators*)
+(*.collaborators*)
 
 ### Available Operations
 

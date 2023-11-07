@@ -1,5 +1,5 @@
 # PayoutDebitCards
-(*payoutDebitCards*)
+(*.payoutDebitCards*)
 
 ### Available Operations
 

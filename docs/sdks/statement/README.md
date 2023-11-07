@@ -1,5 +1,5 @@
 # Statement
-(*statement*)
+(*.statement*)
 
 ### Available Operations
 

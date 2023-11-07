@@ -1,5 +1,5 @@
 # InvoiceAsClient
-(*invoiceAsClient*)
+(*.invoiceAsClient*)
 
 ### Available Operations
 

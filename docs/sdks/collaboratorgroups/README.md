@@ -1,5 +1,5 @@
 # CollaboratorGroups
-(*collaboratorGroups*)
+(*.collaboratorGroups*)
 
 ### Available Operations
 

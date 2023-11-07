@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListMemberInvoicesResponse extends SpeakeasyBase {
@@ -12,12 +12,6 @@ export class ListMemberInvoicesResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     contentType: string;
-
-    /**
-     * A list of invoices
-     */
-    @SpeakeasyMetadata({ elemType: shared.Invoice })
-    invoices?: shared.Invoice[];
 
     /**
      * HTTP response status code for this operation
@@ -30,4 +24,10 @@ export class ListMemberInvoicesResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
+
+    /**
+     * A list of invoices
+     */
+    @SpeakeasyMetadata({ elemType: shared.Invoice })
+    classes?: shared.Invoice[];
 }

@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-export enum AdditionalDataType {
+export enum TypeT {
     Boolean = "Boolean",
     String = "String",
 }
@@ -25,5 +25,5 @@ export class AdditionalData extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type: AdditionalDataType;
+    type: TypeT;
 }

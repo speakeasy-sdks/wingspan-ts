@@ -7,10 +7,7 @@ import { Wingspan } from "wingspan";
 (async () => {
     const sdk = new Wingspan();
 
-    const res = await sdk.oneThousandAndNinetyNine.calculate({
-        memberClientId: "string",
-        year: 6611.96,
-    });
+    const res = await sdk.serviceStatus.get();
 
     if (res.statusCode == 200) {
         // handle response

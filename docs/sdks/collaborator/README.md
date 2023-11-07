@@ -1,5 +1,5 @@
 # Collaborator
-(*collaborator*)
+(*.collaborator*)
 
 ### Available Operations
 
@@ -152,12 +152,12 @@ import {
   Ce853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481Address,
   ClientData,
   CollaboratorForm1099BalancesUpdateRequest,
-  CollaboratorForm1099BalancesUpdateRequestEvents,
   CollaboratorUpdateRequest,
-  CollaboratorUpdateRequestFormW9Data,
   CompanyStructurece853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481,
   DeliveryMethodCollaboratorForm1099BalancesUpdateRequest,
   Eighta9c6cb49482a98cdd603ff09858cdc3e5ef6ad9807c876c4161d925a96694a5,
+  Events,
+  FormW9Data,
   Ninetyf96495b02c2509fff131505484d46479a91b7d23ed2b0f438ca117d0bccad7,
   Sixa65bb5a9fe6d1135b7182baff68e9bc6612ee2c1ab942926fe2804c58663cf4,
   Status8a9c6cb49482a98cdd603ff09858cdc3e5ef6ad9807c876c4161d925a96694a5,

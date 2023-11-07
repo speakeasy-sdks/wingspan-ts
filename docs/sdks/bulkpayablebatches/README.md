@@ -1,5 +1,5 @@
 # BulkPayableBatches
-(*bulkPayableBatches*)
+(*.bulkPayableBatches*)
 
 ### Available Operations
 

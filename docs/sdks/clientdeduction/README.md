@@ -1,5 +1,5 @@
 # ClientDeduction
-(*clientDeduction*)
+(*.clientDeduction*)
 
 ### Available Operations
 

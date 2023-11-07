@@ -1,5 +1,5 @@
 # BulkInvoiceBatches
-(*bulkInvoiceBatches*)
+(*.bulkInvoiceBatches*)
 
 ### Available Operations
 

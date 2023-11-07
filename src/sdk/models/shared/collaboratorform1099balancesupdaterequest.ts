@@ -14,7 +14,7 @@ export enum DeliveryMethodCollaboratorForm1099BalancesUpdateRequest {
     LessThanNilGreaterThan = "<nil>",
 }
 
-export class CollaboratorForm1099BalancesUpdateRequestEvents extends SpeakeasyBase {}
+export class Events extends SpeakeasyBase {}
 
 export enum StatusCollaboratorForm1099BalancesUpdateRequest {
     Ready = "Ready",
@@ -48,8 +48,8 @@ export class CollaboratorForm1099BalancesUpdateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "events" })
-    @Type(() => CollaboratorForm1099BalancesUpdateRequestEvents)
-    events?: CollaboratorForm1099BalancesUpdateRequestEvents;
+    @Type(() => Events)
+    events?: Events;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

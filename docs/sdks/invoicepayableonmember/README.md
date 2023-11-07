@@ -1,5 +1,5 @@
 # InvoicePayableOnMember
-(*invoicePayableOnMember*)
+(*.invoicePayableOnMember*)
 
 ### Available Operations
 

@@ -1,5 +1,5 @@
 # BulkCollaboratorBatchItem
-(*bulkCollaboratorBatchItem*)
+(*.bulkCollaboratorBatchItem*)
 
 ### Available Operations
 
