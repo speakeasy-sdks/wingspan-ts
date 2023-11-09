@@ -1,5 +1,5 @@
 # PayClientInvoice
-(*.payClientInvoice*)
+(*payClientInvoice*)
 
 ### Available Operations
 
@@ -23,7 +23,6 @@ const payRequest: PayRequest = {};
 
   const res = await sdk.payClientInvoice.post(invoiceId, payRequest);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -32,14 +31,18 @@ const payRequest: PayRequest = {};
 
 ### Parameters
 
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `invoiceId`                                                  | *string*                                                     | :heavy_check_mark:                                           | Unique identifier of an invoice                              |
-| `payRequest`                                                 | [shared.PayRequest](../../models/shared/payrequest.md)       | :heavy_minus_sign:                                           | N/A                                                          |
-| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
+| Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `invoiceId`                                                   | *string*                                                      | :heavy_check_mark:                                            | Unique identifier of an invoice                               |
+| `payRequest`                                                  | [shared.PayRequest](../../../sdk/models/shared/payrequest.md) | :heavy_minus_sign:                                            | N/A                                                           |
+| `config`                                                      | [AxiosRequestConfig](https://axios-http.com/docs/req_config)  | :heavy_minus_sign:                                            | Available config options for making requests.                 |
 
 
 ### Response
 
-**Promise<[operations.PostPayClientInvoiceResponse](../../models/operations/postpayclientinvoiceresponse.md)>**
+**Promise<[operations.PostPayClientInvoiceResponse](../../sdk/models/operations/postpayclientinvoiceresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

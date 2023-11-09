@@ -1,5 +1,5 @@
 # MemberClients
-(*.memberClients*)
+(*memberClients*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.memberClients.list();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.ListMemberClientsResponse](../../models/operations/listmemberclientsresponse.md)>**
+**Promise<[operations.ListMemberClientsResponse](../../sdk/models/operations/listmemberclientsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

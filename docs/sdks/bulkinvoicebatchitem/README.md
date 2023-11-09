@@ -1,5 +1,5 @@
 # BulkInvoiceBatchItem
-(*.bulkInvoiceBatchItem*)
+(*bulkInvoiceBatchItem*)
 
 ### Available Operations
 
@@ -43,7 +43,6 @@ const bulkInvoiceItemCreate: BulkInvoiceItemCreate = {
 
   const res = await sdk.bulkInvoiceBatchItem.create(batchId, bulkInvoiceItemCreate);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -52,17 +51,21 @@ const bulkInvoiceItemCreate: BulkInvoiceItemCreate = {
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `batchId`                                                                    | *string*                                                                     | :heavy_check_mark:                                                           | Unique identifier for a batch                                                |
-| `bulkInvoiceItemCreate`                                                      | [shared.BulkInvoiceItemCreate](../../models/shared/bulkinvoiceitemcreate.md) | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `batchId`                                                                           | *string*                                                                            | :heavy_check_mark:                                                                  | Unique identifier for a batch                                                       |
+| `bulkInvoiceItemCreate`                                                             | [shared.BulkInvoiceItemCreate](../../../sdk/models/shared/bulkinvoiceitemcreate.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `config`                                                                            | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                        | :heavy_minus_sign:                                                                  | Available config options for making requests.                                       |
 
 
 ### Response
 
-**Promise<[operations.CreateBulkInvoiceBatchItemResponse](../../models/operations/createbulkinvoicebatchitemresponse.md)>**
+**Promise<[operations.CreateBulkInvoiceBatchItemResponse](../../sdk/models/operations/createbulkinvoicebatchitemresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -81,7 +84,6 @@ const batchItemId: string = "string";
 
   const res = await sdk.bulkInvoiceBatchItem.get(batchId, batchItemId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -99,8 +101,12 @@ const batchItemId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetBulkInvoiceBatchItemResponse](../../models/operations/getbulkinvoicebatchitemresponse.md)>**
+**Promise<[operations.GetBulkInvoiceBatchItemResponse](../../sdk/models/operations/getbulkinvoicebatchitemresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -134,7 +140,6 @@ const bulkInvoiceItemUpdate: BulkInvoiceItemUpdate = {
 
   const res = await sdk.bulkInvoiceBatchItem.update(batchId, batchItemId, bulkInvoiceItemUpdate);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -143,15 +148,19 @@ const bulkInvoiceItemUpdate: BulkInvoiceItemUpdate = {
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `batchId`                                                                    | *string*                                                                     | :heavy_check_mark:                                                           | Unique identifier for a batch                                                |
-| `batchItemId`                                                                | *string*                                                                     | :heavy_check_mark:                                                           | Unique identifier for an item in a batch                                     |
-| `bulkInvoiceItemUpdate`                                                      | [shared.BulkInvoiceItemUpdate](../../models/shared/bulkinvoiceitemupdate.md) | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `batchId`                                                                           | *string*                                                                            | :heavy_check_mark:                                                                  | Unique identifier for a batch                                                       |
+| `batchItemId`                                                                       | *string*                                                                            | :heavy_check_mark:                                                                  | Unique identifier for an item in a batch                                            |
+| `bulkInvoiceItemUpdate`                                                             | [shared.BulkInvoiceItemUpdate](../../../sdk/models/shared/bulkinvoiceitemupdate.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `config`                                                                            | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                        | :heavy_minus_sign:                                                                  | Available config options for making requests.                                       |
 
 
 ### Response
 
-**Promise<[operations.UpdateBulkInvoiceBatchItemResponse](../../models/operations/updatebulkinvoicebatchitemresponse.md)>**
+**Promise<[operations.UpdateBulkInvoiceBatchItemResponse](../../sdk/models/operations/updatebulkinvoicebatchitemresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

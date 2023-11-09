@@ -31,7 +31,7 @@ export class BulkPayableBatch {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/payments/bulk/payable/batch";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/payments/bulk/payable/batch";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -50,7 +50,7 @@ export class BulkPayableBatch {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -106,7 +106,7 @@ export class BulkPayableBatch {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/bulk/payable/batch/{batchId}",
             req
@@ -119,7 +119,7 @@ export class BulkPayableBatch {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -174,7 +174,7 @@ export class BulkPayableBatch {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/bulk/payable/batch/{batchId}",
             req
@@ -187,7 +187,7 @@ export class BulkPayableBatch {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -244,7 +244,7 @@ export class BulkPayableBatch {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/bulk/payable/batch/{batchId}",
             req
@@ -271,7 +271,7 @@ export class BulkPayableBatch {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",

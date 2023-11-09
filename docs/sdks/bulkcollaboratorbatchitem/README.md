@@ -1,5 +1,5 @@
 # BulkCollaboratorBatchItem
-(*.bulkCollaboratorBatchItem*)
+(*bulkCollaboratorBatchItem*)
 
 ### Available Operations
 
@@ -42,7 +42,6 @@ const bulkCollaboratorItemCreate: BulkCollaboratorItemCreate = {
 
   const res = await sdk.bulkCollaboratorBatchItem.create(batchId, bulkCollaboratorItemCreate);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -51,17 +50,21 @@ const bulkCollaboratorItemCreate: BulkCollaboratorItemCreate = {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `batchId`                                                                              | *string*                                                                               | :heavy_check_mark:                                                                     | Unique identifier for a batch                                                          |
-| `bulkCollaboratorItemCreate`                                                           | [shared.BulkCollaboratorItemCreate](../../models/shared/bulkcollaboratoritemcreate.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `batchId`                                                                                     | *string*                                                                                      | :heavy_check_mark:                                                                            | Unique identifier for a batch                                                                 |
+| `bulkCollaboratorItemCreate`                                                                  | [shared.BulkCollaboratorItemCreate](../../../sdk/models/shared/bulkcollaboratoritemcreate.md) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `config`                                                                                      | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                  | :heavy_minus_sign:                                                                            | Available config options for making requests.                                                 |
 
 
 ### Response
 
-**Promise<[operations.CreateBulkCollaboratorBatchItemResponse](../../models/operations/createbulkcollaboratorbatchitemresponse.md)>**
+**Promise<[operations.CreateBulkCollaboratorBatchItemResponse](../../sdk/models/operations/createbulkcollaboratorbatchitemresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -80,7 +83,6 @@ const batchItemId: string = "string";
 
   const res = await sdk.bulkCollaboratorBatchItem.get(batchId, batchItemId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -98,8 +100,12 @@ const batchItemId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetBulkCollaboratorBatchItemResponse](../../models/operations/getbulkcollaboratorbatchitemresponse.md)>**
+**Promise<[operations.GetBulkCollaboratorBatchItemResponse](../../sdk/models/operations/getbulkcollaboratorbatchitemresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -137,7 +143,6 @@ const bulkCollaboratorItemUpdate: BulkCollaboratorItemUpdate = {
 
   const res = await sdk.bulkCollaboratorBatchItem.update(batchId, batchItemId, bulkCollaboratorItemUpdate);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -146,15 +151,19 @@ const bulkCollaboratorItemUpdate: BulkCollaboratorItemUpdate = {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `batchId`                                                                              | *string*                                                                               | :heavy_check_mark:                                                                     | Unique identifier for a batch                                                          |
-| `batchItemId`                                                                          | *string*                                                                               | :heavy_check_mark:                                                                     | Unique identifier for an item in a batch                                               |
-| `bulkCollaboratorItemUpdate`                                                           | [shared.BulkCollaboratorItemUpdate](../../models/shared/bulkcollaboratoritemupdate.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `batchId`                                                                                     | *string*                                                                                      | :heavy_check_mark:                                                                            | Unique identifier for a batch                                                                 |
+| `batchItemId`                                                                                 | *string*                                                                                      | :heavy_check_mark:                                                                            | Unique identifier for an item in a batch                                                      |
+| `bulkCollaboratorItemUpdate`                                                                  | [shared.BulkCollaboratorItemUpdate](../../../sdk/models/shared/bulkcollaboratoritemupdate.md) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `config`                                                                                      | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                  | :heavy_minus_sign:                                                                            | Available config options for making requests.                                                 |
 
 
 ### Response
 
-**Promise<[operations.UpdateBulkCollaboratorBatchItemResponse](../../models/operations/updatebulkcollaboratorbatchitemresponse.md)>**
+**Promise<[operations.UpdateBulkCollaboratorBatchItemResponse](../../sdk/models/operations/updatebulkcollaboratorbatchitemresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

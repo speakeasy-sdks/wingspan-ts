@@ -1,5 +1,5 @@
 # CollaboratorEvents
-(*.collaboratorEvents*)
+(*collaboratorEvents*)
 
 ### Available Operations
 
@@ -21,7 +21,6 @@ const id: string = "string";
 
   const res = await sdk.collaboratorEvents.get(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,5 +37,9 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.GetCollaboratorEventsResponse](../../models/operations/getcollaboratoreventsresponse.md)>**
+**Promise<[operations.GetCollaboratorEventsResponse](../../sdk/models/operations/getcollaboratoreventsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

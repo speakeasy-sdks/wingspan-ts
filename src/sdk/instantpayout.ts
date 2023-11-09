@@ -31,7 +31,8 @@ export class InstantPayout {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/payments/banking/instant-payout";
+        const operationUrl: string =
+            baseURL.replace(/\/$/, "") + "/payments/banking/instant-payout";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -50,7 +51,7 @@ export class InstantPayout {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -100,7 +101,8 @@ export class InstantPayout {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/payments/banking/instant-payout";
+        const operationUrl: string =
+            baseURL.replace(/\/$/, "") + "/payments/banking/instant-payout";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         headers["Accept"] = "application/json";
@@ -109,7 +111,7 @@ export class InstantPayout {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -158,7 +160,8 @@ export class InstantPayout {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/payments/banking/instant-payout";
+        const operationUrl: string =
+            baseURL.replace(/\/$/, "") + "/payments/banking/instant-payout";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         headers["Accept"] = "application/json";
@@ -167,7 +170,7 @@ export class InstantPayout {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",

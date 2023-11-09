@@ -32,7 +32,7 @@ export class CollaboratorGroupEligibilityRequirement {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/collaborator-group/{id}/eligibility-requirement/{eligibilityRequirementId}",
             req
@@ -45,7 +45,7 @@ export class CollaboratorGroupEligibilityRequirement {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -104,7 +104,7 @@ export class CollaboratorGroupEligibilityRequirement {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/collaborator-group/{id}/eligibility-requirement/{eligibilityRequirementId}",
             req
@@ -131,7 +131,7 @@ export class CollaboratorGroupEligibilityRequirement {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",

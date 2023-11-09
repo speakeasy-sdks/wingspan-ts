@@ -1,5 +1,5 @@
 # PaymentEligibilityRequirements
-(*.paymentEligibilityRequirements*)
+(*paymentEligibilityRequirements*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.paymentEligibilityRequirements.list();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.ListPaymentEligibilityRequirementsResponse](../../models/operations/listpaymenteligibilityrequirementsresponse.md)>**
+**Promise<[operations.ListPaymentEligibilityRequirementsResponse](../../sdk/models/operations/listpaymenteligibilityrequirementsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

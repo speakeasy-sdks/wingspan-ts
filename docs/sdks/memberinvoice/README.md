@@ -1,5 +1,5 @@
 # MemberInvoice
-(*.memberInvoice*)
+(*memberInvoice*)
 
 ### Available Operations
 
@@ -75,7 +75,6 @@ import {
     },
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -84,16 +83,20 @@ import {
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `request`                                                                  | [shared.InvoiceCreateRequest](../../models/shared/invoicecreaterequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
-| `config`                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)               | :heavy_minus_sign:                                                         | Available config options for making requests.                              |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [shared.InvoiceCreateRequest](../../sdk/models/shared/invoicecreaterequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
 
 
 ### Response
 
-**Promise<[operations.CreateMemberInvoiceResponse](../../models/operations/creatememberinvoiceresponse.md)>**
+**Promise<[operations.CreateMemberInvoiceResponse](../../sdk/models/operations/creatememberinvoiceresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete
 
@@ -111,7 +114,6 @@ const id: string = "string";
 
   const res = await sdk.memberInvoice.delete(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -128,8 +130,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.DeleteMemberInvoiceResponse](../../models/operations/deletememberinvoiceresponse.md)>**
+**Promise<[operations.DeleteMemberInvoiceResponse](../../sdk/models/operations/deletememberinvoiceresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -147,7 +153,6 @@ const id: string = "string";
 
   const res = await sdk.memberInvoice.get(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -164,8 +169,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.GetMemberInvoiceResponse](../../models/operations/getmemberinvoiceresponse.md)>**
+**Promise<[operations.GetMemberInvoiceResponse](../../sdk/models/operations/getmemberinvoiceresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -252,7 +261,6 @@ const invoiceUpdateRequest: InvoiceUpdateRequest = {
 
   const res = await sdk.memberInvoice.update(id, invoiceUpdateRequest);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -261,14 +269,18 @@ const invoiceUpdateRequest: InvoiceUpdateRequest = {
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `id`                                                                       | *string*                                                                   | :heavy_check_mark:                                                         | Unique identifier                                                          |
-| `invoiceUpdateRequest`                                                     | [shared.InvoiceUpdateRequest](../../models/shared/invoiceupdaterequest.md) | :heavy_minus_sign:                                                         | N/A                                                                        |
-| `config`                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)               | :heavy_minus_sign:                                                         | Available config options for making requests.                              |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `id`                                                                              | *string*                                                                          | :heavy_check_mark:                                                                | Unique identifier                                                                 |
+| `invoiceUpdateRequest`                                                            | [shared.InvoiceUpdateRequest](../../../sdk/models/shared/invoiceupdaterequest.md) | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `config`                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                      | :heavy_minus_sign:                                                                | Available config options for making requests.                                     |
 
 
 ### Response
 
-**Promise<[operations.UpdateMemberInvoiceResponse](../../models/operations/updatememberinvoiceresponse.md)>**
+**Promise<[operations.UpdateMemberInvoiceResponse](../../sdk/models/operations/updatememberinvoiceresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

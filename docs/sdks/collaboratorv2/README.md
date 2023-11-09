@@ -1,5 +1,5 @@
 # CollaboratorV2
-(*.collaboratorV2*)
+(*collaboratorV2*)
 
 ### Available Operations
 
@@ -21,7 +21,6 @@ const memberId: string = "string";
 
   const res = await sdk.collaboratorV2.get(memberId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,5 +37,9 @@ const memberId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetCollaboratorV2Response](../../models/operations/getcollaboratorv2response.md)>**
+**Promise<[operations.GetCollaboratorV2Response](../../sdk/models/operations/getcollaboratorv2response.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

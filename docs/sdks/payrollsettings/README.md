@@ -1,5 +1,5 @@
 # PayrollSettings
-(*.payrollSettings*)
+(*payrollSettings*)
 
 ### Available Operations
 
@@ -22,7 +22,6 @@ const id: string = "string";
 
   const res = await sdk.payrollSettings.get(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -39,8 +38,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.GetPayrollSettingsResponse](../../models/operations/getpayrollsettingsresponse.md)>**
+**Promise<[operations.GetPayrollSettingsResponse](../../sdk/models/operations/getpayrollsettingsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -90,7 +93,6 @@ const payrollSettingsUpdate: PayrollSettingsUpdate = {
 
   const res = await sdk.payrollSettings.update(id, payrollSettingsUpdate);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -99,14 +101,18 @@ const payrollSettingsUpdate: PayrollSettingsUpdate = {
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `id`                                                                         | *string*                                                                     | :heavy_check_mark:                                                           | Unique identifier                                                            |
-| `payrollSettingsUpdate`                                                      | [shared.PayrollSettingsUpdate](../../models/shared/payrollsettingsupdate.md) | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `id`                                                                                | *string*                                                                            | :heavy_check_mark:                                                                  | Unique identifier                                                                   |
+| `payrollSettingsUpdate`                                                             | [shared.PayrollSettingsUpdate](../../../sdk/models/shared/payrollsettingsupdate.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `config`                                                                            | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                        | :heavy_minus_sign:                                                                  | Available config options for making requests.                                       |
 
 
 ### Response
 
-**Promise<[operations.UpdatePayrollSettingsResponse](../../models/operations/updatepayrollsettingsresponse.md)>**
+**Promise<[operations.UpdatePayrollSettingsResponse](../../sdk/models/operations/updatepayrollsettingsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

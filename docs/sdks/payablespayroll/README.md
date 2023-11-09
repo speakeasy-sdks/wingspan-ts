@@ -1,5 +1,5 @@
 # PayablesPayroll
-(*.payablesPayroll*)
+(*payablesPayroll*)
 
 ### Available Operations
 
@@ -21,7 +21,6 @@ const payrollId: string = "string";
 
   const res = await sdk.payablesPayroll.list(payrollId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,5 +37,9 @@ const payrollId: string = "string";
 
 ### Response
 
-**Promise<[operations.ListPayablesPayrollResponse](../../models/operations/listpayablespayrollresponse.md)>**
+**Promise<[operations.ListPayablesPayrollResponse](../../sdk/models/operations/listpayablespayrollresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

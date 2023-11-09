@@ -31,7 +31,8 @@ export class BulkCalculation1099Batch {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/payments/bulk/calculation1099/batch";
+        const operationUrl: string =
+            baseURL.replace(/\/$/, "") + "/payments/bulk/calculation1099/batch";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -50,7 +51,7 @@ export class BulkCalculation1099Batch {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -106,7 +107,7 @@ export class BulkCalculation1099Batch {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/bulk/calculation1099/batch/{batchId}",
             req
@@ -119,7 +120,7 @@ export class BulkCalculation1099Batch {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -176,7 +177,7 @@ export class BulkCalculation1099Batch {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/bulk/calculation1099/batch/{batchId}",
             req
@@ -199,7 +200,7 @@ export class BulkCalculation1099Batch {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",

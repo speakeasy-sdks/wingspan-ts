@@ -1,0 +1,9 @@
+# UpdatePaymentEligibilityRequirementRequest
+
+
+## Fields
+
+| Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                    | *string*                                                                                                | :heavy_check_mark:                                                                                      | Unique identifier                                                                                       |
+| `paymentEligibilityUpdateRequest`                                                                       | [shared.PaymentEligibilityUpdateRequest](../../../sdk/models/shared/paymenteligibilityupdaterequest.md) | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |

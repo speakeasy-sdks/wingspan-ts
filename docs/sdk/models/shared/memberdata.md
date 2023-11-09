@@ -1,0 +1,10 @@
+# MemberData
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `autoPayRequirement`                                                                              | [shared.AutoPayRequirementMemberData](../../../sdk/models/shared/autopayrequirementmemberdata.md) | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `externalId`                                                                                      | *string*                                                                                          | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `shareTaxDocument`                                                                                | [shared.ShareTaxDocumentMemberData](../../../sdk/models/shared/sharetaxdocumentmemberdata.md)     | :heavy_minus_sign:                                                                                | N/A                                                                                               |

@@ -1,5 +1,5 @@
 # MemberClient
-(*.memberClient*)
+(*memberClient*)
 
 ### Available Operations
 
@@ -38,7 +38,6 @@ import {
     memberData: {},
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -47,16 +46,20 @@ import {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [shared.MemberClientCreateRequest](../../models/shared/memberclientcreaterequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [shared.MemberClientCreateRequest](../../sdk/models/shared/memberclientcreaterequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response
 
-**Promise<[operations.CreateMemberClientResponse](../../models/operations/creatememberclientresponse.md)>**
+**Promise<[operations.CreateMemberClientResponse](../../sdk/models/operations/creatememberclientresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete
 
@@ -74,7 +77,6 @@ const id: string = "string";
 
   const res = await sdk.memberClient.delete(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -91,8 +93,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.DeleteMemberClientResponse](../../models/operations/deletememberclientresponse.md)>**
+**Promise<[operations.DeleteMemberClientResponse](../../sdk/models/operations/deletememberclientresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -110,7 +116,6 @@ const id: string = "string";
 
   const res = await sdk.memberClient.get(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -127,8 +132,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.GetMemberClientResponse](../../models/operations/getmemberclientresponse.md)>**
+**Promise<[operations.GetMemberClientResponse](../../sdk/models/operations/getmemberclientresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -199,7 +208,6 @@ const memberClientUpdateRequest: MemberClientUpdateRequest = {
 
   const res = await sdk.memberClient.update(id, memberClientUpdateRequest);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -208,14 +216,18 @@ const memberClientUpdateRequest: MemberClientUpdateRequest = {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `id`                                                                                 | *string*                                                                             | :heavy_check_mark:                                                                   | Unique identifier                                                                    |
-| `memberClientUpdateRequest`                                                          | [shared.MemberClientUpdateRequest](../../models/shared/memberclientupdaterequest.md) | :heavy_minus_sign:                                                                   | N/A                                                                                  |
-| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `id`                                                                                        | *string*                                                                                    | :heavy_check_mark:                                                                          | Unique identifier                                                                           |
+| `memberClientUpdateRequest`                                                                 | [shared.MemberClientUpdateRequest](../../../sdk/models/shared/memberclientupdaterequest.md) | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `config`                                                                                    | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                | :heavy_minus_sign:                                                                          | Available config options for making requests.                                               |
 
 
 ### Response
 
-**Promise<[operations.UpdateMemberClientResponse](../../models/operations/updatememberclientresponse.md)>**
+**Promise<[operations.UpdateMemberClientResponse](../../sdk/models/operations/updatememberclientresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

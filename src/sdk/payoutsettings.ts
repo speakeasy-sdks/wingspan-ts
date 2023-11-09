@@ -30,7 +30,11 @@ export class PayoutSettings {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/payments/payout-settings/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/payments/payout-settings/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         headers["Accept"] = "application/json";
@@ -39,7 +43,7 @@ export class PayoutSettings {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -95,7 +99,11 @@ export class PayoutSettings {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/payments/payout-settings/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/payments/payout-settings/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -118,7 +126,7 @@ export class PayoutSettings {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",

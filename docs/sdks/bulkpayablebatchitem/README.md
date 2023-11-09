@@ -1,5 +1,5 @@
 # BulkPayableBatchItem
-(*.bulkPayableBatchItem*)
+(*bulkPayableBatchItem*)
 
 ### Available Operations
 
@@ -38,7 +38,6 @@ const bulkPayableItemCreate: BulkPayableItemCreate = {
 
   const res = await sdk.bulkPayableBatchItem.create(batchId, bulkPayableItemCreate);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -47,17 +46,21 @@ const bulkPayableItemCreate: BulkPayableItemCreate = {
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `batchId`                                                                    | *string*                                                                     | :heavy_check_mark:                                                           | Unique identifier for a batch                                                |
-| `bulkPayableItemCreate`                                                      | [shared.BulkPayableItemCreate](../../models/shared/bulkpayableitemcreate.md) | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `batchId`                                                                           | *string*                                                                            | :heavy_check_mark:                                                                  | Unique identifier for a batch                                                       |
+| `bulkPayableItemCreate`                                                             | [shared.BulkPayableItemCreate](../../../sdk/models/shared/bulkpayableitemcreate.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `config`                                                                            | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                        | :heavy_minus_sign:                                                                  | Available config options for making requests.                                       |
 
 
 ### Response
 
-**Promise<[operations.CreateBulkPayableBatchItemResponse](../../models/operations/createbulkpayablebatchitemresponse.md)>**
+**Promise<[operations.CreateBulkPayableBatchItemResponse](../../sdk/models/operations/createbulkpayablebatchitemresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -76,7 +79,6 @@ const batchItemId: string = "string";
 
   const res = await sdk.bulkPayableBatchItem.get(batchId, batchItemId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -94,8 +96,12 @@ const batchItemId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetBulkPayableBatchItemResponse](../../models/operations/getbulkpayablebatchitemresponse.md)>**
+**Promise<[operations.GetBulkPayableBatchItemResponse](../../sdk/models/operations/getbulkpayablebatchitemresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -124,7 +130,6 @@ const bulkPayableItemUpdate: BulkPayableItemUpdate = {
 
   const res = await sdk.bulkPayableBatchItem.update(batchId, batchItemId, bulkPayableItemUpdate);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -133,15 +138,19 @@ const bulkPayableItemUpdate: BulkPayableItemUpdate = {
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `batchId`                                                                    | *string*                                                                     | :heavy_check_mark:                                                           | Unique identifier for a batch                                                |
-| `batchItemId`                                                                | *string*                                                                     | :heavy_check_mark:                                                           | Unique identifier for an item in a batch                                     |
-| `bulkPayableItemUpdate`                                                      | [shared.BulkPayableItemUpdate](../../models/shared/bulkpayableitemupdate.md) | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `batchId`                                                                           | *string*                                                                            | :heavy_check_mark:                                                                  | Unique identifier for a batch                                                       |
+| `batchItemId`                                                                       | *string*                                                                            | :heavy_check_mark:                                                                  | Unique identifier for an item in a batch                                            |
+| `bulkPayableItemUpdate`                                                             | [shared.BulkPayableItemUpdate](../../../sdk/models/shared/bulkpayableitemupdate.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `config`                                                                            | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                        | :heavy_minus_sign:                                                                  | Available config options for making requests.                                       |
 
 
 ### Response
 
-**Promise<[operations.UpdateBulkPayableBatchItemResponse](../../models/operations/updatebulkpayablebatchitemresponse.md)>**
+**Promise<[operations.UpdateBulkPayableBatchItemResponse](../../sdk/models/operations/updatebulkpayablebatchitemresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

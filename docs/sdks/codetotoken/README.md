@@ -1,5 +1,5 @@
 # CodeToToken
-(*.codeToToken*)
+(*codeToToken*)
 
 ### Available Operations
 
@@ -26,7 +26,6 @@ const cardTokenRequest: CardTokenRequest = {
 
   const res = await sdk.codeToToken.exchange(id, cardTokenRequest);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,14 +34,18 @@ const cardTokenRequest: CardTokenRequest = {
 
 ### Parameters
 
-| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `id`                                                               | *string*                                                           | :heavy_check_mark:                                                 | Unique identifier                                                  |
-| `cardTokenRequest`                                                 | [shared.CardTokenRequest](../../models/shared/cardtokenrequest.md) | :heavy_minus_sign:                                                 | N/A                                                                |
-| `config`                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)       | :heavy_minus_sign:                                                 | Available config options for making requests.                      |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `id`                                                                      | *string*                                                                  | :heavy_check_mark:                                                        | Unique identifier                                                         |
+| `cardTokenRequest`                                                        | [shared.CardTokenRequest](../../../sdk/models/shared/cardtokenrequest.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `config`                                                                  | [AxiosRequestConfig](https://axios-http.com/docs/req_config)              | :heavy_minus_sign:                                                        | Available config options for making requests.                             |
 
 
 ### Response
 
-**Promise<[operations.ExchangeCodeToTokenResponse](../../models/operations/exchangecodetotokenresponse.md)>**
+**Promise<[operations.ExchangeCodeToTokenResponse](../../sdk/models/operations/exchangecodetotokenresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

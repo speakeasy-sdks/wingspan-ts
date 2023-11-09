@@ -1,5 +1,5 @@
 # CreatedInvoicesByClient
-(*.createdInvoicesByClient*)
+(*createdInvoicesByClient*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.createdInvoicesByClient.list();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.ListCreatedInvoicesByClientResponse](../../models/operations/listcreatedinvoicesbyclientresponse.md)>**
+**Promise<[operations.ListCreatedInvoicesByClientResponse](../../sdk/models/operations/listcreatedinvoicesbyclientresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -1,5 +1,5 @@
 # PayablesAgingGroup
-(*.payablesAgingGroup*)
+(*payablesAgingGroup*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.payablesAgingGroup.get();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.GetPayablesAgingGroupResponse](../../models/operations/getpayablesaginggroupresponse.md)>**
+**Promise<[operations.GetPayablesAgingGroupResponse](../../sdk/models/operations/getpayablesaginggroupresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

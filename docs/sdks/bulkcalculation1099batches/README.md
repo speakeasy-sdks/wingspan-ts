@@ -1,5 +1,5 @@
 # BulkCalculation1099Batches
-(*.bulkCalculation1099Batches*)
+(*bulkCalculation1099Batches*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.bulkCalculation1099Batches.list();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.ListBulkCalculation1099BatchesResponse](../../models/operations/listbulkcalculation1099batchesresponse.md)>**
+**Promise<[operations.ListBulkCalculation1099BatchesResponse](../../sdk/models/operations/listbulkcalculation1099batchesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

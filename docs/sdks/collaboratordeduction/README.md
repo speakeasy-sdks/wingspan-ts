@@ -1,5 +1,5 @@
 # CollaboratorDeduction
-(*.collaboratorDeduction*)
+(*collaboratorDeduction*)
 
 ### Available Operations
 
@@ -30,7 +30,6 @@ import { DeductionCreateRequestCurrency, TypeDeductionCreateRequest } from "wing
     type: TypeDeductionCreateRequest.PostPayment,
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -39,16 +38,20 @@ import { DeductionCreateRequestCurrency, TypeDeductionCreateRequest } from "wing
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [shared.DeductionCreateRequest](../../models/shared/deductioncreaterequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [shared.DeductionCreateRequest](../../sdk/models/shared/deductioncreaterequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
 
 
 ### Response
 
-**Promise<[operations.CreateCollaboratorDeductionResponse](../../models/operations/createcollaboratordeductionresponse.md)>**
+**Promise<[operations.CreateCollaboratorDeductionResponse](../../sdk/models/operations/createcollaboratordeductionresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete
 
@@ -66,7 +69,6 @@ const id: string = "string";
 
   const res = await sdk.collaboratorDeduction.delete(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -83,8 +85,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.DeleteCollaboratorDeductionResponse](../../models/operations/deletecollaboratordeductionresponse.md)>**
+**Promise<[operations.DeleteCollaboratorDeductionResponse](../../sdk/models/operations/deletecollaboratordeductionresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -102,7 +108,6 @@ const id: string = "string";
 
   const res = await sdk.collaboratorDeduction.get(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -119,8 +124,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.GetCollaboratorDeductionResponse](../../models/operations/getcollaboratordeductionresponse.md)>**
+**Promise<[operations.GetCollaboratorDeductionResponse](../../sdk/models/operations/getcollaboratordeductionresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -144,7 +153,6 @@ const deductionUpdateRequest: DeductionUpdateRequest = {};
 
   const res = await sdk.collaboratorDeduction.update(id, deductionUpdateRequest);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -153,14 +161,18 @@ const deductionUpdateRequest: DeductionUpdateRequest = {};
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `id`                                                                           | *string*                                                                       | :heavy_check_mark:                                                             | Unique identifier                                                              |
-| `deductionUpdateRequest`                                                       | [shared.DeductionUpdateRequest](../../models/shared/deductionupdaterequest.md) | :heavy_minus_sign:                                                             | N/A                                                                            |
-| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `id`                                                                                  | *string*                                                                              | :heavy_check_mark:                                                                    | Unique identifier                                                                     |
+| `deductionUpdateRequest`                                                              | [shared.DeductionUpdateRequest](../../../sdk/models/shared/deductionupdaterequest.md) | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `config`                                                                              | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                          | :heavy_minus_sign:                                                                    | Available config options for making requests.                                         |
 
 
 ### Response
 
-**Promise<[operations.UpdateCollaboratorDeductionResponse](../../models/operations/updatecollaboratordeductionresponse.md)>**
+**Promise<[operations.UpdateCollaboratorDeductionResponse](../../sdk/models/operations/updatecollaboratordeductionresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

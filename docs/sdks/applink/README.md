@@ -1,5 +1,5 @@
 # AppLink
-(*.appLink*)
+(*appLink*)
 
 ### Available Operations
 
@@ -21,7 +21,6 @@ const memberId: string = "string";
 
   const res = await sdk.appLink.get(memberId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,5 +37,9 @@ const memberId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetAppLinkResponse](../../models/operations/getapplinkresponse.md)>**
+**Promise<[operations.GetAppLinkResponse](../../sdk/models/operations/getapplinkresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -31,7 +31,8 @@ export class ClientInvoiceTemplate {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/payments/client/invoice-template";
+        const operationUrl: string =
+            baseURL.replace(/\/$/, "") + "/payments/client/invoice-template";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -50,7 +51,7 @@ export class ClientInvoiceTemplate {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -106,7 +107,7 @@ export class ClientInvoiceTemplate {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/client/invoice-template/{id}",
             req
@@ -119,7 +120,7 @@ export class ClientInvoiceTemplate {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -176,7 +177,7 @@ export class ClientInvoiceTemplate {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/client/invoice-template/{id}",
             req
@@ -203,7 +204,7 @@ export class ClientInvoiceTemplate {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",

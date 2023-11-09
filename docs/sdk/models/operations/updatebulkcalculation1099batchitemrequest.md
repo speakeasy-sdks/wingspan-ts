@@ -1,0 +1,10 @@
+# UpdateBulkCalculation1099BatchItemRequest
+
+
+## Fields
+
+| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `batchId`                                                                                           | *string*                                                                                            | :heavy_check_mark:                                                                                  | Unique identifier for a batch                                                                       |
+| `batchItemId`                                                                                       | *string*                                                                                            | :heavy_check_mark:                                                                                  | Unique identifier for an item in a batch                                                            |
+| `bulkCalculation1099ItemUpdate`                                                                     | [shared.BulkCalculation1099ItemUpdate](../../../sdk/models/shared/bulkcalculation1099itemupdate.md) | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |

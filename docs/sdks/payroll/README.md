@@ -1,5 +1,5 @@
 # Payroll
-(*.payroll*)
+(*payroll*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.payroll.execute();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.ExecutePayrollResponse](../../models/operations/executepayrollresponse.md)>**
+**Promise<[operations.ExecutePayrollResponse](../../sdk/models/operations/executepayrollresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

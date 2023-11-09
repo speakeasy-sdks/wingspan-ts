@@ -31,7 +31,7 @@ export class BulkInvoiceBatch {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/payments/bulk/invoice/batch";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/payments/bulk/invoice/batch";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -50,7 +50,7 @@ export class BulkInvoiceBatch {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -106,7 +106,7 @@ export class BulkInvoiceBatch {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/bulk/invoice/batch/{batchId}",
             req
@@ -119,7 +119,7 @@ export class BulkInvoiceBatch {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -176,7 +176,7 @@ export class BulkInvoiceBatch {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/bulk/invoice/batch/{batchId}",
             req
@@ -203,7 +203,7 @@ export class BulkInvoiceBatch {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",

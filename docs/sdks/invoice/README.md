@@ -1,5 +1,5 @@
 # Invoice
-(*.invoice*)
+(*invoice*)
 
 ### Available Operations
 
@@ -22,7 +22,6 @@ const invoiceId: string = "string";
 
   const res = await sdk.invoice.generate(invoiceId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -39,8 +38,12 @@ const invoiceId: string = "string";
 
 ### Response
 
-**Promise<[operations.GenerateInvoiceResponse](../../models/operations/generateinvoiceresponse.md)>**
+**Promise<[operations.GenerateInvoiceResponse](../../sdk/models/operations/generateinvoiceresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## send
 
@@ -58,7 +61,6 @@ const invoiceId: string = "string";
 
   const res = await sdk.invoice.send(invoiceId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -75,5 +77,9 @@ const invoiceId: string = "string";
 
 ### Response
 
-**Promise<[operations.SendInvoiceResponse](../../models/operations/sendinvoiceresponse.md)>**
+**Promise<[operations.SendInvoiceResponse](../../sdk/models/operations/sendinvoiceresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

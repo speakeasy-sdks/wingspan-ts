@@ -31,7 +31,7 @@ export class ClientDeduction {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/payments/client-deduction";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/payments/client-deduction";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -50,7 +50,7 @@ export class ClientDeduction {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",

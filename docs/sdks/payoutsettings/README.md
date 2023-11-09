@@ -1,5 +1,5 @@
 # PayoutSettings
-(*.payoutSettings*)
+(*payoutSettings*)
 
 ### Available Operations
 
@@ -22,7 +22,6 @@ const id: string = "string";
 
   const res = await sdk.payoutSettings.get(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -39,8 +38,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.GetPayoutSettingsResponse](../../models/operations/getpayoutsettingsresponse.md)>**
+**Promise<[operations.GetPayoutSettingsResponse](../../sdk/models/operations/getpayoutsettingsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -70,7 +73,6 @@ const payoutSettingsUpdate: PayoutSettingsUpdate = {
 
   const res = await sdk.payoutSettings.update(id, payoutSettingsUpdate);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -79,14 +81,18 @@ const payoutSettingsUpdate: PayoutSettingsUpdate = {
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `id`                                                                       | *string*                                                                   | :heavy_check_mark:                                                         | Unique identifier                                                          |
-| `payoutSettingsUpdate`                                                     | [shared.PayoutSettingsUpdate](../../models/shared/payoutsettingsupdate.md) | :heavy_minus_sign:                                                         | N/A                                                                        |
-| `config`                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)               | :heavy_minus_sign:                                                         | Available config options for making requests.                              |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `id`                                                                              | *string*                                                                          | :heavy_check_mark:                                                                | Unique identifier                                                                 |
+| `payoutSettingsUpdate`                                                            | [shared.PayoutSettingsUpdate](../../../sdk/models/shared/payoutsettingsupdate.md) | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `config`                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                      | :heavy_minus_sign:                                                                | Available config options for making requests.                                     |
 
 
 ### Response
 
-**Promise<[operations.UpdatePayoutSettingsResponse](../../models/operations/updatepayoutsettingsresponse.md)>**
+**Promise<[operations.UpdatePayoutSettingsResponse](../../sdk/models/operations/updatepayoutsettingsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

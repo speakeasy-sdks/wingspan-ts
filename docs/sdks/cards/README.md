@@ -1,5 +1,5 @@
 # Cards
-(*.cards*)
+(*cards*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.cards.list();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.ListCardsResponse](../../models/operations/listcardsresponse.md)>**
+**Promise<[operations.ListCardsResponse](../../sdk/models/operations/listcardsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

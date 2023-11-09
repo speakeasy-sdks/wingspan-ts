@@ -1,5 +1,5 @@
 # Statement
-(*.statement*)
+(*statement*)
 
 ### Available Operations
 
@@ -22,7 +22,6 @@ const id: string = "string";
 
   const res = await sdk.statement.download(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -39,8 +38,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.DownloadStatementResponse](../../models/operations/downloadstatementresponse.md)>**
+**Promise<[operations.DownloadStatementResponse](../../sdk/models/operations/downloadstatementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -58,7 +61,6 @@ const id: string = "string";
 
   const res = await sdk.statement.get(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -75,5 +77,9 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.GetStatementResponse](../../models/operations/getstatementresponse.md)>**
+**Promise<[operations.GetStatementResponse](../../sdk/models/operations/getstatementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

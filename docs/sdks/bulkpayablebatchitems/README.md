@@ -1,5 +1,5 @@
 # BulkPayableBatchItems
-(*.bulkPayableBatchItems*)
+(*bulkPayableBatchItems*)
 
 ### Available Operations
 
@@ -21,7 +21,6 @@ const batchId: string = "string";
 
   const res = await sdk.bulkPayableBatchItems.list(batchId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,5 +37,9 @@ const batchId: string = "string";
 
 ### Response
 
-**Promise<[operations.ListBulkPayableBatchItemsResponse](../../models/operations/listbulkpayablebatchitemsresponse.md)>**
+**Promise<[operations.ListBulkPayableBatchItemsResponse](../../sdk/models/operations/listbulkpayablebatchitemsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

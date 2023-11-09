@@ -30,7 +30,7 @@ export class BulkPayableBatchItems {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/bulk/payable/batch/{batchId}/item",
             req
@@ -43,7 +43,7 @@ export class BulkPayableBatchItems {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",

@@ -1,5 +1,5 @@
 # BulkInvoiceBatches
-(*.bulkInvoiceBatches*)
+(*bulkInvoiceBatches*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.bulkInvoiceBatches.list();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.ListBulkInvoiceBatchesResponse](../../models/operations/listbulkinvoicebatchesresponse.md)>**
+**Promise<[operations.ListBulkInvoiceBatchesResponse](../../sdk/models/operations/listbulkinvoicebatchesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

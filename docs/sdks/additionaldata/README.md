@@ -1,5 +1,5 @@
 # AdditionalData
-(*.additionalData*)
+(*additionalData*)
 
 ### Available Operations
 
@@ -27,7 +27,6 @@ import { TypeT } from "wingspan/dist/sdk/models/shared";
     type: TypeT.Boolean,
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -36,16 +35,20 @@ import { TypeT } from "wingspan/dist/sdk/models/shared";
 
 ### Parameters
 
-| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| `request`                                                      | [shared.AdditionalData](../../models/shared/additionaldata.md) | :heavy_check_mark:                                             | The request object to use for the request.                     |
-| `config`                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)   | :heavy_minus_sign:                                             | Available config options for making requests.                  |
+| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `request`                                                          | [shared.AdditionalData](../../sdk/models/shared/additionaldata.md) | :heavy_check_mark:                                                 | The request object to use for the request.                         |
+| `config`                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)       | :heavy_minus_sign:                                                 | Available config options for making requests.                      |
 
 
 ### Response
 
-**Promise<[operations.CreateAdditionalDataResponse](../../models/operations/createadditionaldataresponse.md)>**
+**Promise<[operations.CreateAdditionalDataResponse](../../sdk/models/operations/createadditionaldataresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete
 
@@ -63,7 +66,6 @@ const id: string = "string";
 
   const res = await sdk.additionalData.delete(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -80,8 +82,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.DeleteAdditionalDataResponse](../../models/operations/deleteadditionaldataresponse.md)>**
+**Promise<[operations.DeleteAdditionalDataResponse](../../sdk/models/operations/deleteadditionaldataresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -99,7 +105,6 @@ const id: string = "string";
 
   const res = await sdk.additionalData.get(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -116,5 +121,9 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.GetAdditionalDataResponse](../../models/operations/getadditionaldataresponse.md)>**
+**Promise<[operations.GetAdditionalDataResponse](../../sdk/models/operations/getadditionaldataresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

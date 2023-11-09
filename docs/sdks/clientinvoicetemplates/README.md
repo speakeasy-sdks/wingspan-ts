@@ -1,5 +1,5 @@
 # ClientInvoiceTemplates
-(*.clientInvoiceTemplates*)
+(*clientInvoiceTemplates*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.clientInvoiceTemplates.list();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.ListClientInvoiceTemplatesResponse](../../models/operations/listclientinvoicetemplatesresponse.md)>**
+**Promise<[operations.ListClientInvoiceTemplatesResponse](../../sdk/models/operations/listclientinvoicetemplatesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -1,5 +1,5 @@
 # ClientDeductions
-(*.clientDeductions*)
+(*clientDeductions*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.clientDeductions.list();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.ListClientDeductionsResponse](../../models/operations/listclientdeductionsresponse.md)>**
+**Promise<[operations.ListClientDeductionsResponse](../../sdk/models/operations/listclientdeductionsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

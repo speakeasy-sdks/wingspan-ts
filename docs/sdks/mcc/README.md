@@ -1,5 +1,5 @@
 # Mcc
-(*.mcc*)
+(*mcc*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.mcc.list();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.ListMCCResponse](../../models/operations/listmccresponse.md)>**
+**Promise<[operations.ListMCCResponse](../../sdk/models/operations/listmccresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -1,5 +1,5 @@
 # PaPayableOnClientyable
-(*.paPayableOnClientyable*)
+(*paPayableOnClientyable*)
 
 ### Available Operations
 
@@ -21,7 +21,6 @@ const id: string = "string";
 
   const res = await sdk.paPayableOnClientyable.delete(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,5 +37,9 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.DeletePayableOnClientResponse](../../models/operations/deletepayableonclientresponse.md)>**
+**Promise<[operations.DeletePayableOnClientResponse](../../sdk/models/operations/deletepayableonclientresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

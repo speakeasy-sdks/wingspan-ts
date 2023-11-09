@@ -31,7 +31,7 @@ export class AdditionalData {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string =
+        const operationUrl: string =
             baseURL.replace(/\/$/, "") + "/payments/collaborator-settings/additional-data";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
@@ -51,7 +51,7 @@ export class AdditionalData {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -107,7 +107,7 @@ export class AdditionalData {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/collaborator-settings/additional-data/{id}",
             req
@@ -120,7 +120,7 @@ export class AdditionalData {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -175,7 +175,7 @@ export class AdditionalData {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/collaborator-settings/additional-data/{id}",
             req
@@ -188,7 +188,7 @@ export class AdditionalData {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",

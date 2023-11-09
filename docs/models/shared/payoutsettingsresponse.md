@@ -1,9 +1,0 @@
-# PayoutSettingsResponse
-
-
-## Fields
-
-| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `payoutDestinations`                                                                                             | [shared.PayoutDestinationResponse](../../models/shared/payoutdestinationresponse.md)[]                           | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
-| `payoutPreferences`                                                                                              | [shared.PayoutPreferencesPayoutSettingsResponse](../../models/shared/payoutpreferencespayoutsettingsresponse.md) | :heavy_check_mark:                                                                                               | N/A                                                                                                              |

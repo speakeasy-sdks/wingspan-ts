@@ -1,5 +1,5 @@
 # BulkClientBatchItems
-(*.bulkClientBatchItems*)
+(*bulkClientBatchItems*)
 
 ### Available Operations
 
@@ -21,7 +21,6 @@ const batchId: string = "string";
 
   const res = await sdk.bulkClientBatchItems.list(batchId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,5 +37,9 @@ const batchId: string = "string";
 
 ### Response
 
-**Promise<[operations.ListBulkClientBatchItemsResponse](../../models/operations/listbulkclientbatchitemsresponse.md)>**
+**Promise<[operations.ListBulkClientBatchItemsResponse](../../sdk/models/operations/listbulkclientbatchitemsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

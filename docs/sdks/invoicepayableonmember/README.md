@@ -1,5 +1,5 @@
 # InvoicePayableOnMember
-(*.invoicePayableOnMember*)
+(*invoicePayableOnMember*)
 
 ### Available Operations
 
@@ -21,7 +21,6 @@ const id: string = "string";
 
   const res = await sdk.invoicePayableOnMember.get(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,5 +37,9 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.GetInvoicePayableOnMemberResponse](../../models/operations/getinvoicepayableonmemberresponse.md)>**
+**Promise<[operations.GetInvoicePayableOnMemberResponse](../../sdk/models/operations/getinvoicepayableonmemberresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

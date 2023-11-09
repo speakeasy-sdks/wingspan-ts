@@ -31,7 +31,8 @@ export class OneThousandAndNinetyNine {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/payments/collaborator/1099/calculate";
+        const operationUrl: string =
+            baseURL.replace(/\/$/, "") + "/payments/collaborator/1099/calculate";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -50,7 +51,7 @@ export class OneThousandAndNinetyNine {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -106,7 +107,7 @@ export class OneThousandAndNinetyNine {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string =
+        const operationUrl: string =
             baseURL.replace(/\/$/, "") + "/payments/collaborator/1099/mark-undelivered";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
@@ -126,7 +127,7 @@ export class OneThousandAndNinetyNine {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -182,7 +183,8 @@ export class OneThousandAndNinetyNine {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/payments/collaborator/1099/remail";
+        const operationUrl: string =
+            baseURL.replace(/\/$/, "") + "/payments/collaborator/1099/remail";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -201,7 +203,7 @@ export class OneThousandAndNinetyNine {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",

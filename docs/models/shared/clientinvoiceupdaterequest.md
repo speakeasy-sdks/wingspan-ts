@@ -1,9 +1,0 @@
-# ClientInvoiceUpdateRequest
-
-
-## Fields
-
-| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `creditFeeHandling`                                                                                | [shared.FeeHandlingConfig](../../models/shared/feehandlingconfig.md)                               | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
-| `status`                                                                                           | [shared.StatusClientInvoiceUpdateRequest](../../models/shared/statusclientinvoiceupdaterequest.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |

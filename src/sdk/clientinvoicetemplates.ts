@@ -26,7 +26,8 @@ export class ClientInvoiceTemplates {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/payments/client/invoice-template";
+        const operationUrl: string =
+            baseURL.replace(/\/$/, "") + "/payments/client/invoice-template";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         headers["Accept"] = "application/json";
@@ -35,7 +36,7 @@ export class ClientInvoiceTemplates {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",

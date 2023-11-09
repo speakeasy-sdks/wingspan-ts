@@ -1,5 +1,5 @@
 # CollaboratorGroups
-(*.collaboratorGroups*)
+(*collaboratorGroups*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.collaboratorGroups.list();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.ListCollaboratorGroupsResponse](../../models/operations/listcollaboratorgroupsresponse.md)>**
+**Promise<[operations.ListCollaboratorGroupsResponse](../../sdk/models/operations/listcollaboratorgroupsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

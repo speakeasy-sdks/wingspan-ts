@@ -1,5 +1,5 @@
 # BulkCollaboratorBatch
-(*.bulkCollaboratorBatch*)
+(*bulkCollaboratorBatch*)
 
 ### Available Operations
 
@@ -25,7 +25,6 @@ import { Wingspan } from "wingspan";
     },
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -34,16 +33,20 @@ import { Wingspan } from "wingspan";
 
 ### Parameters
 
-| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `request`                                                        | [shared.BulkBatchCreate](../../models/shared/bulkbatchcreate.md) | :heavy_check_mark:                                               | The request object to use for the request.                       |
-| `config`                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)     | :heavy_minus_sign:                                               | Available config options for making requests.                    |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `request`                                                            | [shared.BulkBatchCreate](../../sdk/models/shared/bulkbatchcreate.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
+| `config`                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)         | :heavy_minus_sign:                                                   | Available config options for making requests.                        |
 
 
 ### Response
 
-**Promise<[operations.CreateBulkCollaboratorBatchResponse](../../models/operations/createbulkcollaboratorbatchresponse.md)>**
+**Promise<[operations.CreateBulkCollaboratorBatchResponse](../../sdk/models/operations/createbulkcollaboratorbatchresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -61,7 +64,6 @@ const batchId: string = "string";
 
   const res = await sdk.bulkCollaboratorBatch.get(batchId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -78,8 +80,12 @@ const batchId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetBulkCollaboratorBatchResponse](../../models/operations/getbulkcollaboratorbatchresponse.md)>**
+**Promise<[operations.GetBulkCollaboratorBatchResponse](../../sdk/models/operations/getbulkcollaboratorbatchresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -103,7 +109,6 @@ const bulkBatchUpdate: BulkBatchUpdate = {
 
   const res = await sdk.bulkCollaboratorBatch.update(batchId, bulkBatchUpdate);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -112,14 +117,18 @@ const bulkBatchUpdate: BulkBatchUpdate = {
 
 ### Parameters
 
-| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `batchId`                                                        | *string*                                                         | :heavy_check_mark:                                               | Unique identifier for a batch                                    |
-| `bulkBatchUpdate`                                                | [shared.BulkBatchUpdate](../../models/shared/bulkbatchupdate.md) | :heavy_minus_sign:                                               | N/A                                                              |
-| `config`                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)     | :heavy_minus_sign:                                               | Available config options for making requests.                    |
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `batchId`                                                               | *string*                                                                | :heavy_check_mark:                                                      | Unique identifier for a batch                                           |
+| `bulkBatchUpdate`                                                       | [shared.BulkBatchUpdate](../../../sdk/models/shared/bulkbatchupdate.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `config`                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)            | :heavy_minus_sign:                                                      | Available config options for making requests.                           |
 
 
 ### Response
 
-**Promise<[operations.UpdateBulkCollaboratorBatchResponse](../../models/operations/updatebulkcollaboratorbatchresponse.md)>**
+**Promise<[operations.UpdateBulkCollaboratorBatchResponse](../../sdk/models/operations/updatebulkcollaboratorbatchresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

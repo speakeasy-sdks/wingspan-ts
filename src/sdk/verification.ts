@@ -32,7 +32,11 @@ export class Verification {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/payments/banking/card/{id}/token", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/payments/banking/card/{id}/token",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -51,7 +55,7 @@ export class Verification {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",

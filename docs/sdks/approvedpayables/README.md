@@ -1,5 +1,5 @@
 # ApprovedPayables
-(*.approvedPayables*)
+(*approvedPayables*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.approvedPayables.list();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.ListApprovedPayablesResponse](../../models/operations/listapprovedpayablesresponse.md)>**
+**Promise<[operations.ListApprovedPayablesResponse](../../sdk/models/operations/listapprovedpayablesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

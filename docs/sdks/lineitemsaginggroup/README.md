@@ -1,5 +1,5 @@
 # LineItemsAgingGroup
-(*.lineItemsAgingGroup*)
+(*lineItemsAgingGroup*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.lineItemsAgingGroup.get();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.GetLineItemsAgingGroupResponse](../../models/operations/getlineitemsaginggroupresponse.md)>**
+**Promise<[operations.GetLineItemsAgingGroupResponse](../../sdk/models/operations/getlineitemsaginggroupresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

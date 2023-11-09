@@ -1,5 +1,5 @@
 # PayoutDebitCard
-(*.payoutDebitCard*)
+(*payoutDebitCard*)
 
 ### Available Operations
 
@@ -36,7 +36,6 @@ const checkbookCardCreate: CheckbookCardCreate = {
 
   const res = await sdk.payoutDebitCard.create(memberId, checkbookCardCreate);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -45,17 +44,21 @@ const checkbookCardCreate: CheckbookCardCreate = {
 
 ### Parameters
 
-| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `memberId`                                                               | *string*                                                                 | :heavy_check_mark:                                                       | Unique identifier of a member                                            |
-| `checkbookCardCreate`                                                    | [shared.CheckbookCardCreate](../../models/shared/checkbookcardcreate.md) | :heavy_minus_sign:                                                       | N/A                                                                      |
-| `config`                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)             | :heavy_minus_sign:                                                       | Available config options for making requests.                            |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `memberId`                                                                      | *string*                                                                        | :heavy_check_mark:                                                              | Unique identifier of a member                                                   |
+| `checkbookCardCreate`                                                           | [shared.CheckbookCardCreate](../../../sdk/models/shared/checkbookcardcreate.md) | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `config`                                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                    | :heavy_minus_sign:                                                              | Available config options for making requests.                                   |
 
 
 ### Response
 
-**Promise<[operations.CreatePayoutDebitCardResponse](../../models/operations/createpayoutdebitcardresponse.md)>**
+**Promise<[operations.CreatePayoutDebitCardResponse](../../sdk/models/operations/createpayoutdebitcardresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete
 
@@ -74,7 +77,6 @@ const memberId: string = "string";
 
   const res = await sdk.payoutDebitCard.delete(id, memberId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -92,8 +94,12 @@ const memberId: string = "string";
 
 ### Response
 
-**Promise<[operations.DeletePayoutDebitCardResponse](../../models/operations/deletepayoutdebitcardresponse.md)>**
+**Promise<[operations.DeletePayoutDebitCardResponse](../../sdk/models/operations/deletepayoutdebitcardresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -112,7 +118,6 @@ const memberId: string = "string";
 
   const res = await sdk.payoutDebitCard.get(id, memberId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -130,5 +135,9 @@ const memberId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetPayoutDebitCardResponse](../../models/operations/getpayoutdebitcardresponse.md)>**
+**Promise<[operations.GetPayoutDebitCardResponse](../../sdk/models/operations/getpayoutdebitcardresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

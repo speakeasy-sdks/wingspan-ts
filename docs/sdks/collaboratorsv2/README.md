@@ -1,5 +1,5 @@
 # CollaboratorsV2
-(*.collaboratorsV2*)
+(*collaboratorsV2*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.collaboratorsV2.list();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.ListCollaboratorsV2Response](../../models/operations/listcollaboratorsv2response.md)>**
+**Promise<[operations.ListCollaboratorsV2Response](../../sdk/models/operations/listcollaboratorsv2response.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

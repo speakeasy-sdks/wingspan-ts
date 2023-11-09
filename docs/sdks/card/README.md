@@ -1,5 +1,5 @@
 # Card
-(*.card*)
+(*card*)
 
 ### Available Operations
 
@@ -29,7 +29,6 @@ import { Wingspan } from "wingspan";
     },
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,16 +37,20 @@ import { Wingspan } from "wingspan";
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `request`                                                            | [shared.CardCreateRequest](../../models/shared/cardcreaterequest.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
-| `config`                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)         | :heavy_minus_sign:                                                   | Available config options for making requests.                        |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `request`                                                                | [shared.CardCreateRequest](../../sdk/models/shared/cardcreaterequest.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
+| `config`                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)             | :heavy_minus_sign:                                                       | Available config options for making requests.                            |
 
 
 ### Response
 
-**Promise<[operations.CreateCardResponse](../../models/operations/createcardresponse.md)>**
+**Promise<[operations.CreateCardResponse](../../sdk/models/operations/createcardresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete
 
@@ -65,7 +68,6 @@ const id: string = "string";
 
   const res = await sdk.card.delete(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -82,8 +84,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.DeleteCardResponse](../../models/operations/deletecardresponse.md)>**
+**Promise<[operations.DeleteCardResponse](../../sdk/models/operations/deletecardresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -101,7 +107,6 @@ const id: string = "string";
 
   const res = await sdk.card.get(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -118,8 +123,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.GetCardResponse](../../models/operations/getcardresponse.md)>**
+**Promise<[operations.GetCardResponse](../../sdk/models/operations/getcardresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -141,7 +150,6 @@ const cardUpdateRequest: CardUpdateRequest = {
 
   const res = await sdk.card.update(id, cardUpdateRequest);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -150,14 +158,18 @@ const cardUpdateRequest: CardUpdateRequest = {
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `id`                                                                 | *string*                                                             | :heavy_check_mark:                                                   | Unique identifier                                                    |
-| `cardUpdateRequest`                                                  | [shared.CardUpdateRequest](../../models/shared/cardupdaterequest.md) | :heavy_minus_sign:                                                   | N/A                                                                  |
-| `config`                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)         | :heavy_minus_sign:                                                   | Available config options for making requests.                        |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `id`                                                                        | *string*                                                                    | :heavy_check_mark:                                                          | Unique identifier                                                           |
+| `cardUpdateRequest`                                                         | [shared.CardUpdateRequest](../../../sdk/models/shared/cardupdaterequest.md) | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `config`                                                                    | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                | :heavy_minus_sign:                                                          | Available config options for making requests.                               |
 
 
 ### Response
 
-**Promise<[operations.UpdateCardResponse](../../models/operations/updatecardresponse.md)>**
+**Promise<[operations.UpdateCardResponse](../../sdk/models/operations/updatecardresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

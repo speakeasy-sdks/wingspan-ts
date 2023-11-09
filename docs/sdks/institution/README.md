@@ -1,5 +1,5 @@
 # Institution
-(*.institution*)
+(*institution*)
 
 ### Available Operations
 
@@ -21,7 +21,6 @@ const routingNumber: string = "string";
 
   const res = await sdk.institution.get(routingNumber);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,5 +37,9 @@ const routingNumber: string = "string";
 
 ### Response
 
-**Promise<[operations.GetInstitutionResponse](../../models/operations/getinstitutionresponse.md)>**
+**Promise<[operations.GetInstitutionResponse](../../sdk/models/operations/getinstitutionresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -31,7 +31,7 @@ export class EligibilityRequirement {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string =
+        const operationUrl: string =
             baseURL.replace(/\/$/, "") + "/payments/collaborator-settings/eligibility-requirement";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
@@ -51,7 +51,7 @@ export class EligibilityRequirement {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -107,7 +107,7 @@ export class EligibilityRequirement {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/collaborator-settings/eligibility-requirement/{id}",
             req
@@ -120,7 +120,7 @@ export class EligibilityRequirement {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -178,7 +178,7 @@ export class EligibilityRequirement {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/collaborator-settings/eligibility-requirement/{id}",
             req
@@ -191,7 +191,7 @@ export class EligibilityRequirement {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -251,7 +251,7 @@ export class EligibilityRequirement {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/payments/collaborator-settings/eligibility-requirement/{id}",
             req
@@ -278,7 +278,7 @@ export class EligibilityRequirement {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",

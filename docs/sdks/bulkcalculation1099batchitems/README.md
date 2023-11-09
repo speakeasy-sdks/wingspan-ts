@@ -1,5 +1,5 @@
 # BulkCalculation1099BatchItems
-(*.bulkCalculation1099BatchItems*)
+(*bulkCalculation1099BatchItems*)
 
 ### Available Operations
 
@@ -21,7 +21,6 @@ const batchId: string = "string";
 
   const res = await sdk.bulkCalculation1099BatchItems.list(batchId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,5 +37,9 @@ const batchId: string = "string";
 
 ### Response
 
-**Promise<[operations.ListBulkCalculation1099BatchItemsResponse](../../models/operations/listbulkcalculation1099batchitemsresponse.md)>**
+**Promise<[operations.ListBulkCalculation1099BatchItemsResponse](../../sdk/models/operations/listbulkcalculation1099batchitemsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

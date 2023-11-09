@@ -1,5 +1,5 @@
 # InvoiceTemplate
-(*.invoiceTemplate*)
+(*invoiceTemplate*)
 
 ### Available Operations
 
@@ -87,7 +87,6 @@ import {
     status: StatusInvoiceTemplateCreateRequest.Cancelled,
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -96,16 +95,20 @@ import {
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [shared.InvoiceTemplateCreateRequest](../../models/shared/invoicetemplatecreaterequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [shared.InvoiceTemplateCreateRequest](../../sdk/models/shared/invoicetemplatecreaterequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
 
-**Promise<[operations.CreateInvoiceTemplateResponse](../../models/operations/createinvoicetemplateresponse.md)>**
+**Promise<[operations.CreateInvoiceTemplateResponse](../../sdk/models/operations/createinvoicetemplateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete
 
@@ -123,7 +126,6 @@ const id: string = "string";
 
   const res = await sdk.invoiceTemplate.delete(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -140,8 +142,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.DeleteInvoiceTemplateResponse](../../models/operations/deleteinvoicetemplateresponse.md)>**
+**Promise<[operations.DeleteInvoiceTemplateResponse](../../sdk/models/operations/deleteinvoicetemplateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -159,7 +165,6 @@ const id: string = "string";
 
   const res = await sdk.invoiceTemplate.get(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -176,8 +181,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.GetInvoiceTemplateResponse](../../models/operations/getinvoicetemplateresponse.md)>**
+**Promise<[operations.GetInvoiceTemplateResponse](../../sdk/models/operations/getinvoicetemplateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -277,7 +286,6 @@ const invoiceTemplateUpdateRequest: InvoiceTemplateUpdateRequest = {
 
   const res = await sdk.invoiceTemplate.update(id, invoiceTemplateUpdateRequest);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -286,14 +294,18 @@ const invoiceTemplateUpdateRequest: InvoiceTemplateUpdateRequest = {
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `id`                                                                                       | *string*                                                                                   | :heavy_check_mark:                                                                         | Unique identifier                                                                          |
-| `invoiceTemplateUpdateRequest`                                                             | [shared.InvoiceTemplateUpdateRequest](../../models/shared/invoicetemplateupdaterequest.md) | :heavy_minus_sign:                                                                         | N/A                                                                                        |
-| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `id`                                                                                              | *string*                                                                                          | :heavy_check_mark:                                                                                | Unique identifier                                                                                 |
+| `invoiceTemplateUpdateRequest`                                                                    | [shared.InvoiceTemplateUpdateRequest](../../../sdk/models/shared/invoicetemplateupdaterequest.md) | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `config`                                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                      | :heavy_minus_sign:                                                                                | Available config options for making requests.                                                     |
 
 
 ### Response
 
-**Promise<[operations.UpdateInvoiceTemplateResponse](../../models/operations/updateinvoicetemplateresponse.md)>**
+**Promise<[operations.UpdateInvoiceTemplateResponse](../../sdk/models/operations/updateinvoicetemplateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

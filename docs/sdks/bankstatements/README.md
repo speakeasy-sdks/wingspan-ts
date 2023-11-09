@@ -1,5 +1,5 @@
 # BankStatements
-(*.bankStatements*)
+(*bankStatements*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.bankStatements.list();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.ListBankStatementsResponse](../../models/operations/listbankstatementsresponse.md)>**
+**Promise<[operations.ListBankStatementsResponse](../../sdk/models/operations/listbankstatementsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -1,5 +1,5 @@
 # Payables
-(*.payables*)
+(*payables*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.payables.get();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.GetPayablesResponse](../../models/operations/getpayablesresponse.md)>**
+**Promise<[operations.GetPayablesResponse](../../sdk/models/operations/getpayablesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

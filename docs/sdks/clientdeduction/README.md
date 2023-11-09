@@ -1,5 +1,5 @@
 # ClientDeduction
-(*.clientDeduction*)
+(*clientDeduction*)
 
 ### Available Operations
 
@@ -27,7 +27,6 @@ import { DeductionCreateRequestCurrency, TypeDeductionCreateRequest } from "wing
     type: TypeDeductionCreateRequest.PostPayment,
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -36,13 +35,17 @@ import { DeductionCreateRequestCurrency, TypeDeductionCreateRequest } from "wing
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [shared.DeductionCreateRequest](../../models/shared/deductioncreaterequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [shared.DeductionCreateRequest](../../sdk/models/shared/deductioncreaterequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
 
 
 ### Response
 
-**Promise<[operations.CreateClientDeductionResponse](../../models/operations/createclientdeductionresponse.md)>**
+**Promise<[operations.CreateClientDeductionResponse](../../sdk/models/operations/createclientdeductionresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

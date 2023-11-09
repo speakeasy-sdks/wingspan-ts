@@ -1,5 +1,5 @@
 # ClientInvoiceFees
-(*.clientInvoiceFees*)
+(*clientInvoiceFees*)
 
 ### Available Operations
 
@@ -23,7 +23,6 @@ import { Wingspan } from "wingspan";
     email: "Jena.Nienow28@yahoo.com",
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -32,16 +31,20 @@ import { Wingspan } from "wingspan";
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `request`                                                            | [shared.TestInvoiceCreate](../../models/shared/testinvoicecreate.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
-| `config`                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)         | :heavy_minus_sign:                                                   | Available config options for making requests.                        |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `request`                                                                | [shared.TestInvoiceCreate](../../sdk/models/shared/testinvoicecreate.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
+| `config`                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)             | :heavy_minus_sign:                                                       | Available config options for making requests.                            |
 
 
 ### Response
 
-**Promise<[operations.CreateClientInvoiceFeesResponse](../../models/operations/createclientinvoicefeesresponse.md)>**
+**Promise<[operations.CreateClientInvoiceFeesResponse](../../sdk/models/operations/createclientinvoicefeesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list
 
@@ -59,7 +62,6 @@ const invoiceId: string = "string";
 
   const res = await sdk.clientInvoiceFees.list(invoiceId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -76,5 +78,9 @@ const invoiceId: string = "string";
 
 ### Response
 
-**Promise<[operations.ListClientInvoiceFeesResponse](../../models/operations/listclientinvoicefeesresponse.md)>**
+**Promise<[operations.ListClientInvoiceFeesResponse](../../sdk/models/operations/listclientinvoicefeesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

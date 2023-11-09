@@ -1,5 +1,5 @@
 # Form1099
-(*.form1099*)
+(*form1099*)
 
 ### Available Operations
 
@@ -23,7 +23,6 @@ const year: string = "string";
 
   const res = await sdk.form1099.download(id, index, year);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -42,5 +41,9 @@ const year: string = "string";
 
 ### Response
 
-**Promise<[operations.DownloadForm1099Response](../../models/operations/downloadform1099response.md)>**
+**Promise<[operations.DownloadForm1099Response](../../sdk/models/operations/downloadform1099response.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

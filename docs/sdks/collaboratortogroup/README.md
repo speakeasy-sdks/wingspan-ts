@@ -1,5 +1,5 @@
 # CollaboratorToGroup
-(*.collaboratorToGroup*)
+(*collaboratorToGroup*)
 
 ### Available Operations
 
@@ -23,7 +23,6 @@ const id: string = "string";
 
   const res = await sdk.collaboratorToGroup.add(groupId, id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -41,8 +40,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.AddCollaboratorToGroupResponse](../../models/operations/addcollaboratortogroupresponse.md)>**
+**Promise<[operations.AddCollaboratorToGroupResponse](../../sdk/models/operations/addcollaboratortogroupresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## remove
 
@@ -61,7 +64,6 @@ const id: string = "string";
 
   const res = await sdk.collaboratorToGroup.remove(groupId, id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -79,5 +81,9 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.RemoveCollaboratorToGroupResponse](../../models/operations/removecollaboratortogroupresponse.md)>**
+**Promise<[operations.RemoveCollaboratorToGroupResponse](../../sdk/models/operations/removecollaboratortogroupresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

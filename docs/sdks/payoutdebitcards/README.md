@@ -1,5 +1,5 @@
 # PayoutDebitCards
-(*.payoutDebitCards*)
+(*payoutDebitCards*)
 
 ### Available Operations
 
@@ -21,7 +21,6 @@ const memberId: string = "string";
 
   const res = await sdk.payoutDebitCards.list(memberId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,5 +37,9 @@ const memberId: string = "string";
 
 ### Response
 
-**Promise<[operations.ListPayoutDebitCardsResponse](../../models/operations/listpayoutdebitcardsresponse.md)>**
+**Promise<[operations.ListPayoutDebitCardsResponse](../../sdk/models/operations/listpayoutdebitcardsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

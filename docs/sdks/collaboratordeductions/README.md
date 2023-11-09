@@ -1,5 +1,5 @@
 # CollaboratorDeductions
-(*.collaboratorDeductions*)
+(*collaboratorDeductions*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.collaboratorDeductions.list();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.ListCollaboratorDeductionsResponse](../../models/operations/listcollaboratordeductionsresponse.md)>**
+**Promise<[operations.ListCollaboratorDeductionsResponse](../../sdk/models/operations/listcollaboratordeductionsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

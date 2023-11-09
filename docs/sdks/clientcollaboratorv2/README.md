@@ -1,5 +1,5 @@
 # ClientCollaboratorV2
-(*.clientCollaboratorV2*)
+(*clientCollaboratorV2*)
 
 ### Available Operations
 
@@ -21,7 +21,6 @@ const clientId: string = "string";
 
   const res = await sdk.clientCollaboratorV2.get(clientId);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,5 +37,9 @@ const clientId: string = "string";
 
 ### Response
 
-**Promise<[operations.GetClientCollaboratorV2Response](../../models/operations/getclientcollaboratorv2response.md)>**
+**Promise<[operations.GetClientCollaboratorV2Response](../../sdk/models/operations/getclientcollaboratorv2response.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

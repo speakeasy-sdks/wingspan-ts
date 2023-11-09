@@ -1,5 +1,5 @@
 # Collaborator
-(*.collaborator*)
+(*collaborator*)
 
 ### Available Operations
 
@@ -45,7 +45,6 @@ import {
     },
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -54,16 +53,20 @@ import {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [shared.CollaboratorCreateRequest](../../models/shared/collaboratorcreaterequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [shared.CollaboratorCreateRequest](../../sdk/models/shared/collaboratorcreaterequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response
 
-**Promise<[operations.CreateCollaboratorResponse](../../models/operations/createcollaboratorresponse.md)>**
+**Promise<[operations.CreateCollaboratorResponse](../../sdk/models/operations/createcollaboratorresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete
 
@@ -81,7 +84,6 @@ const id: string = "string";
 
   const res = await sdk.collaborator.delete(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -98,8 +100,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.DeleteCollaboratorResponse](../../models/operations/deletecollaboratorresponse.md)>**
+**Promise<[operations.DeleteCollaboratorResponse](../../sdk/models/operations/deletecollaboratorresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -117,7 +123,6 @@ const id: string = "string";
 
   const res = await sdk.collaborator.get(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -134,8 +139,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.GetCollaboratorResponse](../../models/operations/getcollaboratorresponse.md)>**
+**Promise<[operations.GetCollaboratorResponse](../../sdk/models/operations/getcollaboratorresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -199,7 +208,6 @@ const collaboratorUpdateRequest: CollaboratorUpdateRequest = {
 
   const res = await sdk.collaborator.update(id, collaboratorUpdateRequest);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -208,14 +216,18 @@ const collaboratorUpdateRequest: CollaboratorUpdateRequest = {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `id`                                                                                 | *string*                                                                             | :heavy_check_mark:                                                                   | Unique identifier                                                                    |
-| `collaboratorUpdateRequest`                                                          | [shared.CollaboratorUpdateRequest](../../models/shared/collaboratorupdaterequest.md) | :heavy_minus_sign:                                                                   | N/A                                                                                  |
-| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `id`                                                                                        | *string*                                                                                    | :heavy_check_mark:                                                                          | Unique identifier                                                                           |
+| `collaboratorUpdateRequest`                                                                 | [shared.CollaboratorUpdateRequest](../../../sdk/models/shared/collaboratorupdaterequest.md) | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `config`                                                                                    | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                | :heavy_minus_sign:                                                                          | Available config options for making requests.                                               |
 
 
 ### Response
 
-**Promise<[operations.UpdateCollaboratorResponse](../../models/operations/updatecollaboratorresponse.md)>**
+**Promise<[operations.UpdateCollaboratorResponse](../../sdk/models/operations/updatecollaboratorresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

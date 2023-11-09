@@ -1,5 +1,5 @@
 # EligibilityRequirements
-(*.eligibilityRequirements*)
+(*eligibilityRequirements*)
 
 ### Available Operations
 
@@ -19,7 +19,6 @@ import { Wingspan } from "wingspan";
 
   const res = await sdk.eligibilityRequirements.list();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -35,5 +34,9 @@ import { Wingspan } from "wingspan";
 
 ### Response
 
-**Promise<[operations.ListEligibilityRequirementsResponse](../../models/operations/listeligibilityrequirementsresponse.md)>**
+**Promise<[operations.ListEligibilityRequirementsResponse](../../sdk/models/operations/listeligibilityrequirementsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -1,5 +1,5 @@
 # PaymentEligibilityRequirement
-(*.paymentEligibilityRequirement*)
+(*paymentEligibilityRequirement*)
 
 ### Available Operations
 
@@ -25,7 +25,6 @@ import { Wingspan } from "wingspan";
     value: "string",
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -34,16 +33,20 @@ import { Wingspan } from "wingspan";
 
 ### Parameters
 
-| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `request`                                                              | [shared.PaymentEligibility](../../models/shared/paymenteligibility.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
-| `config`                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)           | :heavy_minus_sign:                                                     | Available config options for making requests.                          |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `request`                                                                  | [shared.PaymentEligibility](../../sdk/models/shared/paymenteligibility.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
+| `config`                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)               | :heavy_minus_sign:                                                         | Available config options for making requests.                              |
 
 
 ### Response
 
-**Promise<[operations.CreatePaymentEligibilityRequirementResponse](../../models/operations/createpaymenteligibilityrequirementresponse.md)>**
+**Promise<[operations.CreatePaymentEligibilityRequirementResponse](../../sdk/models/operations/createpaymenteligibilityrequirementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete
 
@@ -61,7 +64,6 @@ const id: string = "string";
 
   const res = await sdk.paymentEligibilityRequirement.delete(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -78,8 +80,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.DeletePaymentEligibilityRequirementResponse](../../models/operations/deletepaymenteligibilityrequirementresponse.md)>**
+**Promise<[operations.DeletePaymentEligibilityRequirementResponse](../../sdk/models/operations/deletepaymenteligibilityrequirementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -97,7 +103,6 @@ const id: string = "string";
 
   const res = await sdk.paymentEligibilityRequirement.get(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -114,8 +119,12 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.GetPaymentEligibilityRequirementResponse](../../models/operations/getpaymenteligibilityrequirementresponse.md)>**
+**Promise<[operations.GetPaymentEligibilityRequirementResponse](../../sdk/models/operations/getpaymenteligibilityrequirementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -137,7 +146,6 @@ const paymentEligibilityUpdateRequest: PaymentEligibilityUpdateRequest = {
 
   const res = await sdk.paymentEligibilityRequirement.update(id, paymentEligibilityUpdateRequest);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -146,14 +154,18 @@ const paymentEligibilityUpdateRequest: PaymentEligibilityUpdateRequest = {
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `id`                                                                                             | *string*                                                                                         | :heavy_check_mark:                                                                               | Unique identifier                                                                                |
-| `paymentEligibilityUpdateRequest`                                                                | [shared.PaymentEligibilityUpdateRequest](../../models/shared/paymenteligibilityupdaterequest.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                    | *string*                                                                                                | :heavy_check_mark:                                                                                      | Unique identifier                                                                                       |
+| `paymentEligibilityUpdateRequest`                                                                       | [shared.PaymentEligibilityUpdateRequest](../../../sdk/models/shared/paymenteligibilityupdaterequest.md) | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
+| `config`                                                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                            | :heavy_minus_sign:                                                                                      | Available config options for making requests.                                                           |
 
 
 ### Response
 
-**Promise<[operations.UpdatePaymentEligibilityRequirementResponse](../../models/operations/updatepaymenteligibilityrequirementresponse.md)>**
+**Promise<[operations.UpdatePaymentEligibilityRequirementResponse](../../sdk/models/operations/updatepaymenteligibilityrequirementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

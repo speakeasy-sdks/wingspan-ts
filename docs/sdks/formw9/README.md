@@ -1,5 +1,5 @@
 # FormW9
-(*.formW9*)
+(*formW9*)
 
 ### Available Operations
 
@@ -21,7 +21,6 @@ const id: string = "string";
 
   const res = await sdk.formW9.download(id);
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -38,5 +37,9 @@ const id: string = "string";
 
 ### Response
 
-**Promise<[operations.DownloadFormW9Response](../../models/operations/downloadformw9response.md)>**
+**Promise<[operations.DownloadFormW9Response](../../sdk/models/operations/downloadformw9response.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
