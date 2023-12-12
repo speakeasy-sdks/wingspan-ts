@@ -15,7 +15,7 @@ List the payout debit cards
 import { Wingspan } from "wingspan";
 import { ListPayoutDebitCardsRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const memberId: string = "string";
 
@@ -24,7 +24,9 @@ const memberId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

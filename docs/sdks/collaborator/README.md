@@ -23,7 +23,7 @@ import {
   VerificationStratgyClientData,
 } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.collaborator.create({
@@ -48,7 +48,9 @@ import {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -78,7 +80,7 @@ Delete collaborator by Id
 import { Wingspan } from "wingspan";
 import { DeleteCollaboratorRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -87,7 +89,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -117,7 +121,7 @@ Get collaborator by Id
 import { Wingspan } from "wingspan";
 import { GetCollaboratorRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -126,7 +130,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -176,7 +182,7 @@ import {
   VerificationStratgyClientData,
 } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 const collaboratorUpdateRequest: CollaboratorUpdateRequest = {
@@ -211,16 +217,18 @@ const collaboratorUpdateRequest: CollaboratorUpdateRequest = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `id`                                                                                        | *string*                                                                                    | :heavy_check_mark:                                                                          | Unique identifier                                                                           |
-| `collaboratorUpdateRequest`                                                                 | [shared.CollaboratorUpdateRequest](../../../sdk/models/shared/collaboratorupdaterequest.md) | :heavy_minus_sign:                                                                          | N/A                                                                                         |
-| `config`                                                                                    | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                | :heavy_minus_sign:                                                                          | Available config options for making requests.                                               |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `id`                                                                                     | *string*                                                                                 | :heavy_check_mark:                                                                       | Unique identifier                                                                        |
+| `collaboratorUpdateRequest`                                                              | [shared.CollaboratorUpdateRequest](../../sdk/models/shared/collaboratorupdaterequest.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response

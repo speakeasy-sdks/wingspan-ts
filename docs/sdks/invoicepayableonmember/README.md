@@ -15,7 +15,7 @@ Get invoice on member by payableId
 import { Wingspan } from "wingspan";
 import { GetInvoicePayableOnMemberRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -24,7 +24,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

@@ -15,7 +15,7 @@ Create deduction
 import { Wingspan } from "wingspan";
 import { DeductionCreateRequestCurrency, TypeDeductionCreateRequest } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.clientDeduction.create({
@@ -30,7 +30,9 @@ import { DeductionCreateRequestCurrency, TypeDeductionCreateRequest } from "wing
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

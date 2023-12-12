@@ -16,7 +16,7 @@ Delete Eligibility Requirement
 import { Wingspan } from "wingspan";
 import { DeleteCollaboratorGroupEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const eligibilityRequirementId: string = "string";
 const id: string = "string";
@@ -26,7 +26,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -58,7 +60,7 @@ import { Wingspan } from "wingspan";
 import { ReplaceCollaboratorGroupEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 import { CollaboratorGroupRequirementUpdate } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const eligibilityRequirementId: string = "string";
 const id: string = "string";
@@ -71,17 +73,19 @@ const collaboratorGroupRequirementUpdate: CollaboratorGroupRequirementUpdate = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
-| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `eligibilityRequirementId`                                                                                    | *string*                                                                                                      | :heavy_check_mark:                                                                                            | Unique eligibility Requirement Id                                                                             |
-| `id`                                                                                                          | *string*                                                                                                      | :heavy_check_mark:                                                                                            | Unique identifier                                                                                             |
-| `collaboratorGroupRequirementUpdate`                                                                          | [shared.CollaboratorGroupRequirementUpdate](../../../sdk/models/shared/collaboratorgrouprequirementupdate.md) | :heavy_minus_sign:                                                                                            | N/A                                                                                                           |
-| `config`                                                                                                      | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                  | :heavy_minus_sign:                                                                                            | Available config options for making requests.                                                                 |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `eligibilityRequirementId`                                                                                 | *string*                                                                                                   | :heavy_check_mark:                                                                                         | Unique eligibility Requirement Id                                                                          |
+| `id`                                                                                                       | *string*                                                                                                   | :heavy_check_mark:                                                                                         | Unique identifier                                                                                          |
+| `collaboratorGroupRequirementUpdate`                                                                       | [shared.CollaboratorGroupRequirementUpdate](../../sdk/models/shared/collaboratorgrouprequirementupdate.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response

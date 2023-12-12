@@ -16,7 +16,7 @@ Create instant payout details
 ```typescript
 import { Wingspan } from "wingspan";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.instantPayout.create({
@@ -26,7 +26,9 @@ import { Wingspan } from "wingspan";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -55,7 +57,7 @@ Delete instant payout
 ```typescript
 import { Wingspan } from "wingspan";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.instantPayout.delete();
@@ -63,7 +65,9 @@ import { Wingspan } from "wingspan";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -91,7 +95,7 @@ Fetch instant payout details
 ```typescript
 import { Wingspan } from "wingspan";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.instantPayout.fetch();
@@ -99,7 +103,9 @@ import { Wingspan } from "wingspan";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

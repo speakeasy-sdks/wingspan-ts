@@ -136,9 +136,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0.0";
-    sdkVersion = "0.6.4";
-    genVersion = "2.194.1";
-    userAgent = "speakeasy-sdk/typescript 0.6.4 2.194.1 1.0.0 wingspan";
+    sdkVersion = "0.7.0";
+    genVersion = "2.213.3";
+    userAgent = "speakeasy-sdk/typescript 0.7.0 2.213.3 1.0.0 wingspan";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -152,8 +152,8 @@ export class Wingspan {
     public serviceStatus: ServiceStatus;
     public cards: Cards;
     public card: Card;
-    public verification: Verification;
     public codeToToken: CodeToToken;
+    public verification: Verification;
     public instantPayout: InstantPayout;
     public institution: Institution;
     public bankStatements: BankStatements;
@@ -179,8 +179,8 @@ export class Wingspan {
     public bulkPayableBatchSummary: BulkPayableBatchSummary;
     public bulkPayableBatchItems: BulkPayableBatchItems;
     public bulkPayableBatchItem: BulkPayableBatchItem;
-    public clientDeduction: ClientDeduction;
     public clientDeductions: ClientDeductions;
+    public clientDeduction: ClientDeduction;
     public clientDeductionID: ClientDeductionID;
     public createdInvoicesByClient: CreatedInvoicesByClient;
     public invoiceAsClient: InvoiceAsClient;
@@ -191,17 +191,17 @@ export class Wingspan {
     public payClientInvoice: PayClientInvoice;
     public collaborators: Collaborators;
     public collaborator: Collaborator;
-    public collaboratorDeduction: CollaboratorDeduction;
     public collaboratorDeductions: CollaboratorDeductions;
+    public collaboratorDeduction: CollaboratorDeduction;
     public collaboratorGroups: CollaboratorGroups;
     public collaboratorGroup: CollaboratorGroup;
     public collaboratorGroupEligibilityRequirement: CollaboratorGroupEligibilityRequirement;
-    public additionalData: AdditionalData;
     public additionalSettings: AdditionalSettings;
-    public eligibilityRequirement: EligibilityRequirement;
+    public additionalData: AdditionalData;
     public eligibilityRequirements: EligibilityRequirements;
-    public paymentEligibilityRequirement: PaymentEligibilityRequirement;
+    public eligibilityRequirement: EligibilityRequirement;
     public paymentEligibilityRequirements: PaymentEligibilityRequirements;
+    public paymentEligibilityRequirement: PaymentEligibilityRequirement;
     public oneThousandAndNinetyNine: OneThousandAndNinetyNine;
     public collaboratorToGroup: CollaboratorToGroup;
     public form1099: Form1099;
@@ -218,8 +218,8 @@ export class Wingspan {
     public payroll: Payroll;
     public clientInvoices: ClientInvoices;
     public payableOnClient: PayableOnClient;
-    public invoicePayableOnMember: InvoicePayableOnMember;
     public paPayableOnClientyable: PaPayableOnClientyable;
+    public invoicePayableOnMember: InvoicePayableOnMember;
     public payoutSettings: PayoutSettings;
     public payoutDebitCards: PayoutDebitCards;
     public payoutDebitCard: PayoutDebitCard;
@@ -256,8 +256,8 @@ export class Wingspan {
         this.serviceStatus = new ServiceStatus(this.sdkConfiguration);
         this.cards = new Cards(this.sdkConfiguration);
         this.card = new Card(this.sdkConfiguration);
-        this.verification = new Verification(this.sdkConfiguration);
         this.codeToToken = new CodeToToken(this.sdkConfiguration);
+        this.verification = new Verification(this.sdkConfiguration);
         this.instantPayout = new InstantPayout(this.sdkConfiguration);
         this.institution = new Institution(this.sdkConfiguration);
         this.bankStatements = new BankStatements(this.sdkConfiguration);
@@ -285,8 +285,8 @@ export class Wingspan {
         this.bulkPayableBatchSummary = new BulkPayableBatchSummary(this.sdkConfiguration);
         this.bulkPayableBatchItems = new BulkPayableBatchItems(this.sdkConfiguration);
         this.bulkPayableBatchItem = new BulkPayableBatchItem(this.sdkConfiguration);
-        this.clientDeduction = new ClientDeduction(this.sdkConfiguration);
         this.clientDeductions = new ClientDeductions(this.sdkConfiguration);
+        this.clientDeduction = new ClientDeduction(this.sdkConfiguration);
         this.clientDeductionID = new ClientDeductionID(this.sdkConfiguration);
         this.createdInvoicesByClient = new CreatedInvoicesByClient(this.sdkConfiguration);
         this.invoiceAsClient = new InvoiceAsClient(this.sdkConfiguration);
@@ -297,21 +297,21 @@ export class Wingspan {
         this.payClientInvoice = new PayClientInvoice(this.sdkConfiguration);
         this.collaborators = new Collaborators(this.sdkConfiguration);
         this.collaborator = new Collaborator(this.sdkConfiguration);
-        this.collaboratorDeduction = new CollaboratorDeduction(this.sdkConfiguration);
         this.collaboratorDeductions = new CollaboratorDeductions(this.sdkConfiguration);
+        this.collaboratorDeduction = new CollaboratorDeduction(this.sdkConfiguration);
         this.collaboratorGroups = new CollaboratorGroups(this.sdkConfiguration);
         this.collaboratorGroup = new CollaboratorGroup(this.sdkConfiguration);
         this.collaboratorGroupEligibilityRequirement = new CollaboratorGroupEligibilityRequirement(
             this.sdkConfiguration
         );
-        this.additionalData = new AdditionalData(this.sdkConfiguration);
         this.additionalSettings = new AdditionalSettings(this.sdkConfiguration);
-        this.eligibilityRequirement = new EligibilityRequirement(this.sdkConfiguration);
+        this.additionalData = new AdditionalData(this.sdkConfiguration);
         this.eligibilityRequirements = new EligibilityRequirements(this.sdkConfiguration);
-        this.paymentEligibilityRequirement = new PaymentEligibilityRequirement(
+        this.eligibilityRequirement = new EligibilityRequirement(this.sdkConfiguration);
+        this.paymentEligibilityRequirements = new PaymentEligibilityRequirements(
             this.sdkConfiguration
         );
-        this.paymentEligibilityRequirements = new PaymentEligibilityRequirements(
+        this.paymentEligibilityRequirement = new PaymentEligibilityRequirement(
             this.sdkConfiguration
         );
         this.oneThousandAndNinetyNine = new OneThousandAndNinetyNine(this.sdkConfiguration);
@@ -330,8 +330,8 @@ export class Wingspan {
         this.payroll = new Payroll(this.sdkConfiguration);
         this.clientInvoices = new ClientInvoices(this.sdkConfiguration);
         this.payableOnClient = new PayableOnClient(this.sdkConfiguration);
-        this.invoicePayableOnMember = new InvoicePayableOnMember(this.sdkConfiguration);
         this.paPayableOnClientyable = new PaPayableOnClientyable(this.sdkConfiguration);
+        this.invoicePayableOnMember = new InvoicePayableOnMember(this.sdkConfiguration);
         this.payoutSettings = new PayoutSettings(this.sdkConfiguration);
         this.payoutDebitCards = new PayoutDebitCards(this.sdkConfiguration);
         this.payoutDebitCard = new PayoutDebitCard(this.sdkConfiguration);

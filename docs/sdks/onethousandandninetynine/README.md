@@ -16,7 +16,7 @@ Calculate 1099 amounts for collaborator
 ```typescript
 import { Wingspan } from "wingspan";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.oneThousandAndNinetyNine.calculate({
@@ -27,7 +27,9 @@ import { Wingspan } from "wingspan";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -56,7 +58,7 @@ Mark a 1099 submission as returned by mail for collaborator
 ```typescript
 import { Wingspan } from "wingspan";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.oneThousandAndNinetyNine.mark({
@@ -68,7 +70,9 @@ import { Wingspan } from "wingspan";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -97,7 +101,7 @@ Re-mail 1099 submission for collaborator
 ```typescript
 import { Wingspan } from "wingspan";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.oneThousandAndNinetyNine.remail({
@@ -114,7 +118,9 @@ import { Wingspan } from "wingspan";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

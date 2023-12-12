@@ -22,7 +22,7 @@ import {
   StatusMemberClientCreateRequest,
 } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.memberClient.create({
@@ -41,7 +41,9 @@ import {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -71,7 +73,7 @@ Delete memberClient
 import { Wingspan } from "wingspan";
 import { DeleteMemberClientRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -80,7 +82,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -110,7 +114,7 @@ Get Member Client
 import { Wingspan } from "wingspan";
 import { GetMemberClientRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -119,7 +123,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -172,7 +178,7 @@ import {
   VerificationStratgyClientData,
 } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 const memberClientUpdateRequest: MemberClientUpdateRequest = {
@@ -211,16 +217,18 @@ const memberClientUpdateRequest: MemberClientUpdateRequest = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `id`                                                                                        | *string*                                                                                    | :heavy_check_mark:                                                                          | Unique identifier                                                                           |
-| `memberClientUpdateRequest`                                                                 | [shared.MemberClientUpdateRequest](../../../sdk/models/shared/memberclientupdaterequest.md) | :heavy_minus_sign:                                                                          | N/A                                                                                         |
-| `config`                                                                                    | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                | :heavy_minus_sign:                                                                          | Available config options for making requests.                                               |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `id`                                                                                     | *string*                                                                                 | :heavy_check_mark:                                                                       | Unique identifier                                                                        |
+| `memberClientUpdateRequest`                                                              | [shared.MemberClientUpdateRequest](../../sdk/models/shared/memberclientupdaterequest.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response

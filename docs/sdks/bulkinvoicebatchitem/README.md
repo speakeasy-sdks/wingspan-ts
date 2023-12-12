@@ -23,7 +23,7 @@ import {
   InvoiceStatusBulkInvoiceItemCreate,
 } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const batchId: string = "string";
 const bulkInvoiceItemCreate: BulkInvoiceItemCreate = {
@@ -46,16 +46,18 @@ const bulkInvoiceItemCreate: BulkInvoiceItemCreate = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `batchId`                                                                           | *string*                                                                            | :heavy_check_mark:                                                                  | Unique identifier for a batch                                                       |
-| `bulkInvoiceItemCreate`                                                             | [shared.BulkInvoiceItemCreate](../../../sdk/models/shared/bulkinvoiceitemcreate.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
-| `config`                                                                            | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                        | :heavy_minus_sign:                                                                  | Available config options for making requests.                                       |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `batchId`                                                                        | *string*                                                                         | :heavy_check_mark:                                                               | Unique identifier for a batch                                                    |
+| `bulkInvoiceItemCreate`                                                          | [shared.BulkInvoiceItemCreate](../../sdk/models/shared/bulkinvoiceitemcreate.md) | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
 
 
 ### Response
@@ -77,7 +79,7 @@ Get a bulk invoice batch item
 import { Wingspan } from "wingspan";
 import { GetBulkInvoiceBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const batchId: string = "string";
 const batchItemId: string = "string";
@@ -87,7 +89,9 @@ const batchItemId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -124,7 +128,7 @@ import {
   InvoiceStatusBulkInvoiceItemUpdate,
 } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const batchId: string = "string";
 const batchItemId: string = "string";
@@ -143,17 +147,19 @@ const bulkInvoiceItemUpdate: BulkInvoiceItemUpdate = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `batchId`                                                                           | *string*                                                                            | :heavy_check_mark:                                                                  | Unique identifier for a batch                                                       |
-| `batchItemId`                                                                       | *string*                                                                            | :heavy_check_mark:                                                                  | Unique identifier for an item in a batch                                            |
-| `bulkInvoiceItemUpdate`                                                             | [shared.BulkInvoiceItemUpdate](../../../sdk/models/shared/bulkinvoiceitemupdate.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
-| `config`                                                                            | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                        | :heavy_minus_sign:                                                                  | Available config options for making requests.                                       |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `batchId`                                                                        | *string*                                                                         | :heavy_check_mark:                                                               | Unique identifier for a batch                                                    |
+| `batchItemId`                                                                    | *string*                                                                         | :heavy_check_mark:                                                               | Unique identifier for an item in a batch                                         |
+| `bulkInvoiceItemUpdate`                                                          | [shared.BulkInvoiceItemUpdate](../../sdk/models/shared/bulkinvoiceitemupdate.md) | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
 
 
 ### Response

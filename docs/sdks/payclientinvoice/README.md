@@ -16,7 +16,7 @@ import { Wingspan } from "wingspan";
 import { PostPayClientInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 import { PayRequest } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const invoiceId: string = "string";
 const payRequest: PayRequest = {};
@@ -26,16 +26,18 @@ const payRequest: PayRequest = {};
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
-| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| `invoiceId`                                                   | *string*                                                      | :heavy_check_mark:                                            | Unique identifier of an invoice                               |
-| `payRequest`                                                  | [shared.PayRequest](../../../sdk/models/shared/payrequest.md) | :heavy_minus_sign:                                            | N/A                                                           |
-| `config`                                                      | [AxiosRequestConfig](https://axios-http.com/docs/req_config)  | :heavy_minus_sign:                                            | Available config options for making requests.                 |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `invoiceId`                                                  | *string*                                                     | :heavy_check_mark:                                           | Unique identifier of an invoice                              |
+| `payRequest`                                                 | [shared.PayRequest](../../sdk/models/shared/payrequest.md)   | :heavy_minus_sign:                                           | N/A                                                          |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response

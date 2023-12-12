@@ -18,7 +18,7 @@ import { Wingspan } from "wingspan";
 import { CreateBulkCalculation1099BatchItemRequest } from "wingspan/dist/sdk/models/operations";
 import { BulkCalculation1099ItemCreate, CalculationTypeBulkCalculation1099ItemCreate } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const batchId: string = "string";
 const bulkCalculation1099ItemCreate: BulkCalculation1099ItemCreate = {
@@ -34,16 +34,18 @@ const bulkCalculation1099ItemCreate: BulkCalculation1099ItemCreate = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `batchId`                                                                                           | *string*                                                                                            | :heavy_check_mark:                                                                                  | Unique identifier for a batch                                                                       |
-| `bulkCalculation1099ItemCreate`                                                                     | [shared.BulkCalculation1099ItemCreate](../../../sdk/models/shared/bulkcalculation1099itemcreate.md) | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
-| `config`                                                                                            | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                        | :heavy_minus_sign:                                                                                  | Available config options for making requests.                                                       |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `batchId`                                                                                        | *string*                                                                                         | :heavy_check_mark:                                                                               | Unique identifier for a batch                                                                    |
+| `bulkCalculation1099ItemCreate`                                                                  | [shared.BulkCalculation1099ItemCreate](../../sdk/models/shared/bulkcalculation1099itemcreate.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
 
 
 ### Response
@@ -65,7 +67,7 @@ Get a bulk calculation1099 batch item
 import { Wingspan } from "wingspan";
 import { GetBulkCalculation1099BatchItemRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const batchId: string = "string";
 const batchItemId: string = "string";
@@ -75,7 +77,9 @@ const batchItemId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -107,7 +111,7 @@ import { Wingspan } from "wingspan";
 import { UpdateBulkCalculation1099BatchItemRequest } from "wingspan/dist/sdk/models/operations";
 import { BulkCalculation1099ItemUpdate, CalculationTypeBulkCalculation1099ItemUpdate } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const batchId: string = "string";
 const batchItemId: string = "string";
@@ -122,17 +126,19 @@ const bulkCalculation1099ItemUpdate: BulkCalculation1099ItemUpdate = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `batchId`                                                                                           | *string*                                                                                            | :heavy_check_mark:                                                                                  | Unique identifier for a batch                                                                       |
-| `batchItemId`                                                                                       | *string*                                                                                            | :heavy_check_mark:                                                                                  | Unique identifier for an item in a batch                                                            |
-| `bulkCalculation1099ItemUpdate`                                                                     | [shared.BulkCalculation1099ItemUpdate](../../../sdk/models/shared/bulkcalculation1099itemupdate.md) | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
-| `config`                                                                                            | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                        | :heavy_minus_sign:                                                                                  | Available config options for making requests.                                                       |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `batchId`                                                                                        | *string*                                                                                         | :heavy_check_mark:                                                                               | Unique identifier for a batch                                                                    |
+| `batchItemId`                                                                                    | *string*                                                                                         | :heavy_check_mark:                                                                               | Unique identifier for an item in a batch                                                         |
+| `bulkCalculation1099ItemUpdate`                                                                  | [shared.BulkCalculation1099ItemUpdate](../../sdk/models/shared/bulkcalculation1099itemupdate.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
 
 
 ### Response

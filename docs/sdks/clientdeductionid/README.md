@@ -17,7 +17,7 @@ Delete deduction
 import { Wingspan } from "wingspan";
 import { DeleteClientDeductionIDRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -26,7 +26,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -56,7 +58,7 @@ Get deduction
 import { Wingspan } from "wingspan";
 import { GetClientDeductionIDRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -65,7 +67,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -100,7 +104,7 @@ import {
   TypeDeductionUpdateRequest,
 } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 const deductionUpdateRequest: DeductionUpdateRequest = {};
@@ -110,16 +114,18 @@ const deductionUpdateRequest: DeductionUpdateRequest = {};
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `id`                                                                                  | *string*                                                                              | :heavy_check_mark:                                                                    | Unique identifier                                                                     |
-| `deductionUpdateRequest`                                                              | [shared.DeductionUpdateRequest](../../../sdk/models/shared/deductionupdaterequest.md) | :heavy_minus_sign:                                                                    | N/A                                                                                   |
-| `config`                                                                              | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                          | :heavy_minus_sign:                                                                    | Available config options for making requests.                                         |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `id`                                                                               | *string*                                                                           | :heavy_check_mark:                                                                 | Unique identifier                                                                  |
+| `deductionUpdateRequest`                                                           | [shared.DeductionUpdateRequest](../../sdk/models/shared/deductionupdaterequest.md) | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
 
 
 ### Response

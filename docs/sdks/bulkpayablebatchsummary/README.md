@@ -15,7 +15,7 @@ Get Bulk Payable Batch Import Summary
 import { Wingspan } from "wingspan";
 import { GetBulkPayableBatchSummaryRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const batchId: string = "string";
 
@@ -24,7 +24,9 @@ const batchId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

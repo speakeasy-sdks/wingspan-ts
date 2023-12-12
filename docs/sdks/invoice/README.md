@@ -16,7 +16,7 @@ Generate invoice
 import { Wingspan } from "wingspan";
 import { GenerateInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const invoiceId: string = "string";
 
@@ -25,7 +25,9 @@ const invoiceId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -55,7 +57,7 @@ Send invoice
 import { Wingspan } from "wingspan";
 import { SendInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const invoiceId: string = "string";
 
@@ -64,7 +66,9 @@ const invoiceId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

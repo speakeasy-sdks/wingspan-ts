@@ -15,7 +15,7 @@ Get Institution By Routing Number
 import { Wingspan } from "wingspan";
 import { GetInstitutionRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const routingNumber: string = "string";
 
@@ -24,7 +24,9 @@ const routingNumber: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

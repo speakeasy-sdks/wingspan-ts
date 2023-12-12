@@ -16,7 +16,7 @@ Get client-invoice by invoiceId
 import { Wingspan } from "wingspan";
 import { GetClientInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -25,7 +25,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -56,7 +58,7 @@ import { Wingspan } from "wingspan";
 import { UpdateClientInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 import { ClientInvoiceUpdateRequest, FeeHandlingConfig, StatusClientInvoiceUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 const clientInvoiceUpdateRequest: ClientInvoiceUpdateRequest = {
@@ -68,16 +70,18 @@ const clientInvoiceUpdateRequest: ClientInvoiceUpdateRequest = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `id`                                                                                          | *string*                                                                                      | :heavy_check_mark:                                                                            | Unique identifier                                                                             |
-| `clientInvoiceUpdateRequest`                                                                  | [shared.ClientInvoiceUpdateRequest](../../../sdk/models/shared/clientinvoiceupdaterequest.md) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
-| `config`                                                                                      | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                  | :heavy_minus_sign:                                                                            | Available config options for making requests.                                                 |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `id`                                                                                       | *string*                                                                                   | :heavy_check_mark:                                                                         | Unique identifier                                                                          |
+| `clientInvoiceUpdateRequest`                                                               | [shared.ClientInvoiceUpdateRequest](../../sdk/models/shared/clientinvoiceupdaterequest.md) | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response

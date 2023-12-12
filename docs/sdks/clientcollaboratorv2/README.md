@@ -15,7 +15,7 @@ Get a single V2 Collaborator by clientId
 import { Wingspan } from "wingspan";
 import { GetClientCollaboratorV2Request } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const clientId: string = "string";
 
@@ -24,7 +24,9 @@ const clientId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

@@ -18,7 +18,7 @@ import { Wingspan } from "wingspan";
 import { CreatePayoutDebitCardRequest } from "wingspan/dist/sdk/models/operations";
 import { Address, CheckbookCardCreate } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const memberId: string = "string";
 const checkbookCardCreate: CheckbookCardCreate = {
@@ -39,16 +39,18 @@ const checkbookCardCreate: CheckbookCardCreate = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `memberId`                                                                      | *string*                                                                        | :heavy_check_mark:                                                              | Unique identifier of a member                                                   |
-| `checkbookCardCreate`                                                           | [shared.CheckbookCardCreate](../../../sdk/models/shared/checkbookcardcreate.md) | :heavy_minus_sign:                                                              | N/A                                                                             |
-| `config`                                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                    | :heavy_minus_sign:                                                              | Available config options for making requests.                                   |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `memberId`                                                                   | *string*                                                                     | :heavy_check_mark:                                                           | Unique identifier of a member                                                |
+| `checkbookCardCreate`                                                        | [shared.CheckbookCardCreate](../../sdk/models/shared/checkbookcardcreate.md) | :heavy_minus_sign:                                                           | N/A                                                                          |
+| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
 
 
 ### Response
@@ -70,7 +72,7 @@ Delete the payout debit card
 import { Wingspan } from "wingspan";
 import { DeletePayoutDebitCardRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 const memberId: string = "string";
@@ -80,7 +82,9 @@ const memberId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -111,7 +115,7 @@ Get the payout debit card
 import { Wingspan } from "wingspan";
 import { GetPayoutDebitCardRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 const memberId: string = "string";
@@ -121,7 +125,9 @@ const memberId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

@@ -15,7 +15,7 @@ List bulk collaborator batch items
 import { Wingspan } from "wingspan";
 import { ListBulkCollaboratorBatchItemsRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const batchId: string = "string";
 
@@ -24,7 +24,9 @@ const batchId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

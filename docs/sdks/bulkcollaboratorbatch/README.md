@@ -16,7 +16,7 @@ Create a bulk collaborator batch
 ```typescript
 import { Wingspan } from "wingspan";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.bulkCollaboratorBatch.create({
@@ -28,7 +28,9 @@ import { Wingspan } from "wingspan";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -58,7 +60,7 @@ Get a bulk collaborator batch
 import { Wingspan } from "wingspan";
 import { GetBulkCollaboratorBatchRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const batchId: string = "string";
 
@@ -67,7 +69,9 @@ const batchId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -98,7 +102,7 @@ import { Wingspan } from "wingspan";
 import { UpdateBulkCollaboratorBatchRequest } from "wingspan/dist/sdk/models/operations";
 import { BulkBatchUpdate, StatusBulkBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const batchId: string = "string";
 const bulkBatchUpdate: BulkBatchUpdate = {
@@ -112,16 +116,18 @@ const bulkBatchUpdate: BulkBatchUpdate = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `batchId`                                                               | *string*                                                                | :heavy_check_mark:                                                      | Unique identifier for a batch                                           |
-| `bulkBatchUpdate`                                                       | [shared.BulkBatchUpdate](../../../sdk/models/shared/bulkbatchupdate.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
-| `config`                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)            | :heavy_minus_sign:                                                      | Available config options for making requests.                           |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `batchId`                                                            | *string*                                                             | :heavy_check_mark:                                                   | Unique identifier for a batch                                        |
+| `bulkBatchUpdate`                                                    | [shared.BulkBatchUpdate](../../sdk/models/shared/bulkbatchupdate.md) | :heavy_minus_sign:                                                   | N/A                                                                  |
+| `config`                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)         | :heavy_minus_sign:                                                   | Available config options for making requests.                        |
 
 
 ### Response

@@ -17,7 +17,7 @@ Create additional data
 import { Wingspan } from "wingspan";
 import { TypeT } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.additionalData.create({
@@ -30,7 +30,9 @@ import { TypeT } from "wingspan/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -60,7 +62,7 @@ Delete additional data
 import { Wingspan } from "wingspan";
 import { DeleteAdditionalDataRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -69,7 +71,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -99,7 +103,7 @@ Get additional data
 import { Wingspan } from "wingspan";
 import { GetAdditionalDataRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -108,7 +112,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

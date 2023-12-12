@@ -15,7 +15,7 @@ Get collaborator events by collaboratorId
 import { Wingspan } from "wingspan";
 import { GetCollaboratorEventsRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -24,7 +24,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

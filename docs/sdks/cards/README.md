@@ -14,7 +14,7 @@ List cards
 ```typescript
 import { Wingspan } from "wingspan";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.cards.list();
@@ -22,7 +22,9 @@ import { Wingspan } from "wingspan";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

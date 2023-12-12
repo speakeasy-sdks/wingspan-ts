@@ -26,7 +26,7 @@ import {
   StatusScheduleDate,
 } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.invoiceTemplate.create({
@@ -90,7 +90,9 @@ import {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -120,7 +122,7 @@ Delete invoice-template
 import { Wingspan } from "wingspan";
 import { DeleteInvoiceTemplateRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -129,7 +131,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -159,7 +163,7 @@ Get invoice-template
 import { Wingspan } from "wingspan";
 import { GetInvoiceTemplateRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -168,7 +172,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -223,7 +229,7 @@ import {
   ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461,
 } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 const invoiceTemplateUpdateRequest: InvoiceTemplateUpdateRequest = {
@@ -289,16 +295,18 @@ const invoiceTemplateUpdateRequest: InvoiceTemplateUpdateRequest = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `id`                                                                                              | *string*                                                                                          | :heavy_check_mark:                                                                                | Unique identifier                                                                                 |
-| `invoiceTemplateUpdateRequest`                                                                    | [shared.InvoiceTemplateUpdateRequest](../../../sdk/models/shared/invoicetemplateupdaterequest.md) | :heavy_minus_sign:                                                                                | N/A                                                                                               |
-| `config`                                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                      | :heavy_minus_sign:                                                                                | Available config options for making requests.                                                     |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | Unique identifier                                                                              |
+| `invoiceTemplateUpdateRequest`                                                                 | [shared.InvoiceTemplateUpdateRequest](../../sdk/models/shared/invoicetemplateupdaterequest.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response

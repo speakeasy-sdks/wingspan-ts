@@ -26,7 +26,7 @@ import {
   SixtyFourMillionEightHundredAndFortySixThousandOneHundredAndThirtySixa354aa510825c1f23c3a978f4c816d8d4184311e7294a570f73727dc,
 } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const batchId: string = "string";
 const bulkClientItemCreate: BulkClientItemCreate = {
@@ -44,16 +44,18 @@ const bulkClientItemCreate: BulkClientItemCreate = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `batchId`                                                                         | *string*                                                                          | :heavy_check_mark:                                                                | Unique identifier for a batch                                                     |
-| `bulkClientItemCreate`                                                            | [shared.BulkClientItemCreate](../../../sdk/models/shared/bulkclientitemcreate.md) | :heavy_minus_sign:                                                                | N/A                                                                               |
-| `config`                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                      | :heavy_minus_sign:                                                                | Available config options for making requests.                                     |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `batchId`                                                                      | *string*                                                                       | :heavy_check_mark:                                                             | Unique identifier for a batch                                                  |
+| `bulkClientItemCreate`                                                         | [shared.BulkClientItemCreate](../../sdk/models/shared/bulkclientitemcreate.md) | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
 
 
 ### Response
@@ -75,7 +77,7 @@ Get a bulk client batch item
 import { Wingspan } from "wingspan";
 import { GetBulkClientBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const batchId: string = "string";
 const batchItemId: string = "string";
@@ -85,7 +87,9 @@ const batchItemId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -125,7 +129,7 @@ import {
   SixtyFourMillionEightHundredAndFortySixThousandOneHundredAndThirtySixa354aa510825c1f23c3a978f4c816d8d4184311e7294a570f73727dc,
 } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const batchId: string = "string";
 const batchItemId: string = "string";
@@ -144,17 +148,19 @@ const bulkClientItemUpdate: BulkClientItemUpdate = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `batchId`                                                                         | *string*                                                                          | :heavy_check_mark:                                                                | Unique identifier for a batch                                                     |
-| `batchItemId`                                                                     | *string*                                                                          | :heavy_check_mark:                                                                | Unique identifier for an item in a batch                                          |
-| `bulkClientItemUpdate`                                                            | [shared.BulkClientItemUpdate](../../../sdk/models/shared/bulkclientitemupdate.md) | :heavy_minus_sign:                                                                | N/A                                                                               |
-| `config`                                                                          | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                      | :heavy_minus_sign:                                                                | Available config options for making requests.                                     |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `batchId`                                                                      | *string*                                                                       | :heavy_check_mark:                                                             | Unique identifier for a batch                                                  |
+| `batchItemId`                                                                  | *string*                                                                       | :heavy_check_mark:                                                             | Unique identifier for an item in a batch                                       |
+| `bulkClientItemUpdate`                                                         | [shared.BulkClientItemUpdate](../../sdk/models/shared/bulkclientitemupdate.md) | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
 
 
 ### Response

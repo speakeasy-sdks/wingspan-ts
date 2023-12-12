@@ -16,7 +16,7 @@ import { Wingspan } from "wingspan";
 import { ExchangeCodeToTokenRequest } from "wingspan/dist/sdk/models/operations";
 import { CardTokenRequest } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 const cardTokenRequest: CardTokenRequest = {
@@ -29,16 +29,18 @@ const cardTokenRequest: CardTokenRequest = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `id`                                                                      | *string*                                                                  | :heavy_check_mark:                                                        | Unique identifier                                                         |
-| `cardTokenRequest`                                                        | [shared.CardTokenRequest](../../../sdk/models/shared/cardtokenrequest.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
-| `config`                                                                  | [AxiosRequestConfig](https://axios-http.com/docs/req_config)              | :heavy_minus_sign:                                                        | Available config options for making requests.                             |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `id`                                                                   | *string*                                                               | :heavy_check_mark:                                                     | Unique identifier                                                      |
+| `cardTokenRequest`                                                     | [shared.CardTokenRequest](../../sdk/models/shared/cardtokenrequest.md) | :heavy_minus_sign:                                                     | N/A                                                                    |
+| `config`                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)           | :heavy_minus_sign:                                                     | Available config options for making requests.                          |
 
 
 ### Response

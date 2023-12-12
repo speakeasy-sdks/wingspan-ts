@@ -15,7 +15,7 @@ Gets an application link for creating the clearing bank account
 import { Wingspan } from "wingspan";
 import { GetAppLinkRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const memberId: string = "string";
 
@@ -24,7 +24,9 @@ const memberId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

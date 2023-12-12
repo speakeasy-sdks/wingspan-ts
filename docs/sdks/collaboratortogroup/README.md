@@ -16,7 +16,7 @@ Add collaborator to collaborators group
 import { Wingspan } from "wingspan";
 import { AddCollaboratorToGroupRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const groupId: string = "string";
 const id: string = "string";
@@ -26,7 +26,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -57,7 +59,7 @@ Remove collaborator from collaborators group
 import { Wingspan } from "wingspan";
 import { RemoveCollaboratorToGroupRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const groupId: string = "string";
 const id: string = "string";
@@ -67,7 +69,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

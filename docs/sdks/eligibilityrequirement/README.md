@@ -18,7 +18,7 @@ Create Eligibility Requirement
 import { Wingspan } from "wingspan";
 import { EligibilityRequirementCreateRequestRequirementType } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.eligibilityRequirement.create({
@@ -28,7 +28,9 @@ import { EligibilityRequirementCreateRequestRequirementType } from "wingspan/dis
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -58,7 +60,7 @@ Delete Eligibility Requirement
 import { Wingspan } from "wingspan";
 import { DeleteEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -67,7 +69,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -97,7 +101,7 @@ Get Eligibility Requirement
 import { Wingspan } from "wingspan";
 import { GetEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -106,7 +110,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -140,7 +146,7 @@ import {
   EligibilityRequirementUpdateRequestRequirementType,
 } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 const eligibilityRequirementUpdateRequest: EligibilityRequirementUpdateRequest = {
@@ -152,16 +158,18 @@ const eligibilityRequirementUpdateRequest: EligibilityRequirementUpdateRequest =
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | Unique identifier                                                                                               |
-| `eligibilityRequirementUpdateRequest`                                                                           | [shared.EligibilityRequirementUpdateRequest](../../../sdk/models/shared/eligibilityrequirementupdaterequest.md) | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |
-| `config`                                                                                                        | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                    | :heavy_minus_sign:                                                                                              | Available config options for making requests.                                                                   |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                         | *string*                                                                                                     | :heavy_check_mark:                                                                                           | Unique identifier                                                                                            |
+| `eligibilityRequirementUpdateRequest`                                                                        | [shared.EligibilityRequirementUpdateRequest](../../sdk/models/shared/eligibilityrequirementupdaterequest.md) | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |
+| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
 
 
 ### Response

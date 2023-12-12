@@ -15,7 +15,7 @@ Get a list of payables connected to payroll run
 import { Wingspan } from "wingspan";
 import { ListPayablesPayrollRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const payrollId: string = "string";
 
@@ -24,7 +24,9 @@ const payrollId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

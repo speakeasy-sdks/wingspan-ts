@@ -17,7 +17,7 @@ Create a bulk invoice batch
 import { Wingspan } from "wingspan";
 import { BulkInvoiceBatchCreateProcessingStrategy } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.bulkInvoiceBatch.create({
@@ -30,7 +30,9 @@ import { BulkInvoiceBatchCreateProcessingStrategy } from "wingspan/dist/sdk/mode
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -60,7 +62,7 @@ Get a bulk invoice batch
 import { Wingspan } from "wingspan";
 import { GetBulkInvoiceBatchRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const batchId: string = "string";
 
@@ -69,7 +71,9 @@ const batchId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -100,7 +104,7 @@ import { Wingspan } from "wingspan";
 import { UpdateBulkInvoiceBatchRequest } from "wingspan/dist/sdk/models/operations";
 import { BulkInvoiceBatchUpdate, StatusBulkInvoiceBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const batchId: string = "string";
 const bulkInvoiceBatchUpdate: BulkInvoiceBatchUpdate = {
@@ -114,16 +118,18 @@ const bulkInvoiceBatchUpdate: BulkInvoiceBatchUpdate = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `batchId`                                                                             | *string*                                                                              | :heavy_check_mark:                                                                    | Unique identifier for a batch                                                         |
-| `bulkInvoiceBatchUpdate`                                                              | [shared.BulkInvoiceBatchUpdate](../../../sdk/models/shared/bulkinvoicebatchupdate.md) | :heavy_minus_sign:                                                                    | N/A                                                                                   |
-| `config`                                                                              | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                          | :heavy_minus_sign:                                                                    | Available config options for making requests.                                         |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `batchId`                                                                          | *string*                                                                           | :heavy_check_mark:                                                                 | Unique identifier for a batch                                                      |
+| `bulkInvoiceBatchUpdate`                                                           | [shared.BulkInvoiceBatchUpdate](../../sdk/models/shared/bulkinvoicebatchupdate.md) | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
 
 
 ### Response

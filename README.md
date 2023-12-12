@@ -4,7 +4,7 @@
     <a href="https://speakeasyapi.dev/"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>   
 </div>
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
 ### NPM
@@ -18,16 +18,17 @@ npm add https://github.com/speakeasy-sdks/wingspan-ts
 ```bash
 yarn add https://github.com/speakeasy-sdks/wingspan-ts
 ```
-<!-- End SDK Installation -->
+<!-- End SDK Installation [installation] -->
 
+<!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
-<!-- Start SDK Example Usage -->
+
 ### Example
 
 ```typescript
 import { Wingspan } from "wingspan";
 
-(async () => {
+async function run() {
     const sdk = new Wingspan();
 
     const res = await sdk.serviceStatus.get();
@@ -35,14 +36,15 @@ import { Wingspan } from "wingspan";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
 
-<!-- Start SDK Available Operations -->
+<!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
-
 
 ### [serviceStatus](docs/sdks/servicestatus/README.md)
 
@@ -59,13 +61,13 @@ import { Wingspan } from "wingspan";
 * [get](docs/sdks/card/README.md#get) - Get card by cardId
 * [update](docs/sdks/card/README.md#update) - Update card by cardId
 
-### [verification](docs/sdks/verification/README.md)
-
-* [send](docs/sdks/verification/README.md#send) - Sends a verification code
-
 ### [codeToToken](docs/sdks/codetotoken/README.md)
 
 * [exchange](docs/sdks/codetotoken/README.md#exchange) - Exchange the code for a token
+
+### [verification](docs/sdks/verification/README.md)
+
+* [send](docs/sdks/verification/README.md#send) - Sends a verification code
 
 ### [instantPayout](docs/sdks/instantpayout/README.md)
 
@@ -191,13 +193,13 @@ import { Wingspan } from "wingspan";
 * [get](docs/sdks/bulkpayablebatchitem/README.md#get) - Get a bulk payable batch item
 * [update](docs/sdks/bulkpayablebatchitem/README.md#update) - Update a bulk payable batch item
 
-### [clientDeduction](docs/sdks/clientdeduction/README.md)
-
-* [create](docs/sdks/clientdeduction/README.md#create) - Create deduction
-
 ### [clientDeductions](docs/sdks/clientdeductions/README.md)
 
 * [list](docs/sdks/clientdeductions/README.md#list) - List deductions
+
+### [clientDeduction](docs/sdks/clientdeduction/README.md)
+
+* [create](docs/sdks/clientdeduction/README.md#create) - Create deduction
 
 ### [clientDeductionID](docs/sdks/clientdeductionid/README.md)
 
@@ -248,16 +250,16 @@ import { Wingspan } from "wingspan";
 * [get](docs/sdks/collaborator/README.md#get) - Get collaborator by Id
 * [update](docs/sdks/collaborator/README.md#update) - Update a collaborator by Id
 
+### [collaboratorDeductions](docs/sdks/collaboratordeductions/README.md)
+
+* [list](docs/sdks/collaboratordeductions/README.md#list) - List deductions
+
 ### [collaboratorDeduction](docs/sdks/collaboratordeduction/README.md)
 
 * [create](docs/sdks/collaboratordeduction/README.md#create) - Create deduction
 * [delete](docs/sdks/collaboratordeduction/README.md#delete) - Delete deduction
 * [get](docs/sdks/collaboratordeduction/README.md#get) - Get deduction
 * [update](docs/sdks/collaboratordeduction/README.md#update) - Update deduction
-
-### [collaboratorDeductions](docs/sdks/collaboratordeductions/README.md)
-
-* [list](docs/sdks/collaboratordeductions/README.md#list) - List deductions
 
 ### [collaboratorGroups](docs/sdks/collaboratorgroups/README.md)
 
@@ -274,16 +276,20 @@ import { Wingspan } from "wingspan";
 * [delete](docs/sdks/collaboratorgroupeligibilityrequirement/README.md#delete) - Delete Eligibility Requirement
 * [replace](docs/sdks/collaboratorgroupeligibilityrequirement/README.md#replace) - Replace Eligibility Requirement
 
+### [additionalSettings](docs/sdks/additionalsettings/README.md)
+
+* [list](docs/sdks/additionalsettings/README.md#list) - List additional settings
+* [update](docs/sdks/additionalsettings/README.md#update) - Update additional settings
+
 ### [additionalData](docs/sdks/additionaldata/README.md)
 
 * [create](docs/sdks/additionaldata/README.md#create) - Create additional data
 * [delete](docs/sdks/additionaldata/README.md#delete) - Delete additional data
 * [get](docs/sdks/additionaldata/README.md#get) - Get additional data
 
-### [additionalSettings](docs/sdks/additionalsettings/README.md)
+### [eligibilityRequirements](docs/sdks/eligibilityrequirements/README.md)
 
-* [list](docs/sdks/additionalsettings/README.md#list) - List additional settings
-* [update](docs/sdks/additionalsettings/README.md#update) - Update additional settings
+* [list](docs/sdks/eligibilityrequirements/README.md#list) - List Eligibility Requirements
 
 ### [eligibilityRequirement](docs/sdks/eligibilityrequirement/README.md)
 
@@ -292,9 +298,9 @@ import { Wingspan } from "wingspan";
 * [get](docs/sdks/eligibilityrequirement/README.md#get) - Get Eligibility Requirement
 * [update](docs/sdks/eligibilityrequirement/README.md#update) - Update Eligibility Requirement
 
-### [eligibilityRequirements](docs/sdks/eligibilityrequirements/README.md)
+### [paymentEligibilityRequirements](docs/sdks/paymenteligibilityrequirements/README.md)
 
-* [list](docs/sdks/eligibilityrequirements/README.md#list) - List Eligibility Requirements
+* [list](docs/sdks/paymenteligibilityrequirements/README.md#list) - List Payment Eligigbility Requirements
 
 ### [paymentEligibilityRequirement](docs/sdks/paymenteligibilityrequirement/README.md)
 
@@ -302,10 +308,6 @@ import { Wingspan } from "wingspan";
 * [delete](docs/sdks/paymenteligibilityrequirement/README.md#delete) - Delete Payment Eligibility Requirement
 * [get](docs/sdks/paymenteligibilityrequirement/README.md#get) - Get Payment Eligibility Requirement
 * [update](docs/sdks/paymenteligibilityrequirement/README.md#update) - Update Payment Eligibility Requirement
-
-### [paymentEligibilityRequirements](docs/sdks/paymenteligibilityrequirements/README.md)
-
-* [list](docs/sdks/paymenteligibilityrequirements/README.md#list) - List Payment Eligigbility Requirements
 
 ### [oneThousandAndNinetyNine](docs/sdks/onethousandandninetynine/README.md)
 
@@ -385,13 +387,13 @@ import { Wingspan } from "wingspan";
 * [create](docs/sdks/payableonclient/README.md#create) - Create payable on client for member
 * [update](docs/sdks/payableonclient/README.md#update) - Update payable on client by payableId
 
-### [invoicePayableOnMember](docs/sdks/invoicepayableonmember/README.md)
-
-* [get](docs/sdks/invoicepayableonmember/README.md#get) - Get invoice on member by payableId
-
 ### [paPayableOnClientyable](docs/sdks/papayableonclientyable/README.md)
 
 * [delete](docs/sdks/papayableonclientyable/README.md#delete) - Delete payable on client by payableId
+
+### [invoicePayableOnMember](docs/sdks/invoicepayableonmember/README.md)
+
+* [get](docs/sdks/invoicepayableonmember/README.md#get) - Get invoice on member by payableId
 
 ### [payoutSettings](docs/sdks/payoutsettings/README.md)
 
@@ -456,29 +458,15 @@ import { Wingspan } from "wingspan";
 ### [collaboratorV2](docs/sdks/collaboratorv2/README.md)
 
 * [get](docs/sdks/collaboratorv2/README.md#get) - Get a single V2 Collaborator by memberId
-<!-- End SDK Available Operations -->
+<!-- End Available Resources and Operations [operations] -->
 
 
 
-<!-- Start Dev Containers -->
-
-<!-- End Dev Containers -->
 
 
 
-<!-- Start Pagination -->
-# Pagination
 
-Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
-returned response object will have a `next` method that can be called to pull down the next group of results. If the
-return value of `next` is `null`, then there are no more pages to be fetched.
-
-Here's an example of one such pagination call:
-<!-- End Pagination -->
-
-
-
-<!-- Start Error Handling -->
+<!-- Start Error Handling [errors] -->
 ## Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
@@ -492,25 +480,32 @@ Example
 ```typescript
 import { Wingspan } from "wingspan";
 
-(async () => {
+async function run() {
     const sdk = new Wingspan();
 
     let res;
     try {
         res = await sdk.serviceStatus.get();
-    } catch (e) {}
+    } catch (err) {
+        if (err instanceof errors.SDKError) {
+            console.error(err); // handle exception
+            throw err;
+        }
+    }
 
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End Error Handling -->
+<!-- End Error Handling [errors] -->
 
 
 
-<!-- Start Server Selection -->
+<!-- Start Server Selection [server] -->
 ## Server Selection
 
 ### Select Server by Index
@@ -527,7 +522,7 @@ You can override the default server globally by passing a server index to the `s
 ```typescript
 import { Wingspan } from "wingspan";
 
-(async () => {
+async function run() {
     const sdk = new Wingspan({
         serverIdx: 1,
     });
@@ -537,7 +532,9 @@ import { Wingspan } from "wingspan";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
 
@@ -548,7 +545,7 @@ The default server can also be overridden globally by passing a URL to the `serv
 ```typescript
 import { Wingspan } from "wingspan";
 
-(async () => {
+async function run() {
     const sdk = new Wingspan({
         serverURL: "https://api.wingspan.app",
     });
@@ -558,23 +555,25 @@ import { Wingspan } from "wingspan";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End Server Selection -->
+<!-- End Server Selection [server] -->
 
 
 
-<!-- Start Custom HTTP Client -->
+<!-- Start Custom HTTP Client [http-client] -->
 ## Custom HTTP Client
 
-The Typescript SDK makes API calls using the (axios)[https://axios-http.com/docs/intro] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
+The Typescript SDK makes API calls using the [axios](https://axios-http.com/docs/intro) HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
 
 For example, you could specify a header for every request that your sdk makes as follows:
 
 ```typescript
-from wingspan import Wingspan;
-import axios;
+import { wingspan } from "Wingspan";
+import axios from "axios";
 
 const httpClient = axios.create({
     headers: {'x-custom-header': 'someValue'}
@@ -582,7 +581,7 @@ const httpClient = axios.create({
 
 const sdk = new Wingspan({defaultClient: httpClient});
 ```
-<!-- End Custom HTTP Client -->
+<!-- End Custom HTTP Client [http-client] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

@@ -16,7 +16,7 @@ import { Wingspan } from "wingspan";
 import { SendVerificationRequest } from "wingspan/dist/sdk/models/operations";
 import { CardCodeRequest } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 const cardCodeRequest: CardCodeRequest = {
@@ -28,16 +28,18 @@ const cardCodeRequest: CardCodeRequest = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `id`                                                                    | *string*                                                                | :heavy_check_mark:                                                      | Unique identifier                                                       |
-| `cardCodeRequest`                                                       | [shared.CardCodeRequest](../../../sdk/models/shared/cardcoderequest.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
-| `config`                                                                | [AxiosRequestConfig](https://axios-http.com/docs/req_config)            | :heavy_minus_sign:                                                      | Available config options for making requests.                           |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `id`                                                                 | *string*                                                             | :heavy_check_mark:                                                   | Unique identifier                                                    |
+| `cardCodeRequest`                                                    | [shared.CardCodeRequest](../../sdk/models/shared/cardcoderequest.md) | :heavy_minus_sign:                                                   | N/A                                                                  |
+| `config`                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)         | :heavy_minus_sign:                                                   | Available config options for making requests.                        |
 
 
 ### Response

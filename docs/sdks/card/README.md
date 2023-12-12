@@ -17,7 +17,7 @@ Create card
 ```typescript
 import { Wingspan } from "wingspan";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.card.create({
@@ -32,7 +32,9 @@ import { Wingspan } from "wingspan";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -62,7 +64,7 @@ Delete a card by cardId
 import { Wingspan } from "wingspan";
 import { DeleteCardRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -71,7 +73,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -101,7 +105,7 @@ Get card by cardId
 import { Wingspan } from "wingspan";
 import { GetCardRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 
@@ -110,7 +114,9 @@ const id: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -141,7 +147,7 @@ import { Wingspan } from "wingspan";
 import { UpdateCardRequest } from "wingspan/dist/sdk/models/operations";
 import { CardUpdateRequest, PropertiesCardUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 const cardUpdateRequest: CardUpdateRequest = {
@@ -153,16 +159,18 @@ const cardUpdateRequest: CardUpdateRequest = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `id`                                                                        | *string*                                                                    | :heavy_check_mark:                                                          | Unique identifier                                                           |
-| `cardUpdateRequest`                                                         | [shared.CardUpdateRequest](../../../sdk/models/shared/cardupdaterequest.md) | :heavy_minus_sign:                                                          | N/A                                                                         |
-| `config`                                                                    | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                | :heavy_minus_sign:                                                          | Available config options for making requests.                               |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `id`                                                                     | *string*                                                                 | :heavy_check_mark:                                                       | Unique identifier                                                        |
+| `cardUpdateRequest`                                                      | [shared.CardUpdateRequest](../../sdk/models/shared/cardupdaterequest.md) | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `config`                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)             | :heavy_minus_sign:                                                       | Available config options for making requests.                            |
 
 
 ### Response

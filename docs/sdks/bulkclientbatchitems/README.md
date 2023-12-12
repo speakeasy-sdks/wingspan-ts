@@ -15,7 +15,7 @@ List bulk client batch items
 import { Wingspan } from "wingspan";
 import { ListBulkClientBatchItemsRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const batchId: string = "string";
 
@@ -24,7 +24,9 @@ const batchId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

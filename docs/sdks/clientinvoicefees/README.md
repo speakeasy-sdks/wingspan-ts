@@ -15,7 +15,7 @@ Create client-invoice fees
 ```typescript
 import { Wingspan } from "wingspan";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.clientInvoiceFees.create({
@@ -26,7 +26,9 @@ import { Wingspan } from "wingspan";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -56,7 +58,7 @@ List client-invoice fees
 import { Wingspan } from "wingspan";
 import { ListClientInvoiceFeesRequest } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const invoiceId: string = "string";
 
@@ -65,7 +67,9 @@ const invoiceId: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

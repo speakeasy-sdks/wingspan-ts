@@ -15,7 +15,7 @@ Downloads a form 1099 PDF for a collaborator
 import { Wingspan } from "wingspan";
 import { DownloadForm1099Request } from "wingspan/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 const id: string = "string";
 const index: string = "string";
@@ -26,7 +26,9 @@ const year: string = "string";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

@@ -15,7 +15,7 @@ Create invoice as client
 import { Wingspan } from "wingspan";
 import { CurrencyClientInvoiceCreateRequest } from "wingspan/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.invoiceAsClient.create({
@@ -42,7 +42,9 @@ import { CurrencyClientInvoiceCreateRequest } from "wingspan/dist/sdk/models/sha
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
