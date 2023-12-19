@@ -2,14 +2,16 @@ configVersion: 1.0.0
 management:
   docChecksum: 213e6692a623ef7a4c2e2fbeb0e17e0f
   docVersion: 1.0.0
-  speakeasyVersion: 1.126.0
-  generationVersion: 2.213.3
+  speakeasyVersion: 1.127.0
+  generationVersion: 2.220.0
 generation:
   comments: {}
   sdkClassName: wingspan
   repoURL: https://github.com/speakeasy-sdks/wingspan-ts.git
   usageSnippets:
     optionalPropertyRendering: withExample
+  fixes:
+    nameResolutionDec2023: false
 features:
   python:
     core: 2.85.3
@@ -21,13 +23,13 @@ features:
     inputOutputModels: 2.81.1
     serverIDs: 2.81.1
   typescript:
-    core: 3.3.0
+    core: 3.3.9
     flattening: 2.81.1
     globalServerURLs: 2.82.1
     groups: 2.81.2
     nameOverrides: 2.81.1
 typescript:
-  version: 0.7.0
+  version: 0.7.1
   author: Speakeasy
   clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: true
