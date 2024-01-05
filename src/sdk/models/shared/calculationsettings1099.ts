@@ -38,7 +38,7 @@ export class CalculationSettings1099 extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "stateTaxId" })
-    stateTaxId?: any;
+    stateTaxId?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "thresholdAmount" })

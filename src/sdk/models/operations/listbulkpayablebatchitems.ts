@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListBulkPayableBatchItemsRequest extends SpeakeasyBase {
@@ -15,12 +15,6 @@ export class ListBulkPayableBatchItemsRequest extends SpeakeasyBase {
 }
 
 export class ListBulkPayableBatchItemsResponse extends SpeakeasyBase {
-    /**
-     * A list of bulk payable items
-     */
-    @SpeakeasyMetadata({ elemType: shared.BulkPayableItem })
-    bulkPayableItems?: shared.BulkPayableItem[];
-
     /**
      * HTTP response content type for this operation
      */
@@ -37,5 +31,11 @@ export class ListBulkPayableBatchItemsResponse extends SpeakeasyBase {
      * Raw HTTP response; suitable for custom response parsing
      */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
+
+    /**
+     * A list of bulk payable items
+     */
+    @SpeakeasyMetadata({ elemType: shared.BulkPayableItem })
+    classes?: shared.BulkPayableItem[];
 }

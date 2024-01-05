@@ -3,6 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { DocumentEvents } from "./documentevents";
+import { DocumentFiles } from "./documentfiles";
 import { UserRoles } from "./userroles";
 import { Expose, Type } from "class-transformer";
 
@@ -26,11 +28,13 @@ export class DocumentResponse extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "events" })
-    events?: any;
+    @Type(() => DocumentEvents)
+    events?: DocumentEvents;
 
     @SpeakeasyMetadata()
     @Expose({ name: "files" })
-    files?: any;
+    @Type(() => DocumentFiles)
+    files?: DocumentFiles;
 
     @SpeakeasyMetadata()
     @Expose({ name: "memberId" })

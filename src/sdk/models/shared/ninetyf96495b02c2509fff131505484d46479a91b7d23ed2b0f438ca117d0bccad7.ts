@@ -3,14 +3,17 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { CollaboratorForm1099BalancesUpdateRequest } from "./collaboratorform1099balancesupdaterequest";
+import { Expose, Type } from "class-transformer";
 
 export class Ninetyf96495b02c2509fff131505484d46479a91b7d23ed2b0f438ca117d0bccad7 extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "2021" })
-    twoThousandAndTwentyOne?: any;
+    @Type(() => CollaboratorForm1099BalancesUpdateRequest)
+    twoThousandAndTwentyOne?: CollaboratorForm1099BalancesUpdateRequest;
 
     @SpeakeasyMetadata()
     @Expose({ name: "2022" })
-    twoThousandAndTwentyTwo?: any;
+    @Type(() => CollaboratorForm1099BalancesUpdateRequest)
+    twoThousandAndTwentyTwo?: CollaboratorForm1099BalancesUpdateRequest;
 }

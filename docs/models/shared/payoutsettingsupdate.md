@@ -1,9 +1,0 @@
-# PayoutSettingsUpdate
-
-
-## Fields
-
-| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `payoutDestinations`                                                                                  | *any*[]                                                                                               | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
-| `payoutPreferences`                                                                                   | [PayoutPreferencesPayoutSettingsUpdate](../../models/shared/payoutpreferencespayoutsettingsupdate.md) | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |

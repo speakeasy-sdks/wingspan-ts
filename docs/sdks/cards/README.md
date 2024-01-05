@@ -13,15 +13,18 @@ List cards
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListCardsResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.cards.list().then((res: ListCardsResponse) => {
+  const res = await sdk.cards.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -33,5 +36,9 @@ sdk.cards.list().then((res: ListCardsResponse) => {
 
 ### Response
 
-**Promise<[operations.ListCardsResponse](../../models/operations/listcardsresponse.md)>**
+**Promise<[operations.ListCardsResponse](../../sdk/models/operations/listcardsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

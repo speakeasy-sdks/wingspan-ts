@@ -3,14 +3,16 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { Twelved9f9a45dd678e21e49e960084c87d9e541aadd0c26b6e676a00139e89b6915 } from "./twelved9f9a45dd678e21e49e960084c87d9e541aadd0c26b6e676a00139e89b6915";
+import { Expose, Type } from "class-transformer";
 
 export class FiftyFoura6b24a57d15569713a0fc2cbf4d7b60e5b00c0035643d120b72001060ebd30 extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "track" })
-    track?: any;
+    @Type(() => Twelved9f9a45dd678e21e49e960084c87d9e541aadd0c26b6e676a00139e89b6915)
+    track?: Twelved9f9a45dd678e21e49e960084c87d9e541aadd0c26b6e676a00139e89b6915;
 
     @SpeakeasyMetadata()
     @Expose({ name: "unit" })
-    unit?: any;
+    unit?: Record<string, string>;
 }

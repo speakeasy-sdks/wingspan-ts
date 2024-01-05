@@ -14,7 +14,7 @@ export enum IntervalFrequencyUpdate {
 export class FrequencyUpdate extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "daily" })
-    daily?: any;
+    daily?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "dayInInterval" })
@@ -38,5 +38,5 @@ export class FrequencyUpdate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "twicePerMonth" })
-    twicePerMonth?: any;
+    twicePerMonth?: boolean;
 }

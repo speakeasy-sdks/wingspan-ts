@@ -13,15 +13,18 @@ List all collaborators
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListCollaboratorsResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.collaborators.list().then((res: ListCollaboratorsResponse) => {
+  const res = await sdk.collaborators.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -33,5 +36,9 @@ sdk.collaborators.list().then((res: ListCollaboratorsResponse) => {
 
 ### Response
 
-**Promise<[operations.ListCollaboratorsResponse](../../models/operations/listcollaboratorsresponse.md)>**
+**Promise<[operations.ListCollaboratorsResponse](../../sdk/models/operations/listcollaboratorsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

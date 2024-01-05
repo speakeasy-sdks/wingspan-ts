@@ -13,15 +13,18 @@ List bulk client batches
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListBulkClientBatchesResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.bulkClientBatches.list().then((res: ListBulkClientBatchesResponse) => {
+  const res = await sdk.bulkClientBatches.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -33,5 +36,9 @@ sdk.bulkClientBatches.list().then((res: ListBulkClientBatchesResponse) => {
 
 ### Response
 
-**Promise<[operations.ListBulkClientBatchesResponse](../../models/operations/listbulkclientbatchesresponse.md)>**
+**Promise<[operations.ListBulkClientBatchesResponse](../../sdk/models/operations/listbulkclientbatchesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

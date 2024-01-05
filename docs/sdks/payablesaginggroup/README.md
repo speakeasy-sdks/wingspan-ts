@@ -13,15 +13,18 @@ Get a list of payables with respective aging group
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetPayablesAgingGroupResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.payablesAgingGroup.get().then((res: GetPayablesAgingGroupResponse) => {
+  const res = await sdk.payablesAgingGroup.get();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -33,5 +36,9 @@ sdk.payablesAgingGroup.get().then((res: GetPayablesAgingGroupResponse) => {
 
 ### Response
 
-**Promise<[operations.GetPayablesAgingGroupResponse](../../models/operations/getpayablesaginggroupresponse.md)>**
+**Promise<[operations.GetPayablesAgingGroupResponse](../../sdk/models/operations/getpayablesaginggroupresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

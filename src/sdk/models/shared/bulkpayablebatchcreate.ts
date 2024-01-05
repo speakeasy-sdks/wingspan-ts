@@ -13,7 +13,7 @@ export enum BulkPayableBatchCreateProcessingStrategy {
 export class BulkPayableBatchCreate extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "processingStrategy" })

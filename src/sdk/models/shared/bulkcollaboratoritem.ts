@@ -3,6 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Eightcf19a7bc90727398c2780566a4070199559f4723ec14c01c448dc0356efffa1 } from "./eightcf19a7bc90727398c2780566a4070199559f4723ec14c01c448dc0356efffa1";
+import { MemberClientFormW9Info } from "./memberclientformw9info";
 import { UserRoles } from "./userroles";
 import { Expose, Type } from "class-transformer";
 
@@ -67,7 +69,8 @@ export class BulkCollaboratorItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "formW9Data" })
-    formW9Data?: any;
+    @Type(() => MemberClientFormW9Info)
+    formW9Data?: MemberClientFormW9Info;
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
@@ -79,7 +82,8 @@ export class BulkCollaboratorItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "metadata" })
-    metadata?: any;
+    @Type(() => Eightcf19a7bc90727398c2780566a4070199559f4723ec14c01c448dc0356efffa1)
+    metadata?: Eightcf19a7bc90727398c2780566a4070199559f4723ec14c01c448dc0356efffa1;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

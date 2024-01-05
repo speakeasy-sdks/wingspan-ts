@@ -3,14 +3,17 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { Fee } from "./fee";
+import { Expose, Type } from "class-transformer";
 
 export class ProcessingFees extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "creditCardFee" })
-    creditCardFee?: any;
+    @Type(() => Fee)
+    creditCardFee?: Fee;
 
     @SpeakeasyMetadata()
     @Expose({ name: "instantPayoutFee" })
-    instantPayoutFee?: any;
+    @Type(() => Fee)
+    instantPayoutFee?: Fee;
 }

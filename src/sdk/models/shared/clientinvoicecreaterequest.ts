@@ -3,6 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { FeeHandlingConfig } from "./feehandlingconfig";
 import { InvoiceLineItemsCreateRequest } from "./invoicelineitemscreaterequest";
 import { Expose, Type } from "class-transformer";
 
@@ -35,7 +36,8 @@ export class ClientInvoiceCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "creditFeeHandling" })
-    creditFeeHandling?: any;
+    @Type(() => FeeHandlingConfig)
+    creditFeeHandling?: FeeHandlingConfig;
 
     @SpeakeasyMetadata()
     @Expose({ name: "currency" })

@@ -3,7 +3,9 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { CompanyLinks } from "./companylinks";
+import { CompanyPerson } from "./companyperson";
+import { Expose, Type } from "class-transformer";
 
 export enum StructureCompany {
     None = "None",
@@ -22,11 +24,12 @@ export enum StructureCompany {
 export class Company extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "banking" })
-    banking?: any;
+    banking?: boolean;
 
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: CompanyPerson })
     @Expose({ name: "companyOwners" })
-    companyOwners?: any[];
+    @Type(() => CompanyPerson)
+    companyOwners?: CompanyPerson[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "description" })
@@ -38,7 +41,8 @@ export class Company extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "links" })
-    links?: any;
+    @Type(() => CompanyLinks)
+    links?: CompanyLinks;
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })

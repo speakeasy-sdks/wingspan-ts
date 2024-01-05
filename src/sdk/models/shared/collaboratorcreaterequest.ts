@@ -3,7 +3,10 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { ClientData } from "./clientdata";
+import { MemberClientFormW9Info } from "./memberclientformw9info";
+import { TwentySixe8ea23ccb1e007e7d6560175c7e75c768dac34727b7fe1d834ca24b8221ef4 } from "./twentysixe8ea23ccb1e007e7d6560175c7e75c768dac34727b7fe1d834ca24b8221ef4";
+import { Expose, Type } from "class-transformer";
 
 export enum StatusCollaboratorCreateRequest {
     Active = "Active",
@@ -15,7 +18,8 @@ export enum StatusCollaboratorCreateRequest {
 export class CollaboratorCreateRequest extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "clientData" })
-    clientData?: any;
+    @Type(() => ClientData)
+    clientData?: ClientData;
 
     @SpeakeasyMetadata()
     @Expose({ name: "clientId" })
@@ -27,15 +31,17 @@ export class CollaboratorCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "formW9Data" })
-    formW9Data?: any;
+    @Type(() => MemberClientFormW9Info)
+    formW9Data?: MemberClientFormW9Info;
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration" })
-    integration?: any;
+    @Type(() => TwentySixe8ea23ccb1e007e7d6560175c7e75c768dac34727b7fe1d834ca24b8221ef4)
+    integration?: TwentySixe8ea23ccb1e007e7d6560175c7e75c768dac34727b7fe1d834ca24b8221ef4;
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "memberCompany" })

@@ -4,8 +4,10 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { B9789f45f8c8070ff38a64d80c2e4a8732ddaf329e46546474400d26f84c0f1c } from "./b9789f45f8c8070ff38a64d80c2e4a8732ddaf329e46546474400d26f84c0f1c";
+import { MemberClientRequirementResponse } from "./memberclientrequirementresponse";
 import { MemberClientWireAccount } from "./memberclientwireaccount";
 import { RedactedMember } from "./redactedmember";
+import { Threed33fba3f009de957b3be92fba006d6383af7e39f823cc1fd213506f6205100f } from "./threed33fba3f009de957b3be92fba006d6383af7e39f823cc1fd213506f6205100f";
 import { UserRoles } from "./userroles";
 import { Expose, Type } from "class-transformer";
 
@@ -42,9 +44,10 @@ export class MemberClientSchema extends SpeakeasyBase {
     @Expose({ name: "createdAt" })
     createdAt: string;
 
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: MemberClientRequirementResponse })
     @Expose({ name: "eligibilityRequirements" })
-    eligibilityRequirements?: any[];
+    @Type(() => MemberClientRequirementResponse)
+    eligibilityRequirements?: MemberClientRequirementResponse[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "emailCC" })
@@ -61,7 +64,8 @@ export class MemberClientSchema extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration" })
-    integration?: any;
+    @Type(() => Threed33fba3f009de957b3be92fba006d6383af7e39f823cc1fd213506f6205100f)
+    integration?: Threed33fba3f009de957b3be92fba006d6383af7e39f823cc1fd213506f6205100f;
 
     @SpeakeasyMetadata()
     @Expose({ name: "internationalWireAccount" })

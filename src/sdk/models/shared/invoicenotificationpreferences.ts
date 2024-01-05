@@ -8,11 +8,11 @@ import { Expose } from "class-transformer";
 export class InvoiceNotificationPreferences extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "sendInvoice" })
-    sendInvoice?: any;
+    sendInvoice?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "sendReceipt" })
-    sendReceipt?: any;
+    sendReceipt?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "sendReminders" })

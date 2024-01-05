@@ -3,7 +3,9 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { Facb8048736dba546c4c76242d9f8c7111011a7a7483528f37d80226698a1f2b } from "./facb8048736dba546c4c76242d9f8c7111011a7a7483528f37d80226698a1f2b";
+import { ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461 } from "./threebilliononehundredandninetymillionsixhundredandeightyfivethousandeighthundredandthirtytwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461";
+import { Expose, Type } from "class-transformer";
 
 export class InvoiceLineItemsCreateRequest extends SpeakeasyBase {
     @SpeakeasyMetadata()
@@ -20,15 +22,20 @@ export class InvoiceLineItemsCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "discount" })
-    discount?: any;
+    @Type(() => Facb8048736dba546c4c76242d9f8c7111011a7a7483528f37d80226698a1f2b)
+    discount?: Facb8048736dba546c4c76242d9f8c7111011a7a7483528f37d80226698a1f2b;
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration" })
-    integration?: any;
+    @Type(
+        () =>
+            ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461
+    )
+    integration?: ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461;
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "quantity" })
@@ -36,7 +43,7 @@ export class InvoiceLineItemsCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "reimbursableExpense" })
-    reimbursableExpense?: any;
+    reimbursableExpense?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "totalCost" })

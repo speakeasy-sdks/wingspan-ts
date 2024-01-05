@@ -3,12 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { FrequencyUpdate } from "./frequencyupdate";
+import { Expose, Type } from "class-transformer";
 
 export class LateFeeConfigUpdate extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "frequency" })
-    frequency?: any;
+    @Type(() => FrequencyUpdate)
+    frequency?: FrequencyUpdate;
 
     @SpeakeasyMetadata()
     @Expose({ name: "lateFeeAmount" })

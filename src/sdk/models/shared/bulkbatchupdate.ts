@@ -17,7 +17,7 @@ export enum StatusBulkBatchUpdate {
 export class BulkBatchUpdate extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

@@ -3,12 +3,14 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { Ba1d4c38921e9c7af45d17223c51562cb69a815c6bf72f6cf959d800ee59afdb } from "./ba1d4c38921e9c7af45d17223c51562cb69a815c6bf72f6cf959d800ee59afdb";
+import { Expose, Type } from "class-transformer";
 
 export class Twelved9f9a45dd678e21e49e960084c87d9e541aadd0c26b6e676a00139e89b6915 extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "form1099Filings" })
-    form1099Filings?: any;
+    @Type(() => Ba1d4c38921e9c7af45d17223c51562cb69a815c6bf72f6cf959d800ee59afdb)
+    form1099Filings?: Ba1d4c38921e9c7af45d17223c51562cb69a815c6bf72f6cf959d800ee59afdb;
 
     @SpeakeasyMetadata()
     @Expose({ name: "formW9Document" })

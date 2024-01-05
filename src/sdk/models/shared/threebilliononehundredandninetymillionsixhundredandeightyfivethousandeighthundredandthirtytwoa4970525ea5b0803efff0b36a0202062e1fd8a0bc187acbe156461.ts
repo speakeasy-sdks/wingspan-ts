@@ -3,10 +3,12 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { Sixad3f4f624fb518510130e879729b00ed8c237d1cebc5477abf34ac340a6424d } from "./sixad3f4f624fb518510130e879729b00ed8c237d1cebc5477abf34ac340a6424d";
+import { Expose, Type } from "class-transformer";
 
 export class ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461 extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "quickbooks" })
-    quickbooks?: any;
+    @Type(() => Sixad3f4f624fb518510130e879729b00ed8c237d1cebc5477abf34ac340a6424d)
+    quickbooks?: Sixad3f4f624fb518510130e879729b00ed8c237d1cebc5477abf34ac340a6424d;
 }

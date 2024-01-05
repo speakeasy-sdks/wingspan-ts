@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ReplaceCollaboratorGroupEligibilityRequirementRequest extends SpeakeasyBase {
@@ -48,5 +48,5 @@ export class ReplaceCollaboratorGroupEligibilityRequirementResponse extends Spea
      * Raw HTTP response; suitable for custom response parsing
      */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 }

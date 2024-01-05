@@ -5,6 +5,11 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { FeeHandlingConfig } from "./feehandlingconfig";
 import { InvoiceLineItemsCreateRequest } from "./invoicelineitemscreaterequest";
+import { InvoiceMetadata } from "./invoicemetadata";
+import { InvoiceNotificationPreferences } from "./invoicenotificationpreferences";
+import { LateFeeConfigUpdate } from "./latefeeconfigupdate";
+import { ThirtySixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2 } from "./thirtysixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2";
+import { ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461 } from "./threebilliononehundredandninetymillionsixhundredandeightyfivethousandeighthundredandthirtytwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461";
 import { Expose, Type } from "class-transformer";
 
 export enum PayableCreateRequestAcceptedPaymentMethods {
@@ -14,7 +19,7 @@ export enum PayableCreateRequestAcceptedPaymentMethods {
     LessThanNilGreaterThan = "<nil>",
 }
 
-export class PayableCreateRequestClient2 extends SpeakeasyBase {}
+export class PayableCreateRequestClient extends SpeakeasyBase {}
 
 export enum CurrencyPayableCreateRequest {
     Usd = "USD",
@@ -22,7 +27,7 @@ export enum CurrencyPayableCreateRequest {
     LessThanNilGreaterThan = "<nil>",
 }
 
-export class PayableCreateRequestMember2 extends SpeakeasyBase {}
+export class PayableCreateRequestMember extends SpeakeasyBase {}
 
 export enum StatusPayableCreateRequest {
     Draft = "Draft",
@@ -42,11 +47,13 @@ export class PayableCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "attachments" })
-    attachments?: any;
+    @Type(() => ThirtySixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2)
+    attachments?: ThirtySixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2;
 
     @SpeakeasyMetadata()
     @Expose({ name: "client" })
-    client?: any;
+    @Type(() => PayableCreateRequestClient)
+    client?: PayableCreateRequestClient;
 
     @SpeakeasyMetadata()
     @Expose({ name: "collaboratorId" })
@@ -67,7 +74,11 @@ export class PayableCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration" })
-    integration?: any;
+    @Type(
+        () =>
+            ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461
+    )
+    integration?: ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461;
 
     @SpeakeasyMetadata()
     @Expose({ name: "invoiceNotes" })
@@ -75,11 +86,12 @@ export class PayableCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "lateFeeHandling" })
-    lateFeeHandling?: any;
+    @Type(() => LateFeeConfigUpdate)
+    lateFeeHandling?: LateFeeConfigUpdate;
 
     @SpeakeasyMetadata({ elemType: InvoiceLineItemsCreateRequest })
     @Expose({ name: "lineItems" })
@@ -88,7 +100,8 @@ export class PayableCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "member" })
-    member?: any;
+    @Type(() => PayableCreateRequestMember)
+    member?: PayableCreateRequestMember;
 
     @SpeakeasyMetadata()
     @Expose({ name: "memberClientId" })
@@ -96,11 +109,13 @@ export class PayableCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "metadata" })
-    metadata?: any;
+    @Type(() => InvoiceMetadata)
+    metadata?: InvoiceMetadata;
 
     @SpeakeasyMetadata()
     @Expose({ name: "notificationPreferences" })
-    notificationPreferences?: any;
+    @Type(() => InvoiceNotificationPreferences)
+    notificationPreferences?: InvoiceNotificationPreferences;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

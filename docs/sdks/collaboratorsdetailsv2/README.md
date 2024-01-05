@@ -13,15 +13,18 @@ Get a list of collaborators and their details
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetCollaboratorsDetailsV2Response } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.collaboratorsDetailsV2.get().then((res: GetCollaboratorsDetailsV2Response) => {
+  const res = await sdk.collaboratorsDetailsV2.get();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -33,5 +36,9 @@ sdk.collaboratorsDetailsV2.get().then((res: GetCollaboratorsDetailsV2Response) =
 
 ### Response
 
-**Promise<[operations.GetCollaboratorsDetailsV2Response](../../models/operations/getcollaboratorsdetailsv2response.md)>**
+**Promise<[operations.GetCollaboratorsDetailsV2Response](../../sdk/models/operations/getcollaboratorsdetailsv2response.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

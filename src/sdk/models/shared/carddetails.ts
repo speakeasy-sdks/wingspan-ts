@@ -57,7 +57,7 @@ export class CardDetails extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "pinSet" })
-    pinSet?: any;
+    pinSet?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

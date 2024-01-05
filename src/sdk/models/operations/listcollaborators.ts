@@ -3,16 +3,10 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListCollaboratorsResponse extends SpeakeasyBase {
-    /**
-     *  A list of collaborators
-     */
-    @SpeakeasyMetadata({ elemType: shared.CollaboratorSchema })
-    collaboratorSchemas?: shared.CollaboratorSchema[];
-
     /**
      * HTTP response content type for this operation
      */
@@ -29,5 +23,11 @@ export class ListCollaboratorsResponse extends SpeakeasyBase {
      * Raw HTTP response; suitable for custom response parsing
      */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
+
+    /**
+     *  A list of collaborators
+     */
+    @SpeakeasyMetadata({ elemType: shared.CollaboratorSchema })
+    classes?: shared.CollaboratorSchema[];
 }

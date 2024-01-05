@@ -13,15 +13,18 @@ List invoices created by client
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListCreatedInvoicesByClientResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.createdInvoicesByClient.list().then((res: ListCreatedInvoicesByClientResponse) => {
+  const res = await sdk.createdInvoicesByClient.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -33,5 +36,9 @@ sdk.createdInvoicesByClient.list().then((res: ListCreatedInvoicesByClientRespons
 
 ### Response
 
-**Promise<[operations.ListCreatedInvoicesByClientResponse](../../models/operations/listcreatedinvoicesbyclientresponse.md)>**
+**Promise<[operations.ListCreatedInvoicesByClientResponse](../../sdk/models/operations/listcreatedinvoicesbyclientresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

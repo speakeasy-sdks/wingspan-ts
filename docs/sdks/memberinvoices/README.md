@@ -13,15 +13,18 @@ List invoices on member
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListMemberInvoicesResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.memberInvoices.list().then((res: ListMemberInvoicesResponse) => {
+  const res = await sdk.memberInvoices.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -33,5 +36,9 @@ sdk.memberInvoices.list().then((res: ListMemberInvoicesResponse) => {
 
 ### Response
 
-**Promise<[operations.ListMemberInvoicesResponse](../../models/operations/listmemberinvoicesresponse.md)>**
+**Promise<[operations.ListMemberInvoicesResponse](../../sdk/models/operations/listmemberinvoicesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

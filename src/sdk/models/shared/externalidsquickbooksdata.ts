@@ -8,15 +8,15 @@ import { Expose } from "class-transformer";
 export class ExternalIdsQuickbooksData extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "doCreate" })
-    doCreate?: any;
+    doCreate?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "doDelete" })
-    doDelete?: any;
+    doDelete?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "doUpdate" })
-    doUpdate?: any;
+    doUpdate?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "id" })

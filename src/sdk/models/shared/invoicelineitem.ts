@@ -3,6 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Facb8048736dba546c4c76242d9f8c7111011a7a7483528f37d80226698a1f2b } from "./facb8048736dba546c4c76242d9f8c7111011a7a7483528f37d80226698a1f2b";
+import { InvoiceIntegrations } from "./invoiceintegrations";
 import { UserRoles } from "./userroles";
 import { Expose, Type } from "class-transformer";
 
@@ -25,11 +27,13 @@ export class InvoiceLineItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "discount" })
-    discount?: any;
+    @Type(() => Facb8048736dba546c4c76242d9f8c7111011a7a7483528f37d80226698a1f2b)
+    discount?: Facb8048736dba546c4c76242d9f8c7111011a7a7483528f37d80226698a1f2b;
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration" })
-    integration?: any;
+    @Type(() => InvoiceIntegrations)
+    integration?: InvoiceIntegrations;
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
