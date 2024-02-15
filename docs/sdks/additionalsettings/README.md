@@ -57,7 +57,7 @@ import { AdditionalDataUpdateRequest, TypeAdditionalDataUpdateRequest } from "wi
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 const additionalDataUpdateRequest: AdditionalDataUpdateRequest = {};
 
   const res = await sdk.additionalSettings.update(id, additionalDataUpdateRequest);

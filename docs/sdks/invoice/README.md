@@ -18,7 +18,7 @@ import { GenerateInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new Wingspan();
-const invoiceId: string = "string";
+const invoiceId: string = "<value>";
 
   const res = await sdk.invoice.generate(invoiceId);
 
@@ -59,7 +59,7 @@ import { SendInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new Wingspan();
-const invoiceId: string = "string";
+const invoiceId: string = "<value>";
 
   const res = await sdk.invoice.send(invoiceId);
 

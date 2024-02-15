@@ -25,20 +25,20 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
+const batchId: string = "<value>";
 const bulkInvoiceItemCreate: BulkInvoiceItemCreate = {
   acceptedPaymentMethods: [
     BulkInvoiceItemCreateAcceptedPaymentMethods.Ach,
   ],
   amount: 4893.82,
-  bulkInvoiceBatchId: "string",
+  bulkInvoiceBatchId: "<value>",
   creditFeeHandling: {},
-  dueDate: "string",
+  dueDate: "<value>",
   invoiceStatus: InvoiceStatusBulkInvoiceItemCreate.Paid,
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
-  lineItemDescription: "string",
+  lineItemDescription: "<value>",
 };
 
   const res = await sdk.bulkInvoiceBatchItem.create(batchId, bulkInvoiceItemCreate);
@@ -81,8 +81,8 @@ import { GetBulkInvoiceBatchItemRequest } from "wingspan/dist/sdk/models/operati
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
-const batchItemId: string = "string";
+const batchId: string = "<value>";
+const batchItemId: string = "<value>";
 
   const res = await sdk.bulkInvoiceBatchItem.get(batchId, batchItemId);
 
@@ -130,15 +130,15 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
-const batchItemId: string = "string";
+const batchId: string = "<value>";
+const batchItemId: string = "<value>";
 const bulkInvoiceItemUpdate: BulkInvoiceItemUpdate = {
   acceptedPaymentMethods: [
     BulkInvoiceItemUpdateAcceptedPaymentMethods.LessThanNilGreaterThan,
   ],
   creditFeeHandling: {},
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
 };
 

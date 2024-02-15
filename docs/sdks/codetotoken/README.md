@@ -18,10 +18,10 @@ import { CardTokenRequest } from "wingspan/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 const cardTokenRequest: CardTokenRequest = {
-  verificationCode: "string",
-  verificationToken: "string",
+  verificationCode: "<value>",
+  verificationToken: "<value>",
 };
 
   const res = await sdk.codeToToken.exchange(id, cardTokenRequest);

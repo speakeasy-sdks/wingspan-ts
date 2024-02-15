@@ -17,7 +17,7 @@ import { GetCollaboratorEventsRequest } from "wingspan/dist/sdk/models/operation
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.collaboratorEvents.get(id);
 

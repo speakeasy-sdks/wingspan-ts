@@ -19,7 +19,7 @@ import { DeleteClientDeductionIDRequest } from "wingspan/dist/sdk/models/operati
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.clientDeductionID.delete(id);
 
@@ -60,7 +60,7 @@ import { GetClientDeductionIDRequest } from "wingspan/dist/sdk/models/operations
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.clientDeductionID.get(id);
 
@@ -106,7 +106,7 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 const deductionUpdateRequest: DeductionUpdateRequest = {};
 
   const res = await sdk.clientDeductionID.update(id, deductionUpdateRequest);

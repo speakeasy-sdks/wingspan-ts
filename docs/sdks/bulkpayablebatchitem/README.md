@@ -24,15 +24,15 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
+const batchId: string = "<value>";
 const bulkPayableItemCreate: BulkPayableItemCreate = {
   amount: 4865.89,
-  bulkPayableBatchId: "string",
-  dueDate: "string",
+  bulkPayableBatchId: "<value>",
+  dueDate: "<value>",
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
-  lineItemDescription: "string",
+  lineItemDescription: "<value>",
   payableStatus: PayableStatusBulkPayableItemCreate.Approved,
 };
 
@@ -76,8 +76,8 @@ import { GetBulkPayableBatchItemRequest } from "wingspan/dist/sdk/models/operati
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
-const batchItemId: string = "string";
+const batchId: string = "<value>";
+const batchItemId: string = "<value>";
 
   const res = await sdk.bulkPayableBatchItem.get(batchId, batchItemId);
 
@@ -124,11 +124,11 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
-const batchItemId: string = "string";
+const batchId: string = "<value>";
+const batchItemId: string = "<value>";
 const bulkPayableItemUpdate: BulkPayableItemUpdate = {
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
 };
 

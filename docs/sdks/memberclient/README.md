@@ -27,13 +27,13 @@ async function run() {
 
   const res = await sdk.memberClient.create({
     emailCC: [
-      "string",
+      "<value>",
     ],
     integration: {
       quickbooks: {},
     },
     labels: {
-      "key": "string",
+      "key": "<value>",
     },
     memberData: {},
   });
@@ -75,7 +75,7 @@ import { DeleteMemberClientRequest } from "wingspan/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.memberClient.delete(id);
 
@@ -116,7 +116,7 @@ import { GetMemberClientRequest } from "wingspan/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.memberClient.get(id);
 
@@ -180,11 +180,11 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 const memberClientUpdateRequest: MemberClientUpdateRequest = {
   clientData: {},
   emailCC: [
-    "string",
+    "<value>",
   ],
   form1099Balances: {
     twoThousandAndTwentyOne: {
@@ -207,7 +207,7 @@ const memberClientUpdateRequest: MemberClientUpdateRequest = {
     quickbooks: {},
   },
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
   memberData: {},
 };

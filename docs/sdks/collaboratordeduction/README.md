@@ -23,10 +23,10 @@ async function run() {
 
   const res = await sdk.collaboratorDeduction.create({
     amount: 4865.89,
-    clientId: "string",
+    clientId: "<value>",
     currency: DeductionCreateRequestCurrency.Usd,
-    memberId: "string",
-    name: "string",
+    memberId: "<value>",
+    name: "<value>",
     type: TypeDeductionCreateRequest.PostPayment,
   });
 
@@ -67,7 +67,7 @@ import { DeleteCollaboratorDeductionRequest } from "wingspan/dist/sdk/models/ope
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.collaboratorDeduction.delete(id);
 
@@ -108,7 +108,7 @@ import { GetCollaboratorDeductionRequest } from "wingspan/dist/sdk/models/operat
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.collaboratorDeduction.get(id);
 
@@ -154,7 +154,7 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 const deductionUpdateRequest: DeductionUpdateRequest = {};
 
   const res = await sdk.collaboratorDeduction.update(id, deductionUpdateRequest);

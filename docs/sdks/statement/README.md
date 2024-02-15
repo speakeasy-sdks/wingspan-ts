@@ -18,7 +18,7 @@ import { DownloadStatementRequest } from "wingspan/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.statement.download(id);
 
@@ -59,7 +59,7 @@ import { GetStatementRequest } from "wingspan/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.statement.get(id);
 

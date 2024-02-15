@@ -19,12 +19,12 @@ async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.invoiceAsClient.create({
-    clientEmail: "string",
+    clientEmail: "<value>",
     clientEmailCC: [
-      "string",
+      "<value>",
     ],
     creditFeeHandling: {},
-    dueDate: "string",
+    dueDate: "<value>",
     lineItems: [
       {
         discount: {},
@@ -32,11 +32,11 @@ async function run() {
           quickbooks: {},
         },
         labels: {
-          "key": "string",
+          "key": "<value>",
         },
       },
     ],
-    memberId: "string",
+    memberId: "<value>",
   });
 
   if (res.statusCode == 200) {

@@ -21,13 +21,13 @@ async function run() {
 
   const res = await sdk.collaboratorGroup.create({
     collaboratorSettings: {
-      "key": "string",
+      "key": "<value>",
     },
     description: "Multi-tiered human-resource model",
     eligibilityRequirements: [
       {},
     ],
-    name: "string",
+    name: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -67,7 +67,7 @@ import { GetCollaboratorGroupRequest } from "wingspan/dist/sdk/models/operations
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.collaboratorGroup.get(id);
 
@@ -109,10 +109,10 @@ import { CollaboratorGroupRequirement, CollaboratorGroupUpdateRequest } from "wi
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 const collaboratorGroupUpdateRequest: CollaboratorGroupUpdateRequest = {
   collaboratorSettings: {
-    "key": "string",
+    "key": "<value>",
   },
   eligibilityRequirements: [
     {},

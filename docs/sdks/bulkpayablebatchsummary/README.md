@@ -17,7 +17,7 @@ import { GetBulkPayableBatchSummaryRequest } from "wingspan/dist/sdk/models/oper
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
+const batchId: string = "<value>";
 
   const res = await sdk.bulkPayableBatchSummary.get(batchId);
 

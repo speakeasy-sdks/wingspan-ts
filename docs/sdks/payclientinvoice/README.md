@@ -18,7 +18,7 @@ import { PayRequest } from "wingspan/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new Wingspan();
-const invoiceId: string = "string";
+const invoiceId: string = "<value>";
 const payRequest: PayRequest = {};
 
   const res = await sdk.payClientInvoice.post(invoiceId, payRequest);

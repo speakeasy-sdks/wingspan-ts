@@ -21,7 +21,7 @@ async function run() {
 
   const res = await sdk.bulkCalculation1099Batch.create({
     labels: {
-      "key": "string",
+      "key": "<value>",
     },
   });
 
@@ -62,7 +62,7 @@ import { GetBulkCalculation1099BatchRequest } from "wingspan/dist/sdk/models/ope
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
+const batchId: string = "<value>";
 
   const res = await sdk.bulkCalculation1099Batch.get(batchId);
 
@@ -104,10 +104,10 @@ import { BulkBatchUpdate, StatusBulkBatchUpdate } from "wingspan/dist/sdk/models
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
+const batchId: string = "<value>";
 const bulkBatchUpdate: BulkBatchUpdate = {
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
 };
 

@@ -18,8 +18,8 @@ import { DeleteCollaboratorGroupEligibilityRequirementRequest } from "wingspan/d
 
 async function run() {
   const sdk = new Wingspan();
-const eligibilityRequirementId: string = "string";
-const id: string = "string";
+const eligibilityRequirementId: string = "<value>";
+const id: string = "<value>";
 
   const res = await sdk.collaboratorGroupEligibilityRequirement.delete(eligibilityRequirementId, id);
 
@@ -62,10 +62,10 @@ import { CollaboratorGroupRequirementUpdate } from "wingspan/dist/sdk/models/sha
 
 async function run() {
   const sdk = new Wingspan();
-const eligibilityRequirementId: string = "string";
-const id: string = "string";
+const eligibilityRequirementId: string = "<value>";
+const id: string = "<value>";
 const collaboratorGroupRequirementUpdate: CollaboratorGroupRequirementUpdate = {
-  newEligibilityRequirementId: "string",
+  newEligibilityRequirementId: "<value>",
 };
 
   const res = await sdk.collaboratorGroupEligibilityRequirement.replace(eligibilityRequirementId, id, collaboratorGroupRequirementUpdate);

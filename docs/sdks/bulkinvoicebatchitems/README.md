@@ -17,7 +17,7 @@ import { ListBulkInvoiceBatchItemsRequest } from "wingspan/dist/sdk/models/opera
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
+const batchId: string = "<value>";
 
   const res = await sdk.bulkInvoiceBatchItems.list(batchId);
 

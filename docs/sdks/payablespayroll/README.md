@@ -17,7 +17,7 @@ import { ListPayablesPayrollRequest } from "wingspan/dist/sdk/models/operations"
 
 async function run() {
   const sdk = new Wingspan();
-const payrollId: string = "string";
+const payrollId: string = "<value>";
 
   const res = await sdk.payablesPayroll.list(payrollId);
 

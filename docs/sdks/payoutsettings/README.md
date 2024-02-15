@@ -18,7 +18,7 @@ import { GetPayoutSettingsRequest } from "wingspan/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.payoutSettings.get(id);
 
@@ -66,7 +66,7 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 const payoutSettingsUpdate: PayoutSettingsUpdate = {
   payoutDestinations: [
     {},

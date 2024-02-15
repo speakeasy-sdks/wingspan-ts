@@ -20,10 +20,10 @@ async function run() {
 
   const res = await sdk.clientDeduction.create({
     amount: 4865.89,
-    clientId: "string",
+    clientId: "<value>",
     currency: DeductionCreateRequestCurrency.Usd,
-    memberId: "string",
-    name: "string",
+    memberId: "<value>",
+    name: "<value>",
     type: TypeDeductionCreateRequest.PostPayment,
   });
 

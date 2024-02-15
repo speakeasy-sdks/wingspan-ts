@@ -18,9 +18,9 @@ import { CardCodeRequest } from "wingspan/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 const cardCodeRequest: CardCodeRequest = {
-  channel: "string",
+  channel: "<value>",
 };
 
   const res = await sdk.verification.send(id, cardCodeRequest);

@@ -17,7 +17,7 @@ import { GetCollaboratorV2Request } from "wingspan/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new Wingspan();
-const memberId: string = "string";
+const memberId: string = "<value>";
 
   const res = await sdk.collaboratorV2.get(memberId);
 

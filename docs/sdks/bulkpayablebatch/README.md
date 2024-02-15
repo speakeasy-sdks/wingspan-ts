@@ -23,7 +23,7 @@ async function run() {
 
   const res = await sdk.bulkPayableBatch.create({
     labels: {
-      "key": "string",
+      "key": "<value>",
     },
     processingStrategy: BulkPayableBatchCreateProcessingStrategy.Merge,
   });
@@ -65,7 +65,7 @@ import { DeleteBulkPayableBatchRequest } from "wingspan/dist/sdk/models/operatio
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
+const batchId: string = "<value>";
 
   const res = await sdk.bulkPayableBatch.delete(batchId);
 
@@ -106,7 +106,7 @@ import { GetBulkPayableBatchRequest } from "wingspan/dist/sdk/models/operations"
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
+const batchId: string = "<value>";
 
   const res = await sdk.bulkPayableBatch.get(batchId);
 
@@ -148,10 +148,10 @@ import { BulkPayableBatchUpdate, StatusBulkPayableBatchUpdate } from "wingspan/d
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
+const batchId: string = "<value>";
 const bulkPayableBatchUpdate: BulkPayableBatchUpdate = {
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
 };
 

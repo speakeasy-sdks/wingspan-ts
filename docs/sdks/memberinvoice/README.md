@@ -33,7 +33,7 @@ async function run() {
     ],
     attachments: {
       customAttachmentIds: [
-        "string",
+        "<value>",
       ],
     },
     client: {},
@@ -42,16 +42,16 @@ async function run() {
         amount: 4893.82,
         currency: CurrencyInvoiceCollaboratorCreateRequest.Cad,
         description: "Synchronised full-range emulation",
-        memberClientId: "string",
+        memberClientId: "<value>",
       },
     ],
     creditFeeHandling: {},
-    dueDate: "string",
+    dueDate: "<value>",
     integration: {
       quickbooks: {},
     },
     labels: {
-      "key": "string",
+      "key": "<value>",
     },
     lateFeeHandling: {
       frequency: {},
@@ -63,12 +63,12 @@ async function run() {
           quickbooks: {},
         },
         labels: {
-          "key": "string",
+          "key": "<value>",
         },
       },
     ],
     member: {},
-    memberClientId: "string",
+    memberClientId: "<value>",
     metadata: {},
     notificationPreferences: {
       sendReminders: false,
@@ -112,7 +112,7 @@ import { DeleteMemberInvoiceRequest } from "wingspan/dist/sdk/models/operations"
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.memberInvoice.delete(id);
 
@@ -153,7 +153,7 @@ import { GetMemberInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.memberInvoice.get(id);
 
@@ -215,14 +215,14 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 const invoiceUpdateRequest: InvoiceUpdateRequest = {
   acceptedPaymentMethods: [
     InvoiceUpdateRequestAcceptedPaymentMethods.LessThanNilGreaterThan,
   ],
   attachments: {
     customAttachmentIds: [
-      "string",
+      "<value>",
     ],
   },
   chargedFees: {
@@ -242,7 +242,7 @@ const invoiceUpdateRequest: InvoiceUpdateRequest = {
     quickbooks: {},
   },
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
   lateFeeHandling: {
     frequency: {},
@@ -254,7 +254,7 @@ const invoiceUpdateRequest: InvoiceUpdateRequest = {
         quickbooks: {},
       },
       labels: {
-        "key": "string",
+        "key": "<value>",
       },
     },
   ],

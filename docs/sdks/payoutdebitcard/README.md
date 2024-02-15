@@ -20,18 +20,18 @@ import { Address, CheckbookCardCreate } from "wingspan/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new Wingspan();
-const memberId: string = "string";
+const memberId: string = "<value>";
 const checkbookCardCreate: CheckbookCardCreate = {
   address: {
-    addressLine1: "string",
-    city: "Jenafurt",
-    postalCode: "42170-9739",
-    state: "string",
+    addressLine1: "4684 Bria Shores",
+    city: "Fort Peytonbury",
+    postalCode: "80413-0778",
+    state: "South Dakota",
   },
-  cardNumber: "string",
-  expMM: "string",
-  expYYYY: "string",
-  name: "string",
+  cardNumber: "<value>",
+  expMM: "<value>",
+  expYYYY: "<value>",
+  name: "<value>",
 };
 
   const res = await sdk.payoutDebitCard.create(memberId, checkbookCardCreate);
@@ -74,8 +74,8 @@ import { DeletePayoutDebitCardRequest } from "wingspan/dist/sdk/models/operation
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
-const memberId: string = "string";
+const id: string = "<value>";
+const memberId: string = "<value>";
 
   const res = await sdk.payoutDebitCard.delete(id, memberId);
 
@@ -117,8 +117,8 @@ import { GetPayoutDebitCardRequest } from "wingspan/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
-const memberId: string = "string";
+const id: string = "<value>";
+const memberId: string = "<value>";
 
   const res = await sdk.payoutDebitCard.get(id, memberId);
 

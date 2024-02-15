@@ -20,11 +20,11 @@ import { BulkCalculation1099ItemCreate, CalculationTypeBulkCalculation1099ItemCr
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
+const batchId: string = "<value>";
 const bulkCalculation1099ItemCreate: BulkCalculation1099ItemCreate = {
-  clientId: "string",
+  clientId: "<value>",
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
   year: 4865.89,
 };
@@ -69,8 +69,8 @@ import { GetBulkCalculation1099BatchItemRequest } from "wingspan/dist/sdk/models
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
-const batchItemId: string = "string";
+const batchId: string = "<value>";
+const batchItemId: string = "<value>";
 
   const res = await sdk.bulkCalculation1099BatchItem.get(batchId, batchItemId);
 
@@ -113,11 +113,11 @@ import { BulkCalculation1099ItemUpdate, CalculationTypeBulkCalculation1099ItemUp
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
-const batchItemId: string = "string";
+const batchId: string = "<value>";
+const batchItemId: string = "<value>";
 const bulkCalculation1099ItemUpdate: BulkCalculation1099ItemUpdate = {
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
 };
 

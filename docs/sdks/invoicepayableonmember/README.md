@@ -17,7 +17,7 @@ import { GetInvoicePayableOnMemberRequest } from "wingspan/dist/sdk/models/opera
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.invoicePayableOnMember.get(id);
 

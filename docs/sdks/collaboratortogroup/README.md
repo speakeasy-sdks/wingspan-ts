@@ -18,8 +18,8 @@ import { AddCollaboratorToGroupRequest } from "wingspan/dist/sdk/models/operatio
 
 async function run() {
   const sdk = new Wingspan();
-const groupId: string = "string";
-const id: string = "string";
+const groupId: string = "<value>";
+const id: string = "<value>";
 
   const res = await sdk.collaboratorToGroup.add(groupId, id);
 
@@ -61,8 +61,8 @@ import { RemoveCollaboratorToGroupRequest } from "wingspan/dist/sdk/models/opera
 
 async function run() {
   const sdk = new Wingspan();
-const groupId: string = "string";
-const id: string = "string";
+const groupId: string = "<value>";
+const id: string = "<value>";
 
   const res = await sdk.collaboratorToGroup.remove(groupId, id);
 

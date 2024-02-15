@@ -62,7 +62,7 @@ import { DeleteEligibilityRequirementRequest } from "wingspan/dist/sdk/models/op
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.eligibilityRequirement.delete(id);
 
@@ -103,7 +103,7 @@ import { GetEligibilityRequirementRequest } from "wingspan/dist/sdk/models/opera
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.eligibilityRequirement.get(id);
 
@@ -148,7 +148,7 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 const eligibilityRequirementUpdateRequest: EligibilityRequirementUpdateRequest = {
   requirementType: EligibilityRequirementUpdateRequestRequirementType.Signature,
 };

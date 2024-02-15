@@ -19,7 +19,7 @@ async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.clientInvoiceFees.create({
-    contactName: "string",
+    contactName: "<value>",
     email: "Jena.Nienow28@yahoo.com",
   });
 
@@ -60,7 +60,7 @@ import { ListClientInvoiceFeesRequest } from "wingspan/dist/sdk/models/operation
 
 async function run() {
   const sdk = new Wingspan();
-const invoiceId: string = "string";
+const invoiceId: string = "<value>";
 
   const res = await sdk.clientInvoiceFees.list(invoiceId);
 

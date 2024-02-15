@@ -20,7 +20,7 @@ async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.instantPayout.create({
-    externalPayoutAccountToken: "string",
+    externalPayoutAccountToken: "<value>",
   });
 
   if (res.statusCode == 200) {

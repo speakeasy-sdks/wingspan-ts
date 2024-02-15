@@ -31,7 +31,7 @@ async function run() {
 
   const res = await sdk.invoiceTemplate.create({
     frequency: {
-      startDate: "string",
+      startDate: "<value>",
     },
     invoiceData: {
       acceptedPaymentMethods: [
@@ -39,7 +39,7 @@ async function run() {
       ],
       attachments: {
         customAttachmentIds: [
-          "string",
+          "<value>",
         ],
       },
       collaborators: [
@@ -47,16 +47,16 @@ async function run() {
           amount: 4893.82,
           currency: CurrencyInvoiceCollaboratorCreateRequest.Cad,
           description: "Synchronised full-range emulation",
-          memberClientId: "string",
+          memberClientId: "<value>",
         },
       ],
       creditFeeHandling: {},
       labels: {
-        "key": "string",
+        "key": "<value>",
       },
       lateFeeHandling: {
         frequency: {
-          startDate: "string",
+          startDate: "<value>",
         },
       },
       lineItems: [
@@ -66,21 +66,21 @@ async function run() {
             quickbooks: {},
           },
           labels: {
-            "key": "string",
+            "key": "<value>",
           },
         },
       ],
-      memberClientId: "string",
+      memberClientId: "<value>",
       notificationPreferences: {
         sendReminders: false,
       },
     },
     labels: {
-      "key": "string",
+      "key": "<value>",
     },
     scheduleDates: [
       {
-        date: "string",
+        date: "<value>",
         status: StatusScheduleDate.Pending,
       },
     ],
@@ -124,7 +124,7 @@ import { DeleteInvoiceTemplateRequest } from "wingspan/dist/sdk/models/operation
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.invoiceTemplate.delete(id);
 
@@ -165,7 +165,7 @@ import { GetInvoiceTemplateRequest } from "wingspan/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.invoiceTemplate.get(id);
 
@@ -231,7 +231,7 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 const invoiceTemplateUpdateRequest: InvoiceTemplateUpdateRequest = {
   frequency: {},
   invoiceData: {
@@ -240,7 +240,7 @@ const invoiceTemplateUpdateRequest: InvoiceTemplateUpdateRequest = {
     ],
     attachments: {
       customAttachmentIds: [
-        "string",
+        "<value>",
       ],
     },
     chargedFees: {
@@ -260,7 +260,7 @@ const invoiceTemplateUpdateRequest: InvoiceTemplateUpdateRequest = {
       quickbooks: {},
     },
     labels: {
-      "key": "string",
+      "key": "<value>",
     },
     lateFeeHandling: {
       frequency: {},
@@ -272,7 +272,7 @@ const invoiceTemplateUpdateRequest: InvoiceTemplateUpdateRequest = {
           quickbooks: {},
         },
         labels: {
-          "key": "string",
+          "key": "<value>",
         },
       },
     ],
@@ -283,7 +283,7 @@ const invoiceTemplateUpdateRequest: InvoiceTemplateUpdateRequest = {
     },
   },
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
   scheduleDates: [
     {},

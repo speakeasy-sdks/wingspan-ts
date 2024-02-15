@@ -22,7 +22,7 @@ async function run() {
 
   const res = await sdk.additionalData.create({
     key: "<key>",
-    name: "string",
+    name: "<value>",
     required: false,
     type: TypeT.Boolean,
   });
@@ -64,7 +64,7 @@ import { DeleteAdditionalDataRequest } from "wingspan/dist/sdk/models/operations
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.additionalData.delete(id);
 
@@ -105,7 +105,7 @@ import { GetAdditionalDataRequest } from "wingspan/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.additionalData.get(id);
 

@@ -26,12 +26,12 @@ async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.clientInvoiceTemplate.create({
-    clientEmail: "string",
+    clientEmail: "<value>",
     clientEmailCC: [
-      "string",
+      "<value>",
     ],
     frequency: {
-      startDate: "string",
+      startDate: "<value>",
     },
     invoiceData: {
       creditFeeHandling: {},
@@ -42,15 +42,15 @@ async function run() {
             quickbooks: {},
           },
           labels: {
-            "key": "string",
+            "key": "<value>",
           },
         },
       ],
     },
-    memberId: "string",
+    memberId: "<value>",
     scheduleDates: [
       {
-        date: "string",
+        date: "<value>",
         status: StatusScheduleDate.Completed,
       },
     ],
@@ -94,7 +94,7 @@ import { GetClientInvoiceTemplateRequest } from "wingspan/dist/sdk/models/operat
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.clientInvoiceTemplate.get(id);
 
@@ -136,9 +136,9 @@ import { ClientInvoiceTemplateUpdateRequest } from "wingspan/dist/sdk/models/sha
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 const clientInvoiceTemplateUpdateRequest: ClientInvoiceTemplateUpdateRequest = {
-  clientId: "string",
+  clientId: "<value>",
 };
 
   const res = await sdk.clientInvoiceTemplate.update(id, clientInvoiceTemplateUpdateRequest);

@@ -20,7 +20,7 @@ async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.oneThousandAndNinetyNine.calculate({
-    memberClientId: "string",
+    memberClientId: "<value>",
     year: 6611.96,
   });
 
@@ -62,7 +62,7 @@ async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.oneThousandAndNinetyNine.mark({
-    memberId: "string",
+    memberId: "<value>",
     submissionIndex: 2694.09,
     year: 735.52,
   });
@@ -106,13 +106,13 @@ async function run() {
 
   const res = await sdk.oneThousandAndNinetyNine.remail({
     address: {
-      addressLine1: "string",
-      city: "Port Cara",
-      postalCode: "13281-2223",
-      state: "string",
+      addressLine1: "71613 Rene Curve",
+      city: "West Edd",
+      postalCode: "30290",
+      state: "Maine",
     },
-    memberId: "string",
-    year: 3145.26,
+    memberId: "<value>",
+    year: 1008.29,
   });
 
   if (res.statusCode == 200) {

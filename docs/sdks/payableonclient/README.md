@@ -30,18 +30,18 @@ async function run() {
     ],
     attachments: {
       customAttachmentIds: [
-        "string",
+        "<value>",
       ],
     },
     client: {},
-    collaboratorId: "string",
+    collaboratorId: "<value>",
     creditFeeHandling: {},
-    dueDate: "string",
+    dueDate: "<value>",
     integration: {
       quickbooks: {},
     },
     labels: {
-      "key": "string",
+      "key": "<value>",
     },
     lateFeeHandling: {
       frequency: {},
@@ -53,7 +53,7 @@ async function run() {
           quickbooks: {},
         },
         labels: {
-          "key": "string",
+          "key": "<value>",
         },
       },
     ],
@@ -123,14 +123,14 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 const payableUpdateRequest: PayableUpdateRequest = {
   acceptedPaymentMethods: [
     PayableUpdateRequestAcceptedPaymentMethods.LessThanNilGreaterThan,
   ],
   attachments: {
     customAttachmentIds: [
-      "string",
+      "<value>",
     ],
   },
   chargedFees: {
@@ -150,7 +150,7 @@ const payableUpdateRequest: PayableUpdateRequest = {
     quickbooks: {},
   },
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
   lateFeeHandling: {
     frequency: {},
@@ -162,7 +162,7 @@ const payableUpdateRequest: PayableUpdateRequest = {
         quickbooks: {},
       },
       labels: {
-        "key": "string",
+        "key": "<value>",
       },
     },
   ],

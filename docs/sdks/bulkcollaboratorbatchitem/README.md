@@ -25,18 +25,18 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
+const batchId: string = "<value>";
 const bulkCollaboratorItemCreate: BulkCollaboratorItemCreate = {
   formW9Data: {
-    addressLine1: "string",
-    city: "Jenafurt",
-    companyStructure: CompanyStructureMemberClientFormW9Info.CorporationC,
-    country: "Iraq",
-    postalCode: "17097",
-    state: "string",
+    addressLine1: "4684 Bria Shores",
+    city: "Fort Peytonbury",
+    companyStructure: CompanyStructureMemberClientFormW9Info.Partnership,
+    country: "Togo",
+    postalCode: "41307",
+    state: "South Carolina",
   },
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
 };
 
@@ -80,8 +80,8 @@ import { GetBulkCollaboratorBatchItemRequest } from "wingspan/dist/sdk/models/op
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
-const batchItemId: string = "string";
+const batchId: string = "<value>";
+const batchItemId: string = "<value>";
 
   const res = await sdk.bulkCollaboratorBatchItem.get(batchId, batchItemId);
 
@@ -129,19 +129,19 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
-const batchItemId: string = "string";
+const batchId: string = "<value>";
+const batchItemId: string = "<value>";
 const bulkCollaboratorItemUpdate: BulkCollaboratorItemUpdate = {
   formW9Data: {
-    addressLine1: "string",
-    city: "Ann Arbor",
-    companyStructure: CompanyStructureMemberClientFormW9Info.LLCCorporationS,
-    country: "American Samoa",
-    postalCode: "79266",
-    state: "string",
+    addressLine1: "050 Mellie Well",
+    city: "Lake Marlee",
+    companyStructure: CompanyStructureMemberClientFormW9Info.CorporationS,
+    country: "Jersey",
+    postalCode: "10284-4337",
+    state: "Illinois",
   },
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
 };
 

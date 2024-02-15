@@ -28,13 +28,13 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
+const batchId: string = "<value>";
 const bulkClientItemCreate: BulkClientItemCreate = {
   integration: {
     quickbooks: {},
   },
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
   memberData: {},
 };
@@ -79,8 +79,8 @@ import { GetBulkClientBatchItemRequest } from "wingspan/dist/sdk/models/operatio
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
-const batchItemId: string = "string";
+const batchId: string = "<value>";
+const batchItemId: string = "<value>";
 
   const res = await sdk.bulkClientBatchItem.get(batchId, batchItemId);
 
@@ -131,14 +131,14 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
-const batchItemId: string = "string";
+const batchId: string = "<value>";
+const batchItemId: string = "<value>";
 const bulkClientItemUpdate: BulkClientItemUpdate = {
   integration: {
     quickbooks: {},
   },
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
   memberData: {},
 };

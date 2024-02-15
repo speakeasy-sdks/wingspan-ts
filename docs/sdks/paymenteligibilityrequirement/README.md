@@ -21,8 +21,8 @@ async function run() {
   const sdk = new Wingspan();
 
   const res = await sdk.paymentEligibilityRequirement.create({
-    field: "string",
-    value: "string",
+    field: "<value>",
+    value: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -62,7 +62,7 @@ import { DeletePaymentEligibilityRequirementRequest } from "wingspan/dist/sdk/mo
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.paymentEligibilityRequirement.delete(id);
 
@@ -103,7 +103,7 @@ import { GetPaymentEligibilityRequirementRequest } from "wingspan/dist/sdk/model
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.paymentEligibilityRequirement.get(id);
 
@@ -145,7 +145,7 @@ import { PaymentEligibilityUpdateRequest, Value } from "wingspan/dist/sdk/models
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 const paymentEligibilityUpdateRequest: PaymentEligibilityUpdateRequest = {
   value: {},
 };

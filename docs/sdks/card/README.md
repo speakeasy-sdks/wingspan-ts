@@ -22,10 +22,10 @@ async function run() {
 
   const res = await sdk.card.create({
     shippingAddress: {
-      addressLine1: "string",
-      city: "Jenafurt",
-      postalCode: "42170-9739",
-      state: "string",
+      addressLine1: "4684 Bria Shores",
+      city: "Fort Peytonbury",
+      postalCode: "80413-0778",
+      state: "South Dakota",
     },
   });
 
@@ -66,7 +66,7 @@ import { DeleteCardRequest } from "wingspan/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.card.delete(id);
 
@@ -107,7 +107,7 @@ import { GetCardRequest } from "wingspan/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.card.get(id);
 
@@ -149,7 +149,7 @@ import { CardUpdateRequest, PropertiesCardUpdateRequest } from "wingspan/dist/sd
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 const cardUpdateRequest: CardUpdateRequest = {
   status: PropertiesCardUpdateRequest.ClosedByCustomer,
 };

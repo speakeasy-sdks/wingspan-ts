@@ -22,7 +22,7 @@ async function run() {
 
   const res = await sdk.bulkInvoiceBatch.create({
     labels: {
-      "key": "string",
+      "key": "<value>",
     },
     processingStrategy: BulkInvoiceBatchCreateProcessingStrategy.Merge,
   });
@@ -64,7 +64,7 @@ import { GetBulkInvoiceBatchRequest } from "wingspan/dist/sdk/models/operations"
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
+const batchId: string = "<value>";
 
   const res = await sdk.bulkInvoiceBatch.get(batchId);
 
@@ -106,10 +106,10 @@ import { BulkInvoiceBatchUpdate, StatusBulkInvoiceBatchUpdate } from "wingspan/d
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
+const batchId: string = "<value>";
 const bulkInvoiceBatchUpdate: BulkInvoiceBatchUpdate = {
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
 };
 

@@ -28,20 +28,20 @@ async function run() {
 
   const res = await sdk.collaborator.create({
     clientData: {},
-    clientId: "string",
+    clientId: "<value>",
     formW9Data: {
-      addressLine1: "string",
-      city: "Jenafurt",
-      companyStructure: CompanyStructureMemberClientFormW9Info.CorporationC,
-      country: "Iraq",
-      postalCode: "17097",
-      state: "string",
+      addressLine1: "4684 Bria Shores",
+      city: "Fort Peytonbury",
+      companyStructure: CompanyStructureMemberClientFormW9Info.Partnership,
+      country: "Togo",
+      postalCode: "41307",
+      state: "South Carolina",
     },
     integration: {
       quickbooks: {},
     },
     labels: {
-      "key": "string",
+      "key": "<value>",
     },
   });
 
@@ -82,7 +82,7 @@ import { DeleteCollaboratorRequest } from "wingspan/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.collaborator.delete(id);
 
@@ -123,7 +123,7 @@ import { GetCollaboratorRequest } from "wingspan/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 
   const res = await sdk.collaborator.get(id);
 
@@ -184,7 +184,7 @@ import {
 
 async function run() {
   const sdk = new Wingspan();
-const id: string = "string";
+const id: string = "<value>";
 const collaboratorUpdateRequest: CollaboratorUpdateRequest = {
   clientData: {},
   form1099Balances: {
@@ -208,7 +208,7 @@ const collaboratorUpdateRequest: CollaboratorUpdateRequest = {
     quickbooks: {},
   },
   labels: {
-    "key": "string",
+    "key": "<value>",
   },
 };
 

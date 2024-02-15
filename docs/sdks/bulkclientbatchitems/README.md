@@ -17,7 +17,7 @@ import { ListBulkClientBatchItemsRequest } from "wingspan/dist/sdk/models/operat
 
 async function run() {
   const sdk = new Wingspan();
-const batchId: string = "string";
+const batchId: string = "<value>";
 
   const res = await sdk.bulkClientBatchItems.list(batchId);
 
