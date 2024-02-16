@@ -18,7 +18,6 @@ export enum InvoiceUpdateRequestAcceptedPaymentMethods {
     Credit = "Credit",
     Ach = "ACH",
     Manual = "Manual",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class InvoiceUpdateRequestClient extends SpeakeasyBase {}
@@ -33,7 +32,6 @@ export enum StatusInvoiceUpdateRequest {
     Pending = "Pending",
     PaymentInTransit = "PaymentInTransit",
     Paid = "Paid",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class InvoiceUpdateRequest extends SpeakeasyBase {

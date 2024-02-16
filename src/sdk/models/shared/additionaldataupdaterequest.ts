@@ -8,7 +8,6 @@ import { Expose } from "class-transformer";
 export enum TypeAdditionalDataUpdateRequest {
     Boolean = "Boolean",
     String = "String",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class AdditionalDataUpdateRequest extends SpeakeasyBase {

@@ -126,7 +126,7 @@ async function run() {
 const id: string = "<value>";
 const payableUpdateRequest: PayableUpdateRequest = {
   acceptedPaymentMethods: [
-    PayableUpdateRequestAcceptedPaymentMethods.LessThanNilGreaterThan,
+    PayableUpdateRequestAcceptedPaymentMethods.Manual,
   ],
   attachments: {
     customAttachmentIds: [

@@ -134,7 +134,7 @@ const batchId: string = "<value>";
 const batchItemId: string = "<value>";
 const bulkInvoiceItemUpdate: BulkInvoiceItemUpdate = {
   acceptedPaymentMethods: [
-    BulkInvoiceItemUpdateAcceptedPaymentMethods.LessThanNilGreaterThan,
+    BulkInvoiceItemUpdateAcceptedPaymentMethods.Manual,
   ],
   creditFeeHandling: {},
   labels: {

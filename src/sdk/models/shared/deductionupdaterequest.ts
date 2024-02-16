@@ -8,13 +8,11 @@ import { Expose } from "class-transformer";
 export enum CurrencyDeductionUpdateRequest {
     Usd = "USD",
     Cad = "CAD",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum TypeDeductionUpdateRequest {
     PrePayment = "PrePayment",
     PostPayment = "PostPayment",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class DeductionUpdateRequest extends SpeakeasyBase {

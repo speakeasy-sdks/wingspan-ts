@@ -10,7 +10,6 @@ export enum CollaboratorStatusBulkCollaboratorItemCreate {
     Active = "Active",
     Inactive = "Inactive",
     Pending = "Pending",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class BulkCollaboratorItemCreate extends SpeakeasyBase {

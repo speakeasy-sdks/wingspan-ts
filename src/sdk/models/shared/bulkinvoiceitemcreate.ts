@@ -10,7 +10,6 @@ export enum BulkInvoiceItemCreateAcceptedPaymentMethods {
     Credit = "Credit",
     Ach = "ACH",
     Manual = "Manual",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum InvoiceStatusBulkInvoiceItemCreate {

@@ -18,7 +18,6 @@ export enum PayableUpdateRequestAcceptedPaymentMethods {
     Credit = "Credit",
     Ach = "ACH",
     Manual = "Manual",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class PayableUpdateRequestClient extends SpeakeasyBase {}
@@ -29,7 +28,6 @@ export enum PaymentMethods {
     Credit = "Credit",
     Ach = "ACH",
     Manual = "Manual",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum StatusPayableUpdateRequest {
@@ -40,7 +38,6 @@ export enum StatusPayableUpdateRequest {
     Pending = "Pending",
     PaymentInTransit = "PaymentInTransit",
     Paid = "Paid",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class PayableUpdateRequest extends SpeakeasyBase {

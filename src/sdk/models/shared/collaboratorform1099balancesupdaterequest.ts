@@ -11,7 +11,6 @@ export enum DeliveryMethodCollaboratorForm1099BalancesUpdateRequest {
     Electronic = "Electronic",
     Mail = "Mail",
     Both = "Both",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class Events extends SpeakeasyBase {}
@@ -24,7 +23,6 @@ export enum StatusCollaboratorForm1099BalancesUpdateRequest {
     Rejected = "Rejected",
     Accepted = "Accepted",
     Excluded = "Excluded",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class CollaboratorForm1099BalancesUpdateRequest extends SpeakeasyBase {

@@ -8,13 +8,11 @@ import { Expose } from "class-transformer";
 export enum AutoPayRequirementMemberData {
     All = "All",
     None = "None",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum ShareTaxDocumentMemberData {
     Allow = "Allow",
     Decline = "Decline",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class MemberData extends SpeakeasyBase {

@@ -10,7 +10,6 @@ export enum BulkInvoiceItemUpdateAcceptedPaymentMethods {
     Credit = "Credit",
     Ach = "ACH",
     Manual = "Manual",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum InvoiceStatusBulkInvoiceItemUpdate {
@@ -19,7 +18,6 @@ export enum InvoiceStatusBulkInvoiceItemUpdate {
     Approved = "Approved",
     Paid = "Paid",
     Cancelled = "Cancelled",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class BulkInvoiceItemUpdate extends SpeakeasyBase {

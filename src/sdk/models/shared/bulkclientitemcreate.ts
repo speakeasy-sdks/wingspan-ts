@@ -11,7 +11,6 @@ export enum ClientStatusBulkClientItemCreate {
     Active = "Active",
     Inactive = "Inactive",
     Pending = "Pending",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class BulkClientItemCreate extends SpeakeasyBase {

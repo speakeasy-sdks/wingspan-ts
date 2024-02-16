@@ -8,7 +8,6 @@ import { Expose } from "class-transformer";
 export enum IntervalFrequencyUpdate {
     Week = "Week",
     Month = "Month",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class FrequencyUpdate extends SpeakeasyBase {

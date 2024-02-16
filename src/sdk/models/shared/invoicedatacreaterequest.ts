@@ -15,13 +15,11 @@ export enum InvoiceDataCreateRequestAcceptedPaymentMethods {
     Credit = "Credit",
     Ach = "ACH",
     Manual = "Manual",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum CurrencyInvoiceDataCreateRequest {
     Usd = "USD",
     Cad = "CAD",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum StatusInvoiceDataCreateRequest {
@@ -32,7 +30,6 @@ export enum StatusInvoiceDataCreateRequest {
     Pending = "Pending",
     PaymentInTransit = "PaymentInTransit",
     Paid = "Paid",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class InvoiceDataCreateRequest extends SpeakeasyBase {

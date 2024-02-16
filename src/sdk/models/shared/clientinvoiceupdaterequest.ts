@@ -14,7 +14,6 @@ export enum StatusClientInvoiceUpdateRequest {
     Pending = "Pending",
     PaymentInTransit = "PaymentInTransit",
     Paid = "Paid",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class ClientInvoiceUpdateRequest extends SpeakeasyBase {

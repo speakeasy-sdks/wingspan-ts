@@ -218,7 +218,7 @@ async function run() {
 const id: string = "<value>";
 const invoiceUpdateRequest: InvoiceUpdateRequest = {
   acceptedPaymentMethods: [
-    InvoiceUpdateRequestAcceptedPaymentMethods.LessThanNilGreaterThan,
+    InvoiceUpdateRequestAcceptedPaymentMethods.Manual,
   ],
   attachments: {
     customAttachmentIds: [

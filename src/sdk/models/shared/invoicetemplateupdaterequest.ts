@@ -13,7 +13,6 @@ export enum StatusInvoiceTemplateUpdateRequest {
     Draft = "Draft",
     Expired = "Expired",
     Cancelled = "Cancelled",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class InvoiceTemplateUpdateRequest extends SpeakeasyBase {

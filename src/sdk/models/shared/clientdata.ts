@@ -8,13 +8,11 @@ import { Expose } from "class-transformer";
 export enum AutoPayStrategyClientData {
     All = "All",
     None = "None",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum VerificationStratgyClientData {
     None = "None",
     All = "All",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class ClientData extends SpeakeasyBase {

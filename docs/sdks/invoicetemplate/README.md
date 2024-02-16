@@ -236,7 +236,7 @@ const invoiceTemplateUpdateRequest: InvoiceTemplateUpdateRequest = {
   frequency: {},
   invoiceData: {
     acceptedPaymentMethods: [
-      InvoiceUpdateRequestAcceptedPaymentMethods.LessThanNilGreaterThan,
+      InvoiceUpdateRequestAcceptedPaymentMethods.Manual,
     ],
     attachments: {
       customAttachmentIds: [

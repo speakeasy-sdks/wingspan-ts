@@ -15,7 +15,6 @@ export enum StatusMemberClientRequirementResponse {
     Sent = "Sent",
     Pending = "Pending",
     Complete = "Complete",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class MemberClientRequirementResponse extends SpeakeasyBase {
