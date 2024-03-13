@@ -15,31 +15,38 @@ Create instant payout details
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateInstantPayoutResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.instantPayout.create({
-  externalPayoutAccountToken: "bluetooth Extended",
-}).then((res: CreateInstantPayoutResponse) => {
+  const res = await sdk.instantPayout.create({
+    externalPayoutAccountToken: "<value>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `request`                                                                  | [shared.InstantPayoutRequest](../../models/shared/instantpayoutrequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
-| `config`                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)               | :heavy_minus_sign:                                                         | Available config options for making requests.                              |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [shared.InstantPayoutRequest](../../sdk/models/shared/instantpayoutrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
 
 
 ### Response
 
-**Promise<[operations.CreateInstantPayoutResponse](../../models/operations/createinstantpayoutresponse.md)>**
+**Promise<[operations.CreateInstantPayoutResponse](../../sdk/models/operations/createinstantpayoutresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete
 
@@ -49,15 +56,18 @@ Delete instant payout
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteInstantPayoutResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.instantPayout.delete().then((res: DeleteInstantPayoutResponse) => {
+  const res = await sdk.instantPayout.delete();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -69,8 +79,12 @@ sdk.instantPayout.delete().then((res: DeleteInstantPayoutResponse) => {
 
 ### Response
 
-**Promise<[operations.DeleteInstantPayoutResponse](../../models/operations/deleteinstantpayoutresponse.md)>**
+**Promise<[operations.DeleteInstantPayoutResponse](../../sdk/models/operations/deleteinstantpayoutresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## fetch
 
@@ -80,15 +94,18 @@ Fetch instant payout details
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { FetchInstantPayoutResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.instantPayout.fetch().then((res: FetchInstantPayoutResponse) => {
+  const res = await sdk.instantPayout.fetch();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -100,5 +117,9 @@ sdk.instantPayout.fetch().then((res: FetchInstantPayoutResponse) => {
 
 ### Response
 
-**Promise<[operations.FetchInstantPayoutResponse](../../models/operations/fetchinstantpayoutresponse.md)>**
+**Promise<[operations.FetchInstantPayoutResponse](../../sdk/models/operations/fetchinstantpayoutresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

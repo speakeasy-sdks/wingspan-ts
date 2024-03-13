@@ -15,36 +15,45 @@ Create Collaborator Group
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateCollaboratorGroupResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.collaboratorGroup.create({
-  collaboratorSettings: "bluetooth",
-  description: "Synchronised full-range emulation",
-  eligibilityRequirements: [
-    "blue",
-  ],
-  name: "grey technology East",
-}).then((res: CreateCollaboratorGroupResponse) => {
+  const res = await sdk.collaboratorGroup.create({
+    collaboratorSettings: {
+      "key": "<value>",
+    },
+    description: "Multi-tiered human-resource model",
+    eligibilityRequirements: [
+      {},
+    ],
+    name: "<value>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [shared.CollaboratorGroupCreateRequest](../../models/shared/collaboratorgroupcreaterequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [shared.CollaboratorGroupCreateRequest](../../sdk/models/shared/collaboratorgroupcreaterequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
 
 
 ### Response
 
-**Promise<[operations.CreateCollaboratorGroupResponse](../../models/operations/createcollaboratorgroupresponse.md)>**
+**Promise<[operations.CreateCollaboratorGroupResponse](../../sdk/models/operations/createcollaboratorgroupresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -54,16 +63,20 @@ Get Collaborator Group
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetCollaboratorGroupRequest, GetCollaboratorGroupResponse } from "wingspan/dist/sdk/models/operations";
+import { GetCollaboratorGroupRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.collaboratorGroup.get(id).then((res: GetCollaboratorGroupResponse) => {
+  const res = await sdk.collaboratorGroup.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -76,8 +89,12 @@ sdk.collaboratorGroup.get(id).then((res: GetCollaboratorGroupResponse) => {
 
 ### Response
 
-**Promise<[operations.GetCollaboratorGroupResponse](../../models/operations/getcollaboratorgroupresponse.md)>**
+**Promise<[operations.GetCollaboratorGroupResponse](../../sdk/models/operations/getcollaboratorgroupresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -87,39 +104,45 @@ Update Collaborator Group
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateCollaboratorGroupRequest, UpdateCollaboratorGroupResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateCollaboratorGroupRequest } from "wingspan/dist/sdk/models/operations";
 import { CollaboratorGroupRequirement, CollaboratorGroupUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 const collaboratorGroupUpdateRequest: CollaboratorGroupUpdateRequest = {
-  collaboratorSettings: "Reactive",
-  description: "Vision-oriented didactic migration",
+  collaboratorSettings: {
+    "key": "<value>",
+  },
   eligibilityRequirements: [
-    {
-      eligibilityRequirementId: "invoice Arizona",
-    },
+    {},
   ],
-  name: "mostly",
 };
 
-sdk.collaboratorGroup.update(id, collaboratorGroupUpdateRequest).then((res: UpdateCollaboratorGroupResponse) => {
+  const res = await sdk.collaboratorGroup.update(id, collaboratorGroupUpdateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | Unique identifier                                                                              |
-| `collaboratorGroupUpdateRequest`                                                               | [shared.CollaboratorGroupUpdateRequest](../../models/shared/collaboratorgroupupdaterequest.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `id`                                                                                               | *string*                                                                                           | :heavy_check_mark:                                                                                 | Unique identifier                                                                                  |
+| `collaboratorGroupUpdateRequest`                                                                   | [shared.CollaboratorGroupUpdateRequest](../../sdk/models/shared/collaboratorgroupupdaterequest.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
 
 
 ### Response
 
-**Promise<[operations.UpdateCollaboratorGroupResponse](../../models/operations/updatecollaboratorgroupresponse.md)>**
+**Promise<[operations.UpdateCollaboratorGroupResponse](../../sdk/models/operations/updatecollaboratorgroupresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

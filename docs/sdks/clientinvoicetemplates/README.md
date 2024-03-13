@@ -13,15 +13,18 @@ List client-invoice-templates
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListClientInvoiceTemplatesResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.clientInvoiceTemplates.list().then((res: ListClientInvoiceTemplatesResponse) => {
+  const res = await sdk.clientInvoiceTemplates.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -33,5 +36,9 @@ sdk.clientInvoiceTemplates.list().then((res: ListClientInvoiceTemplatesResponse)
 
 ### Response
 
-**Promise<[operations.ListClientInvoiceTemplatesResponse](../../models/operations/listclientinvoicetemplatesresponse.md)>**
+**Promise<[operations.ListClientInvoiceTemplatesResponse](../../sdk/models/operations/listclientinvoicetemplatesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

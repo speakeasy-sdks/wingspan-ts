@@ -3,6 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { A7a1067d6f9d1831e4782756623a7bf61cb630a037de1ac86f003bc5c4cb7c14 } from "./a7a1067d6f9d1831e4782756623a7bf61cb630a037de1ac86f003bc5c4cb7c14";
+import { InvoiceIntegrations } from "./invoiceintegrations";
 import { UserRoles } from "./userroles";
 import { Expose, Type } from "class-transformer";
 
@@ -22,9 +24,8 @@ export enum StatusBulkPayableItem {
     Failed = "Failed",
 }
 
-export enum BulkPayableItemWorkflowSubStatus {
+export enum WorkflowSubStatus {
     Submitted = "Submitted",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class BulkPayableItem extends SpeakeasyBase {
@@ -78,7 +79,8 @@ export class BulkPayableItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration" })
-    integration?: any;
+    @Type(() => InvoiceIntegrations)
+    integration?: InvoiceIntegrations;
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
@@ -94,7 +96,8 @@ export class BulkPayableItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "metadata" })
-    metadata?: any;
+    @Type(() => A7a1067d6f9d1831e4782756623a7bf61cb630a037de1ac86f003bc5c4cb7c14)
+    metadata?: A7a1067d6f9d1831e4782756623a7bf61cb630a037de1ac86f003bc5c4cb7c14;
 
     @SpeakeasyMetadata()
     @Expose({ name: "paidDate" })
@@ -110,7 +113,7 @@ export class BulkPayableItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "reimbursableExpense" })
-    reimbursableExpense?: any;
+    reimbursableExpense?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })
@@ -127,5 +130,5 @@ export class BulkPayableItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "workflowSubStatus" })
-    workflowSubStatus?: BulkPayableItemWorkflowSubStatus;
+    workflowSubStatus?: WorkflowSubStatus;
 }

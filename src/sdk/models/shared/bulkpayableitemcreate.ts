@@ -15,7 +15,6 @@ export enum PayableStatusBulkPayableItemCreate {
 
 export enum WorkflowSubStatusBulkPayableItemCreate {
     Submitted = "Submitted",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class BulkPayableItemCreate extends SpeakeasyBase {
@@ -57,7 +56,7 @@ export class BulkPayableItemCreate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "lineItemDescription" })
@@ -81,7 +80,7 @@ export class BulkPayableItemCreate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "reimbursableExpense" })
-    reimbursableExpense?: any;
+    reimbursableExpense?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "workflowSubStatus" })

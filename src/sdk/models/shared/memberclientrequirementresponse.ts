@@ -3,7 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { DocumentResponse } from "./documentresponse";
+import { Expose, Type } from "class-transformer";
 
 export enum MemberClientRequirementResponseRequirementType {
     Signature = "Signature",
@@ -14,7 +15,6 @@ export enum StatusMemberClientRequirementResponse {
     Sent = "Sent",
     Pending = "Pending",
     Complete = "Complete",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class MemberClientRequirementResponse extends SpeakeasyBase {
@@ -28,7 +28,8 @@ export class MemberClientRequirementResponse extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "document" })
-    document?: any;
+    @Type(() => DocumentResponse)
+    document?: DocumentResponse;
 
     @SpeakeasyMetadata()
     @Expose({ name: "documentId" })

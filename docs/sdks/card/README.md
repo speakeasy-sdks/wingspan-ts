@@ -16,38 +16,43 @@ Create card
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateCardResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.card.create({
-  requestPhysicalCard: "bluetooth",
-  shippingAddress: {
-    addressLine1: "innovative blue",
-    addressLine2: "grey technology East",
-    city: "West Astridcester",
-    postalCode: "88558-7496",
-    state: "Durham after",
-  },
-}).then((res: CreateCardResponse) => {
+  const res = await sdk.card.create({
+    shippingAddress: {
+      addressLine1: "4684 Bria Shores",
+      city: "Fort Peytonbury",
+      postalCode: "80413-0778",
+      state: "South Dakota",
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `request`                                                            | [shared.CardCreateRequest](../../models/shared/cardcreaterequest.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
-| `config`                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)         | :heavy_minus_sign:                                                   | Available config options for making requests.                        |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `request`                                                                | [shared.CardCreateRequest](../../sdk/models/shared/cardcreaterequest.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
+| `config`                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)             | :heavy_minus_sign:                                                       | Available config options for making requests.                            |
 
 
 ### Response
 
-**Promise<[operations.CreateCardResponse](../../models/operations/createcardresponse.md)>**
+**Promise<[operations.CreateCardResponse](../../sdk/models/operations/createcardresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete
 
@@ -57,16 +62,20 @@ Delete a card by cardId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteCardRequest, DeleteCardResponse } from "wingspan/dist/sdk/models/operations";
+import { DeleteCardRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.card.delete(id).then((res: DeleteCardResponse) => {
+  const res = await sdk.card.delete(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -79,8 +88,12 @@ sdk.card.delete(id).then((res: DeleteCardResponse) => {
 
 ### Response
 
-**Promise<[operations.DeleteCardResponse](../../models/operations/deletecardresponse.md)>**
+**Promise<[operations.DeleteCardResponse](../../sdk/models/operations/deletecardresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -90,16 +103,20 @@ Get card by cardId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetCardRequest, GetCardResponse } from "wingspan/dist/sdk/models/operations";
+import { GetCardRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.card.get(id).then((res: GetCardResponse) => {
+  const res = await sdk.card.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -112,8 +129,12 @@ sdk.card.get(id).then((res: GetCardResponse) => {
 
 ### Response
 
-**Promise<[operations.GetCardResponse](../../models/operations/getcardresponse.md)>**
+**Promise<[operations.GetCardResponse](../../sdk/models/operations/getcardresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -123,32 +144,40 @@ Update card by cardId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateCardRequest, UpdateCardResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateCardRequest } from "wingspan/dist/sdk/models/operations";
 import { CardUpdateRequest, PropertiesCardUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 const cardUpdateRequest: CardUpdateRequest = {
-  status: PropertiesCardUpdateRequest.Active,
+  status: PropertiesCardUpdateRequest.ClosedByCustomer,
 };
 
-sdk.card.update(id, cardUpdateRequest).then((res: UpdateCardResponse) => {
+  const res = await sdk.card.update(id, cardUpdateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `id`                                                                 | *string*                                                             | :heavy_check_mark:                                                   | Unique identifier                                                    |
-| `cardUpdateRequest`                                                  | [shared.CardUpdateRequest](../../models/shared/cardupdaterequest.md) | :heavy_minus_sign:                                                   | N/A                                                                  |
-| `config`                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)         | :heavy_minus_sign:                                                   | Available config options for making requests.                        |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `id`                                                                     | *string*                                                                 | :heavy_check_mark:                                                       | Unique identifier                                                        |
+| `cardUpdateRequest`                                                      | [shared.CardUpdateRequest](../../sdk/models/shared/cardupdaterequest.md) | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `config`                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)             | :heavy_minus_sign:                                                       | Available config options for making requests.                            |
 
 
 ### Response
 
-**Promise<[operations.UpdateCardResponse](../../models/operations/updatecardresponse.md)>**
+**Promise<[operations.UpdateCardResponse](../../sdk/models/operations/updatecardresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

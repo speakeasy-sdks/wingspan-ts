@@ -14,16 +14,20 @@ Download bank statement pdf
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DownloadStatementRequest, DownloadStatementResponse } from "wingspan/dist/sdk/models/operations";
+import { DownloadStatementRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "optical";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.statement.download(id).then((res: DownloadStatementResponse) => {
+  const res = await sdk.statement.download(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -36,8 +40,12 @@ sdk.statement.download(id).then((res: DownloadStatementResponse) => {
 
 ### Response
 
-**Promise<[operations.DownloadStatementResponse](../../models/operations/downloadstatementresponse.md)>**
+**Promise<[operations.DownloadStatementResponse](../../sdk/models/operations/downloadstatementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -47,16 +55,20 @@ Get bank statement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetStatementRequest, GetStatementResponse } from "wingspan/dist/sdk/models/operations";
+import { GetStatementRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.statement.get(id).then((res: GetStatementResponse) => {
+  const res = await sdk.statement.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -69,5 +81,9 @@ sdk.statement.get(id).then((res: GetStatementResponse) => {
 
 ### Response
 
-**Promise<[operations.GetStatementResponse](../../models/operations/getstatementresponse.md)>**
+**Promise<[operations.GetStatementResponse](../../sdk/models/operations/getstatementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

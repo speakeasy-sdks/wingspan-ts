@@ -16,34 +16,39 @@ Create Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
 import { EligibilityRequirementCreateRequestRequirementType } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.eligibilityRequirement.create({
-  requirementType: EligibilityRequirementCreateRequestRequirementType.Signature,
-  templateId: "bluetooth Extended",
-  validFor: 1343.65,
-}).then((res: CreateEligibilityRequirementResponse) => {
+  const res = await sdk.eligibilityRequirement.create({
+    requirementType: EligibilityRequirementCreateRequestRequirementType.Signature,
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [shared.EligibilityRequirementCreateRequest](../../models/shared/eligibilityrequirementcreaterequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                    | [shared.EligibilityRequirementCreateRequest](../../sdk/models/shared/eligibilityrequirementcreaterequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
 
 
 ### Response
 
-**Promise<[operations.CreateEligibilityRequirementResponse](../../models/operations/createeligibilityrequirementresponse.md)>**
+**Promise<[operations.CreateEligibilityRequirementResponse](../../sdk/models/operations/createeligibilityrequirementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete
 
@@ -53,16 +58,20 @@ Delete Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteEligibilityRequirementRequest, DeleteEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
+import { DeleteEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.eligibilityRequirement.delete(id).then((res: DeleteEligibilityRequirementResponse) => {
+  const res = await sdk.eligibilityRequirement.delete(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -75,8 +84,12 @@ sdk.eligibilityRequirement.delete(id).then((res: DeleteEligibilityRequirementRes
 
 ### Response
 
-**Promise<[operations.DeleteEligibilityRequirementResponse](../../models/operations/deleteeligibilityrequirementresponse.md)>**
+**Promise<[operations.DeleteEligibilityRequirementResponse](../../sdk/models/operations/deleteeligibilityrequirementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -86,16 +99,20 @@ Get Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetEligibilityRequirementRequest, GetEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
+import { GetEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.eligibilityRequirement.get(id).then((res: GetEligibilityRequirementResponse) => {
+  const res = await sdk.eligibilityRequirement.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -108,8 +125,12 @@ sdk.eligibilityRequirement.get(id).then((res: GetEligibilityRequirementResponse)
 
 ### Response
 
-**Promise<[operations.GetEligibilityRequirementResponse](../../models/operations/geteligibilityrequirementresponse.md)>**
+**Promise<[operations.GetEligibilityRequirementResponse](../../sdk/models/operations/geteligibilityrequirementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -119,37 +140,43 @@ Update Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateEligibilityRequirementRequest, UpdateEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 import {
   EligibilityRequirementUpdateRequest,
   EligibilityRequirementUpdateRequestRequirementType,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 const eligibilityRequirementUpdateRequest: EligibilityRequirementUpdateRequest = {
   requirementType: EligibilityRequirementUpdateRequestRequirementType.Signature,
-  templateId: "Reactive",
-  validFor: 9914.64,
 };
 
-sdk.eligibilityRequirement.update(id, eligibilityRequirementUpdateRequest).then((res: UpdateEligibilityRequirementResponse) => {
+  const res = await sdk.eligibilityRequirement.update(id, eligibilityRequirementUpdateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `id`                                                                                                     | *string*                                                                                                 | :heavy_check_mark:                                                                                       | Unique identifier                                                                                        |
-| `eligibilityRequirementUpdateRequest`                                                                    | [shared.EligibilityRequirementUpdateRequest](../../models/shared/eligibilityrequirementupdaterequest.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                         | *string*                                                                                                     | :heavy_check_mark:                                                                                           | Unique identifier                                                                                            |
+| `eligibilityRequirementUpdateRequest`                                                                        | [shared.EligibilityRequirementUpdateRequest](../../sdk/models/shared/eligibilityrequirementupdaterequest.md) | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |
+| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
 
 
 ### Response
 
-**Promise<[operations.UpdateEligibilityRequirementResponse](../../models/operations/updateeligibilityrequirementresponse.md)>**
+**Promise<[operations.UpdateEligibilityRequirementResponse](../../sdk/models/operations/updateeligibilityrequirementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

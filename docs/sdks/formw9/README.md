@@ -13,16 +13,20 @@ Downloads a form W9 PDF for a collaborator
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DownloadFormW9Request, DownloadFormW9Response } from "wingspan/dist/sdk/models/operations";
+import { DownloadFormW9Request } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "optical";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.formW9.download(id).then((res: DownloadFormW9Response) => {
+  const res = await sdk.formW9.download(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -35,5 +39,9 @@ sdk.formW9.download(id).then((res: DownloadFormW9Response) => {
 
 ### Response
 
-**Promise<[operations.DownloadFormW9Response](../../models/operations/downloadformw9response.md)>**
+**Promise<[operations.DownloadFormW9Response](../../sdk/models/operations/downloadformw9response.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

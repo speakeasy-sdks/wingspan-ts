@@ -16,33 +16,42 @@ Create a bulk payable batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateBulkPayableBatchResponse } from "wingspan/dist/sdk/models/operations";
 import { BulkPayableBatchCreateProcessingStrategy } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.bulkPayableBatch.create({
-  labels: "bluetooth",
-  processingStrategy: BulkPayableBatchCreateProcessingStrategy.Single,
-}).then((res: CreateBulkPayableBatchResponse) => {
+  const res = await sdk.bulkPayableBatch.create({
+    labels: {
+      "key": "<value>",
+    },
+    processingStrategy: BulkPayableBatchCreateProcessingStrategy.Merge,
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [shared.BulkPayableBatchCreate](../../models/shared/bulkpayablebatchcreate.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [shared.BulkPayableBatchCreate](../../sdk/models/shared/bulkpayablebatchcreate.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
 
 
 ### Response
 
-**Promise<[operations.CreateBulkPayableBatchResponse](../../models/operations/createbulkpayablebatchresponse.md)>**
+**Promise<[operations.CreateBulkPayableBatchResponse](../../sdk/models/operations/createbulkpayablebatchresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete
 
@@ -52,16 +61,20 @@ Delete a bulk payable batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteBulkPayableBatchRequest, DeleteBulkPayableBatchResponse } from "wingspan/dist/sdk/models/operations";
+import { DeleteBulkPayableBatchRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "program";
+async function run() {
+  const sdk = new Wingspan();
+const batchId: string = "<value>";
 
-sdk.bulkPayableBatch.delete(batchId).then((res: DeleteBulkPayableBatchResponse) => {
+  const res = await sdk.bulkPayableBatch.delete(batchId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -74,8 +87,12 @@ sdk.bulkPayableBatch.delete(batchId).then((res: DeleteBulkPayableBatchResponse) 
 
 ### Response
 
-**Promise<[operations.DeleteBulkPayableBatchResponse](../../models/operations/deletebulkpayablebatchresponse.md)>**
+**Promise<[operations.DeleteBulkPayableBatchResponse](../../sdk/models/operations/deletebulkpayablebatchresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -85,16 +102,20 @@ Get a bulk payable batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetBulkPayableBatchRequest, GetBulkPayableBatchResponse } from "wingspan/dist/sdk/models/operations";
+import { GetBulkPayableBatchRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const batchId: string = "<value>";
 
-sdk.bulkPayableBatch.get(batchId).then((res: GetBulkPayableBatchResponse) => {
+  const res = await sdk.bulkPayableBatch.get(batchId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -107,8 +128,12 @@ sdk.bulkPayableBatch.get(batchId).then((res: GetBulkPayableBatchResponse) => {
 
 ### Response
 
-**Promise<[operations.GetBulkPayableBatchResponse](../../models/operations/getbulkpayablebatchresponse.md)>**
+**Promise<[operations.GetBulkPayableBatchResponse](../../sdk/models/operations/getbulkpayablebatchresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -118,33 +143,42 @@ Update a bulk payable batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateBulkPayableBatchRequest, UpdateBulkPayableBatchResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateBulkPayableBatchRequest } from "wingspan/dist/sdk/models/operations";
 import { BulkPayableBatchUpdate, StatusBulkPayableBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "Van";
+async function run() {
+  const sdk = new Wingspan();
+const batchId: string = "<value>";
 const bulkPayableBatchUpdate: BulkPayableBatchUpdate = {
-  labels: "Reactive",
-  status: StatusBulkPayableBatchUpdate.LessThanNilGreaterThan,
+  labels: {
+    "key": "<value>",
+  },
 };
 
-sdk.bulkPayableBatch.update(batchId, bulkPayableBatchUpdate).then((res: UpdateBulkPayableBatchResponse) => {
+  const res = await sdk.bulkPayableBatch.update(batchId, bulkPayableBatchUpdate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `batchId`                                                                      | *string*                                                                       | :heavy_check_mark:                                                             | Unique identifier for a batch                                                  |
-| `bulkPayableBatchUpdate`                                                       | [shared.BulkPayableBatchUpdate](../../models/shared/bulkpayablebatchupdate.md) | :heavy_minus_sign:                                                             | N/A                                                                            |
-| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `batchId`                                                                          | *string*                                                                           | :heavy_check_mark:                                                                 | Unique identifier for a batch                                                      |
+| `bulkPayableBatchUpdate`                                                           | [shared.BulkPayableBatchUpdate](../../sdk/models/shared/bulkpayablebatchupdate.md) | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
 
 
 ### Response
 
-**Promise<[operations.UpdateBulkPayableBatchResponse](../../models/operations/updatebulkpayablebatchresponse.md)>**
+**Promise<[operations.UpdateBulkPayableBatchResponse](../../sdk/models/operations/updatebulkpayablebatchresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

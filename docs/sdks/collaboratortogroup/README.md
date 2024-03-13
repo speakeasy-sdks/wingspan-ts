@@ -14,17 +14,21 @@ Add collaborator to collaborators group
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { AddCollaboratorToGroupRequest, AddCollaboratorToGroupResponse } from "wingspan/dist/sdk/models/operations";
+import { AddCollaboratorToGroupRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const groupId: string = "transmit";
-const id: string = "calculate";
+async function run() {
+  const sdk = new Wingspan();
+const groupId: string = "<value>";
+const id: string = "<value>";
 
-sdk.collaboratorToGroup.add(groupId, id).then((res: AddCollaboratorToGroupResponse) => {
+  const res = await sdk.collaboratorToGroup.add(groupId, id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -38,8 +42,12 @@ sdk.collaboratorToGroup.add(groupId, id).then((res: AddCollaboratorToGroupRespon
 
 ### Response
 
-**Promise<[operations.AddCollaboratorToGroupResponse](../../models/operations/addcollaboratortogroupresponse.md)>**
+**Promise<[operations.AddCollaboratorToGroupResponse](../../sdk/models/operations/addcollaboratortogroupresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## remove
 
@@ -49,17 +57,21 @@ Remove collaborator from collaborators group
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { RemoveCollaboratorToGroupRequest, RemoveCollaboratorToGroupResponse } from "wingspan/dist/sdk/models/operations";
+import { RemoveCollaboratorToGroupRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const groupId: string = "Usability";
-const id: string = "Southwest";
+async function run() {
+  const sdk = new Wingspan();
+const groupId: string = "<value>";
+const id: string = "<value>";
 
-sdk.collaboratorToGroup.remove(groupId, id).then((res: RemoveCollaboratorToGroupResponse) => {
+  const res = await sdk.collaboratorToGroup.remove(groupId, id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -73,5 +85,9 @@ sdk.collaboratorToGroup.remove(groupId, id).then((res: RemoveCollaboratorToGroup
 
 ### Response
 
-**Promise<[operations.RemoveCollaboratorToGroupResponse](../../models/operations/removecollaboratortogroupresponse.md)>**
+**Promise<[operations.RemoveCollaboratorToGroupResponse](../../sdk/models/operations/removecollaboratortogroupresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

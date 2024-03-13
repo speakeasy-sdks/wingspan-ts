@@ -3,37 +3,43 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { ClientData } from "./clientdata";
+import { Ninetyf96495b02c2509fff131505484d46479a91b7d23ed2b0f438ca117d0bccad7 } from "./ninetyf96495b02c2509fff131505484d46479a91b7d23ed2b0f438ca117d0bccad7";
+import { TwentySixe8ea23ccb1e007e7d6560175c7e75c768dac34727b7fe1d834ca24b8221ef4 } from "./twentysixe8ea23ccb1e007e7d6560175c7e75c768dac34727b7fe1d834ca24b8221ef4";
+import { Expose, Type } from "class-transformer";
 
-export class CollaboratorUpdateRequestFormW9Data2 extends SpeakeasyBase {}
+export class FormW9Data extends SpeakeasyBase {}
 
 export enum StatusCollaboratorUpdateRequest {
     Active = "Active",
     Inactive = "Inactive",
     Pending = "Pending",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class CollaboratorUpdateRequest extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "clientData" })
-    clientData?: any;
+    @Type(() => ClientData)
+    clientData?: ClientData;
 
     @SpeakeasyMetadata()
     @Expose({ name: "form1099Balances" })
-    form1099Balances?: any;
+    @Type(() => Ninetyf96495b02c2509fff131505484d46479a91b7d23ed2b0f438ca117d0bccad7)
+    form1099Balances?: Ninetyf96495b02c2509fff131505484d46479a91b7d23ed2b0f438ca117d0bccad7;
 
     @SpeakeasyMetadata()
     @Expose({ name: "formW9Data" })
-    formW9Data?: any;
+    @Type(() => FormW9Data)
+    formW9Data?: FormW9Data;
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration" })
-    integration?: any;
+    @Type(() => TwentySixe8ea23ccb1e007e7d6560175c7e75c768dac34727b7fe1d834ca24b8221ef4)
+    integration?: TwentySixe8ea23ccb1e007e7d6560175c7e75c768dac34727b7fe1d834ca24b8221ef4;
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

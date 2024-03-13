@@ -13,19 +13,20 @@ List bulk calculation1099 batch items
 
 ```typescript
 import { Wingspan } from "wingspan";
-import {
-  ListBulkCalculation1099BatchItemsRequest,
-  ListBulkCalculation1099BatchItemsResponse,
-} from "wingspan/dist/sdk/models/operations";
+import { ListBulkCalculation1099BatchItemsRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "Bicycle";
+async function run() {
+  const sdk = new Wingspan();
+const batchId: string = "<value>";
 
-sdk.bulkCalculation1099BatchItems.list(batchId).then((res: ListBulkCalculation1099BatchItemsResponse) => {
+  const res = await sdk.bulkCalculation1099BatchItems.list(batchId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -38,5 +39,9 @@ sdk.bulkCalculation1099BatchItems.list(batchId).then((res: ListBulkCalculation10
 
 ### Response
 
-**Promise<[operations.ListBulkCalculation1099BatchItemsResponse](../../models/operations/listbulkcalculation1099batchitemsresponse.md)>**
+**Promise<[operations.ListBulkCalculation1099BatchItemsResponse](../../sdk/models/operations/listbulkcalculation1099batchitemsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

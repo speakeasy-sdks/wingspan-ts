@@ -3,21 +3,25 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { ClientData } from "./clientdata";
+import { MemberData } from "./memberdata";
+import { Ninetyf96495b02c2509fff131505484d46479a91b7d23ed2b0f438ca117d0bccad7 } from "./ninetyf96495b02c2509fff131505484d46479a91b7d23ed2b0f438ca117d0bccad7";
+import { Threed33fba3f009de957b3be92fba006d6383af7e39f823cc1fd213506f6205100f } from "./threed33fba3f009de957b3be92fba006d6383af7e39f823cc1fd213506f6205100f";
+import { Expose, Type } from "class-transformer";
 
-export class MemberClientUpdateRequestFormW9Data2 extends SpeakeasyBase {}
+export class MemberClientUpdateRequestFormW9Data extends SpeakeasyBase {}
 
 export enum StatusMemberClientUpdateRequest {
     Active = "Active",
     Inactive = "Inactive",
     Pending = "Pending",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class MemberClientUpdateRequest extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "clientData" })
-    clientData?: any;
+    @Type(() => ClientData)
+    clientData?: ClientData;
 
     @SpeakeasyMetadata()
     @Expose({ name: "clientId" })
@@ -37,23 +41,27 @@ export class MemberClientUpdateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "form1099Balances" })
-    form1099Balances?: any;
+    @Type(() => Ninetyf96495b02c2509fff131505484d46479a91b7d23ed2b0f438ca117d0bccad7)
+    form1099Balances?: Ninetyf96495b02c2509fff131505484d46479a91b7d23ed2b0f438ca117d0bccad7;
 
     @SpeakeasyMetadata()
     @Expose({ name: "formW9Data" })
-    formW9Data?: any;
+    @Type(() => MemberClientUpdateRequestFormW9Data)
+    formW9Data?: MemberClientUpdateRequestFormW9Data;
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration" })
-    integration?: any;
+    @Type(() => Threed33fba3f009de957b3be92fba006d6383af7e39f823cc1fd213506f6205100f)
+    integration?: Threed33fba3f009de957b3be92fba006d6383af7e39f823cc1fd213506f6205100f;
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "memberData" })
-    memberData?: any;
+    @Type(() => MemberData)
+    memberData?: MemberData;
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })

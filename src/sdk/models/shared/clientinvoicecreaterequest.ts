@@ -3,13 +3,13 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { FeeHandlingConfig } from "./feehandlingconfig";
 import { InvoiceLineItemsCreateRequest } from "./invoicelineitemscreaterequest";
 import { Expose, Type } from "class-transformer";
 
 export enum CurrencyClientInvoiceCreateRequest {
     Usd = "USD",
     Cad = "CAD",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class ClientInvoiceCreateRequest extends SpeakeasyBase {
@@ -35,7 +35,8 @@ export class ClientInvoiceCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "creditFeeHandling" })
-    creditFeeHandling?: any;
+    @Type(() => FeeHandlingConfig)
+    creditFeeHandling?: FeeHandlingConfig;
 
     @SpeakeasyMetadata()
     @Expose({ name: "currency" })

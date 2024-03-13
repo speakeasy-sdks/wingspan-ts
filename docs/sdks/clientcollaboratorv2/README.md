@@ -13,16 +13,20 @@ Get a single V2 Collaborator by clientId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetClientCollaboratorV2Request, GetClientCollaboratorV2Response } from "wingspan/dist/sdk/models/operations";
+import { GetClientCollaboratorV2Request } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const clientId: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const clientId: string = "<value>";
 
-sdk.clientCollaboratorV2.get(clientId).then((res: GetClientCollaboratorV2Response) => {
+  const res = await sdk.clientCollaboratorV2.get(clientId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -35,5 +39,9 @@ sdk.clientCollaboratorV2.get(clientId).then((res: GetClientCollaboratorV2Respons
 
 ### Response
 
-**Promise<[operations.GetClientCollaboratorV2Response](../../models/operations/getclientcollaboratorv2response.md)>**
+**Promise<[operations.GetClientCollaboratorV2Response](../../sdk/models/operations/getclientcollaboratorv2response.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

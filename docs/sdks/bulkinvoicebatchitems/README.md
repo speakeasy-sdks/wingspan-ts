@@ -13,16 +13,20 @@ List bulk invoice batch items
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListBulkInvoiceBatchItemsRequest, ListBulkInvoiceBatchItemsResponse } from "wingspan/dist/sdk/models/operations";
+import { ListBulkInvoiceBatchItemsRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "Bicycle";
+async function run() {
+  const sdk = new Wingspan();
+const batchId: string = "<value>";
 
-sdk.bulkInvoiceBatchItems.list(batchId).then((res: ListBulkInvoiceBatchItemsResponse) => {
+  const res = await sdk.bulkInvoiceBatchItems.list(batchId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -35,5 +39,9 @@ sdk.bulkInvoiceBatchItems.list(batchId).then((res: ListBulkInvoiceBatchItemsResp
 
 ### Response
 
-**Promise<[operations.ListBulkInvoiceBatchItemsResponse](../../models/operations/listbulkinvoicebatchitemsresponse.md)>**
+**Promise<[operations.ListBulkInvoiceBatchItemsResponse](../../sdk/models/operations/listbulkinvoicebatchitemsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

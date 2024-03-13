@@ -11,19 +11,16 @@ export enum PayoutPreferencesMemberOptions {
     Expedited = "Expedited",
     Check = "Check",
     ECheck = "ECheck",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum WorkflowStatusMemberOptions {
     Disputed = "Disputed",
     Accepted = "Accepted",
     Resubmitted = "Resubmitted",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum WorkflowSubStatusMemberOptions {
     Submitted = "Submitted",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class MemberOptions extends SpeakeasyBase {

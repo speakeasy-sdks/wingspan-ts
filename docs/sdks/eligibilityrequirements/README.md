@@ -13,15 +13,18 @@ List Eligibility Requirements
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListEligibilityRequirementsResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.eligibilityRequirements.list().then((res: ListEligibilityRequirementsResponse) => {
+  const res = await sdk.eligibilityRequirements.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -33,5 +36,9 @@ sdk.eligibilityRequirements.list().then((res: ListEligibilityRequirementsRespons
 
 ### Response
 
-**Promise<[operations.ListEligibilityRequirementsResponse](../../models/operations/listeligibilityrequirementsresponse.md)>**
+**Promise<[operations.ListEligibilityRequirementsResponse](../../sdk/models/operations/listeligibilityrequirementsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

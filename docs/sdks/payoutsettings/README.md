@@ -14,16 +14,20 @@ Get the payout settings
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetPayoutSettingsRequest, GetPayoutSettingsResponse } from "wingspan/dist/sdk/models/operations";
+import { GetPayoutSettingsRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.payoutSettings.get(id).then((res: GetPayoutSettingsResponse) => {
+  const res = await sdk.payoutSettings.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -36,8 +40,12 @@ sdk.payoutSettings.get(id).then((res: GetPayoutSettingsResponse) => {
 
 ### Response
 
-**Promise<[operations.GetPayoutSettingsResponse](../../models/operations/getpayoutsettingsresponse.md)>**
+**Promise<[operations.GetPayoutSettingsResponse](../../sdk/models/operations/getpayoutsettingsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -47,7 +55,7 @@ Update the payout settings
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdatePayoutSettingsRequest, UpdatePayoutSettingsResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdatePayoutSettingsRequest } from "wingspan/dist/sdk/models/operations";
 import {
   DestinationTypePayoutDestinationUpdate,
   PayoutDestinationUpdate,
@@ -56,32 +64,39 @@ import {
   PayoutSettingsUpdate,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 const payoutSettingsUpdate: PayoutSettingsUpdate = {
   payoutDestinations: [
-    "Reactive",
+    {},
   ],
-  payoutPreferences: PayoutPreferencesPayoutSettingsUpdate.LessThanNilGreaterThan,
 };
 
-sdk.payoutSettings.update(id, payoutSettingsUpdate).then((res: UpdatePayoutSettingsResponse) => {
+  const res = await sdk.payoutSettings.update(id, payoutSettingsUpdate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `id`                                                                       | *string*                                                                   | :heavy_check_mark:                                                         | Unique identifier                                                          |
-| `payoutSettingsUpdate`                                                     | [shared.PayoutSettingsUpdate](../../models/shared/payoutsettingsupdate.md) | :heavy_minus_sign:                                                         | N/A                                                                        |
-| `config`                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)               | :heavy_minus_sign:                                                         | Available config options for making requests.                              |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `id`                                                                           | *string*                                                                       | :heavy_check_mark:                                                             | Unique identifier                                                              |
+| `payoutSettingsUpdate`                                                         | [shared.PayoutSettingsUpdate](../../sdk/models/shared/payoutsettingsupdate.md) | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
 
 
 ### Response
 
-**Promise<[operations.UpdatePayoutSettingsResponse](../../models/operations/updatepayoutsettingsresponse.md)>**
+**Promise<[operations.UpdatePayoutSettingsResponse](../../sdk/models/operations/updatepayoutsettingsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

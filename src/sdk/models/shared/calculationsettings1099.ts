@@ -8,19 +8,16 @@ import { Expose } from "class-transformer";
 export enum CardProcessingFeesCalculationSettings1099 {
     Include = "Include",
     Exclude = "Exclude",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum OffPlatformPaymentsCalculationSettings1099 {
     Include = "Include",
     Exclude = "Exclude",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum ReimbursableExpensesCalculationSettings1099 {
     Include = "Include",
     Exclude = "Exclude",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class CalculationSettings1099 extends SpeakeasyBase {
@@ -38,7 +35,7 @@ export class CalculationSettings1099 extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "stateTaxId" })
-    stateTaxId?: any;
+    stateTaxId?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "thresholdAmount" })

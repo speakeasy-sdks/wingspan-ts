@@ -15,33 +15,42 @@ Create a bulk invoice batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateBulkInvoiceBatchResponse } from "wingspan/dist/sdk/models/operations";
 import { BulkInvoiceBatchCreateProcessingStrategy } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.bulkInvoiceBatch.create({
-  labels: "bluetooth",
-  processingStrategy: BulkInvoiceBatchCreateProcessingStrategy.Single,
-}).then((res: CreateBulkInvoiceBatchResponse) => {
+  const res = await sdk.bulkInvoiceBatch.create({
+    labels: {
+      "key": "<value>",
+    },
+    processingStrategy: BulkInvoiceBatchCreateProcessingStrategy.Merge,
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [shared.BulkInvoiceBatchCreate](../../models/shared/bulkinvoicebatchcreate.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [shared.BulkInvoiceBatchCreate](../../sdk/models/shared/bulkinvoicebatchcreate.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
 
 
 ### Response
 
-**Promise<[operations.CreateBulkInvoiceBatchResponse](../../models/operations/createbulkinvoicebatchresponse.md)>**
+**Promise<[operations.CreateBulkInvoiceBatchResponse](../../sdk/models/operations/createbulkinvoicebatchresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -51,16 +60,20 @@ Get a bulk invoice batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetBulkInvoiceBatchRequest, GetBulkInvoiceBatchResponse } from "wingspan/dist/sdk/models/operations";
+import { GetBulkInvoiceBatchRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const batchId: string = "<value>";
 
-sdk.bulkInvoiceBatch.get(batchId).then((res: GetBulkInvoiceBatchResponse) => {
+  const res = await sdk.bulkInvoiceBatch.get(batchId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -73,8 +86,12 @@ sdk.bulkInvoiceBatch.get(batchId).then((res: GetBulkInvoiceBatchResponse) => {
 
 ### Response
 
-**Promise<[operations.GetBulkInvoiceBatchResponse](../../models/operations/getbulkinvoicebatchresponse.md)>**
+**Promise<[operations.GetBulkInvoiceBatchResponse](../../sdk/models/operations/getbulkinvoicebatchresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -84,33 +101,42 @@ Update a bulk invoice batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateBulkInvoiceBatchRequest, UpdateBulkInvoiceBatchResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateBulkInvoiceBatchRequest } from "wingspan/dist/sdk/models/operations";
 import { BulkInvoiceBatchUpdate, StatusBulkInvoiceBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "Van";
+async function run() {
+  const sdk = new Wingspan();
+const batchId: string = "<value>";
 const bulkInvoiceBatchUpdate: BulkInvoiceBatchUpdate = {
-  labels: "Reactive",
-  status: StatusBulkInvoiceBatchUpdate.LessThanNilGreaterThan,
+  labels: {
+    "key": "<value>",
+  },
 };
 
-sdk.bulkInvoiceBatch.update(batchId, bulkInvoiceBatchUpdate).then((res: UpdateBulkInvoiceBatchResponse) => {
+  const res = await sdk.bulkInvoiceBatch.update(batchId, bulkInvoiceBatchUpdate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `batchId`                                                                      | *string*                                                                       | :heavy_check_mark:                                                             | Unique identifier for a batch                                                  |
-| `bulkInvoiceBatchUpdate`                                                       | [shared.BulkInvoiceBatchUpdate](../../models/shared/bulkinvoicebatchupdate.md) | :heavy_minus_sign:                                                             | N/A                                                                            |
-| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `batchId`                                                                          | *string*                                                                           | :heavy_check_mark:                                                                 | Unique identifier for a batch                                                      |
+| `bulkInvoiceBatchUpdate`                                                           | [shared.BulkInvoiceBatchUpdate](../../sdk/models/shared/bulkinvoicebatchupdate.md) | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
 
 
 ### Response
 
-**Promise<[operations.UpdateBulkInvoiceBatchResponse](../../models/operations/updatebulkinvoicebatchresponse.md)>**
+**Promise<[operations.UpdateBulkInvoiceBatchResponse](../../sdk/models/operations/updatebulkinvoicebatchresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

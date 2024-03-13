@@ -3,13 +3,13 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { MemberClientFormW9Info } from "./memberclientformw9info";
+import { Expose, Type } from "class-transformer";
 
 export enum CollaboratorStatusBulkCollaboratorItemCreate {
     Active = "Active",
     Inactive = "Inactive",
     Pending = "Pending",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class BulkCollaboratorItemCreate extends SpeakeasyBase {
@@ -43,9 +43,10 @@ export class BulkCollaboratorItemCreate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "formW9Data" })
-    formW9Data?: any;
+    @Type(() => MemberClientFormW9Info)
+    formW9Data?: MemberClientFormW9Info;
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 }

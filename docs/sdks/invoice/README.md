@@ -14,16 +14,20 @@ Generate invoice
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GenerateInvoiceRequest, GenerateInvoiceResponse } from "wingspan/dist/sdk/models/operations";
+import { GenerateInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const invoiceId: string = "ohm";
+async function run() {
+  const sdk = new Wingspan();
+const invoiceId: string = "<value>";
 
-sdk.invoice.generate(invoiceId).then((res: GenerateInvoiceResponse) => {
+  const res = await sdk.invoice.generate(invoiceId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -36,8 +40,12 @@ sdk.invoice.generate(invoiceId).then((res: GenerateInvoiceResponse) => {
 
 ### Response
 
-**Promise<[operations.GenerateInvoiceResponse](../../models/operations/generateinvoiceresponse.md)>**
+**Promise<[operations.GenerateInvoiceResponse](../../sdk/models/operations/generateinvoiceresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## send
 
@@ -47,16 +55,20 @@ Send invoice
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { SendInvoiceRequest, SendInvoiceResponse } from "wingspan/dist/sdk/models/operations";
+import { SendInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const invoiceId: string = "hacking";
+async function run() {
+  const sdk = new Wingspan();
+const invoiceId: string = "<value>";
 
-sdk.invoice.send(invoiceId).then((res: SendInvoiceResponse) => {
+  const res = await sdk.invoice.send(invoiceId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -69,5 +81,9 @@ sdk.invoice.send(invoiceId).then((res: SendInvoiceResponse) => {
 
 ### Response
 
-**Promise<[operations.SendInvoiceResponse](../../models/operations/sendinvoiceresponse.md)>**
+**Promise<[operations.SendInvoiceResponse](../../sdk/models/operations/sendinvoiceresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

@@ -11,13 +11,12 @@ export enum StatusBulkBatchUpdate {
     Processing = "Processing",
     Complete = "Complete",
     Failed = "Failed",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class BulkBatchUpdate extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

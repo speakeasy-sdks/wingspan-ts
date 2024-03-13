@@ -15,35 +15,42 @@ Create additional data
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateAdditionalDataResponse } from "wingspan/dist/sdk/models/operations";
-import { AdditionalDataType } from "wingspan/dist/sdk/models/shared";
+import { TypeT } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.additionalData.create({
-  key: "<key>",
-  name: "bluetooth Extended",
-  required: false,
-  type: AdditionalDataType.Boolean,
-}).then((res: CreateAdditionalDataResponse) => {
+  const res = await sdk.additionalData.create({
+    key: "<key>",
+    name: "<value>",
+    required: false,
+    type: TypeT.Boolean,
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| `request`                                                      | [shared.AdditionalData](../../models/shared/additionaldata.md) | :heavy_check_mark:                                             | The request object to use for the request.                     |
-| `config`                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)   | :heavy_minus_sign:                                             | Available config options for making requests.                  |
+| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `request`                                                          | [shared.AdditionalData](../../sdk/models/shared/additionaldata.md) | :heavy_check_mark:                                                 | The request object to use for the request.                         |
+| `config`                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)       | :heavy_minus_sign:                                                 | Available config options for making requests.                      |
 
 
 ### Response
 
-**Promise<[operations.CreateAdditionalDataResponse](../../models/operations/createadditionaldataresponse.md)>**
+**Promise<[operations.CreateAdditionalDataResponse](../../sdk/models/operations/createadditionaldataresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete
 
@@ -53,16 +60,20 @@ Delete additional data
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteAdditionalDataRequest, DeleteAdditionalDataResponse } from "wingspan/dist/sdk/models/operations";
+import { DeleteAdditionalDataRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.additionalData.delete(id).then((res: DeleteAdditionalDataResponse) => {
+  const res = await sdk.additionalData.delete(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -75,8 +86,12 @@ sdk.additionalData.delete(id).then((res: DeleteAdditionalDataResponse) => {
 
 ### Response
 
-**Promise<[operations.DeleteAdditionalDataResponse](../../models/operations/deleteadditionaldataresponse.md)>**
+**Promise<[operations.DeleteAdditionalDataResponse](../../sdk/models/operations/deleteadditionaldataresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -86,16 +101,20 @@ Get additional data
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetAdditionalDataRequest, GetAdditionalDataResponse } from "wingspan/dist/sdk/models/operations";
+import { GetAdditionalDataRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.additionalData.get(id).then((res: GetAdditionalDataResponse) => {
+  const res = await sdk.additionalData.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -108,5 +127,9 @@ sdk.additionalData.get(id).then((res: GetAdditionalDataResponse) => {
 
 ### Response
 
-**Promise<[operations.GetAdditionalDataResponse](../../models/operations/getadditionaldataresponse.md)>**
+**Promise<[operations.GetAdditionalDataResponse](../../sdk/models/operations/getadditionaldataresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

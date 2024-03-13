@@ -16,53 +16,52 @@ Create memberClient
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateMemberClientResponse } from "wingspan/dist/sdk/models/operations";
 import {
   AutoPayRequirementMemberData,
   ShareTaxDocumentMemberData,
   StatusMemberClientCreateRequest,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.memberClient.create({
-  clientId: "bluetooth Extended",
-  company: "Schaefer Inc",
-  emailCC: [
-    "shred",
-  ],
-  emailTo: "technology East",
-  integration: "evolve",
-  labels: {
-    "minus": "SUV",
-  },
-  memberData: {
-    autoPayRequirement: AutoPayRequirementMemberData.None,
-    externalId: "volt physical Ameliorated",
-    shareTaxDocument: ShareTaxDocumentMemberData.Allow,
-  },
-  memberId: "South Intelligent Fish",
-  name: "Fiat",
-  status: StatusMemberClientCreateRequest.LessThanNilGreaterThan,
-}).then((res: CreateMemberClientResponse) => {
+  const res = await sdk.memberClient.create({
+    emailCC: [
+      "<value>",
+    ],
+    integration: {
+      quickbooks: {},
+    },
+    labels: {
+      "key": "<value>",
+    },
+    memberData: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [shared.MemberClientCreateRequest](../../models/shared/memberclientcreaterequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [shared.MemberClientCreateRequest](../../sdk/models/shared/memberclientcreaterequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response
 
-**Promise<[operations.CreateMemberClientResponse](../../models/operations/creatememberclientresponse.md)>**
+**Promise<[operations.CreateMemberClientResponse](../../sdk/models/operations/creatememberclientresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete
 
@@ -72,16 +71,20 @@ Delete memberClient
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteMemberClientRequest, DeleteMemberClientResponse } from "wingspan/dist/sdk/models/operations";
+import { DeleteMemberClientRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.memberClient.delete(id).then((res: DeleteMemberClientResponse) => {
+  const res = await sdk.memberClient.delete(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -94,8 +97,12 @@ sdk.memberClient.delete(id).then((res: DeleteMemberClientResponse) => {
 
 ### Response
 
-**Promise<[operations.DeleteMemberClientResponse](../../models/operations/deletememberclientresponse.md)>**
+**Promise<[operations.DeleteMemberClientResponse](../../sdk/models/operations/deletememberclientresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -105,16 +112,20 @@ Get Member Client
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetMemberClientRequest, GetMemberClientResponse } from "wingspan/dist/sdk/models/operations";
+import { GetMemberClientRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.memberClient.get(id).then((res: GetMemberClientResponse) => {
+  const res = await sdk.memberClient.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -127,8 +138,12 @@ sdk.memberClient.get(id).then((res: GetMemberClientResponse) => {
 
 ### Response
 
-**Promise<[operations.GetMemberClientResponse](../../models/operations/getmemberclientresponse.md)>**
+**Promise<[operations.GetMemberClientResponse](../../sdk/models/operations/getmemberclientresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -138,21 +153,21 @@ Update memberClient
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateMemberClientRequest, UpdateMemberClientResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateMemberClientRequest } from "wingspan/dist/sdk/models/operations";
 import {
   AutoPayRequirementMemberData,
   AutoPayStrategyClientData,
   Ce853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481,
-  Ce853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481Address2,
+  Ce853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481Address,
   ClientData,
   CollaboratorForm1099BalancesUpdateRequest,
-  CollaboratorForm1099BalancesUpdateRequestEvents2,
   CompanyStructurece853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481,
   D86c1fba5267ac3d9ce2954a6e46b70e471c0f91a44abbe94565ae50e6e9e863,
   DeliveryMethodCollaboratorForm1099BalancesUpdateRequest,
   Eighta9c6cb49482a98cdd603ff09858cdc3e5ef6ad9807c876c4161d925a96694a5,
+  Events,
   MemberClientUpdateRequest,
-  MemberClientUpdateRequestFormW9Data2,
+  MemberClientUpdateRequestFormW9Data,
   MemberData,
   Ninetyf96495b02c2509fff131505484d46479a91b7d23ed2b0f438ca117d0bccad7,
   ShareTaxDocumentMemberData,
@@ -163,76 +178,64 @@ import {
   VerificationStratgyClientData,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 const memberClientUpdateRequest: MemberClientUpdateRequest = {
-  clientData: "Reactive",
-  clientId: "Metal cheater Islands",
-  company: "King - Hills",
+  clientData: {},
   emailCC: [
-    "extend",
+    "<value>",
   ],
-  emailTo: "bifurcated",
   form1099Balances: {
     twoThousandAndTwentyOne: {
-      adjustments: 9936.8,
       correction: {
-        address: "implement",
-        companyStructure: CompanyStructurece853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481.LLCCorporationS,
-        ein: "Bicycle guestbook",
-        firstName: "Juliet",
-        lastName: "Barton",
-        legalBusinessName: "pascal Gasoline",
-        ssn: "Northeast Wooden",
-        totalAmount: 3529.19,
+        address: {},
       },
-      deliveryMethod: DeliveryMethodCollaboratorForm1099BalancesUpdateRequest.Mail,
-      dispute: {
-        amount: 8246.79,
-        comment: "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-        status: Status8a9c6cb49482a98cdd603ff09858cdc3e5ef6ad9807c876c4161d925a96694a5.LessThanNilGreaterThan,
-      },
-      events: "brightly",
-      status: StatusCollaboratorForm1099BalancesUpdateRequest.Accepted,
+      dispute: {},
+      events: {},
     },
-    twoThousandAndTwentyTwo: "compressing",
+    twoThousandAndTwentyTwo: {
+      correction: {
+        address: {},
+      },
+      dispute: {},
+      events: {},
+    },
   },
-  formW9Data: "haptic",
+  formW9Data: {},
   integration: {
-    quickbooks: {
-      customerId: "navigating Diesel Avon",
-      expenseAccountId: "hungrily",
-      itemId: "Global Northeast Xenogender",
-      vendorId: "West",
-    },
+    quickbooks: {},
   },
-  labels: "Southeast",
-  memberData: {
-    autoPayRequirement: AutoPayRequirementMemberData.LessThanNilGreaterThan,
-    externalId: "pascal Plastic",
-    shareTaxDocument: ShareTaxDocumentMemberData.Allow,
+  labels: {
+    "key": "<value>",
   },
-  name: "male",
-  status: StatusMemberClientUpdateRequest.Inactive,
+  memberData: {},
 };
 
-sdk.memberClient.update(id, memberClientUpdateRequest).then((res: UpdateMemberClientResponse) => {
+  const res = await sdk.memberClient.update(id, memberClientUpdateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `id`                                                                                 | *string*                                                                             | :heavy_check_mark:                                                                   | Unique identifier                                                                    |
-| `memberClientUpdateRequest`                                                          | [shared.MemberClientUpdateRequest](../../models/shared/memberclientupdaterequest.md) | :heavy_minus_sign:                                                                   | N/A                                                                                  |
-| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `id`                                                                                     | *string*                                                                                 | :heavy_check_mark:                                                                       | Unique identifier                                                                        |
+| `memberClientUpdateRequest`                                                              | [shared.MemberClientUpdateRequest](../../sdk/models/shared/memberclientupdaterequest.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response
 
-**Promise<[operations.UpdateMemberClientResponse](../../models/operations/updatememberclientresponse.md)>**
+**Promise<[operations.UpdateMemberClientResponse](../../sdk/models/operations/updatememberclientresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

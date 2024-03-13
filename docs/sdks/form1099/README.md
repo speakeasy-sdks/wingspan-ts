@@ -13,18 +13,22 @@ Downloads a form 1099 PDF for a collaborator
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DownloadForm1099Request, DownloadForm1099Response } from "wingspan/dist/sdk/models/operations";
+import { DownloadForm1099Request } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "optical";
-const index: string = "Dakota";
-const year: string = "infrastructures";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
+const index: string = "<value>";
+const year: string = "<value>";
 
-sdk.form1099.download(id, index, year).then((res: DownloadForm1099Response) => {
+  const res = await sdk.form1099.download(id, index, year);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -39,5 +43,9 @@ sdk.form1099.download(id, index, year).then((res: DownloadForm1099Response) => {
 
 ### Response
 
-**Promise<[operations.DownloadForm1099Response](../../models/operations/downloadform1099response.md)>**
+**Promise<[operations.DownloadForm1099Response](../../sdk/models/operations/downloadform1099response.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

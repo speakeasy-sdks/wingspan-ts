@@ -14,16 +14,20 @@ Get client-invoice by invoiceId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetClientInvoiceRequest, GetClientInvoiceResponse } from "wingspan/dist/sdk/models/operations";
+import { GetClientInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.clientInvoice.get(id).then((res: GetClientInvoiceResponse) => {
+  const res = await sdk.clientInvoice.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -36,8 +40,12 @@ sdk.clientInvoice.get(id).then((res: GetClientInvoiceResponse) => {
 
 ### Response
 
-**Promise<[operations.GetClientInvoiceResponse](../../models/operations/getclientinvoiceresponse.md)>**
+**Promise<[operations.GetClientInvoiceResponse](../../sdk/models/operations/getclientinvoiceresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -47,33 +55,40 @@ Update client-invoice by invoiceId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateClientInvoiceRequest, UpdateClientInvoiceResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateClientInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 import { ClientInvoiceUpdateRequest, FeeHandlingConfig, StatusClientInvoiceUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 const clientInvoiceUpdateRequest: ClientInvoiceUpdateRequest = {
-  creditFeeHandling: "Reactive",
-  status: StatusClientInvoiceUpdateRequest.LessThanNilGreaterThan,
+  creditFeeHandling: {},
 };
 
-sdk.clientInvoice.update(id, clientInvoiceUpdateRequest).then((res: UpdateClientInvoiceResponse) => {
+  const res = await sdk.clientInvoice.update(id, clientInvoiceUpdateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `id`                                                                                   | *string*                                                                               | :heavy_check_mark:                                                                     | Unique identifier                                                                      |
-| `clientInvoiceUpdateRequest`                                                           | [shared.ClientInvoiceUpdateRequest](../../models/shared/clientinvoiceupdaterequest.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `id`                                                                                       | *string*                                                                                   | :heavy_check_mark:                                                                         | Unique identifier                                                                          |
+| `clientInvoiceUpdateRequest`                                                               | [shared.ClientInvoiceUpdateRequest](../../sdk/models/shared/clientinvoiceupdaterequest.md) | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
 
-**Promise<[operations.UpdateClientInvoiceResponse](../../models/operations/updateclientinvoiceresponse.md)>**
+**Promise<[operations.UpdateClientInvoiceResponse](../../sdk/models/operations/updateclientinvoiceresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

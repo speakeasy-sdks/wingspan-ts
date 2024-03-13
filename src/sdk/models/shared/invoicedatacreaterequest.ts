@@ -3,20 +3,23 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { FeeHandlingConfig } from "./feehandlingconfig";
+import { InvoiceCollaboratorCreateRequest } from "./invoicecollaboratorcreaterequest";
 import { InvoiceLineItemsCreateRequest } from "./invoicelineitemscreaterequest";
+import { InvoiceNotificationPreferences } from "./invoicenotificationpreferences";
+import { LateFeeConfig } from "./latefeeconfig";
+import { ThirtySixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2 } from "./thirtysixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2";
 import { Expose, Type } from "class-transformer";
 
 export enum InvoiceDataCreateRequestAcceptedPaymentMethods {
     Credit = "Credit",
     Ach = "ACH",
     Manual = "Manual",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum CurrencyInvoiceDataCreateRequest {
     Usd = "USD",
     Cad = "CAD",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum StatusInvoiceDataCreateRequest {
@@ -27,7 +30,6 @@ export enum StatusInvoiceDataCreateRequest {
     Pending = "Pending",
     PaymentInTransit = "PaymentInTransit",
     Paid = "Paid",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class InvoiceDataCreateRequest extends SpeakeasyBase {
@@ -37,15 +39,18 @@ export class InvoiceDataCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "attachments" })
-    attachments?: any;
+    @Type(() => ThirtySixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2)
+    attachments?: ThirtySixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2;
 
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: InvoiceCollaboratorCreateRequest })
     @Expose({ name: "collaborators" })
-    collaborators?: any[];
+    @Type(() => InvoiceCollaboratorCreateRequest)
+    collaborators?: InvoiceCollaboratorCreateRequest[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "creditFeeHandling" })
-    creditFeeHandling?: any;
+    @Type(() => FeeHandlingConfig)
+    creditFeeHandling?: FeeHandlingConfig;
 
     @SpeakeasyMetadata()
     @Expose({ name: "currency" })
@@ -61,11 +66,12 @@ export class InvoiceDataCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "lateFeeHandling" })
-    lateFeeHandling?: any;
+    @Type(() => LateFeeConfig)
+    lateFeeHandling?: LateFeeConfig;
 
     @SpeakeasyMetadata({ elemType: InvoiceLineItemsCreateRequest })
     @Expose({ name: "lineItems" })
@@ -78,7 +84,8 @@ export class InvoiceDataCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "notificationPreferences" })
-    notificationPreferences?: any;
+    @Type(() => InvoiceNotificationPreferences)
+    notificationPreferences?: InvoiceNotificationPreferences;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

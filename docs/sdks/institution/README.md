@@ -13,16 +13,20 @@ Get Institution By Routing Number
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetInstitutionRequest, GetInstitutionResponse } from "wingspan/dist/sdk/models/operations";
+import { GetInstitutionRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const routingNumber: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const routingNumber: string = "<value>";
 
-sdk.institution.get(routingNumber).then((res: GetInstitutionResponse) => {
+  const res = await sdk.institution.get(routingNumber);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -35,5 +39,9 @@ sdk.institution.get(routingNumber).then((res: GetInstitutionResponse) => {
 
 ### Response
 
-**Promise<[operations.GetInstitutionResponse](../../models/operations/getinstitutionresponse.md)>**
+**Promise<[operations.GetInstitutionResponse](../../sdk/models/operations/getinstitutionresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

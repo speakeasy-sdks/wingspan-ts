@@ -4,14 +4,18 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Address } from "./address";
+import { BankAccount } from "./bankaccount";
 import { ClientOptions } from "./clientoptions";
 import { FeeHandlingConfig } from "./feehandlingconfig";
+import { Fees } from "./fees";
 import { InvoiceAttachments } from "./invoiceattachments";
 import { InvoiceEvents } from "./invoiceevents";
 import { InvoiceLineItem } from "./invoicelineitem";
+import { InvoiceMetadata } from "./invoicemetadata";
 import { InvoiceNotificationPreferences } from "./invoicenotificationpreferences";
 import { LateFeeConfig } from "./latefeeconfig";
 import { MemberOptions } from "./memberoptions";
+import { ScheduleDate } from "./scheduledate";
 import { Sixb94b58d661f3eabc1444a7a43ac4b99580f0d050123b7bf38184e2f0d7bd66e } from "./sixb94b58d661f3eabc1444a7a43ac4b99580f0d050123b7bf38184e2f0d7bd66e";
 import { UserRoles } from "./userroles";
 import { Expose, Type } from "class-transformer";
@@ -20,7 +24,6 @@ export enum PayableSchemaAcceptedPaymentMethods {
     Credit = "Credit",
     Ach = "ACH",
     Manual = "Manual",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum CurrencyPayableSchema {
@@ -58,11 +61,13 @@ export class PayableSchema extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "bankTransferInfo" })
-    bankTransferInfo?: any;
+    @Type(() => BankAccount)
+    bankTransferInfo?: BankAccount;
 
     @SpeakeasyMetadata()
     @Expose({ name: "chargedFees" })
-    chargedFees?: any;
+    @Type(() => Fees)
+    chargedFees?: Fees;
 
     @SpeakeasyMetadata()
     @Expose({ name: "client" })
@@ -106,7 +111,8 @@ export class PayableSchema extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "internationalBankTransferInfo" })
-    internationalBankTransferInfo?: any;
+    @Type(() => BankAccount)
+    internationalBankTransferInfo?: BankAccount;
 
     @SpeakeasyMetadata()
     @Expose({ name: "invoiceNotes" })
@@ -154,11 +160,13 @@ export class PayableSchema extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "metadata" })
-    metadata?: any;
+    @Type(() => InvoiceMetadata)
+    metadata?: InvoiceMetadata;
 
     @SpeakeasyMetadata()
     @Expose({ name: "nextPayrollExecutionDate" })
-    nextPayrollExecutionDate?: any;
+    @Type(() => ScheduleDate)
+    nextPayrollExecutionDate?: ScheduleDate;
 
     @SpeakeasyMetadata()
     @Expose({ name: "notificationPreferences" })

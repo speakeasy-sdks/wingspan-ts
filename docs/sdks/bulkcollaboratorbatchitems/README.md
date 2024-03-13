@@ -13,16 +13,20 @@ List bulk collaborator batch items
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListBulkCollaboratorBatchItemsRequest, ListBulkCollaboratorBatchItemsResponse } from "wingspan/dist/sdk/models/operations";
+import { ListBulkCollaboratorBatchItemsRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "Bicycle";
+async function run() {
+  const sdk = new Wingspan();
+const batchId: string = "<value>";
 
-sdk.bulkCollaboratorBatchItems.list(batchId).then((res: ListBulkCollaboratorBatchItemsResponse) => {
+  const res = await sdk.bulkCollaboratorBatchItems.list(batchId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -35,5 +39,9 @@ sdk.bulkCollaboratorBatchItems.list(batchId).then((res: ListBulkCollaboratorBatc
 
 ### Response
 
-**Promise<[operations.ListBulkCollaboratorBatchItemsResponse](../../models/operations/listbulkcollaboratorbatchitemsresponse.md)>**
+**Promise<[operations.ListBulkCollaboratorBatchItemsResponse](../../sdk/models/operations/listbulkcollaboratorbatchitemsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

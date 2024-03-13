@@ -11,12 +11,10 @@ export enum PayableStatusBulkPayableItemUpdate {
     Approved = "Approved",
     Paid = "Paid",
     Cancelled = "Cancelled",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum BulkPayableItemUpdateWorkflowSubStatus {
     Submitted = "Submitted",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class BulkPayableItemUpdate extends SpeakeasyBase {
@@ -58,7 +56,7 @@ export class BulkPayableItemUpdate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "lineItemDescription" })
@@ -82,7 +80,7 @@ export class BulkPayableItemUpdate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "reimbursableExpense" })
-    reimbursableExpense?: any;
+    reimbursableExpense?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "workflowSubStatus" })

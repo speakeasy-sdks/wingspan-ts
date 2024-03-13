@@ -14,20 +14,21 @@ Delete Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import {
-  DeleteCollaboratorGroupEligibilityRequirementRequest,
-  DeleteCollaboratorGroupEligibilityRequirementResponse,
-} from "wingspan/dist/sdk/models/operations";
+import { DeleteCollaboratorGroupEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const eligibilityRequirementId: string = "program";
-const id: string = "Designer";
+async function run() {
+  const sdk = new Wingspan();
+const eligibilityRequirementId: string = "<value>";
+const id: string = "<value>";
 
-sdk.collaboratorGroupEligibilityRequirement.delete(eligibilityRequirementId, id).then((res: DeleteCollaboratorGroupEligibilityRequirementResponse) => {
+  const res = await sdk.collaboratorGroupEligibilityRequirement.delete(eligibilityRequirementId, id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -41,8 +42,12 @@ sdk.collaboratorGroupEligibilityRequirement.delete(eligibilityRequirementId, id)
 
 ### Response
 
-**Promise<[operations.DeleteCollaboratorGroupEligibilityRequirementResponse](../../models/operations/deletecollaboratorgroupeligibilityrequirementresponse.md)>**
+**Promise<[operations.DeleteCollaboratorGroupEligibilityRequirementResponse](../../sdk/models/operations/deletecollaboratorgroupeligibilityrequirementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## replace
 
@@ -52,37 +57,42 @@ Replace Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import {
-  ReplaceCollaboratorGroupEligibilityRequirementRequest,
-  ReplaceCollaboratorGroupEligibilityRequirementResponse,
-} from "wingspan/dist/sdk/models/operations";
+import { ReplaceCollaboratorGroupEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 import { CollaboratorGroupRequirementUpdate } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const eligibilityRequirementId: string = "Cruiser";
-const id: string = "Tandem";
+async function run() {
+  const sdk = new Wingspan();
+const eligibilityRequirementId: string = "<value>";
+const id: string = "<value>";
 const collaboratorGroupRequirementUpdate: CollaboratorGroupRequirementUpdate = {
-  newEligibilityRequirementId: "Bicycle",
+  newEligibilityRequirementId: "<value>",
 };
 
-sdk.collaboratorGroupEligibilityRequirement.replace(eligibilityRequirementId, id, collaboratorGroupRequirementUpdate).then((res: ReplaceCollaboratorGroupEligibilityRequirementResponse) => {
+  const res = await sdk.collaboratorGroupEligibilityRequirement.replace(eligibilityRequirementId, id, collaboratorGroupRequirementUpdate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `eligibilityRequirementId`                                                                             | *string*                                                                                               | :heavy_check_mark:                                                                                     | Unique eligibility Requirement Id                                                                      |
-| `id`                                                                                                   | *string*                                                                                               | :heavy_check_mark:                                                                                     | Unique identifier                                                                                      |
-| `collaboratorGroupRequirementUpdate`                                                                   | [shared.CollaboratorGroupRequirementUpdate](../../models/shared/collaboratorgrouprequirementupdate.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `eligibilityRequirementId`                                                                                 | *string*                                                                                                   | :heavy_check_mark:                                                                                         | Unique eligibility Requirement Id                                                                          |
+| `id`                                                                                                       | *string*                                                                                                   | :heavy_check_mark:                                                                                         | Unique identifier                                                                                          |
+| `collaboratorGroupRequirementUpdate`                                                                       | [shared.CollaboratorGroupRequirementUpdate](../../sdk/models/shared/collaboratorgrouprequirementupdate.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
 
-**Promise<[operations.ReplaceCollaboratorGroupEligibilityRequirementResponse](../../models/operations/replacecollaboratorgroupeligibilityrequirementresponse.md)>**
+**Promise<[operations.ReplaceCollaboratorGroupEligibilityRequirementResponse](../../sdk/models/operations/replacecollaboratorgroupeligibilityrequirementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

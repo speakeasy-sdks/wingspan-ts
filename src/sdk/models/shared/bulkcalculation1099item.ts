@@ -3,6 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { EightHundredAndSixtyFiveThousandNineHundredAndSixtyNinebc2d9a3cb12c3263d4f941da6e1c7783024804b469db4a6eab9bc12f14 } from "./eighthundredandsixtyfivethousandninehundredandsixtyninebc2d9a3cb12c3263d4f941da6e1c7783024804b469db4a6eab9bc12f14";
 import { UserRoles } from "./userroles";
 import { Expose, Type } from "class-transformer";
 
@@ -46,7 +47,11 @@ export class BulkCalculation1099Item extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "metadata" })
-    metadata?: any;
+    @Type(
+        () =>
+            EightHundredAndSixtyFiveThousandNineHundredAndSixtyNinebc2d9a3cb12c3263d4f941da6e1c7783024804b469db4a6eab9bc12f14
+    )
+    metadata?: EightHundredAndSixtyFiveThousandNineHundredAndSixtyNinebc2d9a3cb12c3263d4f941da6e1c7783024804b469db4a6eab9bc12f14;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

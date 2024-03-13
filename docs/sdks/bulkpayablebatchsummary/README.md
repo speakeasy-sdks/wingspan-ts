@@ -13,16 +13,20 @@ Get Bulk Payable Batch Import Summary
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetBulkPayableBatchSummaryRequest, GetBulkPayableBatchSummaryResponse } from "wingspan/dist/sdk/models/operations";
+import { GetBulkPayableBatchSummaryRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const batchId: string = "<value>";
 
-sdk.bulkPayableBatchSummary.get(batchId).then((res: GetBulkPayableBatchSummaryResponse) => {
+  const res = await sdk.bulkPayableBatchSummary.get(batchId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -35,5 +39,9 @@ sdk.bulkPayableBatchSummary.get(batchId).then((res: GetBulkPayableBatchSummaryRe
 
 ### Response
 
-**Promise<[operations.GetBulkPayableBatchSummaryResponse](../../models/operations/getbulkpayablebatchsummaryresponse.md)>**
+**Promise<[operations.GetBulkPayableBatchSummaryResponse](../../sdk/models/operations/getbulkpayablebatchsummaryresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

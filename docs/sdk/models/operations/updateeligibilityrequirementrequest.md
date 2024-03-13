@@ -1,0 +1,9 @@
+# UpdateEligibilityRequirementRequest
+
+
+## Fields
+
+| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | Unique identifier                                                                                               |
+| `eligibilityRequirementUpdateRequest`                                                                           | [shared.EligibilityRequirementUpdateRequest](../../../sdk/models/shared/eligibilityrequirementupdaterequest.md) | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |

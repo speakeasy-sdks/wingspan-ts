@@ -14,16 +14,20 @@ Get payroll settings
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetPayrollSettingsRequest, GetPayrollSettingsResponse } from "wingspan/dist/sdk/models/operations";
+import { GetPayrollSettingsRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.payrollSettings.get(id).then((res: GetPayrollSettingsResponse) => {
+  const res = await sdk.payrollSettings.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -36,8 +40,12 @@ sdk.payrollSettings.get(id).then((res: GetPayrollSettingsResponse) => {
 
 ### Response
 
-**Promise<[operations.GetPayrollSettingsResponse](../../models/operations/getpayrollsettingsresponse.md)>**
+**Promise<[operations.GetPayrollSettingsResponse](../../sdk/models/operations/getpayrollsettingsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -47,7 +55,7 @@ Update payroll settings
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdatePayrollSettingsRequest, UpdatePayrollSettingsResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdatePayrollSettingsRequest } from "wingspan/dist/sdk/models/operations";
 import {
   CalculationSettings1099,
   CardProcessingFeesCalculationSettings1099,
@@ -65,44 +73,50 @@ import {
   WorkflowPayrollSettingsUpdate,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 const payrollSettingsUpdate: PayrollSettingsUpdate = {
-  calculationSettings1099: "Reactive",
-  enablePlannedPayroll: false,
-  enableProcessDaysBeforeDue: "Quality",
-  frequency: "invoice",
-  fundingSource: "Islands",
-  issue1099s: "withdrawal",
-  processDaysBeforeDue: 3115.07,
-  scheduleDates: [
-    {
-      date: "bifurcated",
-      invoiceTemplateId: "silver immediately",
-      status: StatusScheduleDateUpdate.Completed,
+  calculationSettings1099: {
+    stateTaxId: {
+      "key": "<value>",
     },
+  },
+  frequency: {},
+  fundingSource: {
+    fundingSourceCurrency: FundingSourceCurrency.Cad,
+    fundingSourceId: "<value>",
+    fundingSourceType: TypeFundingSource.InternalAccount,
+  },
+  scheduleDates: [
+    {},
   ],
-  status: StatusPayrollSettingsUpdate.Active,
-  workflow: WorkflowPayrollSettingsUpdate.DualStage,
 };
 
-sdk.payrollSettings.update(id, payrollSettingsUpdate).then((res: UpdatePayrollSettingsResponse) => {
+  const res = await sdk.payrollSettings.update(id, payrollSettingsUpdate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `id`                                                                         | *string*                                                                     | :heavy_check_mark:                                                           | Unique identifier                                                            |
-| `payrollSettingsUpdate`                                                      | [shared.PayrollSettingsUpdate](../../models/shared/payrollsettingsupdate.md) | :heavy_minus_sign:                                                           | N/A                                                                          |
-| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `id`                                                                             | *string*                                                                         | :heavy_check_mark:                                                               | Unique identifier                                                                |
+| `payrollSettingsUpdate`                                                          | [shared.PayrollSettingsUpdate](../../sdk/models/shared/payrollsettingsupdate.md) | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
 
 
 ### Response
 
-**Promise<[operations.UpdatePayrollSettingsResponse](../../models/operations/updatepayrollsettingsresponse.md)>**
+**Promise<[operations.UpdatePayrollSettingsResponse](../../sdk/models/operations/updatepayrollsettingsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

@@ -4,25 +4,29 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { FeeHandlingConfig } from "./feehandlingconfig";
+import { InvoiceCollaboratorCreateRequest } from "./invoicecollaboratorcreaterequest";
 import { InvoiceLineItemsCreateRequest } from "./invoicelineitemscreaterequest";
+import { InvoiceMetadata } from "./invoicemetadata";
+import { InvoiceNotificationPreferences } from "./invoicenotificationpreferences";
+import { LateFeeConfigUpdate } from "./latefeeconfigupdate";
+import { ThirtySixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2 } from "./thirtysixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2";
+import { ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461 } from "./threebilliononehundredandninetymillionsixhundredandeightyfivethousandeighthundredandthirtytwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461";
 import { Expose, Type } from "class-transformer";
 
 export enum InvoiceCreateRequestAcceptedPaymentMethods {
     Credit = "Credit",
     Ach = "ACH",
     Manual = "Manual",
-    LessThanNilGreaterThan = "<nil>",
 }
 
-export class InvoiceCreateRequestClient2 extends SpeakeasyBase {}
+export class Client extends SpeakeasyBase {}
 
 export enum CurrencyInvoiceCreateRequest {
     Usd = "USD",
     Cad = "CAD",
-    LessThanNilGreaterThan = "<nil>",
 }
 
-export class InvoiceCreateRequestMember2 extends SpeakeasyBase {}
+export class Member extends SpeakeasyBase {}
 
 export enum StatusInvoiceCreateRequest {
     Draft = "Draft",
@@ -32,7 +36,6 @@ export enum StatusInvoiceCreateRequest {
     Pending = "Pending",
     PaymentInTransit = "PaymentInTransit",
     Paid = "Paid",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class InvoiceCreateRequest extends SpeakeasyBase {
@@ -42,15 +45,18 @@ export class InvoiceCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "attachments" })
-    attachments?: any;
+    @Type(() => ThirtySixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2)
+    attachments?: ThirtySixb041d426951ffff76360faf03ef8ae938bed9739e6ad9f51acb982782296a2;
 
     @SpeakeasyMetadata()
     @Expose({ name: "client" })
-    client?: any;
+    @Type(() => Client)
+    client?: Client;
 
-    @SpeakeasyMetadata()
+    @SpeakeasyMetadata({ elemType: InvoiceCollaboratorCreateRequest })
     @Expose({ name: "collaborators" })
-    collaborators?: any[];
+    @Type(() => InvoiceCollaboratorCreateRequest)
+    collaborators?: InvoiceCollaboratorCreateRequest[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "creditFeeHandling" })
@@ -67,7 +73,11 @@ export class InvoiceCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration" })
-    integration?: any;
+    @Type(
+        () =>
+            ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461
+    )
+    integration?: ThreeBillionOneHundredAndNinetyMillionSixHundredAndEightyFiveThousandEightHundredAndThirtyTwoa4970525ea5b0803efff0b36a0202062e1fd8a0bc187acbe156461;
 
     @SpeakeasyMetadata()
     @Expose({ name: "invoiceNotes" })
@@ -75,11 +85,12 @@ export class InvoiceCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "lateFeeHandling" })
-    lateFeeHandling?: any;
+    @Type(() => LateFeeConfigUpdate)
+    lateFeeHandling?: LateFeeConfigUpdate;
 
     @SpeakeasyMetadata({ elemType: InvoiceLineItemsCreateRequest })
     @Expose({ name: "lineItems" })
@@ -88,7 +99,8 @@ export class InvoiceCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "member" })
-    member?: any;
+    @Type(() => Member)
+    member?: Member;
 
     @SpeakeasyMetadata()
     @Expose({ name: "memberClientId" })
@@ -96,11 +108,13 @@ export class InvoiceCreateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "metadata" })
-    metadata?: any;
+    @Type(() => InvoiceMetadata)
+    metadata?: InvoiceMetadata;
 
     @SpeakeasyMetadata()
     @Expose({ name: "notificationPreferences" })
-    notificationPreferences?: any;
+    @Type(() => InvoiceNotificationPreferences)
+    notificationPreferences?: InvoiceNotificationPreferences;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

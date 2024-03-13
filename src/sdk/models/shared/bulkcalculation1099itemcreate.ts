@@ -8,7 +8,6 @@ import { Expose } from "class-transformer";
 export enum CalculationTypeBulkCalculation1099ItemCreate {
     Balances = "Balances",
     Submissions = "Submissions",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class BulkCalculation1099ItemCreate extends SpeakeasyBase {
@@ -22,7 +21,7 @@ export class BulkCalculation1099ItemCreate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "year" })

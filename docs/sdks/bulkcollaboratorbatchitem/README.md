@@ -15,7 +15,7 @@ Create a bulk collaborator batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateBulkCollaboratorBatchItemRequest, CreateBulkCollaboratorBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import { CreateBulkCollaboratorBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 import {
   BulkCollaboratorItemCreate,
   CollaboratorStatusBulkCollaboratorItemCreate,
@@ -23,54 +23,50 @@ import {
   MemberClientFormW9Info,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "online";
+async function run() {
+  const sdk = new Wingspan();
+const batchId: string = "<value>";
 const bulkCollaboratorItemCreate: BulkCollaboratorItemCreate = {
-  collaboratorGroupId: "Extended South",
-  collaboratorId: "grey technology East",
-  collaboratorStatus: CollaboratorStatusBulkCollaboratorItemCreate.Active,
-  company: "Borer LLC",
-  email: "Russel_Schumm@hotmail.com",
-  externalId: "volt physical Ameliorated",
-  firstLastName: "after",
   formW9Data: {
-    addressLine1: "Bike",
-    addressLine2: "Buckinghamshire functionalities Grocery",
-    city: "New Baronbury",
-    companyStructure: CompanyStructureMemberClientFormW9Info.LLCCorporationC,
-    country: "Bulgaria",
-    dob: "animated Minivan",
-    ein: "Senior Mouse West",
-    firstName: "Judd",
-    lastName: "Hauck",
-    legalBusinessName: "Towels",
-    postalCode: "44747-2679",
-    ssn: "Sausages",
-    state: "round Lake Dollar",
+    addressLine1: "4684 Bria Shores",
+    city: "Fort Peytonbury",
+    companyStructure: CompanyStructureMemberClientFormW9Info.Partnership,
+    country: "Togo",
+    postalCode: "41307",
+    state: "South Carolina",
   },
-  labels: "South",
+  labels: {
+    "key": "<value>",
+  },
 };
 
-sdk.bulkCollaboratorBatchItem.create(batchId, bulkCollaboratorItemCreate).then((res: CreateBulkCollaboratorBatchItemResponse) => {
+  const res = await sdk.bulkCollaboratorBatchItem.create(batchId, bulkCollaboratorItemCreate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `batchId`                                                                              | *string*                                                                               | :heavy_check_mark:                                                                     | Unique identifier for a batch                                                          |
-| `bulkCollaboratorItemCreate`                                                           | [shared.BulkCollaboratorItemCreate](../../models/shared/bulkcollaboratoritemcreate.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `batchId`                                                                                  | *string*                                                                                   | :heavy_check_mark:                                                                         | Unique identifier for a batch                                                              |
+| `bulkCollaboratorItemCreate`                                                               | [shared.BulkCollaboratorItemCreate](../../sdk/models/shared/bulkcollaboratoritemcreate.md) | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
 
-**Promise<[operations.CreateBulkCollaboratorBatchItemResponse](../../models/operations/createbulkcollaboratorbatchitemresponse.md)>**
+**Promise<[operations.CreateBulkCollaboratorBatchItemResponse](../../sdk/models/operations/createbulkcollaboratorbatchitemresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -80,17 +76,21 @@ Get a bulk collaborator batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetBulkCollaboratorBatchItemRequest, GetBulkCollaboratorBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import { GetBulkCollaboratorBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "female";
-const batchItemId: string = "program";
+async function run() {
+  const sdk = new Wingspan();
+const batchId: string = "<value>";
+const batchItemId: string = "<value>";
 
-sdk.bulkCollaboratorBatchItem.get(batchId, batchItemId).then((res: GetBulkCollaboratorBatchItemResponse) => {
+  const res = await sdk.bulkCollaboratorBatchItem.get(batchId, batchItemId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -104,8 +104,12 @@ sdk.bulkCollaboratorBatchItem.get(batchId, batchItemId).then((res: GetBulkCollab
 
 ### Response
 
-**Promise<[operations.GetBulkCollaboratorBatchItemResponse](../../models/operations/getbulkcollaboratorbatchitemresponse.md)>**
+**Promise<[operations.GetBulkCollaboratorBatchItemResponse](../../sdk/models/operations/getbulkcollaboratorbatchitemresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -115,7 +119,7 @@ Update a bulk collaborator batch item
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateBulkCollaboratorBatchItemRequest, UpdateBulkCollaboratorBatchItemResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateBulkCollaboratorBatchItemRequest } from "wingspan/dist/sdk/models/operations";
 import {
   BulkCollaboratorItemUpdate,
   CollaboratorStatusBulkCollaboratorItemUpdate,
@@ -123,41 +127,49 @@ import {
   MemberClientFormW9Info,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "Van";
-const batchItemId: string = "East";
+async function run() {
+  const sdk = new Wingspan();
+const batchId: string = "<value>";
+const batchItemId: string = "<value>";
 const bulkCollaboratorItemUpdate: BulkCollaboratorItemUpdate = {
-  collaboratorGroupId: "dock Quality redundant",
-  collaboratorId: "Arizona Cotton extend",
-  collaboratorStatus: CollaboratorStatusBulkCollaboratorItemUpdate.Active,
-  company: "Connelly - Nolan",
-  email: "Zakary.Towne@hotmail.com",
-  externalId: "JBOD",
-  firstLastName: "Quality guestbook driver",
-  formW9Data: "pascal",
+  formW9Data: {
+    addressLine1: "050 Mellie Well",
+    city: "Lake Marlee",
+    companyStructure: CompanyStructureMemberClientFormW9Info.CorporationS,
+    country: "Jersey",
+    postalCode: "10284-4337",
+    state: "Illinois",
+  },
   labels: {
-    "officia": "Lev",
+    "key": "<value>",
   },
 };
 
-sdk.bulkCollaboratorBatchItem.update(batchId, batchItemId, bulkCollaboratorItemUpdate).then((res: UpdateBulkCollaboratorBatchItemResponse) => {
+  const res = await sdk.bulkCollaboratorBatchItem.update(batchId, batchItemId, bulkCollaboratorItemUpdate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `batchId`                                                                              | *string*                                                                               | :heavy_check_mark:                                                                     | Unique identifier for a batch                                                          |
-| `batchItemId`                                                                          | *string*                                                                               | :heavy_check_mark:                                                                     | Unique identifier for an item in a batch                                               |
-| `bulkCollaboratorItemUpdate`                                                           | [shared.BulkCollaboratorItemUpdate](../../models/shared/bulkcollaboratoritemupdate.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `batchId`                                                                                  | *string*                                                                                   | :heavy_check_mark:                                                                         | Unique identifier for a batch                                                              |
+| `batchItemId`                                                                              | *string*                                                                                   | :heavy_check_mark:                                                                         | Unique identifier for an item in a batch                                                   |
+| `bulkCollaboratorItemUpdate`                                                               | [shared.BulkCollaboratorItemUpdate](../../sdk/models/shared/bulkcollaboratoritemupdate.md) | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
 
-**Promise<[operations.UpdateBulkCollaboratorBatchItemResponse](../../models/operations/updatebulkcollaboratorbatchitemresponse.md)>**
+**Promise<[operations.UpdateBulkCollaboratorBatchItemResponse](../../sdk/models/operations/updatebulkcollaboratorbatchitemresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

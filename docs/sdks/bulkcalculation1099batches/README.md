@@ -13,15 +13,18 @@ List bulk calculation1099 batches
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListBulkCalculation1099BatchesResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.bulkCalculation1099Batches.list().then((res: ListBulkCalculation1099BatchesResponse) => {
+  const res = await sdk.bulkCalculation1099Batches.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -33,5 +36,9 @@ sdk.bulkCalculation1099Batches.list().then((res: ListBulkCalculation1099BatchesR
 
 ### Response
 
-**Promise<[operations.ListBulkCalculation1099BatchesResponse](../../models/operations/listbulkcalculation1099batchesresponse.md)>**
+**Promise<[operations.ListBulkCalculation1099BatchesResponse](../../sdk/models/operations/listbulkcalculation1099batchesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

@@ -13,16 +13,20 @@ Get a list of payables connected to payroll run
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListPayablesPayrollRequest, ListPayablesPayrollResponse } from "wingspan/dist/sdk/models/operations";
+import { ListPayablesPayrollRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const payrollId: string = "Bicycle";
+async function run() {
+  const sdk = new Wingspan();
+const payrollId: string = "<value>";
 
-sdk.payablesPayroll.list(payrollId).then((res: ListPayablesPayrollResponse) => {
+  const res = await sdk.payablesPayroll.list(payrollId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -35,5 +39,9 @@ sdk.payablesPayroll.list(payrollId).then((res: ListPayablesPayrollResponse) => {
 
 ### Response
 
-**Promise<[operations.ListPayablesPayrollResponse](../../models/operations/listpayablespayrollresponse.md)>**
+**Promise<[operations.ListPayablesPayrollResponse](../../sdk/models/operations/listpayablespayrollresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

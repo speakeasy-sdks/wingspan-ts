@@ -3,16 +3,20 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { Address } from "./address";
+import { Company } from "./company";
+import { Expose, Type } from "class-transformer";
 
 export class TwentyThreed776fc12e56286a20f36065e4f942c43a28218a62eb2f211116c130deb74eb extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "address" })
-    address?: any;
+    @Type(() => Address)
+    address?: Address;
 
     @SpeakeasyMetadata()
     @Expose({ name: "company" })
-    company?: any;
+    @Type(() => Company)
+    company?: Company;
 
     @SpeakeasyMetadata()
     @Expose({ name: "logoUrl" })

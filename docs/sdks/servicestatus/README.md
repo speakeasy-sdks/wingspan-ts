@@ -13,15 +13,18 @@ Get Service Status
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetServiceStatusResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.serviceStatus.get().then((res: GetServiceStatusResponse) => {
+  const res = await sdk.serviceStatus.get();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -33,5 +36,9 @@ sdk.serviceStatus.get().then((res: GetServiceStatusResponse) => {
 
 ### Response
 
-**Promise<[operations.GetServiceStatusResponse](../../models/operations/getservicestatusresponse.md)>**
+**Promise<[operations.GetServiceStatusResponse](../../sdk/models/operations/getservicestatusresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

@@ -13,15 +13,18 @@ Get payables summary
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetPayablesResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.payables.get().then((res: GetPayablesResponse) => {
+  const res = await sdk.payables.get();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -33,5 +36,9 @@ sdk.payables.get().then((res: GetPayablesResponse) => {
 
 ### Response
 
-**Promise<[operations.GetPayablesResponse](../../models/operations/getpayablesresponse.md)>**
+**Promise<[operations.GetPayablesResponse](../../sdk/models/operations/getpayablesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

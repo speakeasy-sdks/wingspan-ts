@@ -4,21 +4,29 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Address } from "./address";
+import { BankAccount } from "./bankaccount";
 import { ClientOptions } from "./clientoptions";
+import { FeeHandlingConfig } from "./feehandlingconfig";
+import { Fees } from "./fees";
+import { InvoiceAttachments } from "./invoiceattachments";
 import { InvoiceEvents } from "./invoiceevents";
+import { InvoiceIntegrations } from "./invoiceintegrations";
 import { InvoiceLineItem } from "./invoicelineitem";
+import { InvoiceMetadata } from "./invoicemetadata";
+import { LateFeeConfig } from "./latefeeconfig";
 import { MemberClient } from "./memberclient";
 import { MemberOptions } from "./memberoptions";
+import { PaymentInfo } from "./paymentinfo";
+import { ProcessingFees } from "./processingfees";
 import { Expose, Type } from "class-transformer";
 
 export enum ClientInvoiceAcceptedPaymentMethods {
     Credit = "Credit",
     Ach = "ACH",
     Manual = "Manual",
-    LessThanNilGreaterThan = "<nil>",
 }
 
-export enum ClientInvoiceCurrency {
+export enum Currency {
     Usd = "USD",
     Cad = "CAD",
 }
@@ -52,15 +60,18 @@ export class ClientInvoice extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "attachments" })
-    attachments?: any;
+    @Type(() => InvoiceAttachments)
+    attachments?: InvoiceAttachments;
 
     @SpeakeasyMetadata()
     @Expose({ name: "bankTransferInfo" })
-    bankTransferInfo?: any;
+    @Type(() => BankAccount)
+    bankTransferInfo?: BankAccount;
 
     @SpeakeasyMetadata()
     @Expose({ name: "chargedFees" })
-    chargedFees?: any;
+    @Type(() => Fees)
+    chargedFees?: Fees;
 
     @SpeakeasyMetadata()
     @Expose({ name: "client" })
@@ -73,11 +84,12 @@ export class ClientInvoice extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "creditFeeHandling" })
-    creditFeeHandling?: any;
+    @Type(() => FeeHandlingConfig)
+    creditFeeHandling?: FeeHandlingConfig;
 
     @SpeakeasyMetadata()
     @Expose({ name: "currency" })
-    currency: ClientInvoiceCurrency;
+    currency: Currency;
 
     @SpeakeasyMetadata()
     @Expose({ name: "dueDate" })
@@ -90,11 +102,13 @@ export class ClientInvoice extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration" })
-    integration?: any;
+    @Type(() => InvoiceIntegrations)
+    integration?: InvoiceIntegrations;
 
     @SpeakeasyMetadata()
     @Expose({ name: "internationalBankTransferInfo" })
-    internationalBankTransferInfo?: any;
+    @Type(() => BankAccount)
+    internationalBankTransferInfo?: BankAccount;
 
     @SpeakeasyMetadata()
     @Expose({ name: "invoiceId" })
@@ -114,7 +128,8 @@ export class ClientInvoice extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "lateFeeHandling" })
-    lateFeeHandling?: any;
+    @Type(() => LateFeeConfig)
+    lateFeeHandling?: LateFeeConfig;
 
     @SpeakeasyMetadata({ elemType: InvoiceLineItem })
     @Expose({ name: "lineItems" })
@@ -170,11 +185,13 @@ export class ClientInvoice extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "metadata" })
-    metadata?: any;
+    @Type(() => InvoiceMetadata)
+    metadata?: InvoiceMetadata;
 
     @SpeakeasyMetadata()
     @Expose({ name: "paymentInfo" })
-    paymentInfo?: any;
+    @Type(() => PaymentInfo)
+    paymentInfo?: PaymentInfo;
 
     @SpeakeasyMetadata()
     @Expose({ name: "paymentMethodId" })
@@ -182,7 +199,8 @@ export class ClientInvoice extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "processingFees" })
-    processingFees?: any;
+    @Type(() => ProcessingFees)
+    processingFees?: ProcessingFees;
 
     @SpeakeasyMetadata()
     @Expose({ name: "projectName" })

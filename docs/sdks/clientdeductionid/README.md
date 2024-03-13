@@ -15,16 +15,20 @@ Delete deduction
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteClientDeductionIDRequest, DeleteClientDeductionIDResponse } from "wingspan/dist/sdk/models/operations";
+import { DeleteClientDeductionIDRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.clientDeductionID.delete(id).then((res: DeleteClientDeductionIDResponse) => {
+  const res = await sdk.clientDeductionID.delete(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -37,8 +41,12 @@ sdk.clientDeductionID.delete(id).then((res: DeleteClientDeductionIDResponse) => 
 
 ### Response
 
-**Promise<[operations.DeleteClientDeductionIDResponse](../../models/operations/deleteclientdeductionidresponse.md)>**
+**Promise<[operations.DeleteClientDeductionIDResponse](../../sdk/models/operations/deleteclientdeductionidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -48,16 +56,20 @@ Get deduction
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetClientDeductionIDRequest, GetClientDeductionIDResponse } from "wingspan/dist/sdk/models/operations";
+import { GetClientDeductionIDRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.clientDeductionID.get(id).then((res: GetClientDeductionIDResponse) => {
+  const res = await sdk.clientDeductionID.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -70,8 +82,12 @@ sdk.clientDeductionID.get(id).then((res: GetClientDeductionIDResponse) => {
 
 ### Response
 
-**Promise<[operations.GetClientDeductionIDResponse](../../models/operations/getclientdeductionidresponse.md)>**
+**Promise<[operations.GetClientDeductionIDResponse](../../sdk/models/operations/getclientdeductionidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -81,42 +97,42 @@ Update deduction
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateClientDeductionIDRequest, UpdateClientDeductionIDResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateClientDeductionIDRequest } from "wingspan/dist/sdk/models/operations";
 import {
   CurrencyDeductionUpdateRequest,
   DeductionUpdateRequest,
   TypeDeductionUpdateRequest,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
-const deductionUpdateRequest: DeductionUpdateRequest = {
-  amount: 156.52,
-  currency: CurrencyDeductionUpdateRequest.Cad,
-  name: "dock Quality redundant",
-  priority: 9840.08,
-  sourceInvoiceId: "Islands",
-  startDate: "withdrawal extend",
-  type: TypeDeductionUpdateRequest.PrePayment,
-};
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
+const deductionUpdateRequest: DeductionUpdateRequest = {};
 
-sdk.clientDeductionID.update(id, deductionUpdateRequest).then((res: UpdateClientDeductionIDResponse) => {
+  const res = await sdk.clientDeductionID.update(id, deductionUpdateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `id`                                                                           | *string*                                                                       | :heavy_check_mark:                                                             | Unique identifier                                                              |
-| `deductionUpdateRequest`                                                       | [shared.DeductionUpdateRequest](../../models/shared/deductionupdaterequest.md) | :heavy_minus_sign:                                                             | N/A                                                                            |
-| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `id`                                                                               | *string*                                                                           | :heavy_check_mark:                                                                 | Unique identifier                                                                  |
+| `deductionUpdateRequest`                                                           | [shared.DeductionUpdateRequest](../../sdk/models/shared/deductionupdaterequest.md) | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
 
 
 ### Response
 
-**Promise<[operations.UpdateClientDeductionIDResponse](../../models/operations/updateclientdeductionidresponse.md)>**
+**Promise<[operations.UpdateClientDeductionIDResponse](../../sdk/models/operations/updateclientdeductionidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

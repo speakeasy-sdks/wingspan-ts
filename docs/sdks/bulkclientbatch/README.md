@@ -15,31 +15,40 @@ Create a bulk client batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateBulkClientBatchResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.bulkClientBatch.create({
-  labels: "bluetooth",
-}).then((res: CreateBulkClientBatchResponse) => {
+  const res = await sdk.bulkClientBatch.create({
+    labels: {
+      "key": "<value>",
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `request`                                                        | [shared.BulkBatchCreate](../../models/shared/bulkbatchcreate.md) | :heavy_check_mark:                                               | The request object to use for the request.                       |
-| `config`                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)     | :heavy_minus_sign:                                               | Available config options for making requests.                    |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `request`                                                            | [shared.BulkBatchCreate](../../sdk/models/shared/bulkbatchcreate.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
+| `config`                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)         | :heavy_minus_sign:                                                   | Available config options for making requests.                        |
 
 
 ### Response
 
-**Promise<[operations.CreateBulkClientBatchResponse](../../models/operations/createbulkclientbatchresponse.md)>**
+**Promise<[operations.CreateBulkClientBatchResponse](../../sdk/models/operations/createbulkclientbatchresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -49,16 +58,20 @@ Get a bulk client batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetBulkClientBatchRequest, GetBulkClientBatchResponse } from "wingspan/dist/sdk/models/operations";
+import { GetBulkClientBatchRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const batchId: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const batchId: string = "<value>";
 
-sdk.bulkClientBatch.get(batchId).then((res: GetBulkClientBatchResponse) => {
+  const res = await sdk.bulkClientBatch.get(batchId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -71,8 +84,12 @@ sdk.bulkClientBatch.get(batchId).then((res: GetBulkClientBatchResponse) => {
 
 ### Response
 
-**Promise<[operations.GetBulkClientBatchResponse](../../models/operations/getbulkclientbatchresponse.md)>**
+**Promise<[operations.GetBulkClientBatchResponse](../../sdk/models/operations/getbulkclientbatchresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -82,33 +99,42 @@ Update a bulk client batch
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateBulkClientBatchRequest, UpdateBulkClientBatchResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateBulkClientBatchRequest } from "wingspan/dist/sdk/models/operations";
 import { BulkBatchUpdate, StatusBulkBatchUpdate } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const batchId: string = "Van";
+async function run() {
+  const sdk = new Wingspan();
+const batchId: string = "<value>";
 const bulkBatchUpdate: BulkBatchUpdate = {
-  labels: "Reactive",
-  status: StatusBulkBatchUpdate.LessThanNilGreaterThan,
+  labels: {
+    "key": "<value>",
+  },
 };
 
-sdk.bulkClientBatch.update(batchId, bulkBatchUpdate).then((res: UpdateBulkClientBatchResponse) => {
+  const res = await sdk.bulkClientBatch.update(batchId, bulkBatchUpdate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `batchId`                                                        | *string*                                                         | :heavy_check_mark:                                               | Unique identifier for a batch                                    |
-| `bulkBatchUpdate`                                                | [shared.BulkBatchUpdate](../../models/shared/bulkbatchupdate.md) | :heavy_minus_sign:                                               | N/A                                                              |
-| `config`                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)     | :heavy_minus_sign:                                               | Available config options for making requests.                    |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `batchId`                                                            | *string*                                                             | :heavy_check_mark:                                                   | Unique identifier for a batch                                        |
+| `bulkBatchUpdate`                                                    | [shared.BulkBatchUpdate](../../sdk/models/shared/bulkbatchupdate.md) | :heavy_minus_sign:                                                   | N/A                                                                  |
+| `config`                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)         | :heavy_minus_sign:                                                   | Available config options for making requests.                        |
 
 
 ### Response
 
-**Promise<[operations.UpdateBulkClientBatchResponse](../../models/operations/updatebulkclientbatchresponse.md)>**
+**Promise<[operations.UpdateBulkClientBatchResponse](../../sdk/models/operations/updatebulkclientbatchresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

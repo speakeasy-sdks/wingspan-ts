@@ -16,32 +16,39 @@ Create Payment Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreatePaymentEligibilityRequirementResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.paymentEligibilityRequirement.create({
-  field: "bluetooth Extended",
-  value: "blue",
-}).then((res: CreatePaymentEligibilityRequirementResponse) => {
+  const res = await sdk.paymentEligibilityRequirement.create({
+    field: "<value>",
+    value: "<value>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `request`                                                              | [shared.PaymentEligibility](../../models/shared/paymenteligibility.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
-| `config`                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)           | :heavy_minus_sign:                                                     | Available config options for making requests.                          |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `request`                                                                  | [shared.PaymentEligibility](../../sdk/models/shared/paymenteligibility.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
+| `config`                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)               | :heavy_minus_sign:                                                         | Available config options for making requests.                              |
 
 
 ### Response
 
-**Promise<[operations.CreatePaymentEligibilityRequirementResponse](../../models/operations/createpaymenteligibilityrequirementresponse.md)>**
+**Promise<[operations.CreatePaymentEligibilityRequirementResponse](../../sdk/models/operations/createpaymenteligibilityrequirementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete
 
@@ -51,19 +58,20 @@ Delete Payment Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import {
-  DeletePaymentEligibilityRequirementRequest,
-  DeletePaymentEligibilityRequirementResponse,
-} from "wingspan/dist/sdk/models/operations";
+import { DeletePaymentEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.paymentEligibilityRequirement.delete(id).then((res: DeletePaymentEligibilityRequirementResponse) => {
+  const res = await sdk.paymentEligibilityRequirement.delete(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -76,8 +84,12 @@ sdk.paymentEligibilityRequirement.delete(id).then((res: DeletePaymentEligibility
 
 ### Response
 
-**Promise<[operations.DeletePaymentEligibilityRequirementResponse](../../models/operations/deletepaymenteligibilityrequirementresponse.md)>**
+**Promise<[operations.DeletePaymentEligibilityRequirementResponse](../../sdk/models/operations/deletepaymenteligibilityrequirementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -87,19 +99,20 @@ Get Payment Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import {
-  GetPaymentEligibilityRequirementRequest,
-  GetPaymentEligibilityRequirementResponse,
-} from "wingspan/dist/sdk/models/operations";
+import { GetPaymentEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.paymentEligibilityRequirement.get(id).then((res: GetPaymentEligibilityRequirementResponse) => {
+  const res = await sdk.paymentEligibilityRequirement.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -112,8 +125,12 @@ sdk.paymentEligibilityRequirement.get(id).then((res: GetPaymentEligibilityRequir
 
 ### Response
 
-**Promise<[operations.GetPaymentEligibilityRequirementResponse](../../models/operations/getpaymenteligibilityrequirementresponse.md)>**
+**Promise<[operations.GetPaymentEligibilityRequirementResponse](../../sdk/models/operations/getpaymenteligibilityrequirementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -123,36 +140,40 @@ Update Payment Eligibility Requirement
 
 ```typescript
 import { Wingspan } from "wingspan";
-import {
-  UpdatePaymentEligibilityRequirementRequest,
-  UpdatePaymentEligibilityRequirementResponse,
-} from "wingspan/dist/sdk/models/operations";
-import { PaymentEligibilityUpdateRequest, PaymentEligibilityUpdateRequestValue2 } from "wingspan/dist/sdk/models/shared";
+import { UpdatePaymentEligibilityRequirementRequest } from "wingspan/dist/sdk/models/operations";
+import { PaymentEligibilityUpdateRequest, Value } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 const paymentEligibilityUpdateRequest: PaymentEligibilityUpdateRequest = {
-  field: "Reactive",
   value: {},
 };
 
-sdk.paymentEligibilityRequirement.update(id, paymentEligibilityUpdateRequest).then((res: UpdatePaymentEligibilityRequirementResponse) => {
+  const res = await sdk.paymentEligibilityRequirement.update(id, paymentEligibilityUpdateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `id`                                                                                             | *string*                                                                                         | :heavy_check_mark:                                                                               | Unique identifier                                                                                |
-| `paymentEligibilityUpdateRequest`                                                                | [shared.PaymentEligibilityUpdateRequest](../../models/shared/paymenteligibilityupdaterequest.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                 | *string*                                                                                             | :heavy_check_mark:                                                                                   | Unique identifier                                                                                    |
+| `paymentEligibilityUpdateRequest`                                                                    | [shared.PaymentEligibilityUpdateRequest](../../sdk/models/shared/paymenteligibilityupdaterequest.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
 
-**Promise<[operations.UpdatePaymentEligibilityRequirementResponse](../../models/operations/updatepaymenteligibilityrequirementresponse.md)>**
+**Promise<[operations.UpdatePaymentEligibilityRequirementResponse](../../sdk/models/operations/updatepaymenteligibilityrequirementresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

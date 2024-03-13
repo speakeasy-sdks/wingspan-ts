@@ -15,7 +15,6 @@ Create client-invoice-template
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateClientInvoiceTemplateResponse } from "wingspan/dist/sdk/models/operations";
 import {
   CurrencyClientInvoiceDataCreateRequest,
   IntervalFrequency,
@@ -23,84 +22,65 @@ import {
   StatusScheduleDate,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.clientInvoiceTemplate.create({
-  accountId: "bluetooth Extended",
-  clientCompany: "blue",
-  clientEmail: "grey technology East",
-  clientEmailCC: [
-    "orange",
-  ],
-  clientFirstName: "male",
-  clientLastName: "Gasoline Screen mobile",
-  dueInDays: 6562.56,
-  frequency: "Durham",
-  invoiceData: {
-    creditFeeHandling: {
-      clientAbsolutePercentage: 177.59,
-      clientPays: 5190.28,
-      memberPays: 2303.13,
+  const res = await sdk.clientInvoiceTemplate.create({
+    clientEmail: "<value>",
+    clientEmailCC: [
+      "<value>",
+    ],
+    frequency: {
+      startDate: "<value>",
     },
-    currency: CurrencyClientInvoiceDataCreateRequest.Usd,
-    dueDate: "female",
-    lineItems: [
-      {
-        costPerUnit: 8291.42,
-        description: "Function-based tertiary collaboration",
-        detail: "Borders Northwest",
-        discount: {
-          amount: 1325.85,
-          description: "Fundamental systemic algorithm",
-          percentage: 8424.64,
-        },
-        integration: {
-          quickbooks: {
-            expenseAccountId: "East red",
-            itemId: "array Edinburg Investor",
+    invoiceData: {
+      creditFeeHandling: {},
+      lineItems: [
+        {
+          discount: {},
+          integration: {
+            quickbooks: {},
+          },
+          labels: {
+            "key": "<value>",
           },
         },
-        labels: {
-          "quisquam": "likewise",
-        },
-        quantity: 4522.24,
-        reimbursableExpense: false,
-        totalCost: 4963.23,
-        unit: "steradian",
+      ],
+    },
+    memberId: "<value>",
+    scheduleDates: [
+      {
+        date: "<value>",
+        status: StatusScheduleDate.Completed,
       },
     ],
-  },
-  memberId: "woman",
-  paymentMethodId: "Sausages",
-  scheduleDates: [
-    {
-      cutOffDate: "City meanwhile incompatible",
-      date: "Folk South digital",
-      invoiceId: "Southwest",
-      invoiceTemplateId: "Mongolia Maine sexy",
-      status: StatusScheduleDate.Skipped,
-    },
-  ],
-  status: StatusClientInvoiceTemplateCreateRequest.Draft,
-}).then((res: CreateClientInvoiceTemplateResponse) => {
+    status: StatusClientInvoiceTemplateCreateRequest.Draft,
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [shared.ClientInvoiceTemplateCreateRequest](../../models/shared/clientinvoicetemplatecreaterequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [shared.ClientInvoiceTemplateCreateRequest](../../sdk/models/shared/clientinvoicetemplatecreaterequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
 
-**Promise<[operations.CreateClientInvoiceTemplateResponse](../../models/operations/createclientinvoicetemplateresponse.md)>**
+**Promise<[operations.CreateClientInvoiceTemplateResponse](../../sdk/models/operations/createclientinvoicetemplateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -110,16 +90,20 @@ Get client-invoice-template
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetClientInvoiceTemplateRequest, GetClientInvoiceTemplateResponse } from "wingspan/dist/sdk/models/operations";
+import { GetClientInvoiceTemplateRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.clientInvoiceTemplate.get(id).then((res: GetClientInvoiceTemplateResponse) => {
+  const res = await sdk.clientInvoiceTemplate.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -132,8 +116,12 @@ sdk.clientInvoiceTemplate.get(id).then((res: GetClientInvoiceTemplateResponse) =
 
 ### Response
 
-**Promise<[operations.GetClientInvoiceTemplateResponse](../../models/operations/getclientinvoicetemplateresponse.md)>**
+**Promise<[operations.GetClientInvoiceTemplateResponse](../../sdk/models/operations/getclientinvoicetemplateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -143,34 +131,40 @@ Update client-invoice-template
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateClientInvoiceTemplateRequest, UpdateClientInvoiceTemplateResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateClientInvoiceTemplateRequest } from "wingspan/dist/sdk/models/operations";
 import { ClientInvoiceTemplateUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 const clientInvoiceTemplateUpdateRequest: ClientInvoiceTemplateUpdateRequest = {
-  accountId: "Reactive",
-  clientId: "Metal cheater Islands",
-  paymentMethodId: "withdrawal extend",
+  clientId: "<value>",
 };
 
-sdk.clientInvoiceTemplate.update(id, clientInvoiceTemplateUpdateRequest).then((res: UpdateClientInvoiceTemplateResponse) => {
+  const res = await sdk.clientInvoiceTemplate.update(id, clientInvoiceTemplateUpdateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `id`                                                                                                   | *string*                                                                                               | :heavy_check_mark:                                                                                     | Unique identifier                                                                                      |
-| `clientInvoiceTemplateUpdateRequest`                                                                   | [shared.ClientInvoiceTemplateUpdateRequest](../../models/shared/clientinvoicetemplateupdaterequest.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                       | *string*                                                                                                   | :heavy_check_mark:                                                                                         | Unique identifier                                                                                          |
+| `clientInvoiceTemplateUpdateRequest`                                                                       | [shared.ClientInvoiceTemplateUpdateRequest](../../sdk/models/shared/clientinvoicetemplateupdaterequest.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
 
-**Promise<[operations.UpdateClientInvoiceTemplateResponse](../../models/operations/updateclientinvoicetemplateresponse.md)>**
+**Promise<[operations.UpdateClientInvoiceTemplateResponse](../../sdk/models/operations/updateclientinvoicetemplateresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

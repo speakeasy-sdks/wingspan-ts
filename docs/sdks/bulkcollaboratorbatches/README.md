@@ -13,15 +13,18 @@ List bulk collaborator batches
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListBulkCollaboratorBatchesResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.bulkCollaboratorBatches.list().then((res: ListBulkCollaboratorBatchesResponse) => {
+  const res = await sdk.bulkCollaboratorBatches.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -33,5 +36,9 @@ sdk.bulkCollaboratorBatches.list().then((res: ListBulkCollaboratorBatchesRespons
 
 ### Response
 
-**Promise<[operations.ListBulkCollaboratorBatchesResponse](../../models/operations/listbulkcollaboratorbatchesresponse.md)>**
+**Promise<[operations.ListBulkCollaboratorBatchesResponse](../../sdk/models/operations/listbulkcollaboratorbatchesresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

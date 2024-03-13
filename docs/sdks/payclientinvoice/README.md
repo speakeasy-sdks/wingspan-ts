@@ -13,22 +13,22 @@ Pay client-invoice
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { PostPayClientInvoiceRequest, PostPayClientInvoiceResponse } from "wingspan/dist/sdk/models/operations";
+import { PostPayClientInvoiceRequest } from "wingspan/dist/sdk/models/operations";
 import { PayRequest } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const invoiceId: string = "payment";
-const payRequest: PayRequest = {
-  accountId: "base mealy Metrics",
-  paymentMethodId: "Market",
-  plaidPublicToken: "Grenada",
-};
+async function run() {
+  const sdk = new Wingspan();
+const invoiceId: string = "<value>";
+const payRequest: PayRequest = {};
 
-sdk.payClientInvoice.post(invoiceId, payRequest).then((res: PostPayClientInvoiceResponse) => {
+  const res = await sdk.payClientInvoice.post(invoiceId, payRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -36,11 +36,15 @@ sdk.payClientInvoice.post(invoiceId, payRequest).then((res: PostPayClientInvoice
 | Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | `invoiceId`                                                  | *string*                                                     | :heavy_check_mark:                                           | Unique identifier of an invoice                              |
-| `payRequest`                                                 | [shared.PayRequest](../../models/shared/payrequest.md)       | :heavy_minus_sign:                                           | N/A                                                          |
+| `payRequest`                                                 | [shared.PayRequest](../../sdk/models/shared/payrequest.md)   | :heavy_minus_sign:                                           | N/A                                                          |
 | `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
 
-**Promise<[operations.PostPayClientInvoiceResponse](../../models/operations/postpayclientinvoiceresponse.md)>**
+**Promise<[operations.PostPayClientInvoiceResponse](../../sdk/models/operations/postpayclientinvoiceresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

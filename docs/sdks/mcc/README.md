@@ -13,15 +13,18 @@ List mcc codes
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListMCCResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.mcc.list().then((res: ListMCCResponse) => {
+  const res = await sdk.mcc.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -33,5 +36,9 @@ sdk.mcc.list().then((res: ListMCCResponse) => {
 
 ### Response
 
-**Promise<[operations.ListMCCResponse](../../models/operations/listmccresponse.md)>**
+**Promise<[operations.ListMCCResponse](../../sdk/models/operations/listmccresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

@@ -9,7 +9,6 @@ export enum DestinationTypePayoutDestinationUpdate {
     Account = "Account",
     Card = "Card",
     WeGift = "WeGift",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum PayoutMethodPayoutDestinationUpdate {
@@ -18,7 +17,6 @@ export enum PayoutMethodPayoutDestinationUpdate {
     Expedited = "Expedited",
     Check = "Check",
     ECheck = "ECheck",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class PayoutDestinationUpdate extends SpeakeasyBase {

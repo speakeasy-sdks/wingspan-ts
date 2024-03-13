@@ -14,15 +14,18 @@ List additional settings
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListAdditionalSettingsResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.additionalSettings.list().then((res: ListAdditionalSettingsResponse) => {
+  const res = await sdk.additionalSettings.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -34,8 +37,12 @@ sdk.additionalSettings.list().then((res: ListAdditionalSettingsResponse) => {
 
 ### Response
 
-**Promise<[operations.ListAdditionalSettingsResponse](../../models/operations/listadditionalsettingsresponse.md)>**
+**Promise<[operations.ListAdditionalSettingsResponse](../../sdk/models/operations/listadditionalsettingsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -45,35 +52,38 @@ Update additional settings
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateAdditionalSettingsRequest, UpdateAdditionalSettingsResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateAdditionalSettingsRequest } from "wingspan/dist/sdk/models/operations";
 import { AdditionalDataUpdateRequest, TypeAdditionalDataUpdateRequest } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
-const additionalDataUpdateRequest: AdditionalDataUpdateRequest = {
-  key: "<key>",
-  name: "Reactive",
-  required: false,
-  type: TypeAdditionalDataUpdateRequest.Boolean,
-};
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
+const additionalDataUpdateRequest: AdditionalDataUpdateRequest = {};
 
-sdk.additionalSettings.update(id, additionalDataUpdateRequest).then((res: UpdateAdditionalSettingsResponse) => {
+  const res = await sdk.additionalSettings.update(id, additionalDataUpdateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `id`                                                                                     | *string*                                                                                 | :heavy_check_mark:                                                                       | Unique identifier                                                                        |
-| `additionalDataUpdateRequest`                                                            | [shared.AdditionalDataUpdateRequest](../../models/shared/additionaldataupdaterequest.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |
-| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `id`                                                                                         | *string*                                                                                     | :heavy_check_mark:                                                                           | Unique identifier                                                                            |
+| `additionalDataUpdateRequest`                                                                | [shared.AdditionalDataUpdateRequest](../../sdk/models/shared/additionaldataupdaterequest.md) | :heavy_minus_sign:                                                                           | N/A                                                                                          |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
 
 
 ### Response
 
-**Promise<[operations.UpdateAdditionalSettingsResponse](../../models/operations/updateadditionalsettingsresponse.md)>**
+**Promise<[operations.UpdateAdditionalSettingsResponse](../../sdk/models/operations/updateadditionalsettingsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

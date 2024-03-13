@@ -8,7 +8,6 @@ import { Expose } from "class-transformer";
 export enum TypeAdditionalDataUpdateRequest {
     Boolean = "Boolean",
     String = "String",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class AdditionalDataUpdateRequest extends SpeakeasyBase {
@@ -22,7 +21,7 @@ export class AdditionalDataUpdateRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "required" })
-    required?: any;
+    required?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "type" })

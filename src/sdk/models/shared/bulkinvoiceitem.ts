@@ -3,14 +3,16 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { C1b9877fd1d35a4292006c3c09941c1c5c21bbe2e0e87488661804eebf2a3e4a } from "./c1b9877fd1d35a4292006c3c09941c1c5c21bbe2e0e87488661804eebf2a3e4a";
+import { FeeHandlingConfig } from "./feehandlingconfig";
+import { InvoiceIntegrations } from "./invoiceintegrations";
 import { UserRoles } from "./userroles";
 import { Expose, Type } from "class-transformer";
 
-export enum BulkInvoiceItemAcceptedPaymentMethods {
+export enum AcceptedPaymentMethods {
     Credit = "Credit",
     Ach = "ACH",
     Manual = "Manual",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export enum InvoiceStatusBulkInvoiceItem {
@@ -32,7 +34,7 @@ export enum StatusBulkInvoiceItem {
 export class BulkInvoiceItem extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "acceptedPaymentMethods" })
-    acceptedPaymentMethods?: BulkInvoiceItemAcceptedPaymentMethods[];
+    acceptedPaymentMethods?: AcceptedPaymentMethods[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "amount" })
@@ -68,7 +70,8 @@ export class BulkInvoiceItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "creditFeeHandling" })
-    creditFeeHandling?: any;
+    @Type(() => FeeHandlingConfig)
+    creditFeeHandling?: FeeHandlingConfig;
 
     @SpeakeasyMetadata()
     @Expose({ name: "dueDate" })
@@ -76,7 +79,8 @@ export class BulkInvoiceItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration" })
-    integration?: any;
+    @Type(() => InvoiceIntegrations)
+    integration?: InvoiceIntegrations;
 
     @SpeakeasyMetadata()
     @Expose({ name: "invoiceNotes" })
@@ -108,7 +112,8 @@ export class BulkInvoiceItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "metadata" })
-    metadata?: any;
+    @Type(() => C1b9877fd1d35a4292006c3c09941c1c5c21bbe2e0e87488661804eebf2a3e4a)
+    metadata?: C1b9877fd1d35a4292006c3c09941c1c5c21bbe2e0e87488661804eebf2a3e4a;
 
     @SpeakeasyMetadata()
     @Expose({ name: "paidDate" })
@@ -120,7 +125,7 @@ export class BulkInvoiceItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "reimbursableExpense" })
-    reimbursableExpense?: any;
+    reimbursableExpense?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "sendDate" })

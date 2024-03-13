@@ -13,16 +13,20 @@ Get invoice on member by payableId
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetInvoicePayableOnMemberRequest, GetInvoicePayableOnMemberResponse } from "wingspan/dist/sdk/models/operations";
+import { GetInvoicePayableOnMemberRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.invoicePayableOnMember.get(id).then((res: GetInvoicePayableOnMemberResponse) => {
+  const res = await sdk.invoicePayableOnMember.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -35,5 +39,9 @@ sdk.invoicePayableOnMember.get(id).then((res: GetInvoicePayableOnMemberResponse)
 
 ### Response
 
-**Promise<[operations.GetInvoicePayableOnMemberResponse](../../models/operations/getinvoicepayableonmemberresponse.md)>**
+**Promise<[operations.GetInvoicePayableOnMemberResponse](../../sdk/models/operations/getinvoicepayableonmemberresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

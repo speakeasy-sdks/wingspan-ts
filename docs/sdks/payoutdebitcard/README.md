@@ -15,46 +15,52 @@ Create a payout debit card
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreatePayoutDebitCardRequest, CreatePayoutDebitCardResponse } from "wingspan/dist/sdk/models/operations";
+import { CreatePayoutDebitCardRequest } from "wingspan/dist/sdk/models/operations";
 import { Address, CheckbookCardCreate } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const memberId: string = "online";
+async function run() {
+  const sdk = new Wingspan();
+const memberId: string = "<value>";
 const checkbookCardCreate: CheckbookCardCreate = {
   address: {
-    addressLine1: "Money blue shred",
-    addressLine2: "technology East",
-    city: "West Astridcester",
-    postalCode: "88558-7496",
-    state: "Durham after",
+    addressLine1: "4684 Bria Shores",
+    city: "Fort Peytonbury",
+    postalCode: "80413-0778",
+    state: "South Dakota",
   },
-  cardNumber: "Intelligent Fish",
-  cvv: "Fiat",
-  expMM: "Grocery Borders Northwest",
-  expYYYY: "Kentucky animated",
-  name: "Interactions Senior Mouse",
+  cardNumber: "<value>",
+  expMM: "<value>",
+  expYYYY: "<value>",
+  name: "<value>",
 };
 
-sdk.payoutDebitCard.create(memberId, checkbookCardCreate).then((res: CreatePayoutDebitCardResponse) => {
+  const res = await sdk.payoutDebitCard.create(memberId, checkbookCardCreate);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `memberId`                                                               | *string*                                                                 | :heavy_check_mark:                                                       | Unique identifier of a member                                            |
-| `checkbookCardCreate`                                                    | [shared.CheckbookCardCreate](../../models/shared/checkbookcardcreate.md) | :heavy_minus_sign:                                                       | N/A                                                                      |
-| `config`                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)             | :heavy_minus_sign:                                                       | Available config options for making requests.                            |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `memberId`                                                                   | *string*                                                                     | :heavy_check_mark:                                                           | Unique identifier of a member                                                |
+| `checkbookCardCreate`                                                        | [shared.CheckbookCardCreate](../../sdk/models/shared/checkbookcardcreate.md) | :heavy_minus_sign:                                                           | N/A                                                                          |
+| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
 
 
 ### Response
 
-**Promise<[operations.CreatePayoutDebitCardResponse](../../models/operations/createpayoutdebitcardresponse.md)>**
+**Promise<[operations.CreatePayoutDebitCardResponse](../../sdk/models/operations/createpayoutdebitcardresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete
 
@@ -64,17 +70,21 @@ Delete the payout debit card
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeletePayoutDebitCardRequest, DeletePayoutDebitCardResponse } from "wingspan/dist/sdk/models/operations";
+import { DeletePayoutDebitCardRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
-const memberId: string = "Designer";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
+const memberId: string = "<value>";
 
-sdk.payoutDebitCard.delete(id, memberId).then((res: DeletePayoutDebitCardResponse) => {
+  const res = await sdk.payoutDebitCard.delete(id, memberId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -88,8 +98,12 @@ sdk.payoutDebitCard.delete(id, memberId).then((res: DeletePayoutDebitCardRespons
 
 ### Response
 
-**Promise<[operations.DeletePayoutDebitCardResponse](../../models/operations/deletepayoutdebitcardresponse.md)>**
+**Promise<[operations.DeletePayoutDebitCardResponse](../../sdk/models/operations/deletepayoutdebitcardresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -99,17 +113,21 @@ Get the payout debit card
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetPayoutDebitCardRequest, GetPayoutDebitCardResponse } from "wingspan/dist/sdk/models/operations";
+import { GetPayoutDebitCardRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
-const memberId: string = "program";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
+const memberId: string = "<value>";
 
-sdk.payoutDebitCard.get(id, memberId).then((res: GetPayoutDebitCardResponse) => {
+  const res = await sdk.payoutDebitCard.get(id, memberId);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -123,5 +141,9 @@ sdk.payoutDebitCard.get(id, memberId).then((res: GetPayoutDebitCardResponse) => 
 
 ### Response
 
-**Promise<[operations.GetPayoutDebitCardResponse](../../models/operations/getpayoutdebitcardresponse.md)>**
+**Promise<[operations.GetPayoutDebitCardResponse](../../sdk/models/operations/getpayoutdebitcardresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

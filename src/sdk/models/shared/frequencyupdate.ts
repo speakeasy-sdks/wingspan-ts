@@ -8,13 +8,12 @@ import { Expose } from "class-transformer";
 export enum IntervalFrequencyUpdate {
     Week = "Week",
     Month = "Month",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class FrequencyUpdate extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "daily" })
-    daily?: any;
+    daily?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "dayInInterval" })
@@ -38,5 +37,5 @@ export class FrequencyUpdate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "twicePerMonth" })
-    twicePerMonth?: any;
+    twicePerMonth?: boolean;
 }

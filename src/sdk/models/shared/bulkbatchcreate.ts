@@ -8,5 +8,5 @@ import { Expose } from "class-transformer";
 export class BulkBatchCreate extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "labels" })
-    labels?: any;
+    labels?: Record<string, string>;
 }

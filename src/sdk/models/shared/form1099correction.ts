@@ -3,9 +3,9 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { Expose, Type } from "class-transformer";
 
-export class Form1099CorrectionAddress2 extends SpeakeasyBase {}
+export class Form1099CorrectionAddress extends SpeakeasyBase {}
 
 export enum CompanyStructureForm1099Correction {
     None = "None",
@@ -18,13 +18,13 @@ export enum CompanyStructureForm1099Correction {
     LLCPartnership = "LLCPartnership",
     CorporationC = "CorporationC",
     Partnership = "Partnership",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 export class Form1099Correction extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "address" })
-    address?: any;
+    @Type(() => Form1099CorrectionAddress)
+    address?: Form1099CorrectionAddress;
 
     @SpeakeasyMetadata()
     @Expose({ name: "companyStructure" })

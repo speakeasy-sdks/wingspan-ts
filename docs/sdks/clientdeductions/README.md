@@ -13,15 +13,18 @@ List deductions
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { ListClientDeductionsResponse } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.clientDeductions.list().then((res: ListClientDeductionsResponse) => {
+  const res = await sdk.clientDeductions.list();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -33,5 +36,9 @@ sdk.clientDeductions.list().then((res: ListClientDeductionsResponse) => {
 
 ### Response
 
-**Promise<[operations.ListClientDeductionsResponse](../../models/operations/listclientdeductionsresponse.md)>**
+**Promise<[operations.ListClientDeductionsResponse](../../sdk/models/operations/listclientdeductionsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

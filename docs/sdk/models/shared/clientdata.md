@@ -1,0 +1,10 @@
+# ClientData
+
+
+## Fields
+
+| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `autoPayStrategy`                                                                                   | [shared.AutoPayStrategyClientData](../../../sdk/models/shared/autopaystrategyclientdata.md)         | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `externalId`                                                                                        | *string*                                                                                            | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `verificationStratgy`                                                                               | [shared.VerificationStratgyClientData](../../../sdk/models/shared/verificationstratgyclientdata.md) | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |

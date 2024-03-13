@@ -16,7 +16,6 @@ Create new collaborator
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { CreateCollaboratorResponse } from "wingspan/dist/sdk/models/operations";
 import {
   AutoPayStrategyClientData,
   CompanyStructureMemberClientFormW9Info,
@@ -24,44 +23,52 @@ import {
   VerificationStratgyClientData,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
+async function run() {
+  const sdk = new Wingspan();
 
-sdk.collaborator.create({
-  clientData: "bluetooth",
-  clientId: "Money blue shred",
-  collaboratorGroupId: "technology East",
-  formW9Data: "evolve",
-  integration: {
-    quickbooks: {
-      expenseAccountId: "Gasoline Screen mobile",
-      vendorId: "Ameliorated Fresh",
+  const res = await sdk.collaborator.create({
+    clientData: {},
+    clientId: "<value>",
+    formW9Data: {
+      addressLine1: "4684 Bria Shores",
+      city: "Fort Peytonbury",
+      companyStructure: CompanyStructureMemberClientFormW9Info.Partnership,
+      country: "Togo",
+      postalCode: "41307",
+      state: "South Carolina",
     },
-  },
-  labels: "overriding",
-  memberCompany: "Fish",
-  memberEmail: "Fiat",
-  memberId: "Grocery Borders Northwest",
-  memberName: "Kentucky animated",
-  status: StatusCollaboratorCreateRequest.LessThanNilGreaterThan,
-}).then((res: CreateCollaboratorResponse) => {
+    integration: {
+      quickbooks: {},
+    },
+    labels: {
+      "key": "<value>",
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [shared.CollaboratorCreateRequest](../../models/shared/collaboratorcreaterequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [shared.CollaboratorCreateRequest](../../sdk/models/shared/collaboratorcreaterequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response
 
-**Promise<[operations.CreateCollaboratorResponse](../../models/operations/createcollaboratorresponse.md)>**
+**Promise<[operations.CreateCollaboratorResponse](../../sdk/models/operations/createcollaboratorresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete
 
@@ -71,16 +78,20 @@ Delete collaborator by Id
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { DeleteCollaboratorRequest, DeleteCollaboratorResponse } from "wingspan/dist/sdk/models/operations";
+import { DeleteCollaboratorRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "program";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.collaborator.delete(id).then((res: DeleteCollaboratorResponse) => {
+  const res = await sdk.collaborator.delete(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -93,8 +104,12 @@ sdk.collaborator.delete(id).then((res: DeleteCollaboratorResponse) => {
 
 ### Response
 
-**Promise<[operations.DeleteCollaboratorResponse](../../models/operations/deletecollaboratorresponse.md)>**
+**Promise<[operations.DeleteCollaboratorResponse](../../sdk/models/operations/deletecollaboratorresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -104,16 +119,20 @@ Get collaborator by Id
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { GetCollaboratorRequest, GetCollaboratorResponse } from "wingspan/dist/sdk/models/operations";
+import { GetCollaboratorRequest } from "wingspan/dist/sdk/models/operations";
 
-const sdk = new Wingspan();
-const id: string = "female";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 
-sdk.collaborator.get(id).then((res: GetCollaboratorResponse) => {
+  const res = await sdk.collaborator.get(id);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
@@ -126,8 +145,12 @@ sdk.collaborator.get(id).then((res: GetCollaboratorResponse) => {
 
 ### Response
 
-**Promise<[operations.GetCollaboratorResponse](../../models/operations/getcollaboratorresponse.md)>**
+**Promise<[operations.GetCollaboratorResponse](../../sdk/models/operations/getcollaboratorresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -137,19 +160,19 @@ Update a collaborator by Id
 
 ```typescript
 import { Wingspan } from "wingspan";
-import { UpdateCollaboratorRequest, UpdateCollaboratorResponse } from "wingspan/dist/sdk/models/operations";
+import { UpdateCollaboratorRequest } from "wingspan/dist/sdk/models/operations";
 import {
   AutoPayStrategyClientData,
   Ce853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481,
-  Ce853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481Address2,
+  Ce853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481Address,
   ClientData,
   CollaboratorForm1099BalancesUpdateRequest,
-  CollaboratorForm1099BalancesUpdateRequestEvents2,
   CollaboratorUpdateRequest,
-  CollaboratorUpdateRequestFormW9Data2,
   CompanyStructurece853dbef33b2b91880690c84bc5314340c1301fd7b3503dd6ce79c844e2a481,
   DeliveryMethodCollaboratorForm1099BalancesUpdateRequest,
   Eighta9c6cb49482a98cdd603ff09858cdc3e5ef6ad9807c876c4161d925a96694a5,
+  Events,
+  FormW9Data,
   Ninetyf96495b02c2509fff131505484d46479a91b7d23ed2b0f438ca117d0bccad7,
   Sixa65bb5a9fe6d1135b7182baff68e9bc6612ee2c1ab942926fe2804c58663cf4,
   Status8a9c6cb49482a98cdd603ff09858cdc3e5ef6ad9807c876c4161d925a96694a5,
@@ -159,37 +182,60 @@ import {
   VerificationStratgyClientData,
 } from "wingspan/dist/sdk/models/shared";
 
-const sdk = new Wingspan();
-const id: string = "Van";
+async function run() {
+  const sdk = new Wingspan();
+const id: string = "<value>";
 const collaboratorUpdateRequest: CollaboratorUpdateRequest = {
-  clientData: "Reactive",
+  clientData: {},
   form1099Balances: {
-    twoThousandAndTwentyOne: "Quality",
-    twoThousandAndTwentyTwo: "invoice",
+    twoThousandAndTwentyOne: {
+      correction: {
+        address: {},
+      },
+      dispute: {},
+      events: {},
+    },
+    twoThousandAndTwentyTwo: {
+      correction: {
+        address: {},
+      },
+      dispute: {},
+      events: {},
+    },
   },
-  formW9Data: "Islands",
-  integration: "withdrawal",
-  labels: "white",
-  status: StatusCollaboratorUpdateRequest.Inactive,
+  formW9Data: {},
+  integration: {
+    quickbooks: {},
+  },
+  labels: {
+    "key": "<value>",
+  },
 };
 
-sdk.collaborator.update(id, collaboratorUpdateRequest).then((res: UpdateCollaboratorResponse) => {
+  const res = await sdk.collaborator.update(id, collaboratorUpdateRequest);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+}
+
+run();
 ```
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `id`                                                                                 | *string*                                                                             | :heavy_check_mark:                                                                   | Unique identifier                                                                    |
-| `collaboratorUpdateRequest`                                                          | [shared.CollaboratorUpdateRequest](../../models/shared/collaboratorupdaterequest.md) | :heavy_minus_sign:                                                                   | N/A                                                                                  |
-| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `id`                                                                                     | *string*                                                                                 | :heavy_check_mark:                                                                       | Unique identifier                                                                        |
+| `collaboratorUpdateRequest`                                                              | [shared.CollaboratorUpdateRequest](../../sdk/models/shared/collaboratorupdaterequest.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response
 
-**Promise<[operations.UpdateCollaboratorResponse](../../models/operations/updatecollaboratorresponse.md)>**
+**Promise<[operations.UpdateCollaboratorResponse](../../sdk/models/operations/updatecollaboratorresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
