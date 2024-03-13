@@ -3,10 +3,10 @@ id: c0f10cb7-f308-4f84-b8a0-803b3a5e9361
 management:
   docChecksum: 213e6692a623ef7a4c2e2fbeb0e17e0f
   docVersion: 1.0.0
-  speakeasyVersion: internal
-  generationVersion: 2.259.1
-  releaseVersion: 0.7.2
-  configChecksum: ffdc9aa2c6b5b207dba979b78d444b84
+  speakeasyVersion: 1.207.1
+  generationVersion: 2.280.6
+  releaseVersion: 0.7.3
+  configChecksum: 51fa9ce562678e5c10f25ea5a820a3a3
   repoURL: https://github.com/speakeasy-sdks/wingspan-ts.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/wingspan-ts
@@ -21,9 +21,9 @@ features:
     inputOutputModels: 2.81.1
     serverIDs: 2.81.1
   typescript:
-    core: 3.4.7
+    core: 3.4.8
     flattening: 2.81.1
-    globalServerURLs: 2.82.1
+    globalServerURLs: 2.82.2
     groups: 2.81.2
     nameOverrides: 2.81.1
 generatedFiles:
